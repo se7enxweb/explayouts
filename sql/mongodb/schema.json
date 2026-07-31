@@ -1,0 +1,69 @@
+{
+    "database": "explayouts",
+    "collections": [
+        {
+            "name": "explayouts_layout",
+            "indexes": [
+                { "keys": { "identifier": 1, "status": 1 }, "options": { "unique": true, "name": "idx_identifier_status" } },
+                { "keys": { "status": 1 }, "options": { "name": "idx_status" } }
+            ]
+        },
+        {
+            "name": "explayouts_zone",
+            "indexes": [
+                { "keys": { "layout_id": 1, "status": 1 }, "options": { "name": "idx_layout_status" } },
+                { "keys": { "position": 1 }, "options": { "name": "idx_position" } }
+            ]
+        },
+        {
+            "name": "explayouts_block",
+            "indexes": [
+                { "keys": { "zone_id": 1, "status": 1 }, "options": { "name": "idx_zone_status" } },
+                { "keys": { "layout_id": 1, "status": 1 }, "options": { "name": "idx_layout_status" } },
+                { "keys": { "position": 1 }, "options": { "name": "idx_position" } }
+            ]
+        },
+        {
+            "name": "explayouts_block_parameter",
+            "indexes": [
+                { "keys": { "block_id": 1, "name": 1 }, "options": { "unique": true, "name": "idx_block_name" } }
+            ]
+        },
+        {
+            "name": "explayouts_collection",
+            "indexes": [
+                { "keys": { "block_id": 1 }, "options": { "unique": true, "name": "idx_block" } }
+            ]
+        },
+        {
+            "name": "explayouts_collection_item",
+            "indexes": [
+                { "keys": { "collection_id": 1, "position": 1 }, "options": { "name": "idx_collection_position" } }
+            ]
+        },
+        {
+            "name": "explayouts_collection_query",
+            "indexes": [
+                { "keys": { "collection_id": 1 }, "options": { "unique": true, "name": "idx_collection" } }
+            ]
+        },
+        {
+            "name": "explayouts_rule",
+            "indexes": [
+                { "keys": { "enabled": 1, "priority": 1 }, "options": { "name": "idx_enabled_priority" } }
+            ]
+        },
+        {
+            "name": "explayouts_rule_target",
+            "indexes": [
+                { "keys": { "rule_id": 1 }, "options": { "name": "idx_rule" } }
+            ]
+        },
+        {
+            "name": "explayouts_rule_condition",
+            "indexes": [
+                { "keys": { "rule_id": 1 }, "options": { "name": "idx_rule" } }
+            ]
+        }
+    ]
+}
