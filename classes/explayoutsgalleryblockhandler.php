@@ -152,9 +152,16 @@ class expLayoutsGalleryBlockHandler implements expLayoutsBlockHandlerInterface
             $image = $attr->hasAttribute( 'content' ) ? $attr->attribute( 'content' ) : false;
             if ( $image )
             {
-                $url = $image->hasAttribute( $thumbnailSize ) ? $image->attribute( $thumbnailSize )['url'] : '';
+                $url = '';
+                $thumb = $image->hasAttribute( $thumbnailSize ) ? $image->attribute( $thumbnailSize ) : false;
+                if ( is_array( $thumb ) && isset( $thumb['url'] ) )
+                    $url = $thumb['url'];
                 if ( $url === '' && $image->hasAttribute( 'original' ) )
-                    $url = $image->attribute( 'original' )['url'];
+                {
+                    $original = $image->attribute( 'original' );
+                    if ( is_array( $original ) && isset( $original['url'] ) )
+                        $url = $original['url'];
+                }
                 if ( $url !== '' )
                 {
                     $entry['url'] = $url;
