@@ -10,6 +10,7 @@
  */
 
 return array(
-    );
+    'ExplBlockXHTMLXMLOutput' => 'extension/explayouts/classes/explblockxhtmlxmloutput.php',
+);
 
 ?>
