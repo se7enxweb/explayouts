@@ -107,11 +107,15 @@ class expLayoutsDynamicCollection
 
     static function queryRow( $collectionId )
     {
-        $db = eZDB::instance();
-        $rows = $db->arrayQuery(
-            'SELECT query_type, parameters FROM explayouts_collection_query WHERE collection_id=' . (int)$collectionId
-        );
-        return isset( $rows[0] ) ? $rows[0] : false;
+        $query = expLayoutsCollectionQuery::fetchByCollection( (int)$collectionId, true );
+        if ( $query )
+        {
+            return array(
+                'query_type' => $query->attribute( 'query_type' ),
+                'parameters' => $query->attribute( 'parameters' ),
+            );
+        }
+        return false;
     }
 
     static function manualItems( $collectionId, $offset = 0, $limit = 0 )

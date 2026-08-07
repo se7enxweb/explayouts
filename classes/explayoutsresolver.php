@@ -1,6 +1,8 @@
 <?php
 class expLayoutsResolver
 {
+    private static $resolvedCache = array();
+
     static function resolve( $path = false )
     {
         if ( $path === false )
@@ -20,6 +22,28 @@ class expLayoutsResolver
         if ( $path === '' )
             $path = 'home';
 
+        $current = eZSiteAccess::current();
+        $siteAccessName = ( is_array( $current ) && isset( $current['name'] ) ) ? $current['name'] : 'default';
+
+        $cached = self::readCache( $path, $siteAccessName );
+        if ( $cached !== false )
+        {
+            if ( (int)$cached['layout_id'] > 0 )
+            {
+                $layout = expLayoutsLayout::fetch( $cached['layout_id'] );
+                if ( $layout && (int)$layout->attribute( 'status' ) > 0 )
+                {
+                    error_log( "expLayoutsResolver: Cache hit for path '$path', layout=" . $layout->attribute( 'identifier' ) );
+                    return $layout;
+                }
+            }
+            else
+            {
+                error_log( "expLayoutsResolver: Cache hit for path '$path', no match" );
+                return false;
+            }
+        }
+
         $rules = expLayoutsRule::fetchEnabled();
         foreach ( $rules as $rule )
         {
@@ -28,6 +52,7 @@ class expLayoutsResolver
                 $layout = expLayoutsLayout::fetch( $rule->attribute( 'layout_id' ) );
                 if ( $layout && (int)$layout->attribute( 'status' ) > 0 )
                 {
+                    self::writeCache( $path, $siteAccessName, (int)$rule->attribute( 'id' ), (int)$layout->attribute( 'id' ) );
                     error_log( "expLayoutsResolver: Matched rule " . $rule->attribute( 'id' ) . " for path '$path', layout=" . $layout->attribute( 'identifier' ) );
                     return $layout;
                 }
@@ -38,9 +63,93 @@ class expLayoutsResolver
         $ini = eZINI::instance( 'explayouts.ini' );
         $default = $ini->variable( 'ResolverSettings', 'DefaultLayout' );
         if ( $default )
-            return expLayoutsLayout::fetchByIdentifier( $default, 2 );
+        {
+            $layout = expLayoutsLayout::fetchByIdentifier( $default, 2 );
+            if ( $layout )
+            {
+                self::writeCache( $path, $siteAccessName, 0, (int)$layout->attribute( 'id' ) );
+                return $layout;
+            }
+        }
+
+        self::writeCache( $path, $siteAccessName, 0, 0 );
+        return false;
+    }
+
+    private static function cacheKey( $path, $siteAccessName )
+    {
+        return md5( $path . '|' . $siteAccessName );
+    }
+
+    private static function cacheDir()
+    {
+        $varDir = eZINI::instance( 'site.ini' )->variable( 'FileSettings', 'VarDir' );
+        return $varDir . '/cache/explayouts/resolver';
+    }
+
+    private static function cacheFile( $key )
+    {
+        return self::cacheDir() . '/' . $key . '.php';
+    }
+
+    private static function readCache( $path, $siteAccessName )
+    {
+        $key = self::cacheKey( $path, $siteAccessName );
+
+        if ( array_key_exists( $key, self::$resolvedCache ) )
+        {
+            return self::$resolvedCache[$key];
+        }
+
+        $file = self::cacheFile( $key );
+        if ( file_exists( $file ) )
+        {
+            $data = @include( $file );
+            if ( is_array( $data ) && isset( $data['expires'] ) && $data['expires'] > time() )
+            {
+                self::$resolvedCache[$key] = $data;
+                return $data;
+            }
+            @unlink( $file );
+        }
 
         return false;
+    }
+
+    private static function writeCache( $path, $siteAccessName, $ruleId, $layoutId )
+    {
+        $ini = eZINI::instance( 'explayouts.ini' );
+        $ttl = (int)$ini->variable( 'ResolverSettings', 'CacheTTL' );
+        if ( $ttl <= 0 )
+            $ttl = 3600;
+
+        $key = self::cacheKey( $path, $siteAccessName );
+        $data = array(
+            'path' => $path,
+            'siteaccess' => $siteAccessName,
+            'rule_id' => $ruleId,
+            'layout_id' => $layoutId,
+            'expires' => time() + $ttl,
+        );
+
+        self::$resolvedCache[$key] = $data;
+        eZFile::create( $key . '.php', self::cacheDir(), '<?php return ' . var_export( $data, true ) . ';', true );
+    }
+
+    public static function clearCache()
+    {
+        $dir = self::cacheDir();
+        if ( !is_dir( $dir ) )
+            return;
+
+        $files = glob( $dir . '/*.php' );
+        if ( $files !== false )
+        {
+            foreach ( $files as $file )
+            {
+                @unlink( $file );
+            }
+        }
     }
 
     static function ruleMatches( $rule, $path )

@@ -248,3 +248,4 @@ AllowedTemplateRoots[]=extension
 
 [ResolverSettings]
 DefaultLayout=
+CacheTTL=3600
