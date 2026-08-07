@@ -64,6 +64,9 @@ CREATE TABLE explayouts_block (
     view_type VARCHAR2(255) NOT NULL DEFAULT '',
     name VARCHAR2(255) NOT NULL DEFAULT '',
     status NUMBER(11,0) NOT NULL DEFAULT 1,
+    parent_id NUMBER(11,0) NOT NULL DEFAULT 0,
+    placeholder VARCHAR2(255) NOT NULL DEFAULT '',
+    item_view_type CLOB,
     CONSTRAINT explayouts_block_pk PRIMARY KEY (id)
 );
 

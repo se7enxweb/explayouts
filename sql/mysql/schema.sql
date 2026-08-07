@@ -1,108 +1,119 @@
-CREATE TABLE IF NOT EXISTS explayouts_layout (
-    id INT(11) NOT NULL AUTO_INCREMENT,
-    identifier VARCHAR(255) NOT NULL,
-    name VARCHAR(255) NOT NULL DEFAULT '',
-    layout_type VARCHAR(255) NOT NULL DEFAULT '',
-    status INT(11) NOT NULL DEFAULT 1,
-    created INT(11) NOT NULL DEFAULT 0,
-    modified INT(11) NOT NULL DEFAULT 0,
-    PRIMARY KEY (id),
-    UNIQUE KEY unique_identifier_status (identifier, status),
-    KEY idx_status (status)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE explayouts_block (
+  definition_identifier varchar(255) NOT NULL DEFAULT '',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  item_view_type text NOT NULL,
+  layout_id int NOT NULL DEFAULT '0',
+  name varchar(255) NOT NULL DEFAULT '',
+  parent_id int NOT NULL DEFAULT '0',
+  placeholder varchar(255) NOT NULL DEFAULT '',
+  position int NOT NULL DEFAULT '0',
+  status int NOT NULL DEFAULT '1',
+  view_type varchar(255) NOT NULL DEFAULT '',
+  zone_id int NOT NULL DEFAULT '0',
+  PRIMARY KEY ( id ),
+  KEY idx_block_layout_status ( layout_id, status ),
+  KEY idx_block_position ( position ),
+  KEY idx_block_zone_status ( zone_id, status )
+) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4;
 
-CREATE TABLE IF NOT EXISTS explayouts_zone (
-    id INT(11) NOT NULL AUTO_INCREMENT,
-    layout_id INT(11) NOT NULL,
-    identifier VARCHAR(255) NOT NULL,
-    linked_layout_id INT(11) DEFAULT NULL,
-    status INT(11) NOT NULL DEFAULT 1,
-    position INT(11) NOT NULL DEFAULT 0,
-    PRIMARY KEY (id),
-    KEY idx_layout_status (layout_id, status),
-    KEY idx_position (position)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS explayouts_block (
-    id INT(11) NOT NULL AUTO_INCREMENT,
-    zone_id INT(11) NOT NULL,
-    layout_id INT(11) NOT NULL,
-    position INT(11) NOT NULL DEFAULT 0,
-    definition_identifier VARCHAR(255) NOT NULL,
-    view_type VARCHAR(255) NOT NULL DEFAULT '',
-    name VARCHAR(255) NOT NULL DEFAULT '',
-    status INT(11) NOT NULL DEFAULT 1,
-    PRIMARY KEY (id),
-    KEY idx_zone_status (zone_id, status),
-    KEY idx_layout_status (layout_id, status),
-    KEY idx_position (position)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE explayouts_block_parameter (
+  block_id int NOT NULL DEFAULT '0',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name varchar(255) NOT NULL DEFAULT '',
+  value text,
+  PRIMARY KEY ( id ),
+  KEY idx_block_parameter_block ( block_id ),
+  UNIQUE KEY idx_block_parameter_block_name ( block_id, name )
+) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4;
 
-CREATE TABLE IF NOT EXISTS explayouts_block_parameter (
-    id INT(11) NOT NULL AUTO_INCREMENT,
-    block_id INT(11) NOT NULL,
-    name VARCHAR(255) NOT NULL,
-    value LONGTEXT,
-    PRIMARY KEY (id),
-    KEY idx_block (block_id),
-    UNIQUE KEY unique_block_name (block_id, name)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS explayouts_collection (
-    id INT(11) NOT NULL AUTO_INCREMENT,
-    block_id INT(11) NOT NULL,
-    collection_type VARCHAR(255) NOT NULL DEFAULT 'manual',
-    offset_value INT(11) NOT NULL DEFAULT 0,
-    limit_value INT(11) NOT NULL DEFAULT 0,
-    status INT(11) NOT NULL DEFAULT 1,
-    PRIMARY KEY (id),
-    KEY idx_block (block_id),
-    UNIQUE KEY unique_block (block_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE explayouts_collection (
+  block_id int NOT NULL DEFAULT '0',
+  collection_type varchar(255) NOT NULL DEFAULT 'manual',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  limit_value int NOT NULL DEFAULT '0',
+  offset_value int NOT NULL DEFAULT '0',
+  status int NOT NULL DEFAULT '1',
+  PRIMARY KEY ( id ),
+  UNIQUE KEY idx_collection_block ( block_id )
+) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4;
 
-CREATE TABLE IF NOT EXISTS explayouts_collection_item (
-    id INT(11) NOT NULL AUTO_INCREMENT,
-    collection_id INT(11) NOT NULL,
-    position INT(11) NOT NULL DEFAULT 0,
-    value_type VARCHAR(255) NOT NULL DEFAULT 'ez_content',
-    value_id INT(11) NOT NULL,
-    item_type VARCHAR(255) NOT NULL DEFAULT 'manual',
-    PRIMARY KEY (id),
-    KEY idx_collection_position (collection_id, position)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS explayouts_collection_query (
-    id INT(11) NOT NULL AUTO_INCREMENT,
-    collection_id INT(11) NOT NULL,
-    query_type VARCHAR(255) NOT NULL DEFAULT '',
-    parameters LONGTEXT,
-    PRIMARY KEY (id),
-    UNIQUE KEY unique_collection (collection_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE explayouts_collection_item (
+  collection_id int NOT NULL DEFAULT '0',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  item_type varchar(255) NOT NULL DEFAULT 'manual',
+  position int NOT NULL DEFAULT '0',
+  value_id int NOT NULL DEFAULT '0',
+  value_type varchar(255) NOT NULL DEFAULT 'ez_content',
+  PRIMARY KEY ( id ),
+  KEY idx_collection_item_collection_position ( collection_id, position )
+) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4;
 
-CREATE TABLE IF NOT EXISTS explayouts_rule (
-    id INT(11) NOT NULL AUTO_INCREMENT,
-    layout_id INT(11) NOT NULL,
-    priority INT(11) NOT NULL DEFAULT 0,
-    enabled INT(11) NOT NULL DEFAULT 1,
-    PRIMARY KEY (id),
-    KEY idx_enabled_priority (enabled, priority)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS explayouts_rule_target (
-    id INT(11) NOT NULL AUTO_INCREMENT,
-    rule_id INT(11) NOT NULL,
-    target_type VARCHAR(255) NOT NULL,
-    target_value VARCHAR(255) NOT NULL,
-    PRIMARY KEY (id),
-    KEY idx_rule (rule_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE explayouts_collection_query (
+  collection_id int NOT NULL DEFAULT '0',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  parameters text,
+  query_type varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY ( id ),
+  UNIQUE KEY idx_collection_query_collection ( collection_id )
+) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4;
 
-CREATE TABLE IF NOT EXISTS explayouts_rule_condition (
-    id INT(11) NOT NULL AUTO_INCREMENT,
-    rule_id INT(11) NOT NULL,
-    condition_type VARCHAR(255) NOT NULL,
-    condition_value VARCHAR(255) NOT NULL,
-    PRIMARY KEY (id),
-    KEY idx_rule (rule_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE explayouts_layout (
+  created int NOT NULL DEFAULT '0',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  identifier varchar(255) NOT NULL DEFAULT '',
+  layout_type varchar(255) NOT NULL DEFAULT '',
+  modified int NOT NULL DEFAULT '0',
+  name varchar(255) NOT NULL DEFAULT '',
+  status int NOT NULL DEFAULT '1',
+  PRIMARY KEY ( id ),
+  KEY idx_layout_status ( status ),
+  UNIQUE KEY idx_layout_identifier_status ( identifier, status )
+) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4;
+
+
+CREATE TABLE explayouts_rule (
+  enabled int NOT NULL DEFAULT '1',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  layout_id int NOT NULL DEFAULT '0',
+  priority int NOT NULL DEFAULT '0',
+  PRIMARY KEY ( id ),
+  KEY idx_rule_enabled_priority ( enabled, priority )
+) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4;
+
+
+CREATE TABLE explayouts_rule_condition (
+  condition_type varchar(255) NOT NULL DEFAULT '',
+  condition_value varchar(255) NOT NULL DEFAULT '',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  rule_id int NOT NULL DEFAULT '0',
+  PRIMARY KEY ( id ),
+  KEY idx_rule_condition_rule ( rule_id )
+) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4;
+
+
+CREATE TABLE explayouts_rule_target (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  rule_id int NOT NULL DEFAULT '0',
+  target_type varchar(255) NOT NULL DEFAULT '',
+  target_value varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY ( id ),
+  KEY idx_rule_target_rule ( rule_id )
+) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4;
+
+
+CREATE TABLE explayouts_zone (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  identifier varchar(255) NOT NULL DEFAULT '',
+  layout_id int NOT NULL DEFAULT '0',
+  linked_layout_id int DEFAULT NULL,
+  position int NOT NULL DEFAULT '0',
+  status int NOT NULL DEFAULT '1',
+  PRIMARY KEY ( id ),
+  KEY idx_zone_layout_status ( layout_id, status ),
+  KEY idx_zone_position ( position )
+) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4;
