@@ -11,6 +11,7 @@
 
 return array(
     'ExplBlockXHTMLXMLOutput' => 'extension/explayouts/classes/explblockxhtmlxmloutput.php',
+    'ExplBlockDebug' => 'extension/explayouts/event/explblockdebug.php',
 );
 
 ?>

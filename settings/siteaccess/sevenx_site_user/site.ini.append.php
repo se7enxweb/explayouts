@@ -3,4 +3,7 @@
 [TemplateSettings]
 ExtensionAutoloadPath[]=explayouts
 
+[Event]
+Listeners[]=response/output@ExplBlockDebug::output
+
 */ ?>
