@@ -33,7 +33,11 @@ class expLayoutsManualQueryHandler implements expLayoutsQueryHandlerInterface
             $sliceOffset = (int)$rows[0]['offset_value'];
             $sliceLimit = (int)$rows[0]['limit_value'];
             if ( $sliceOffset > 0 || $sliceLimit > 0 )
+            {
+                $total = count( $nodes );
                 $nodes = array_slice( $nodes, $sliceOffset, $sliceLimit > 0 ? $sliceLimit : null );
+                return array( 'total' => $total, 'items' => $nodes );
+            }
         }
 
         return array( 'total' => count( $nodes ), 'items' => $nodes );

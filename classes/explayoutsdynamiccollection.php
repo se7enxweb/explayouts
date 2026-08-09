@@ -102,7 +102,7 @@ class expLayoutsDynamicCollection
         }
         if ( $limit > 0 )
             $merged = array_slice( $merged, 0, $limit );
-        return array( 'total' => count( $merged ), 'items' => $merged );
+        return array( 'total' => $result['total'], 'items' => $merged );
     }
 
     static function queryRow( $collectionId )
@@ -128,9 +128,10 @@ class expLayoutsDynamicCollection
             if ( $node )
                 $nodes[] = $node;
         }
+        $total = count( $nodes );
         if ( $offset > 0 || $limit > 0 )
             $nodes = array_slice( $nodes, $offset, $limit > 0 ? $limit : null );
-        return array( 'total' => count( $nodes ), 'items' => $nodes );
+        return array( 'total' => $total, 'items' => $nodes );
     }
 
     static function remapNodeId( $nexusId )
@@ -138,9 +139,18 @@ class expLayoutsDynamicCollection
         $nexusId = (int)$nexusId;
         if ( $nexusId <= 0 )
             return 0;
-        $mapped = $nexusId + self::NODE_OFFSET;
-        if ( eZContentObjectTreeNode::fetch( $mapped, false, false ) )
-            return $mapped;
+        $ini = eZINI::instance( 'explayouts' );
+        $key = (string)$nexusId;
+        if ( $ini->hasVariable( 'NexusNodeMap', $key ) )
+        {
+            $mapped = (int)$ini->variable( 'NexusNodeMap', $key );
+            if ( eZContentObjectTreeNode::fetch( $mapped, false, false ) )
+                return $mapped;
+            return 0;
+        }
+        // Fallback: when the nexus parent location id already exists in alpha,
+        // treat it as an identity mapping. This covers imported top-level section
+        // nodes (Video, Running, etc.) while the explicit [NexusNodeMap] builds.
         if ( eZContentObjectTreeNode::fetch( $nexusId, false, false ) )
             return $nexusId;
         return 0;
@@ -211,12 +221,23 @@ class expLayoutsDynamicCollection
             $nodes = $filtered;
         }
 
+        $total = eZContentObjectTreeNode::subTreeCountByNodeID( $fetchParams, $parentNodeId );
+        if ( $total === null )
+            $total = 0;
         $nodes = array_slice( $nodes, $offset, $limit > 0 ? $limit : null );
-        return array( 'total' => count( $nodes ), 'items' => $nodes );
+        return array( 'total' => $total, 'items' => $nodes );
     }
 
     static function currentNode()
     {
+        if ( isset( $_GET['node_id'] ) && is_numeric( $_GET['node_id'] )
+             && isset( $_SERVER['REQUEST_URI'] )
+             && strpos( $_SERVER['REQUEST_URI'], '/ezjscore/call' ) !== false )
+        {
+            $node = eZContentObjectTreeNode::fetch( (int)$_GET['node_id'] );
+            if ( $node instanceof eZContentObjectTreeNode )
+                return $node;
+        }
         $uri = eZSys::requestURI();
         if ( class_exists( 'expLayoutsResolver' ) )
             return expLayoutsResolver::nodeFromPath( $uri );
@@ -234,7 +255,7 @@ class expLayoutsDynamicCollection
         $tagIds = array();
         if ( !empty( $params['topic_content_id'] ) )
         {
-            $topicObjectId = (int)$params['topic_content_id'] + 776;
+            $topicObjectId = (int)$params['topic_content_id'];
             $rows = $db->arrayQuery( 'SELECT keyword_id FROM eztags_attribute_link WHERE object_id=' . $topicObjectId );
             foreach ( $rows as $row )
                 $tagIds[] = (int)$row['keyword_id'];
@@ -275,18 +296,33 @@ class expLayoutsDynamicCollection
         if ( $current )
             $currentObjectId = (int)$current->attribute( 'contentobject_id' );
 
+        $where = 't.node_id = t.main_node_id'
+               . ' AND tal.keyword_id IN (' . implode( ',', array_map( 'intval', $tagIds ) ) . ')'
+               . " AND t.path_string LIKE '" . $db->escapeString( $parentPath ) . "%'"
+               . ( $currentObjectId ? ' AND co.id != ' . $currentObjectId : '' )
+               . ' AND co.contentclass_id != (SELECT id FROM ezcontentclass WHERE identifier=\'ng_topic\')'
+               . $typeFilter;
+
+        $countSql = 'SELECT COUNT(DISTINCT t.node_id) AS count FROM ezcontentobject_tree t'
+                  . ' JOIN ezcontentobject co ON co.id = t.contentobject_id'
+                  . ' JOIN eztags_attribute_link tal ON tal.object_id = co.id'
+                  . ' WHERE ' . $where;
+        $countRows = $db->arrayQuery( $countSql );
+        $total = isset( $countRows[0]['count'] ) ? (int)$countRows[0]['count'] : 0;
+
         $sql = 'SELECT DISTINCT t.node_id, co.published FROM ezcontentobject_tree t'
              . ' JOIN ezcontentobject co ON co.id = t.contentobject_id'
              . ' JOIN eztags_attribute_link tal ON tal.object_id = co.id'
-             . ' WHERE t.node_id = t.main_node_id'
-             . ' AND tal.keyword_id IN (' . implode( ',', array_map( 'intval', $tagIds ) ) . ')'
-             . " AND t.path_string LIKE '" . $db->escapeString( $parentPath ) . "%'"
-             . ( $currentObjectId ? ' AND co.id != ' . $currentObjectId : '' )
-             . ' AND co.contentclass_id != (SELECT id FROM ezcontentclass WHERE identifier=\'ng_topic\')'
-             . $typeFilter
+             . ' WHERE ' . $where
              . ' ORDER BY co.published DESC';
 
-        $rows = $db->arrayQuery( $sql );
+        $queryParams = array();
+        if ( $limit > 0 )
+        {
+            $queryParams['limit'] = $limit;
+            $queryParams['offset'] = $offset;
+        }
+        $rows = $db->arrayQuery( $sql, $queryParams );
         $nodes = array();
         foreach ( $rows as $row )
         {
@@ -294,7 +330,6 @@ class expLayoutsDynamicCollection
             if ( $node )
                 $nodes[] = $node;
         }
-        $nodes = array_slice( $nodes, $offset, $limit > 0 ? $limit : null );
-        return array( 'total' => count( $nodes ), 'items' => $nodes );
+        return array( 'total' => $total, 'items' => $nodes );
     }
 }
