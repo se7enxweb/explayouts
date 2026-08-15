@@ -26,6 +26,7 @@ $schema = array (
       ),
       'layout_id' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
@@ -39,6 +40,7 @@ $schema = array (
       ),
       'parent_id' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
@@ -52,12 +54,14 @@ $schema = array (
       ),
       'position' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
       ),
       'status' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 1,
@@ -71,6 +75,7 @@ $schema = array (
       ),
       'zone_id' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
@@ -121,6 +126,7 @@ $schema = array (
     array (
       'block_id' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
@@ -179,6 +185,7 @@ $schema = array (
     array (
       'block_id' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
@@ -197,18 +204,21 @@ $schema = array (
       ),
       'limit_value' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
       ),
       'offset_value' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
       ),
       'status' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 1,
@@ -241,6 +251,7 @@ $schema = array (
     array (
       'collection_id' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
@@ -259,12 +270,14 @@ $schema = array (
       ),
       'position' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
       ),
       'value_id' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
@@ -305,6 +318,7 @@ $schema = array (
     array (
       'collection_id' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
@@ -354,6 +368,7 @@ $schema = array (
     array (
       'created' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
@@ -379,6 +394,7 @@ $schema = array (
       ),
       'modified' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
@@ -392,6 +408,7 @@ $schema = array (
       ),
       'status' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 1,
@@ -407,14 +424,6 @@ $schema = array (
           0 => 'id',
         ),
       ),
-      'idx_layout_status' => 
-      array (
-        'type' => 'non-unique',
-        'fields' => 
-        array (
-          0 => 'status',
-        ),
-      ),
       'idx_layout_identifier_status' => 
       array (
         'type' => 'unique',
@@ -422,6 +431,14 @@ $schema = array (
         array (
           0 => 'identifier',
           1 => 'status',
+        ),
+      ),
+      'idx_layout_status' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'status',
         ),
       ),
     ),
@@ -433,6 +450,7 @@ $schema = array (
     array (
       'enabled' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 1,
@@ -444,12 +462,14 @@ $schema = array (
       ),
       'layout_id' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
       ),
       'priority' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
@@ -502,6 +522,7 @@ $schema = array (
       ),
       'rule_id' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
@@ -539,6 +560,7 @@ $schema = array (
       ),
       'rule_id' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
@@ -597,23 +619,27 @@ $schema = array (
       ),
       'layout_id' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
       ),
       'linked_layout_id' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'default' => NULL,
       ),
       'position' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 0,
       ),
       'status' => 
       array (
+        'length' => 11,
         'type' => 'int',
         'not_null' => '1',
         'default' => 1,
@@ -644,6 +670,391 @@ $schema = array (
         'fields' => 
         array (
           0 => 'position',
+        ),
+      ),
+    ),
+  ),
+  'eztags' => 
+  array (
+    'name' => 'eztags',
+    'fields' => 
+    array (
+      'depth' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 1,
+      ),
+      'id' => 
+      array (
+        'type' => 'auto_increment',
+        'default' => false,
+      ),
+      'keyword' => 
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'language_mask' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'main_language_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'main_tag_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'modified' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'parent_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'path_string' => 
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'remote_id' => 
+      array (
+        'length' => 100,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+    ),
+    'indexes' => 
+    array (
+      'PRIMARY' => 
+      array (
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+        ),
+      ),
+      'idx_eztags_keyword' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'keyword',
+        ),
+      ),
+      'idx_eztags_keyword_id' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'keyword',
+          1 => 'id',
+        ),
+      ),
+      'idx_eztags_remote_id' => 
+      array (
+        'type' => 'unique',
+        'fields' => 
+        array (
+          0 => 'remote_id',
+        ),
+      ),
+    ),
+  ),
+  'eztags_attribute_link' => 
+  array (
+    'name' => 'eztags_attribute_link',
+    'fields' => 
+    array (
+      'id' => 
+      array (
+        'type' => 'auto_increment',
+        'default' => false,
+      ),
+      'keyword_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'object_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'objectattribute_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'objectattribute_version' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'priority' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' => 
+    array (
+      'PRIMARY' => 
+      array (
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+        ),
+      ),
+      'idx_eztags_attr_link_keyword_id' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'keyword_id',
+        ),
+      ),
+      'idx_eztags_attr_link_kid_oaid_oav' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'keyword_id',
+          1 => 'objectattribute_id',
+          2 => 'objectattribute_version',
+        ),
+      ),
+      'idx_eztags_attr_link_kid_oid' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'keyword_id',
+          1 => 'object_id',
+        ),
+      ),
+      'idx_eztags_attr_link_oaid_oav' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'objectattribute_id',
+          1 => 'objectattribute_version',
+        ),
+      ),
+    ),
+  ),
+  'eztags_keyword' => 
+  array (
+    'name' => 'eztags_keyword',
+    'fields' => 
+    array (
+      'keyword' => 
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'keyword_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'language_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'locale' => 
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'status' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' => 
+    array (
+      'PRIMARY' => 
+      array (
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'keyword_id',
+          1 => 'locale',
+        ),
+      ),
+    ),
+  ),
+  'ezurl' => 
+  array (
+    'name' => 'ezurl',
+    'fields' => 
+    array (
+      'created' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'id' => 
+      array (
+        'type' => 'auto_increment',
+        'default' => false,
+      ),
+      'is_valid' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 1,
+      ),
+      'last_checked' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'modified' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'original_url_md5' => 
+      array (
+        'length' => 32,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'url' => 
+      array (
+        'type' => 'longtext',
+        'default' => false,
+      ),
+    ),
+    'indexes' => 
+    array (
+      'PRIMARY' => 
+      array (
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+        ),
+      ),
+      'ezurl_url' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'url',
+        ),
+      ),
+    ),
+  ),
+  'ezurl_object_link' => 
+  array (
+    'name' => 'ezurl_object_link',
+    'fields' => 
+    array (
+      'contentobject_attribute_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'contentobject_attribute_version' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'url_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' => 
+    array (
+      'ezurl_ol_coa_id' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'contentobject_attribute_id',
+        ),
+      ),
+      'ezurl_ol_coa_version' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'contentobject_attribute_version',
+        ),
+      ),
+      'ezurl_ol_url_id' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'url_id',
         ),
       ),
     ),

@@ -267,6 +267,19 @@
     padding: 0.5rem 0;
 }
 
+nav.ajax-navigation {
+    width: 100%;
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+nav.ajax-navigation .ajax-load-more {
+    display: inline-block;
+    margin: 0 auto;
+}
+
 @media (max-width: 768px) {
     .slb-2-column,
     .slb-3-column,

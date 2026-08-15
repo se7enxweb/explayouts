@@ -141,12 +141,65 @@ class expLayoutsRenderer
         return $items;
     }
 
+    static function resolveBlockLink( $value )
+    {
+        if ( !is_string( $value ) || $value === '' )
+            return $value;
+
+        // Plain ibexa-location URI (legacy / pre-JSON values)
+        if ( strpos( $value, 'ibexa-location://' ) === 0 )
+        {
+            $nexusId = (int)substr( $value, 17 );
+            $nodeId = expLayoutsDynamicCollection::remapNodeId( $nexusId );
+            $node = $nodeId ? eZContentObjectTreeNode::fetch( $nodeId, false, true ) : false;
+            if ( $node )
+                return $node->attribute( 'url_alias' );
+            return $value;
+        }
+
+        if ( $value[0] !== '{' )
+            return $value;
+
+        $data = json_decode( $value, true );
+        if ( !is_array( $data ) || empty( $data['link_type'] ) )
+            return $value;
+
+        $link = isset( $data['link'] ) ? $data['link'] : '';
+        if ( $data['link_type'] === 'internal' && strpos( $link, 'ibexa-location://' ) === 0 )
+        {
+            $nexusId = (int)substr( $link, 17 );
+            $nodeId = expLayoutsDynamicCollection::remapNodeId( $nexusId );
+            $node = $nodeId ? eZContentObjectTreeNode::fetch( $nodeId, false, true ) : false;
+            if ( $node )
+                return $node->attribute( 'url_alias' );
+        }
+        elseif ( $data['link_type'] === 'internal' && strpos( $link, 'ibexa-object://' ) === 0 )
+        {
+            $objectId = (int)substr( $link, 15 );
+            $object = eZContentObject::fetch( $objectId );
+            $node = $object ? $object->attribute( 'main_node' ) : false;
+            if ( $node )
+                return $node->attribute( 'url_alias' );
+        }
+        elseif ( $data['link_type'] === 'url' )
+        {
+            return $link;
+        }
+
+        return $value;
+    }
+
     static function prepareBlock( $block )
     {
         $params = array();
         foreach ( expLayoutsBlockParameter::fetchByBlock( $block->attribute( 'id' ) ) as $param )
         {
             $params[$param->attribute( 'name' )] = $param->attribute( 'value' );
+        }
+
+        if ( isset( $params['link'] ) )
+        {
+            $params['link'] = self::resolveBlockLink( $params['link'] );
         }
 
         $blockArray = array(
@@ -161,7 +214,6 @@ class expLayoutsRenderer
             'name' => $block->attribute( 'name' ),
             'parameters' => $params,
         );
-
         $handler = expLayoutsBlockHandlerFactory::get( $blockArray['definition_identifier'] );
         if ( $handler )
         {

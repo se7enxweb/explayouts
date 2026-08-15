@@ -56,16 +56,18 @@ class expLayoutsDynamicCollection
                 return false;
         }
 
-        if ( $result !== false )
-            $result = self::applyPinnedItems( $collectionId, $result, $limit );
+        if ( $result !== false && $offset === 0 )
+            $result = self::applyPinnedItems( $collectionId, $result, $limit, $offset );
         return $result;
     }
 
     /**
      * Manual items stored on a dynamic collection are pinned overrides: they
      * occupy their stored position, query results fill the slots around them.
+     * Pinned positions are absolute within the full collection; only those
+     * falling inside the current [offset, offset+limit) window are rendered.
      */
-    static function applyPinnedItems( $collectionId, $result, $limit = 0 )
+    static function applyPinnedItems( $collectionId, $result, $limit = 0, $offset = 0 )
     {
         $pinned = array();
         foreach ( expLayoutsCollectionItem::fetchByCollection( $collectionId, true ) as $item )
@@ -82,27 +84,34 @@ class expLayoutsDynamicCollection
         foreach ( $pinned as $node )
             $pinnedIds[] = (int)$node->attribute( 'node_id' );
 
+        $windowSize = $limit > 0 ? $limit : ( count( $queryItems ) + count( $pinned ) );
         $merged = array();
-        $qi = 0;
-        $total = count( $queryItems ) + count( $pinned );
-        for ( $pos = 0; $pos < $total; $pos++ )
+
+        // Place pinned items that belong to the current page window.
+        foreach ( $pinned as $pos => $node )
         {
-            if ( isset( $pinned[$pos] ) )
-            {
-                $merged[] = $pinned[$pos];
+            $relPos = $pos - $offset;
+            if ( $relPos >= 0 && $relPos < $windowSize )
+                $merged[$relPos] = $node;
+        }
+
+        // Fill remaining slots with query results, skipping pinned ids.
+        $qi = 0;
+        for ( $pos = 0; $pos < $windowSize; $pos++ )
+        {
+            if ( isset( $merged[$pos] ) )
                 continue;
-            }
             while ( $qi < count( $queryItems ) && in_array( (int)$queryItems[$qi]->attribute( 'node_id' ), $pinnedIds ) )
                 $qi++;
             if ( $qi < count( $queryItems ) )
             {
-                $merged[] = $queryItems[$qi];
+                $merged[$pos] = $queryItems[$qi];
                 $qi++;
             }
         }
-        if ( $limit > 0 )
-            $merged = array_slice( $merged, 0, $limit );
-        return array( 'total' => $result['total'], 'items' => $merged );
+
+        ksort( $merged );
+        return array( 'total' => $result['total'], 'items' => array_values( $merged ) );
     }
 
     static function queryRow( $collectionId )
@@ -139,7 +148,7 @@ class expLayoutsDynamicCollection
         $nexusId = (int)$nexusId;
         if ( $nexusId <= 0 )
             return 0;
-        $ini = eZINI::instance( 'explayouts' );
+        $ini = eZINI::instance( 'explayouts.ini' );
         $key = (string)$nexusId;
         if ( $ini->hasVariable( 'NexusNodeMap', $key ) )
         {
@@ -299,6 +308,7 @@ class expLayoutsDynamicCollection
         $where = 't.node_id = t.main_node_id'
                . ' AND tal.keyword_id IN (' . implode( ',', array_map( 'intval', $tagIds ) ) . ')'
                . " AND t.path_string LIKE '" . $db->escapeString( $parentPath ) . "%'"
+               . ' AND t.node_id != ' . (int)$parentNodeId
                . ( $currentObjectId ? ' AND co.id != ' . $currentObjectId : '' )
                . ' AND co.contentclass_id != (SELECT id FROM ezcontentclass WHERE identifier=\'ng_topic\')'
                . $typeFilter;

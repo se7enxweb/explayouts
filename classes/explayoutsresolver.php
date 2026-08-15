@@ -19,6 +19,8 @@ class expLayoutsResolver
             $path = '';
 
         $path = ltrim( $path, '/' );
+        if ( stripos( $path, 'index.php/' ) === 0 )
+            $path = substr( $path, 10 );
         if ( $path === '' )
             $path = 'home';
 

@@ -24,7 +24,24 @@ class expLayoutsAjaxLoadMoreServer
         $limit = (int)$collection->attribute( 'limit_value' );
         if ( $limit <= 0 )
             $limit = 10;
-        $offset = ( $page - 1 ) * $limit;
+        $baseOffset = (int)$collection->attribute( 'offset_value' );
+        $offset = $baseOffset + ( $page - 1 ) * $limit;
+
+        // Pinned/manual items occupy slots in the rendered grid but should not
+        // consume dynamic results. Compensate offset by the number of manual
+        // items placed on pages before the requested one.
+        $manualItems = expLayoutsCollectionItem::fetchByCollection( $collection->attribute( 'id' ), true );
+        $manualSkip = 0;
+        $pageStart = ( $page - 1 ) * $limit;
+        foreach ( $manualItems as $item )
+        {
+            $itemPosition = (int)$item->attribute( 'position' );
+            if ( $itemPosition < $pageStart )
+                $manualSkip++;
+        }
+        $offset -= $manualSkip;
+        if ( $offset < $baseOffset )
+            $offset = $baseOffset;
 
         // Temporarily override offset/limit for the requested page.
         $collection->setAttribute( 'offset_value', $offset );
