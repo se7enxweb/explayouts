@@ -19,6 +19,7 @@ AvailableBlocks[]=gallery
 AvailableBlocks[]=quote
 AvailableBlocks[]=alert
 AvailableBlocks[]=video
+AvailableBlocks[]=rich_text
 AvailableBlocks[]=badge
 AvailableBlocks[]=progress
 AvailableBlocks[]=map
@@ -55,6 +56,11 @@ ViewTypes[]=default
 [BlockDefinition_html]
 Name=Raw HTML
 Handler=expLayoutsHtmlBlockHandler
+ViewTypes[]=default
+
+[BlockDefinition_rich_text]
+Name=Rich Text
+Handler=expLayoutsRichTextBlockHandler
 ViewTypes[]=default
 
 [BlockDefinition_image]
