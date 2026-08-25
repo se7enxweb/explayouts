@@ -241,6 +241,27 @@ Zones[]=c
 Zones[]=d
 Zones[]=e
 
+[LayoutType_layout_1]
+Name=Single zone
+Zones[]=main
+
+[LayoutType_layout_2]
+Name=Header / Main / Footer
+Zones[]=header
+Zones[]=post_header
+Zones[]=main
+Zones[]=pre_footer
+Zones[]=footer
+
+[LayoutType_layout_4]
+Name=Header / Left / Right / Footer
+Zones[]=header
+Zones[]=post_header
+Zones[]=left
+Zones[]=right
+Zones[]=pre_footer
+Zones[]=footer
+
 [TemplateEditorSettings]
 AllowedTemplateRoots[]
 AllowedTemplateRoots[]=design
