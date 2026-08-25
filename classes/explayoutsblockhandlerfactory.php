@@ -34,12 +34,16 @@ class expLayoutsBlockHandlerFactory
         $name = $ini->hasVariable( $blockSection, 'Name' ) ? $ini->variable( $blockSection, 'Name' ) : $definitionIdentifier;
         $viewTypes = $ini->hasVariable( $blockSection, 'ViewTypes' ) ? $ini->variable( $blockSection, 'ViewTypes' ) : array( 'default' );
         $hasCollection = $ini->hasVariable( $blockSection, 'HasCollection' ) ? (bool)$ini->variable( $blockSection, 'HasCollection' ) : false;
+        $isContainer = $ini->hasVariable( $blockSection, 'IsContainer' ) ? (bool)$ini->variable( $blockSection, 'IsContainer' ) : false;
+        $placeholders = $ini->hasVariable( $blockSection, 'Placeholders' ) ? $ini->variable( $blockSection, 'Placeholders' ) : array();
 
         return array(
             'identifier' => $definitionIdentifier,
             'name' => $name,
             'view_types' => $viewTypes,
             'has_collection' => $hasCollection,
+            'is_container' => $isContainer,
+            'placeholders' => $placeholders,
         );
     }
 }

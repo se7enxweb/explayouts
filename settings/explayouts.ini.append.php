@@ -23,6 +23,24 @@ AvailableBlocks[]=badge
 AvailableBlocks[]=progress
 AvailableBlocks[]=map
 AvailableBlocks[]=carousel
+AvailableBlocks[]=two_columns
+AvailableBlocks[]=column
+
+[BlockDefinition_two_columns]
+Name=Two columns
+Handler=expLayoutsContainerBlockHandler
+ViewTypes[]=two_columns_66_33
+ViewTypes[]=two_columns_33_66
+IsContainer=1
+Placeholders[]=left
+Placeholders[]=right
+
+[BlockDefinition_column]
+Name=Column
+Handler=expLayoutsContainerBlockHandler
+ViewTypes[]=column
+IsContainer=1
+Placeholders[]=main
 
 [BlockDefinition_text]
 Name=Text / HTML
