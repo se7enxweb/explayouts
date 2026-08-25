@@ -26,6 +26,7 @@ AvailableBlocks[]=map
 AvailableBlocks[]=carousel
 AvailableBlocks[]=two_columns
 AvailableBlocks[]=column
+AvailableBlocks[]=twig_block
 
 [BlockDefinition_two_columns]
 Name=Two columns
@@ -42,6 +43,11 @@ Handler=expLayoutsContainerBlockHandler
 ViewTypes[]=column
 IsContainer=1
 Placeholders[]=main
+
+[BlockDefinition_twig_block]
+Name=Template block
+Handler=expLayoutsTwigBlockHandler
+ViewTypes[]=twig_block
 
 [BlockDefinition_text]
 Name=Text / HTML
