@@ -139,7 +139,8 @@ if ( eZUser::currentUser()->hasAccessTo( 'explayouts', 'edit' ) && $http->hasPos
     }
 }
 
-$layouts = expLayoutsLayout::fetchList( false );
+$layoutService = new expLayoutsCoreLayoutService();
+$layouts = $layoutService->listAll();
 
 $tpl = eZTemplate::factory();
 $tpl->setVariable( 'layouts', $layouts );
