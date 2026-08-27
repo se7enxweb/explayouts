@@ -3,7 +3,7 @@ class expLayoutsListBlockHandler extends expLayoutsAbstractContentBlockHandler
 {
     public function getParameters()
     {
-        return $this->getCommonParameters();
+        return $this->getDesignParameters();
     }
 
     public function getValues( $block )

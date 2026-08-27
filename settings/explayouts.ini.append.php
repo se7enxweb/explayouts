@@ -77,7 +77,12 @@ ViewTypes[]=default
 [BlockDefinition_list]
 Name=Content list
 Handler=expLayoutsListBlockHandler
-ViewTypes[]=default
+ViewTypes[]=list
+ViewTypes[]=grid
+ViewTypes[]=list_numbered
+ViewTypes[]=list_zigzag
+ViewTypes[]=list_accordion
+ViewTypes[]=grid_featured
 HasCollection=1
 
 [BlockDefinition_single]
@@ -175,6 +180,8 @@ AvailableQueries[]=manual
 AvailableQueries[]=exp_content_relation_list
 AvailableQueries[]=exp_content_reverse_relation_list
 AvailableQueries[]=exp_content_tags
+AvailableQueries[]=ibexa_content_search
+AvailableQueries[]=content_by_topic
 
 [QueryType_children]
 Name=Children of a node
@@ -215,6 +222,14 @@ Handler=expLayoutsReverseRelationListQueryHandler
 [QueryType_exp_content_tags]
 Name=Exp tags
 Handler=expLayoutsTagsQueryHandler
+
+[QueryType_ibexa_content_search]
+Name=Ibexa
+Handler=expLayoutsIbexaContentSearchQueryHandler
+
+[QueryType_content_by_topic]
+Name=Topics
+Handler=expLayoutsContentByTopicQueryHandler
 
 [LayoutType_1_column]
 Name=1 column

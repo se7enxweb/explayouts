@@ -3,7 +3,8 @@ class expLayoutsCarouselBlockHandler extends expLayoutsAbstractContentBlockHandl
 {
     public function getParameters()
     {
-        $params = $this->getCommonParameters();
+        $params = $this->getDesignParameters();
+        unset( $params['number_of_columns'] );
         $params['slides_per_view'] = array(
             'name' => 'Slides per view',
             'type' => 'integer',

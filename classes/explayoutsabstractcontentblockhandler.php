@@ -51,44 +51,154 @@ abstract class expLayoutsAbstractContentBlockHandler implements expLayoutsBlockH
         return expLayoutsSiteAPI::filterChildren( $parentNodeId, $options );
     }
 
-    protected function getCommonParameters()
+    /**
+     * Design-time parameters rendered in the Design tab of the SPA sidebar.
+     */
+    public function getDesignParameters()
     {
         return array(
-            'query_type' => array(
-                'name' => 'Query type',
-                'type' => 'string',
-                'default' => 'children',
+            'number_of_columns' => array(
+                'name' => 'Number of columns',
+                'type' => 'select',
+                'options' => array(
+                    '2' => '2 columns',
+                    '3' => '3 columns',
+                    '4' => '4 columns',
+                    '6' => '6 columns',
+                ),
+                'default' => '3',
+                'view_type' => 'grid,grid_featured',
             ),
-            'parent_node_id' => array(
-                'name' => 'Parent node ID',
-                'type' => 'integer',
-                'default' => 0,
+            'background_color:enabled' => array(
+                'name' => 'Set background color',
+                'type' => 'compound_checkbox',
+                'default' => '',
+                'children' => array(
+                    'background_color:color' => array(
+                        'name' => 'Background color',
+                        'type' => 'select',
+                        'options' => array(
+                            'primary' => 'Primary (Yellow)',
+                            'secondary' => 'Secondary (Light gray)',
+                            'white' => 'White',
+                            'black' => 'Black',
+                        ),
+                        'default' => 'secondary',
+                    ),
+                ),
             ),
-            'node_id' => array(
-                'name' => 'Node ID',
-                'type' => 'integer',
-                'default' => 0,
+            'background_image:enabled' => array(
+                'name' => 'Set background image',
+                'type' => 'compound_checkbox',
+                'default' => '',
+                'children' => array(
+                    'background_image:image' => array(
+                        'name' => 'Background image',
+                        'type' => 'browse',
+                        'default' => '',
+                    ),
+                ),
             ),
-            'limit' => array(
-                'name' => 'Limit',
-                'type' => 'integer',
-                'default' => 10,
+            'vertical_whitespace:enabled' => array(
+                'name' => 'Use vertical whitespace',
+                'type' => 'compound_checkbox',
+                'default' => '1',
+                'children' => array(
+                    'vertical_whitespace:top' => array(
+                        'name' => 'On top',
+                        'type' => 'select',
+                        'options' => array(
+                            'none' => 'None',
+                            'small' => 'Small',
+                            'medium' => 'Medium',
+                            'large' => 'Large',
+                        ),
+                        'default' => 'none',
+                    ),
+                    'vertical_whitespace:bottom' => array(
+                        'name' => 'On bottom',
+                        'type' => 'select',
+                        'options' => array(
+                            'none' => 'None',
+                            'small' => 'Small',
+                            'medium' => 'Medium',
+                            'large' => 'Large',
+                        ),
+                        'default' => 'medium',
+                    ),
+                ),
             ),
-            'offset' => array(
-                'name' => 'Offset',
-                'type' => 'integer',
-                'default' => 0,
+            'paged_collections:enabled' => array(
+                'name' => 'Enable pagination',
+                'type' => 'compound_checkbox',
+                'default' => '',
+                'children' => array(
+                    'paged_collections:type' => array(
+                        'name' => 'Pagination type',
+                        'type' => 'select',
+                        'options' => array(
+                            'pager' => 'Pager',
+                            'load_more' => 'Load more',
+                        ),
+                        'default' => 'load_more',
+                    ),
+                    'paged_collections:max_pages' => array(
+                        'name' => 'Maximum number of pages',
+                        'type' => 'integer',
+                        'default' => '',
+                    ),
+                    'paged_collections:ajax_first' => array(
+                        'name' => 'Load first page via AJAX',
+                        'type' => 'checkbox',
+                        'default' => '',
+                    ),
+                ),
             ),
-            'class_filter' => array(
-                'name' => 'Class filter',
+            'css_class' => array(
+                'name' => 'CSS class',
                 'type' => 'string',
                 'default' => '',
             ),
-            'sort' => array(
-                'name' => 'Sort',
+            'css_id' => array(
+                'name' => 'CSS ID',
                 'type' => 'string',
-                'default' => 'published',
+                'default' => '',
             ),
+            'set_container' => array(
+                'name' => 'Wrap in container',
+                'type' => 'compound_checkbox',
+                'default' => '1',
+                'children' => array(
+                    'set_container:size' => array(
+                        'name' => 'Container size',
+                        'type' => 'select',
+                        'options' => array(
+                            '' => 'Regular',
+                            'narrow' => 'Narrow',
+                            'wide' => 'Wide',
+                        ),
+                        'default' => '',
+                    ),
+                ),
+            ),
+        );
+    }
+
+    /**
+     * Available item view types per view type (used by master/slave selects).
+     */
+    public function getItemViewTypes()
+    {
+        return array(
+            'standard' => 'Standard',
+            'standard_with_intro' => 'Standard (with intro)',
+            'overlay' => 'Overlay',
+            'card' => 'Card',
+            'card_with_intro' => 'Card (with intro)',
+            'line' => 'Line',
+            'mini' => 'Mini',
+            'listitem' => 'List item',
+            'listitem_with_intro' => 'List item (with intro)',
         );
     }
 }
