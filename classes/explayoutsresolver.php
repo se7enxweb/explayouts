@@ -195,7 +195,6 @@ class expLayoutsResolver
             case 'content_node':
                 return self::contentNodeMatches( $path, $value );
             case 'subtree':
-            case 'ibexa_subtree':
                 return self::subtreeMatches( $path, $value );
             case 'route':
             default:
@@ -313,7 +312,6 @@ class expLayoutsResolver
         switch ( $type )
         {
             case 'siteaccess':
-            case 'ibexa_site_access':
             {
                 $siteAccesses = json_decode( $value, true );
                 if ( !is_array( $siteAccesses ) )
@@ -326,7 +324,6 @@ class expLayoutsResolver
                 return in_array( $current['name'], $siteAccesses );
             }
             case 'content_type':
-            case 'ibexa_content_type':
             {
                 $classes = json_decode( $value, true );
                 if ( !is_array( $classes ) )
