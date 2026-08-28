@@ -24,6 +24,12 @@ AvailableBlocks[]=tabs
 AvailableBlocks[]=list
 AvailableBlocks[]=grid
 AvailableBlocks[]=gallery
+AvailableBlocks[]=slider
+AvailableBlocks[]=thumb_gallery
+AvailableBlocks[]=grid_gallery
+AvailableBlocks[]=sushi_bar
+AvailableBlocks[]=list_zigzag
+AvailableBlocks[]=list_accordion
 AvailableBlocks[]=carousel
 AvailableBlocks[]=twig_block
 AvailableBlocks[]=full_view
@@ -84,7 +90,7 @@ Handler=expLayoutsImageBlockHandler
 ViewTypes[]=default
 
 [BlockDefinition_list]
-Name=Content list
+Name=List
 Handler=expLayoutsListBlockHandler
 ViewTypes[]=list
 ViewTypes[]=grid
@@ -139,6 +145,42 @@ HasCollection=1
 Name=Gallery
 Handler=expLayoutsGalleryBlockHandler
 ViewTypes[]=default
+HasCollection=1
+
+[BlockDefinition_slider]
+Name=Slider
+Handler=expLayoutsGalleryBlockHandler
+ViewTypes[]=default
+HasCollection=1
+
+[BlockDefinition_thumb_gallery]
+Name=Thumb gallery
+Handler=expLayoutsGalleryBlockHandler
+ViewTypes[]=default
+HasCollection=1
+
+[BlockDefinition_grid_gallery]
+Name=Grid gallery
+Handler=expLayoutsGalleryBlockHandler
+ViewTypes[]=default
+HasCollection=1
+
+[BlockDefinition_sushi_bar]
+Name=Sushi bar
+Handler=expLayoutsGalleryBlockHandler
+ViewTypes[]=default
+HasCollection=1
+
+[BlockDefinition_list_zigzag]
+Name=Zig-Zag (List)
+Handler=expLayoutsListBlockHandler
+ViewTypes[]=list_zigzag
+HasCollection=1
+
+[BlockDefinition_list_accordion]
+Name=Accordion (List)
+Handler=expLayoutsListBlockHandler
+ViewTypes[]=list_accordion
 HasCollection=1
 
 [BlockDefinition_quote]
