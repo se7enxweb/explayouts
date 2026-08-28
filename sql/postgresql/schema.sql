@@ -120,9 +120,9 @@ CREATE TABLE IF NOT EXISTS explayouts_layout (
   name character varying(255) DEFAULT ''::character varying NOT NULL,
   status integer DEFAULT 1 NOT NULL
 );
-CREATE INDEX idx_layout_status ON explayouts_layout USING btree ( status );
-
 CREATE UNIQUE INDEX idx_layout_identifier_status ON explayouts_layout USING btree ( identifier, status );
+
+CREATE INDEX idx_layout_status ON explayouts_layout USING btree ( status );
 
 ALTER TABLE ONLY explayouts_layout ADD CONSTRAINT explayouts_layout_pkey PRIMARY KEY ( id );
 
@@ -201,4 +201,107 @@ CREATE INDEX idx_zone_layout_status ON explayouts_zone USING btree ( layout_id, 
 CREATE INDEX idx_zone_position ON explayouts_zone USING btree ( "position" );
 
 ALTER TABLE ONLY explayouts_zone ADD CONSTRAINT explayouts_zone_pkey PRIMARY KEY ( id );
+
+
+
+CREATE SEQUENCE IF NOT EXISTS eztags_id_seq
+  START 1
+  INCREMENT 1
+  MAXVALUE 9223372036854775807
+  MINVALUE 1
+  CACHE 1;
+CREATE TABLE IF NOT EXISTS eztags (
+  depth integer DEFAULT 1 NOT NULL,
+  id integer DEFAULT nextval('eztags_id_seq'::text) NOT NULL,
+  keyword character varying(255) DEFAULT ''::character varying NOT NULL,
+  language_mask integer DEFAULT 0 NOT NULL,
+  main_language_id integer DEFAULT 0 NOT NULL,
+  main_tag_id integer DEFAULT 0 NOT NULL,
+  modified integer DEFAULT 0 NOT NULL,
+  parent_id integer DEFAULT 0 NOT NULL,
+  path_string character varying(255) DEFAULT ''::character varying NOT NULL,
+  remote_id character varying(100) DEFAULT ''::character varying NOT NULL
+);
+CREATE INDEX idx_eztags_keyword ON eztags USING btree ( keyword );
+
+CREATE INDEX idx_eztags_keyword_id ON eztags USING btree ( keyword, id );
+
+CREATE UNIQUE INDEX idx_eztags_remote_id ON eztags USING btree ( remote_id );
+
+ALTER TABLE ONLY eztags ADD CONSTRAINT eztags_pkey PRIMARY KEY ( id );
+
+
+
+CREATE SEQUENCE IF NOT EXISTS eztags_attribute_link_id_seq
+  START 1
+  INCREMENT 1
+  MAXVALUE 9223372036854775807
+  MINVALUE 1
+  CACHE 1;
+CREATE TABLE IF NOT EXISTS eztags_attribute_link (
+  id integer DEFAULT nextval('eztags_attribute_link_id_seq'::text) NOT NULL,
+  keyword_id integer DEFAULT 0 NOT NULL,
+  object_id integer DEFAULT 0 NOT NULL,
+  objectattribute_id integer DEFAULT 0 NOT NULL,
+  objectattribute_version integer DEFAULT 0 NOT NULL,
+  priority integer DEFAULT 0 NOT NULL
+);
+CREATE INDEX idx_eztags_attr_link_keyword_id ON eztags_attribute_link USING btree ( keyword_id );
+
+CREATE INDEX idx_eztags_attr_link_kid_oaid_oav ON eztags_attribute_link USING btree ( keyword_id, objectattribute_id, objectattribute_version );
+
+CREATE INDEX idx_eztags_attr_link_kid_oid ON eztags_attribute_link USING btree ( keyword_id, object_id );
+
+CREATE INDEX idx_eztags_attr_link_oaid_oav ON eztags_attribute_link USING btree ( objectattribute_id, objectattribute_version );
+
+ALTER TABLE ONLY eztags_attribute_link ADD CONSTRAINT eztags_attribute_link_pkey PRIMARY KEY ( id );
+
+
+
+
+CREATE TABLE IF NOT EXISTS eztags_keyword (
+  keyword character varying(255) DEFAULT ''::character varying NOT NULL,
+  keyword_id integer DEFAULT 0 NOT NULL,
+  language_id integer DEFAULT 0 NOT NULL,
+  locale character varying(255) DEFAULT ''::character varying NOT NULL,
+  status integer DEFAULT 0 NOT NULL
+);
+
+ALTER TABLE ONLY eztags_keyword ADD CONSTRAINT eztags_keyword_pkey PRIMARY KEY ( keyword_id, locale );
+
+
+
+CREATE SEQUENCE IF NOT EXISTS ezurl_id_seq
+  START 1
+  INCREMENT 1
+  MAXVALUE 9223372036854775807
+  MINVALUE 1
+  CACHE 1;
+CREATE TABLE IF NOT EXISTS ezurl (
+  created integer DEFAULT 0 NOT NULL,
+  id integer DEFAULT nextval('ezurl_id_seq'::text) NOT NULL,
+  is_valid integer DEFAULT 1 NOT NULL,
+  last_checked integer DEFAULT 0 NOT NULL,
+  modified integer DEFAULT 0 NOT NULL,
+  original_url_md5 character varying(32) DEFAULT ''::character varying NOT NULL,
+  url text
+);
+CREATE INDEX ezurl_url ON ezurl USING btree ( url );
+
+ALTER TABLE ONLY ezurl ADD CONSTRAINT ezurl_pkey PRIMARY KEY ( id );
+
+
+
+
+CREATE TABLE IF NOT EXISTS ezurl_object_link (
+  contentobject_attribute_id integer DEFAULT 0 NOT NULL,
+  contentobject_attribute_version integer DEFAULT 0 NOT NULL,
+  url_id integer DEFAULT 0 NOT NULL
+);
+CREATE INDEX ezurl_ol_coa_id ON ezurl_object_link USING btree ( contentobject_attribute_id );
+
+CREATE INDEX ezurl_ol_coa_version ON ezurl_object_link USING btree ( contentobject_attribute_version );
+
+CREATE INDEX ezurl_ol_url_id ON ezurl_object_link USING btree ( url_id );
+
 
