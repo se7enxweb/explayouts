@@ -180,7 +180,7 @@ AvailableQueries[]=manual
 AvailableQueries[]=exp_content_relation_list
 AvailableQueries[]=exp_content_reverse_relation_list
 AvailableQueries[]=exp_content_tags
-AvailableQueries[]=ibexa_content_search
+AvailableQueries[]=exponential_content_search
 AvailableQueries[]=content_by_topic
 
 [QueryType_children]
@@ -223,9 +223,9 @@ Handler=expLayoutsReverseRelationListQueryHandler
 Name=Exp tags
 Handler=expLayoutsTagsQueryHandler
 
-[QueryType_ibexa_content_search]
-Name=Ibexa
-Handler=expLayoutsIbexaContentSearchQueryHandler
+[QueryType_exponential_content_search]
+Name=Exponential
+Handler=expLayoutsExponentialContentSearchQueryHandler
 
 [QueryType_content_by_topic]
 Name=Topics

@@ -1,10 +1,10 @@
 <?php
 
-class expLayoutsIbexaContentSearchQueryHandler implements expLayoutsQueryHandlerInterface
+class expLayoutsExponentialContentSearchQueryHandler implements expLayoutsQueryHandlerInterface
 {
     public function getName()
     {
-        return 'Ibexa';
+        return 'Exponential';
     }
 
     public function getParameters()

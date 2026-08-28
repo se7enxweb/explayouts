@@ -3,7 +3,7 @@
  * Executes 'dynamic' collections (imported nglayouts collection queries).
  *
  * Supported query types:
- *  - ibexa_content_search: subtree fetch with content-type filter, publish-date
+ *  - exponential_content_search: subtree fetch with content-type filter, publish-date
  *    sort, only-main-locations and exclude-current-location semantics.
  *  - content_by_topic: alpha has no eztags data, so these collections are
  *    materialized as manual items by the repair tooling; when manual items
@@ -38,7 +38,7 @@ class expLayoutsDynamicCollection
 
         switch ( $query['query_type'] )
         {
-            case 'ibexa_content_search':
+            case 'exponential_content_search':
                 $result = self::contentSearch( $params, $offset, $limit );
                 break;
             case 'content_by_topic':

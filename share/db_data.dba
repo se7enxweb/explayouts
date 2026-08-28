@@ -27699,7 +27699,7 @@ $data = array (
         0 => '65',
         1 => '55',
         2 => '{"use_current_location":false,"parent_location_id":151,"sort_type":"date_published","sort_direction":"descending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_video"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       3 => 
       array (
@@ -27727,14 +27727,14 @@ $data = array (
         0 => '70',
         1 => '59',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_blog_post","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       7 => 
       array (
         0 => '72',
         1 => '60',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_blog_post","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       8 => 
       array (
@@ -27748,21 +27748,21 @@ $data = array (
         0 => '74',
         1 => '62',
         2 => '{"use_current_location":false,"parent_location_id":117,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":{"0":"ng_article","2":"ng_gallery","3":"ng_news"},"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       10 => 
       array (
         0 => '75',
         1 => '63',
         2 => '{"use_current_location":false,"parent_location_id":117,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":{"1":"ng_blog_post"},"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       11 => 
       array (
         0 => '76',
         1 => '64',
         2 => '{"use_current_location":false,"parent_location_id":117,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":{"0":"ng_article","2":"ng_gallery","3":"ng_news"},"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       12 => 
       array (
@@ -27776,28 +27776,28 @@ $data = array (
         0 => '78',
         1 => '66',
         2 => '{"use_current_location":false,"parent_location_id":131,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_recipe"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       14 => 
       array (
         0 => '83',
         1 => '67',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       15 => 
       array (
         0 => '85',
         1 => '68',
         2 => '{"use_current_location":false,"parent_location_id":76,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_blog_post"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       16 => 
       array (
         0 => '88',
         1 => '71',
         2 => '{"use_current_location":false,"parent_location_id":131,"sort_type":"date_published","sort_direction":"descending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":false,"content_types":null,"content_types_filter":null,"filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       17 => 
       array (
@@ -27811,14 +27811,14 @@ $data = array (
         0 => '90',
         1 => '73',
         2 => '{"use_current_location":false,"parent_location_id":151,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_video"],"content_types_filter":"include","filter_by_section":false,"sections":[],"filter_by_object_state":false,"object_states":[]}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       19 => 
       array (
         0 => '92',
         1 => '74',
         2 => '{"use_current_location":false,"parent_location_id":151,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_video"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       20 => 
       array (
@@ -27832,105 +27832,105 @@ $data = array (
         0 => '97',
         1 => '76',
         2 => '{"use_current_location":true,"parent_location_id":null,"sort_type":"location_priority","sort_direction":"ascending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_container","ng_component_about","ng_component_features","ng_component_hero","ng_component_lead","ng_component_logos","ng_component_quote"],"content_types_filter":"exclude","filter_by_section":false,"sections":[],"filter_by_object_state":false,"object_states":[]}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       22 => 
       array (
         0 => '98',
         1 => '77',
         2 => '{"use_current_location":true,"parent_location_id":null,"sort_type":"location_priority","sort_direction":"ascending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_container","ng_component_about","ng_component_features","ng_component_hero","ng_component_lead","ng_component_logos","ng_component_quote"],"content_types_filter":"exclude","filter_by_section":false,"sections":[],"filter_by_object_state":false,"object_states":[]}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       23 => 
       array (
         0 => '99',
         1 => '78',
         2 => '{"use_current_location":true,"parent_location_id":null,"sort_type":"location_priority","sort_direction":"ascending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_banner","ng_blog_post","ng_gallery","ng_news","ng_recipe","ng_video"],"content_types_filter":"include","filter_by_section":false,"sections":[],"filter_by_object_state":false,"object_states":[]}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       24 => 
       array (
         0 => '100',
         1 => '79',
         2 => '{"use_current_location":true,"parent_location_id":null,"sort_type":"location_priority","sort_direction":"ascending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_container","ng_component_about","ng_component_features","ng_component_hero","ng_component_lead","ng_component_logos","ng_component_quote"],"content_types_filter":"exclude","filter_by_section":false,"sections":[],"filter_by_object_state":false,"object_states":[]}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       25 => 
       array (
         0 => '101',
         1 => '80',
         2 => '{"use_current_location":true,"parent_location_id":null,"sort_type":"location_priority","sort_direction":"ascending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_container","ng_component_about","ng_component_features","ng_component_hero","ng_component_lead","ng_component_logos","ng_component_quote"],"content_types_filter":"exclude","filter_by_section":false,"sections":[],"filter_by_object_state":false,"object_states":[]}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       26 => 
       array (
         0 => '102',
         1 => '81',
         2 => '{"use_current_location":true,"parent_location_id":null,"sort_type":"location_priority","sort_direction":"ascending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_container","ng_component_about","ng_component_features","ng_component_hero","ng_component_lead","ng_component_logos","ng_component_quote"],"content_types_filter":"exclude","filter_by_section":false,"sections":[],"filter_by_object_state":false,"object_states":[]}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       27 => 
       array (
         0 => '103',
         1 => '82',
         2 => '{"use_current_location":true,"parent_location_id":null,"sort_type":"location_priority","sort_direction":"ascending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_container","ng_component_about","ng_component_features","ng_component_hero","ng_component_lead","ng_component_logos","ng_component_quote"],"content_types_filter":"exclude","filter_by_section":false,"sections":[],"filter_by_object_state":false,"object_states":[]}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       28 => 
       array (
         0 => '104',
         1 => '83',
         2 => '{"use_current_location":true,"parent_location_id":null,"sort_type":"date_published","sort_direction":"descending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":{"0":"ng_article","2":"ng_banner","3":"ng_blog_post","4":"ng_news","6":"image","7":"ng_video"},"content_types_filter":"include","filter_by_section":false,"sections":[],"filter_by_object_state":false,"object_states":[]}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       29 => 
       array (
         0 => '105',
         1 => '84',
         2 => '{"use_current_location":true,"parent_location_id":null,"sort_type":"date_published","sort_direction":"descending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":{"0":"ng_article","1":"ng_banner","2":"ng_blog_post","3":"ng_news","5":"image","4":"ng_video"},"content_types_filter":"include","filter_by_section":false,"sections":[],"filter_by_object_state":false,"object_states":[]}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       30 => 
       array (
         0 => '106',
         1 => '85',
         2 => '{"use_current_location":true,"parent_location_id":null,"sort_type":"date_published","sort_direction":"descending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":{"0":"ng_article","1":"ng_banner","2":"ng_blog_post","3":"ng_news","5":"image","4":"ng_video"},"content_types_filter":"include","filter_by_section":false,"sections":[],"filter_by_object_state":false,"object_states":[]}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       31 => 
       array (
         0 => '111',
         1 => '88',
         2 => '{"use_current_location":false,"parent_location_id":71,"sort_type":"date_published","sort_direction":"descending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":false,"content_types":null,"content_types_filter":null,"filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       32 => 
       array (
         0 => '112',
         1 => '89',
         2 => '{"use_current_location":false,"parent_location_id":66,"sort_type":"defined_by_parent","sort_direction":"ascending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":false,"content_types":null,"content_types_filter":null,"filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       33 => 
       array (
         0 => '166',
         1 => '98',
         2 => '{"use_current_location":true,"parent_location_id":null,"sort_type":"date_published","sort_direction":"descending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":{"0":"ng_article","2":"ng_banner","3":"ng_blog_post","4":"ng_news","6":"image","7":"ng_video"},"content_types_filter":"include","filter_by_section":false,"sections":[],"filter_by_object_state":false,"object_states":[]}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       34 => 
       array (
         0 => '169',
         1 => '100',
         2 => '{"use_current_location":true,"parent_location_id":null,"sort_type":"date_published","sort_direction":"descending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":{"0":"ng_article","2":"ng_banner","3":"ng_blog_post","4":"ng_news","6":"image","7":"ng_video"},"content_types_filter":"include","filter_by_section":false,"sections":[],"filter_by_object_state":false,"object_states":[]}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
       35 => 
       array (
         0 => '171',
         1 => '102',
         2 => '{"use_current_location":false,"parent_location_id":181,"sort_type":"location_priority","sort_direction":"ascending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":false,"content_types":[],"content_types_filter":null,"filter_by_section":false,"sections":[],"filter_by_object_state":false,"object_states":[]}',
-        3 => 'ibexa_content_search',
+        3 => 'exponential_content_search',
       ),
     ),
   ),
