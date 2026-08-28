@@ -313,8 +313,18 @@ class expLayoutsResolver
         switch ( $type )
         {
             case 'siteaccess':
+            case 'ibexa_site_access':
+            {
+                $siteAccesses = json_decode( $value, true );
+                if ( !is_array( $siteAccesses ) )
+                    $siteAccesses = array( (string)$value );
+
                 $current = eZSiteAccess::current();
-                return is_array( $current ) && isset( $current['name'] ) && $current['name'] === $value;
+                if ( !is_array( $current ) || !isset( $current['name'] ) )
+                    return false;
+
+                return in_array( $current['name'], $siteAccesses );
+            }
             case 'content_type':
             case 'ibexa_content_type':
             {
@@ -326,8 +336,115 @@ class expLayoutsResolver
                     return false;
                 return in_array( $node->attribute( 'class_identifier' ), $classes );
             }
+            case 'query_parameter':
+            {
+                $params = json_decode( $value, true );
+                if ( !is_array( $params ) )
+                    $params = array( 'parameter_name' => (string)$value );
+
+                $name = isset( $params['parameter_name'] ) ? trim( $params['parameter_name'] ) : '';
+                if ( $name === '' )
+                    return false;
+
+                if ( !isset( $_GET[$name] ) )
+                    return false;
+
+                $paramValue = trim( (string)$_GET[$name] );
+                $paramValues = isset( $params['parameter_values'] ) ? $params['parameter_values'] : array();
+                if ( !is_array( $paramValues ) )
+                    $paramValues = array( (string)$paramValues );
+
+                if ( count( $paramValues ) === 0 )
+                    return true;
+
+                foreach ( $paramValues as $v )
+                {
+                    if ( trim( (string)$v ) === $paramValue )
+                        return true;
+                }
+
+                return false;
+            }
+            case 'route_parameter':
+            {
+                $params = json_decode( $value, true );
+                if ( !is_array( $params ) )
+                    $params = array( 'parameter_name' => (string)$value );
+
+                $name = isset( $params['parameter_name'] ) ? trim( $params['parameter_name'] ) : '';
+                if ( $name === '' )
+                    return false;
+
+                $uri = eZURI::instance( $path );
+                $routeParams = $uri ? $uri->userParameters() : array();
+                if ( !isset( $routeParams[$name] ) )
+                    return false;
+
+                $paramValue = trim( (string)$routeParams[$name] );
+                $paramValues = isset( $params['parameter_values'] ) ? $params['parameter_values'] : array();
+                if ( !is_array( $paramValues ) )
+                    $paramValues = array( (string)$paramValues );
+
+                if ( count( $paramValues ) === 0 )
+                    return true;
+
+                foreach ( $paramValues as $v )
+                {
+                    if ( trim( (string)$v ) === $paramValue )
+                        return true;
+                }
+
+                return false;
+            }
+            case 'time':
+            {
+                $range = json_decode( $value, true );
+                if ( !is_array( $range ) )
+                    return false;
+
+                $from = isset( $range['from'] ) ? $range['from'] : null;
+                $to = isset( $range['to'] ) ? $range['to'] : null;
+
+                if ( empty( $from ) && empty( $to ) )
+                    return true;
+
+                $fromTs = self::conditionTimeToTimestamp( $from );
+                $toTs = self::conditionTimeToTimestamp( $to );
+                $now = time();
+
+                if ( $fromTs !== null && $now < $fromTs )
+                    return false;
+                if ( $toTs !== null && $now > $toTs )
+                    return false;
+
+                return true;
+            }
             default:
                 return true;
         }
+    }
+
+    private static function conditionTimeToTimestamp( $value )
+    {
+        if ( empty( $value ) )
+            return null;
+
+        if ( is_array( $value ) )
+        {
+            $year = isset( $value['year'] ) ? (int)$value['year'] : 0;
+            $month = isset( $value['month'] ) ? (int)$value['month'] : 0;
+            $day = isset( $value['day'] ) ? (int)$value['day'] : 0;
+            $hour = isset( $value['hour'] ) ? (int)$value['hour'] : 0;
+            $minute = isset( $value['minute'] ) ? (int)$value['minute'] : 0;
+            $second = isset( $value['second'] ) ? (int)$value['second'] : 0;
+
+            if ( $year > 0 && $month > 0 && $day > 0 )
+                return mktime( $hour, $minute, $second, $month, $day, $year );
+
+            return null;
+        }
+
+        $timestamp = strtotime( (string)$value );
+        return $timestamp !== false ? $timestamp : null;
     }
 }
