@@ -36127,222 +36127,208 @@ $data = array (
       ),
       14 => 
       array (
-        0 => '89',
-        1 => '72',
-        2 => '{"use_topic_from_current_content":false,"topic_content_id":74,"use_current_location":false,"parent_location_id":76,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"filter_by_content_type":true,"content_types":{"0":"ng_article","1":"ng_gallery","2":"ng_news","5":"ng_blog_post"},"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
-        3 => 'content_by_topic',
-      ),
-      15 => 
-      array (
         0 => '90',
         1 => '73',
         2 => '{"use_current_location":false,"parent_location_id":151,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_video"],"content_types_filter":"include","filter_by_section":false,"sections":[],"filter_by_object_state":false,"object_states":[]}',
         3 => 'exponential_content_search',
       ),
-      16 => 
+      15 => 
       array (
         0 => '92',
         1 => '74',
         2 => '{"use_current_location":false,"parent_location_id":151,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_video"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      17 => 
+      16 => 
       array (
         0 => '93',
         1 => '75',
         2 => '{"use_topic_from_current_content":false,"topic_content_id":150,"use_current_location":false,"parent_location_id":76,"sort_type":"date_published","sort_direction":"ascending","query_type":"tree","only_main_locations":true,"filter_by_content_type":true,"content_types":["ng_video"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'content_by_topic',
       ),
-      18 => 
+      17 => 
       array (
         0 => '111',
         1 => '88',
         2 => '{"use_current_location":false,"parent_location_id":71,"sort_type":"date_published","sort_direction":"descending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":false,"content_types":null,"content_types_filter":null,"filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      19 => 
+      18 => 
       array (
         0 => '112',
         1 => '89',
         2 => '{"use_current_location":false,"parent_location_id":66,"sort_type":"defined_by_parent","sort_direction":"ascending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":false,"content_types":null,"content_types_filter":null,"filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      20 => 
+      19 => 
       array (
         0 => '171',
         1 => '102',
         2 => '{"use_current_location":false,"parent_location_id":181,"sort_type":"location_priority","sort_direction":"ascending","query_type":"list","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":false,"content_types":[],"content_types_filter":null,"filter_by_section":false,"sections":[],"filter_by_object_state":false,"object_states":[]}',
         3 => 'exponential_content_search',
       ),
-      21 => 
-      array (
-        0 => '176',
-        1 => '103',
-        2 => '{"parent_location_id":"2","use_current_location":"0","sort_type":"date_published","sort_direction":"descending","query_type":"list","only_main_locations":"1","exclude_current_location":"1","filter_by_content_type":"0","content_types":["ng_article"],"content_types_filter":"include"}',
-        3 => 'exponential_content_search',
-      ),
-      22 => 
+      20 => 
       array (
         0 => '228',
         1 => '144',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_blog_post","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      23 => 
+      21 => 
       array (
         0 => '230',
         1 => '145',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_blog_post","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      24 => 
+      22 => 
       array (
         0 => '231',
         1 => '146',
         2 => '{"use_topic_from_current_content":false,"topic_content_id":152,"use_current_location":false,"parent_location_id":151,"sort_type":"date_published","sort_direction":"descending","query_type":"list","only_main_locations":true,"filter_by_content_type":false,"content_types":null,"content_types_filter":null,"filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'content_by_topic',
       ),
-      25 => 
+      23 => 
       array (
         0 => '236',
         1 => '150',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_blog_post","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      26 => 
+      24 => 
       array (
         0 => '238',
         1 => '151',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_blog_post","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      27 => 
+      25 => 
       array (
         0 => '239',
         1 => '152',
         2 => '{"use_topic_from_current_content":false,"topic_content_id":152,"use_current_location":false,"parent_location_id":151,"sort_type":"date_published","sort_direction":"descending","query_type":"list","only_main_locations":true,"filter_by_content_type":false,"content_types":null,"content_types_filter":null,"filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'content_by_topic',
       ),
-      28 => 
+      26 => 
       array (
         0 => '240',
         1 => '153',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_blog_post","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      29 => 
+      27 => 
       array (
         0 => '242',
         1 => '154',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_blog_post","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      30 => 
+      28 => 
       array (
         0 => '243',
         1 => '155',
         2 => '{"use_topic_from_current_content":false,"topic_content_id":152,"use_current_location":false,"parent_location_id":151,"sort_type":"date_published","sort_direction":"descending","query_type":"list","only_main_locations":true,"filter_by_content_type":false,"content_types":null,"content_types_filter":null,"filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'content_by_topic',
       ),
-      31 => 
+      29 => 
       array (
         0 => '260',
         1 => '168',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_blog_post","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      32 => 
+      30 => 
       array (
         0 => '262',
         1 => '169',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_blog_post","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      33 => 
+      31 => 
       array (
         0 => '263',
         1 => '170',
         2 => '{"use_topic_from_current_content":false,"topic_content_id":152,"use_current_location":false,"parent_location_id":151,"sort_type":"date_published","sort_direction":"descending","query_type":"list","only_main_locations":true,"filter_by_content_type":false,"content_types":null,"content_types_filter":null,"filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'content_by_topic',
       ),
-      34 => 
+      32 => 
       array (
         0 => '268',
         1 => '174',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_blog_post","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      35 => 
+      33 => 
       array (
         0 => '270',
         1 => '175',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_blog_post","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      36 => 
+      34 => 
       array (
         0 => '271',
         1 => '176',
         2 => '{"use_topic_from_current_content":false,"topic_content_id":152,"use_current_location":false,"parent_location_id":151,"sort_type":"date_published","sort_direction":"descending","query_type":"list","only_main_locations":true,"filter_by_content_type":false,"content_types":null,"content_types_filter":null,"filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'content_by_topic',
       ),
-      37 => 
+      35 => 
       array (
         0 => '276',
         1 => '180',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_blog_post","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      38 => 
+      36 => 
       array (
         0 => '278',
         1 => '181',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_blog_post","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      39 => 
+      37 => 
       array (
         0 => '279',
         1 => '182',
         2 => '{"use_topic_from_current_content":false,"topic_content_id":152,"use_current_location":false,"parent_location_id":151,"sort_type":"date_published","sort_direction":"descending","query_type":"list","only_main_locations":true,"filter_by_content_type":false,"content_types":null,"content_types_filter":null,"filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'content_by_topic',
       ),
-      40 => 
+      38 => 
       array (
         0 => '280',
         1 => '183',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_blog_post","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      41 => 
+      39 => 
       array (
         0 => '282',
         1 => '184',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_blog_post","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      42 => 
+      40 => 
       array (
         0 => '283',
         1 => '185',
         2 => '{"use_topic_from_current_content":false,"topic_content_id":152,"use_current_location":false,"parent_location_id":151,"sort_type":"date_published","sort_direction":"descending","query_type":"list","only_main_locations":true,"filter_by_content_type":false,"content_types":null,"content_types_filter":null,"filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'content_by_topic',
       ),
-      43 => 
+      41 => 
       array (
         0 => '301',
         1 => '200',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_blog_post","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      44 => 
+      42 => 
       array (
         0 => '303',
         1 => '201',
         2 => '{"use_current_location":false,"parent_location_id":79,"sort_type":"date_published","sort_direction":"descending","query_type":"tree","only_main_locations":true,"exclude_current_location":true,"filter_by_content_type":true,"content_types":["ng_article","ng_blog_post","ng_gallery","ng_news"],"content_types_filter":"include","filter_by_section":false,"sections":null,"filter_by_object_state":false,"object_states":null}',
         3 => 'exponential_content_search',
       ),
-      45 => 
+      43 => 
       array (
         0 => '304',
         1 => '202',
