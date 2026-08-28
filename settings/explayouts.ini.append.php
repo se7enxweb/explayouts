@@ -27,6 +27,11 @@ AvailableBlocks[]=gallery
 AvailableBlocks[]=carousel
 AvailableBlocks[]=twig_block
 AvailableBlocks[]=full_view
+AvailableBlocks[]=hero
+AvailableBlocks[]=about
+AvailableBlocks[]=features
+AvailableBlocks[]=logos
+AvailableBlocks[]=lead
 AvailableBlocks[]=column
 AvailableBlocks[]=two_columns
 AvailableBlocks[]=three_columns
@@ -181,6 +186,32 @@ ViewTypes[]=default
 Name=Full view
 Handler=expLayoutsFullViewBlockHandler
 ViewTypes[]=default
+
+[BlockDefinition_hero]
+Name=Hero
+Handler=expLayoutsComponentBlockHandler
+ViewTypes[]=default
+
+[BlockDefinition_about]
+Name=About
+Handler=expLayoutsComponentBlockHandler
+ViewTypes[]=default
+
+[BlockDefinition_features]
+Name=Features
+Handler=expLayoutsComponentBlockHandler
+ViewTypes[]=default
+
+[BlockDefinition_lead]
+Name=Lead
+Handler=expLayoutsComponentBlockHandler
+ViewTypes[]=default
+
+[BlockDefinition_logos]
+Name=Logos
+Handler=expLayoutsGalleryBlockHandler
+ViewTypes[]=default
+HasCollection=1
 
 [BlockDefinition_three_columns]
 Name=Three columns
