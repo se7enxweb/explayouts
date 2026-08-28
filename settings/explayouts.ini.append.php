@@ -4,29 +4,33 @@
 AvailableBlocks[]
 AvailableBlocks[]=text
 AvailableBlocks[]=title
+AvailableBlocks[]=markdown
 AvailableBlocks[]=html
 AvailableBlocks[]=image
-AvailableBlocks[]=list
-AvailableBlocks[]=single
-AvailableBlocks[]=button
-AvailableBlocks[]=spacer
-AvailableBlocks[]=divider
-AvailableBlocks[]=card
-AvailableBlocks[]=accordion
-AvailableBlocks[]=tabs
-AvailableBlocks[]=grid
-AvailableBlocks[]=gallery
-AvailableBlocks[]=quote
-AvailableBlocks[]=alert
 AvailableBlocks[]=video
 AvailableBlocks[]=rich_text
+AvailableBlocks[]=map
+AvailableBlocks[]=button
+AvailableBlocks[]=single
+AvailableBlocks[]=spacer
+AvailableBlocks[]=divider
+AvailableBlocks[]=quote
+AvailableBlocks[]=card
+AvailableBlocks[]=alert
 AvailableBlocks[]=badge
 AvailableBlocks[]=progress
-AvailableBlocks[]=map
+AvailableBlocks[]=accordion
+AvailableBlocks[]=tabs
+AvailableBlocks[]=list
+AvailableBlocks[]=grid
+AvailableBlocks[]=gallery
 AvailableBlocks[]=carousel
-AvailableBlocks[]=two_columns
-AvailableBlocks[]=column
 AvailableBlocks[]=twig_block
+AvailableBlocks[]=full_view
+AvailableBlocks[]=column
+AvailableBlocks[]=two_columns
+AvailableBlocks[]=three_columns
+AvailableBlocks[]=four_columns
 
 [BlockDefinition_two_columns]
 Name=Two columns
@@ -45,12 +49,12 @@ IsContainer=1
 Placeholders[]=main
 
 [BlockDefinition_twig_block]
-Name=Template block
+Name=Twig block
 Handler=expLayoutsTwigBlockHandler
 ViewTypes[]=twig_block
 
 [BlockDefinition_text]
-Name=Text / HTML
+Name=Text
 Handler=expLayoutsTextBlockHandler
 ViewTypes[]=default
 
@@ -60,12 +64,12 @@ Handler=expLayoutsTitleBlockHandler
 ViewTypes[]=default
 
 [BlockDefinition_html]
-Name=Raw HTML
+Name=HTML snippet
 Handler=expLayoutsHtmlBlockHandler
 ViewTypes[]=default
 
 [BlockDefinition_rich_text]
-Name=Rich Text
+Name=Rich text
 Handler=expLayoutsRichTextBlockHandler
 ViewTypes[]=default
 
@@ -86,12 +90,12 @@ ViewTypes[]=grid_featured
 HasCollection=1
 
 [BlockDefinition_single]
-Name=Single content
+Name=Exponential content field
 Handler=expLayoutsSingleBlockHandler
 ViewTypes[]=default
 
 [BlockDefinition_button]
-Name=Button
+Name=Button / Link
 Handler=expLayoutsButtonBlockHandler
 ViewTypes[]=default
 
@@ -143,7 +147,7 @@ Handler=expLayoutsAlertBlockHandler
 ViewTypes[]=default
 
 [BlockDefinition_video]
-Name=Video
+Name=External video
 Handler=expLayoutsVideoBlockHandler
 ViewTypes[]=default
 
@@ -167,6 +171,35 @@ Name=Carousel
 Handler=expLayoutsCarouselBlockHandler
 ViewTypes[]=default
 HasCollection=1
+
+[BlockDefinition_markdown]
+Name=Markdown
+Handler=expLayoutsMarkdownBlockHandler
+ViewTypes[]=default
+
+[BlockDefinition_full_view]
+Name=Full view
+Handler=expLayoutsFullViewBlockHandler
+ViewTypes[]=default
+
+[BlockDefinition_three_columns]
+Name=Three columns
+Handler=expLayoutsContainerBlockHandler
+ViewTypes[]=three_columns
+IsContainer=1
+Placeholders[]=col_1
+Placeholders[]=col_2
+Placeholders[]=col_3
+
+[BlockDefinition_four_columns]
+Name=Four columns
+Handler=expLayoutsContainerBlockHandler
+ViewTypes[]=four_columns
+IsContainer=1
+Placeholders[]=col_1
+Placeholders[]=col_2
+Placeholders[]=col_3
+Placeholders[]=col_4
 
 [QuerySettings]
 AvailableQueries[]
