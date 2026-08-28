@@ -44,8 +44,7 @@
                     </div>
                     <div class="nl-node-rule-actions">
                         <a href={concat('explayouts_ui/layout_preview/',$resolved.id,'/2')|ezurl} target="_blank" class="nl-btn"><i class="material-icons">visibility</i> Preview</a>
-                        <a href={concat('explayouts_ui_api/app#layout/',$resolved.id)|ezurl} class="nl-btn" onclick="sessionStorage.setItem('nglayouts_return_to','/content/view/full/{$node.node_id}'); return true;"><i class="material-icons">edit</i> Modern editor</a>
-                        <a href={concat('explayouts_ui/layout_edit/',$resolved.id)|ezurl} class="nl-btn nl-btn-primary"><i class="material-icons">edit</i> Edit layout</a>
+                        <a href={concat('explayouts_ui_api/app#layout/',$resolved.id)|ezurl} class="nl-btn nl-btn-primary" onclick="sessionStorage.setItem('nglayouts_return_to','/content/view/full/{$node.node_id}'); return true;"><i class="material-icons">edit</i> Edit layout</a>
                     </div>
                 </div>
                 {def $zone_count = count($resolved.zones)}
@@ -69,12 +68,12 @@
             {foreach $rules as $rule}
                 <div class="nl-node-rule">
                     <div class="nl-node-rule-info">
-                        <p class="nl-node-rule-name"><a href={concat('explayouts_ui/layout_edit/',$rule.layout_id)|ezurl}>{$rule.layout_name|wash}</a> <small>({$rule.layout_identifier|wash})</small></p>
+                        <p class="nl-node-rule-name"><a href={concat('explayouts_ui_api/app#layout/',$rule.layout_id)|ezurl}>{$rule.layout_name|wash}</a> <small>({$rule.layout_identifier|wash})</small></p>
                         <p class="nl-node-rule-meta">Priority {$rule.priority|wash} · Target: node / {$node.node_id}</p>
                     </div>
                     <div class="nl-node-rule-actions">
                         {if $rule.enabled}<span class="nl-status enabled">Enabled</span>{else}<span class="nl-status disabled">Disabled</span>{/if}
-                        <a href={concat('explayouts_ui/rule_edit/',$rule.id)|ezurl} class="nl-btn" title="Edit mapping"><i class="material-icons">edit</i></a>
+                        <a href={concat('explayouts_ui/rule_list?RuleID=',$rule.id)|ezurl} class="nl-btn" title="Edit mapping"><i class="material-icons">edit</i></a>
                         <a href={concat('explayouts_ui/layout_preview/',$rule.layout_id,'/2')|ezurl} target="_blank" class="nl-btn" title="Preview layout"><i class="material-icons">visibility</i></a>
                     </div>
                 </div>
@@ -89,7 +88,7 @@
         <h3 class="nl-node-rules-title">List of layouts using this content as a component</h3>
         <p class="nl-empty-text">No layouts</p>
         <div class="layouts-controls">
-            <a href={concat('explayouts_ui/rule_edit?TargetType=node&TargetValue=',$node.node_id)|ezurl} class="nl-btn nl-btn-primary">
+            <a href={concat('explayouts_ui/rule_list?TargetType=node&TargetValue=',$node.node_id)|ezurl} class="nl-btn nl-btn-primary">
                 <i class="material-icons">add</i> Map layout
             </a>
             <a href={concat('explayouts_ui_api/app#layout')|ezurl} class="nl-btn">
