@@ -321,7 +321,9 @@ class expLayoutsDynamicCollection
         if ( $map === null )
         {
             $map = array();
-            foreach ( eZContentObjectState::limitationList() as $state )
+            $db = eZDB::instance();
+            $rows = $db->arrayQuery( "SELECT g.identifier AS group_identifier, s.identifier AS state_identifier, s.id FROM ezcobj_state s JOIN ezcobj_state_group g ON s.group_id = g.id" );
+            foreach ( $rows as $state )
             {
                 $key = (string)$state['group_identifier'] . '|' . (string)$state['state_identifier'];
                 $map[$key] = (int)$state['id'];
