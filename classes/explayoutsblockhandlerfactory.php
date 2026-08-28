@@ -36,6 +36,7 @@ class expLayoutsBlockHandlerFactory
         $hasCollection = $ini->hasVariable( $blockSection, 'HasCollection' ) ? (bool)$ini->variable( $blockSection, 'HasCollection' ) : false;
         $isContainer = $ini->hasVariable( $blockSection, 'IsContainer' ) ? (bool)$ini->variable( $blockSection, 'IsContainer' ) : false;
         $placeholders = $ini->hasVariable( $blockSection, 'Placeholders' ) ? $ini->variable( $blockSection, 'Placeholders' ) : array();
+        $category = $ini->hasVariable( $blockSection, 'Category' ) ? $ini->variable( $blockSection, 'Category' ) : 'standard';
 
         return array(
             'identifier' => $definitionIdentifier,
@@ -44,6 +45,7 @@ class expLayoutsBlockHandlerFactory
             'has_collection' => $hasCollection,
             'is_container' => $isContainer,
             'placeholders' => $placeholders,
+            'category' => $category,
         );
     }
 }

@@ -2,46 +2,46 @@
 
 [BlockSettings]
 AvailableBlocks[]
-AvailableBlocks[]=text
 AvailableBlocks[]=title
+AvailableBlocks[]=text
+AvailableBlocks[]=button
+AvailableBlocks[]=rich_text
+AvailableBlocks[]=video
+AvailableBlocks[]=map
 AvailableBlocks[]=markdown
 AvailableBlocks[]=html
 AvailableBlocks[]=image
-AvailableBlocks[]=video
-AvailableBlocks[]=rich_text
-AvailableBlocks[]=map
-AvailableBlocks[]=button
-AvailableBlocks[]=single
 AvailableBlocks[]=spacer
 AvailableBlocks[]=divider
-AvailableBlocks[]=quote
 AvailableBlocks[]=card
 AvailableBlocks[]=alert
 AvailableBlocks[]=badge
 AvailableBlocks[]=progress
 AvailableBlocks[]=accordion
 AvailableBlocks[]=tabs
+AvailableBlocks[]=hero
+AvailableBlocks[]=about
+AvailableBlocks[]=features
+AvailableBlocks[]=logos
+AvailableBlocks[]=quote
+AvailableBlocks[]=lead
 AvailableBlocks[]=list
 AvailableBlocks[]=grid
+AvailableBlocks[]=list_zigzag
+AvailableBlocks[]=list_accordion
 AvailableBlocks[]=gallery
 AvailableBlocks[]=slider
 AvailableBlocks[]=thumb_gallery
 AvailableBlocks[]=grid_gallery
 AvailableBlocks[]=sushi_bar
-AvailableBlocks[]=list_zigzag
-AvailableBlocks[]=list_accordion
 AvailableBlocks[]=carousel
-AvailableBlocks[]=twig_block
-AvailableBlocks[]=full_view
-AvailableBlocks[]=hero
-AvailableBlocks[]=about
-AvailableBlocks[]=features
-AvailableBlocks[]=logos
-AvailableBlocks[]=lead
 AvailableBlocks[]=column
 AvailableBlocks[]=two_columns
 AvailableBlocks[]=three_columns
 AvailableBlocks[]=four_columns
+AvailableBlocks[]=tpl_block
+AvailableBlocks[]=full_view
+AvailableBlocks[]=single
 
 [BlockDefinition_two_columns]
 Name=Two columns
@@ -52,6 +52,7 @@ IsContainer=1
 Placeholders[]=left
 Placeholders[]=right
 
+Category=containers
 [BlockDefinition_column]
 Name=Column
 Handler=expLayoutsContainerBlockHandler
@@ -59,36 +60,43 @@ ViewTypes[]=column
 IsContainer=1
 Placeholders[]=main
 
-[BlockDefinition_twig_block]
-Name=Twig block
-Handler=expLayoutsTwigBlockHandler
-ViewTypes[]=twig_block
+Category=containers
+[BlockDefinition_tpl_block]
+Name=Template block
+Handler=expLayoutsTplBlockHandler
+ViewTypes[]=tpl_block
 
+Category=placeholders
 [BlockDefinition_text]
 Name=Text
 Handler=expLayoutsTextBlockHandler
 ViewTypes[]=default
 
+Category=basic
 [BlockDefinition_title]
 Name=Title
 Handler=expLayoutsTitleBlockHandler
 ViewTypes[]=default
 
+Category=basic
 [BlockDefinition_html]
 Name=HTML snippet
 Handler=expLayoutsHtmlBlockHandler
 ViewTypes[]=default
 
+Category=basic
 [BlockDefinition_rich_text]
 Name=Rich text
 Handler=expLayoutsRichTextBlockHandler
 ViewTypes[]=default
 
+Category=basic
 [BlockDefinition_image]
 Name=Image
 Handler=expLayoutsImageBlockHandler
 ViewTypes[]=default
 
+Category=basic
 [BlockDefinition_list]
 Name=List
 Handler=expLayoutsListBlockHandler
@@ -100,161 +108,191 @@ ViewTypes[]=list_accordion
 ViewTypes[]=grid_featured
 HasCollection=1
 
+Category=listing
 [BlockDefinition_single]
-Name=Exponential content field
+Name=Single content
 Handler=expLayoutsSingleBlockHandler
 ViewTypes[]=default
 
+Category=placeholders
 [BlockDefinition_button]
 Name=Button / Link
 Handler=expLayoutsButtonBlockHandler
 ViewTypes[]=default
 
+Category=basic
 [BlockDefinition_spacer]
 Name=Spacer
 Handler=expLayoutsSpacerBlockHandler
 ViewTypes[]=default
 
+Category=basic
 [BlockDefinition_divider]
 Name=Divider
 Handler=expLayoutsDividerBlockHandler
 ViewTypes[]=default
 
+Category=basic
 [BlockDefinition_card]
 Name=Card
 Handler=expLayoutsCardBlockHandler
 ViewTypes[]=default
 
+Category=basic
 [BlockDefinition_accordion]
 Name=Accordion
 Handler=expLayoutsAccordionBlockHandler
 ViewTypes[]=default
 
+Category=basic
 [BlockDefinition_tabs]
 Name=Tabs
 Handler=expLayoutsTabsBlockHandler
 ViewTypes[]=default
 
+Category=basic
 [BlockDefinition_grid]
 Name=Grid
 Handler=expLayoutsGridBlockHandler
 ViewTypes[]=default
 HasCollection=1
 
+Category=listing
 [BlockDefinition_gallery]
 Name=Gallery
 Handler=expLayoutsGalleryBlockHandler
 ViewTypes[]=default
 HasCollection=1
 
+Category=gallery
 [BlockDefinition_slider]
 Name=Slider
 Handler=expLayoutsGalleryBlockHandler
 ViewTypes[]=default
 HasCollection=1
 
+Category=gallery
 [BlockDefinition_thumb_gallery]
 Name=Thumb gallery
 Handler=expLayoutsGalleryBlockHandler
 ViewTypes[]=default
 HasCollection=1
 
+Category=gallery
 [BlockDefinition_grid_gallery]
 Name=Grid gallery
 Handler=expLayoutsGalleryBlockHandler
 ViewTypes[]=default
 HasCollection=1
 
+Category=gallery
 [BlockDefinition_sushi_bar]
 Name=Sushi bar
 Handler=expLayoutsGalleryBlockHandler
 ViewTypes[]=default
 HasCollection=1
 
+Category=gallery
 [BlockDefinition_list_zigzag]
 Name=Zig-Zag (List)
 Handler=expLayoutsListBlockHandler
 ViewTypes[]=list_zigzag
 HasCollection=1
 
+Category=listing
 [BlockDefinition_list_accordion]
 Name=Accordion (List)
 Handler=expLayoutsListBlockHandler
 ViewTypes[]=list_accordion
 HasCollection=1
 
+Category=listing
 [BlockDefinition_quote]
 Name=Quote
 Handler=expLayoutsQuoteBlockHandler
 ViewTypes[]=default
 
+Category=components
 [BlockDefinition_alert]
 Name=Alert
 Handler=expLayoutsAlertBlockHandler
 ViewTypes[]=default
 
+Category=basic
 [BlockDefinition_video]
 Name=External video
 Handler=expLayoutsVideoBlockHandler
 ViewTypes[]=default
 
+Category=basic
 [BlockDefinition_badge]
 Name=Badge
 Handler=expLayoutsBadgeBlockHandler
 ViewTypes[]=default
 
+Category=basic
 [BlockDefinition_progress]
 Name=Progress bar
 Handler=expLayoutsProgressBlockHandler
 ViewTypes[]=default
 
+Category=basic
 [BlockDefinition_map]
 Name=Map
 Handler=expLayoutsMapBlockHandler
 ViewTypes[]=default
 
+Category=basic
 [BlockDefinition_carousel]
 Name=Carousel
 Handler=expLayoutsCarouselBlockHandler
 ViewTypes[]=default
 HasCollection=1
 
+Category=gallery
 [BlockDefinition_markdown]
 Name=Markdown
 Handler=expLayoutsMarkdownBlockHandler
 ViewTypes[]=default
 
+Category=basic
 [BlockDefinition_full_view]
 Name=Full view
 Handler=expLayoutsFullViewBlockHandler
 ViewTypes[]=default
 
+Category=placeholders
 [BlockDefinition_hero]
 Name=Hero
 Handler=expLayoutsComponentBlockHandler
 ViewTypes[]=default
 
+Category=components
 [BlockDefinition_about]
 Name=About
 Handler=expLayoutsComponentBlockHandler
 ViewTypes[]=default
 
+Category=components
 [BlockDefinition_features]
 Name=Features
 Handler=expLayoutsComponentBlockHandler
 ViewTypes[]=default
 
+Category=components
 [BlockDefinition_lead]
 Name=Lead
 Handler=expLayoutsComponentBlockHandler
 ViewTypes[]=default
 
+Category=components
 [BlockDefinition_logos]
 Name=Logos
 Handler=expLayoutsGalleryBlockHandler
 ViewTypes[]=default
 HasCollection=1
 
+Category=components
 [BlockDefinition_three_columns]
 Name=Three columns
 Handler=expLayoutsContainerBlockHandler
@@ -264,6 +302,7 @@ Placeholders[]=col_1
 Placeholders[]=col_2
 Placeholders[]=col_3
 
+Category=containers
 [BlockDefinition_four_columns]
 Name=Four columns
 Handler=expLayoutsContainerBlockHandler
@@ -274,6 +313,7 @@ Placeholders[]=col_2
 Placeholders[]=col_3
 Placeholders[]=col_4
 
+Category=containers
 [QuerySettings]
 AvailableQueries[]
 AvailableQueries[]=children

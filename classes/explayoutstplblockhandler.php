@@ -1,5 +1,5 @@
 <?php
-class expLayoutsTwigBlockHandler implements expLayoutsBlockHandlerInterface
+class expLayoutsTplBlockHandler implements expLayoutsBlockHandlerInterface
 {
     public function getParameters()
     {
