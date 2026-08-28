@@ -322,7 +322,9 @@ class expLayoutsResolver
 
                 return in_array( $current['name'], $siteAccesses );
             }
+            case 'ibexa_content_type':
             case 'content_type':
+            case 'class':
             {
                 $classes = json_decode( $value, true );
                 if ( !is_array( $classes ) )
