@@ -7,7 +7,7 @@ class expLayoutsFunctionCollection
         if ( !$layout )
             return array( 'result' => false );
 
-        return array( 'result' => expLayoutsRenderer::prepareLayout( $layout, null ) );
+        return array( 'result' => expLayoutsRenderer::prepareLayout( $layout, 2 ) );
     }
 
     function resolveLayout( $path = false )
@@ -19,7 +19,7 @@ class expLayoutsFunctionCollection
         if ( !$layout )
             return array( 'result' => false );
 
-        return array( 'result' => expLayoutsRenderer::prepareLayout( $layout, null ) );
+        return array( 'result' => expLayoutsRenderer::prepareLayout( $layout, 2 ) );
     }
 
     function resolveLayoutForNode( $nodeId )
@@ -30,7 +30,7 @@ class expLayoutsFunctionCollection
         {
             $layout = expLayoutsResolver::resolve( $node->attribute( 'url_alias' ) );
             if ( $layout )
-                return array( 'result' => expLayoutsRenderer::prepareLayout( $layout, null ) );
+                return array( 'result' => expLayoutsRenderer::prepareLayout( $layout, 2 ) );
         }
         return array( 'result' => false );
     }

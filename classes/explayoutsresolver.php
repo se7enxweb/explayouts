@@ -33,7 +33,7 @@ class expLayoutsResolver
             if ( (int)$cached['layout_id'] > 0 )
             {
                 $layout = expLayoutsLayout::fetch( $cached['layout_id'] );
-                if ( $layout && (int)$layout->attribute( 'status' ) > 0 )
+                if ( $layout && (int)$layout->attribute( 'status' ) === 2 )
                 {
                     error_log( "expLayoutsResolver: Cache hit for path '$path', layout=" . $layout->attribute( 'identifier' ) );
                     return $layout;
@@ -52,7 +52,7 @@ class expLayoutsResolver
             if ( self::ruleMatches( $rule, $path ) )
             {
                 $layout = expLayoutsLayout::fetch( $rule->attribute( 'layout_id' ) );
-                if ( $layout && (int)$layout->attribute( 'status' ) > 0 )
+                if ( $layout && (int)$layout->attribute( 'status' ) === 2 )
                 {
                     self::writeCache( $path, $siteAccessName, (int)$rule->attribute( 'id' ), (int)$layout->attribute( 'id' ) );
                     error_log( "expLayoutsResolver: Matched rule " . $rule->attribute( 'id' ) . " for path '$path', layout=" . $layout->attribute( 'identifier' ) );
