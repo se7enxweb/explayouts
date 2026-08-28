@@ -16,6 +16,22 @@ class expLayoutsExponentialContentSearchQueryHandler implements expLayoutsQueryH
             $classes[(string)$class->attribute( 'identifier' )] = (string)$class->attribute( 'name' );
         }
 
+        $sections = array();
+        $sectionList = eZSection::fetchList();
+        foreach ( $sectionList as $section )
+        {
+            $sections[(string)$section->attribute( 'identifier' )] = (string)$section->attribute( 'name' );
+        }
+
+        $objectStates = array();
+        $stateList = eZContentObjectState::limitationList();
+        foreach ( $stateList as $state )
+        {
+            $key = (string)$state['group_identifier'] . '|' . (string)$state['state_identifier'];
+            $label = (string)$state['group_identifier'] . ': ' . (string)$state['state_identifier'];
+            $objectStates[$key] = $label;
+        }
+
         return array(
             'parent_location_id' => array(
                 'name' => 'Parent location',
@@ -86,6 +102,28 @@ class expLayoutsExponentialContentSearchQueryHandler implements expLayoutsQueryH
                     'exclude' => 'Exclude content types',
                 ),
                 'default' => 'include',
+            ),
+            'filter_by_section' => array(
+                'name' => 'Filter by section',
+                'type' => 'checkbox',
+                'default' => '0',
+            ),
+            'sections' => array(
+                'name' => 'Sections',
+                'type' => 'multiselect',
+                'options' => $sections,
+                'default' => array(),
+            ),
+            'filter_by_object_state' => array(
+                'name' => 'Filter by object state',
+                'type' => 'checkbox',
+                'default' => '0',
+            ),
+            'object_states' => array(
+                'name' => 'Object states',
+                'type' => 'multiselect',
+                'options' => $objectStates,
+                'default' => array(),
             ),
         );
     }

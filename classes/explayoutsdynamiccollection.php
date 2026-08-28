@@ -184,6 +184,10 @@ class expLayoutsDynamicCollection
             $sortField = 'name';
         $sortAsc = ( isset( $params['sort_direction'] ) && strtolower( (string)$params['sort_direction'] ) === 'ascending' );
 
+        $filterBySection = !empty( $params['filter_by_section'] ) && !empty( $params['sections'] );
+        $filterByObjectState = !empty( $params['filter_by_object_state'] ) && !empty( $params['object_states'] );
+        $hasExtraFilters = $filterBySection || $filterByObjectState;
+
         $fetchParams = array(
             'SortBy' => array( array( $sortField, $sortAsc ) ),
             'MainNodeOnly' => !isset( $params['only_main_locations'] ) || $params['only_main_locations'],
@@ -211,9 +215,20 @@ class expLayoutsDynamicCollection
                 $excludeNodeId = (int)$current->attribute( 'node_id' );
         }
 
-        // over-fetch a little so exclude+offset+limit still fill the page
-        $fetchParams['Limit'] = ( $limit > 0 ? $limit : 50 ) + $offset + ( $excludeNodeId ? 1 : 0 );
-        $fetchParams['Offset'] = 0;
+        // When filtering by section or object state we must fetch the whole
+        // candidate set and apply the filters in PHP (eZ's subtree API does not
+        // support those dimensions directly).
+        if ( $hasExtraFilters )
+        {
+            $fetchParams['Limit'] = false;
+            $fetchParams['Offset'] = false;
+        }
+        else
+        {
+            // over-fetch a little so exclude+offset+limit still fill the page
+            $fetchParams['Limit'] = ( $limit > 0 ? $limit : 50 ) + $offset + ( $excludeNodeId ? 1 : 0 );
+            $fetchParams['Offset'] = 0;
+        }
 
         $nodes = eZContentObjectTreeNode::subTreeByNodeID( $fetchParams, $parentNodeId );
         if ( !is_array( $nodes ) )
@@ -230,11 +245,96 @@ class expLayoutsDynamicCollection
             $nodes = $filtered;
         }
 
+        if ( $filterBySection || $filterByObjectState )
+        {
+            $sectionIds = $filterBySection ? self::resolveSectionIds( $params['sections'] ) : array();
+            $stateIds = $filterByObjectState ? self::resolveObjectStateIds( $params['object_states'] ) : array();
+
+            $filtered = array();
+            foreach ( $nodes as $node )
+            {
+                if ( $filterBySection && !in_array( (int)$node->attribute( 'section_id' ), $sectionIds, true ) )
+                    continue;
+
+                if ( $filterByObjectState )
+                {
+                    $object = $node->object();
+                    if ( !$object )
+                        continue;
+                    $nodeStateIds = array_map( 'intval', (array)$object->attribute( 'state_id_array' ) );
+                    if ( count( array_intersect( $nodeStateIds, $stateIds ) ) === 0 )
+                        continue;
+                }
+
+                $filtered[] = $node;
+            }
+            $nodes = $filtered;
+        }
+
         $total = eZContentObjectTreeNode::subTreeCountByNodeID( $fetchParams, $parentNodeId );
         if ( $total === null )
             $total = 0;
-        $nodes = array_slice( $nodes, $offset, $limit > 0 ? $limit : null );
+
+        if ( $hasExtraFilters )
+        {
+            $total = count( $nodes );
+            $nodes = array_slice( $nodes, $offset, $limit > 0 ? $limit : null );
+        }
+        else
+        {
+            $nodes = array_slice( $nodes, $offset, $limit > 0 ? $limit : null );
+        }
+
         return array( 'total' => $total, 'items' => $nodes );
+    }
+
+    /**
+     * Map section identifiers (e.g. 'standard', 'media') to their numeric IDs.
+     */
+    static function resolveSectionIds( $sectionIdentifiers )
+    {
+        static $map = null;
+        if ( $map === null )
+        {
+            $map = array();
+            foreach ( eZSection::fetchList() as $section )
+            {
+                $map[(string)$section->attribute( 'identifier' )] = (int)$section->attribute( 'id' );
+            }
+        }
+
+        $ids = array();
+        foreach ( array_values( (array)$sectionIdentifiers ) as $ident )
+        {
+            if ( isset( $map[(string)$ident] ) )
+                $ids[] = $map[(string)$ident];
+        }
+        return array_unique( $ids );
+    }
+
+    /**
+     * Map object state keys (e.g. 'ez_lock|not_locked') to their numeric IDs.
+     */
+    static function resolveObjectStateIds( $stateKeys )
+    {
+        static $map = null;
+        if ( $map === null )
+        {
+            $map = array();
+            foreach ( eZContentObjectState::limitationList() as $state )
+            {
+                $key = (string)$state['group_identifier'] . '|' . (string)$state['state_identifier'];
+                $map[$key] = (int)$state['id'];
+            }
+        }
+
+        $ids = array();
+        foreach ( array_values( (array)$stateKeys ) as $key )
+        {
+            if ( isset( $map[(string)$key] ) )
+                $ids[] = $map[(string)$key];
+        }
+        return array_unique( $ids );
     }
 
     static function currentNode()
