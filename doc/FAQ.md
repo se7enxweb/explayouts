@@ -12,7 +12,7 @@ All `explayouts_*` tables: `explayouts_layout`, `explayouts_zone`, `explayouts_b
 
 `expLayoutsResolver::resolve()` walks all enabled rules (`expLayoutsRule::fetchEnabled()`) ordered by priority and returns the layout of the first rule whose targets match the request path or node. If no rule matches, the `ResolverSettings/DefaultLayout` identifier from `explayouts.ini` is used as fallback.
 
-Supported target types: `path`, `path_prefix`, `path_info_prefix`, `path_regex`, `node`/`content_node`, `subtree`. Supported condition types: `siteaccess` and `content_type` (unknown condition types match by default).
+Supported target types: `path`, `path_prefix`, `path_info_prefix`, `path_regex`, `node`, `subtree`. Supported condition types: `siteaccess` and `content_type` (unknown condition types match by default).
 
 ## How do I add my own block type?
 

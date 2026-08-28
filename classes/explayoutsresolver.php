@@ -192,7 +192,6 @@ class expLayoutsResolver
             case 'path_regex':
                 return (bool) preg_match( '/' . str_replace( '/', '\\/', $value ) . '/', $path );
             case 'node':
-            case 'content_node':
                 return self::contentNodeMatches( $path, $value );
             case 'subtree':
                 return self::subtreeMatches( $path, $value );

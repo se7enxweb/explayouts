@@ -70,7 +70,7 @@
                 <div class="nl-node-rule">
                     <div class="nl-node-rule-info">
                         <p class="nl-node-rule-name"><a href={concat('explayouts_ui/layout_edit/',$rule.layout_id)|ezurl}>{$rule.layout_name|wash}</a> <small>({$rule.layout_identifier|wash})</small></p>
-                        <p class="nl-node-rule-meta">Priority {$rule.priority|wash} · Target: content_node / {$node.node_id}</p>
+                        <p class="nl-node-rule-meta">Priority {$rule.priority|wash} · Target: node / {$node.node_id}</p>
                     </div>
                     <div class="nl-node-rule-actions">
                         {if $rule.enabled}<span class="nl-status enabled">Enabled</span>{else}<span class="nl-status disabled">Disabled</span>{/if}
@@ -89,7 +89,7 @@
         <h3 class="nl-node-rules-title">List of layouts using this content as a component</h3>
         <p class="nl-empty-text">No layouts</p>
         <div class="layouts-controls">
-            <a href={concat('explayouts_ui/rule_edit?TargetType=content_node&TargetValue=',$node.node_id)|ezurl} class="nl-btn nl-btn-primary">
+            <a href={concat('explayouts_ui/rule_edit?TargetType=node&TargetValue=',$node.node_id)|ezurl} class="nl-btn nl-btn-primary">
                 <i class="material-icons">add</i> Map layout
             </a>
             <a href={concat('explayouts_ui_api/app#layout')|ezurl} class="nl-btn">

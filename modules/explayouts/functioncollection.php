@@ -43,7 +43,7 @@ class expLayoutsFunctionCollection
         {
             foreach ( $rule->targets() as $target )
             {
-                if ( in_array( $target->attribute( 'target_type' ), array( 'node', 'content_node' ) ) && (int)$target->attribute( 'target_value' ) == $nodeId )
+                if ( $target->attribute( 'target_type' ) === 'node' && (int)$target->attribute( 'target_value' ) == $nodeId )
                 {
                     $layout = expLayoutsLayout::fetch( $rule->attribute( 'layout_id' ) );
                     $rules[] = array(
