@@ -1,7 +1,7 @@
 <?php /* #?ini charset="utf-8"?
 
 # The legacy "Exponential Layouts" top admin tab has been disabled in favor of
-# the "Exponential Layouts UI" tab from the explayouts_ui extension.
+# the "Layouts" tab from the explayouts_ui extension.
 
 #[NavigationPart]
 #Part[ezexplayoutscorepart]=Exponential Layouts
