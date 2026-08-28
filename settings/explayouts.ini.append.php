@@ -459,7 +459,7 @@ AllowedTemplateRoots[]=design
 AllowedTemplateRoots[]=extension
 
 [ResolverSettings]
-DefaultLayout=
+DefaultLayout=1d96945167435ac185b86cc0f9ef7084
 CacheTTL=3600
 
 [NexusNodeMap]
