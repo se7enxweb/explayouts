@@ -26,6 +26,16 @@ class ExplBlockFunction
         );
     }
 
+    function attributeList()
+    {
+        return array( 'explblock' => true );
+    }
+
+    function hasChildren()
+    {
+        return true;
+    }
+
     function process( $tpl, &$textElements, $functionName, $functionChildren, $functionParameters, $functionPlacement, $rootNamespace, $currentNamespace )
     {
         if ( !isset( $functionParameters['name'] ) )
