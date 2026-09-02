@@ -193,8 +193,8 @@ CSS;
      * Inline JS for minimize / close behavior and localStorage persistence.
      *
      * - Minimize / expand is persisted in localStorage.
-     * - Close is persisted in sessionStorage so it hides the toolbar for the
-     *   current tab/session but it reappears on a fresh tab with ?expl_debug=1.
+     * - Close simply hides the toolbar for the current page view and clears the
+     *   stored state so the toolbar reappears on the next ?expl_debug=1 page load.
      */
     private static function toolbarJs()
     {
@@ -206,38 +206,30 @@ CSS;
     var close = document.getElementById('explDebugClose');
     var bar = toolbar ? toolbar.querySelector('.expl-debug-bar') : null;
     var storageKey = 'explDebugState';
-    var closedKey = 'explDebugClosed';
 
     function defaultState() {
         return (toolbar && toolbar.getAttribute('data-default-state')) || 'open';
     }
 
-    function isClosed() {
-        try { return sessionStorage.getItem(closedKey) === '1'; } catch (e) { return false; }
-    }
-
-    function setClosed(closed) {
-        try {
-            if (closed) sessionStorage.setItem(closedKey, '1');
-            else sessionStorage.removeItem(closedKey);
-        } catch (e) {}
-    }
-
     function getState() {
-        if (isClosed()) return 'closed';
-        try { return localStorage.getItem(storageKey) || defaultState(); } catch (e) { return defaultState(); }
+        try {
+            var state = localStorage.getItem(storageKey);
+            // Legacy/stale 'closed' value should not hide the toolbar on reload.
+            if (state === 'closed') {
+                try { localStorage.removeItem(storageKey); } catch (e) {}
+                return defaultState();
+            }
+            return state || defaultState();
+        } catch (e) { return defaultState(); }
     }
 
     function setState(state) {
-        setClosed(false);
         try { localStorage.setItem(storageKey, state); } catch (e) {}
     }
 
     function applyState(state) {
         if (!toolbar || !panel || !toggle) return;
-        if (state === 'closed') {
-            toolbar.style.display = 'none';
-        } else if (state === 'minimized') {
+        if (state === 'minimized') {
             toolbar.style.display = '';
             panel.style.display = 'none';
             toggle.textContent = '+';
@@ -253,7 +245,7 @@ CSS;
     if (toggle) {
         toggle.addEventListener('click', function(e) {
             e.stopPropagation();
-            if (isClosed() || panel.style.display === 'none') {
+            if (panel.style.display === 'none') {
                 setState('open');
                 applyState('open');
             } else {
@@ -266,16 +258,15 @@ CSS;
     if (close) {
         close.addEventListener('click', function(e) {
             e.stopPropagation();
-            setClosed(true);
             try { localStorage.removeItem(storageKey); } catch (e) {}
-            applyState('closed');
+            toolbar.style.display = 'none';
         });
     }
 
     if (bar) {
         bar.addEventListener('click', function(e) {
             if (e.target.closest('.expl-debug-btn')) return;
-            if (isClosed() || panel.style.display === 'none') {
+            if (panel.style.display === 'none') {
                 setState('open');
                 applyState('open');
             } else {
