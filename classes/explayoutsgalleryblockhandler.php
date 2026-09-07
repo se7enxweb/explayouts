@@ -164,6 +164,14 @@ class expLayoutsGalleryBlockHandler implements expLayoutsBlockHandlerInterface
                 }
                 if ( $url !== '' )
                 {
+                    // Image alias URLs are stored without a leading slash, so
+                    // an <img src> built straight from one is resolved relative
+                    // to the current page: on /testing/ it became
+                    // /testing/var/site/storage/... and 404'd. Only a path on a
+                    // one-segment URL happened to work.
+                    if ( strpos( $url, '/' ) !== 0 && strpos( $url, 'http' ) !== 0 )
+                        $url = '/' . $url;
+
                     $entry['url'] = $url;
                     $entry['has_image'] = true;
                 }

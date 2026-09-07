@@ -44,7 +44,16 @@ class expLayoutsCarouselBlockHandler extends expLayoutsAbstractContentBlockHandl
                     $attr = $dataMap[$result['image_attribute']];
                     $image = $attr->hasAttribute( 'content' ) ? $attr->attribute( 'content' ) : false;
                     if ( $image )
-                        $url = $image->attribute( 'original' )['url'];
+                    {
+                        $original = $image->attribute( 'original' );
+                        $url = is_array( $original ) && isset( $original['url'] ) ? (string)$original['url'] : '';
+
+                        // Alias URLs carry no leading slash, so an <img src>
+                        // built from one resolves against the current page -
+                        // on /testing/ it became /testing/var/site/... and 404'd.
+                        if ( $url !== '' && strpos( $url, '/' ) !== 0 && strpos( $url, 'http' ) !== 0 )
+                            $url = '/' . $url;
+                    }
                 }
             }
             $slides[] = array(
