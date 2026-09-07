@@ -35,13 +35,13 @@ class expLayoutsResolver
                 $layout = expLayoutsLayout::fetch( $cached['layout_id'] );
                 if ( $layout && (int)$layout->attribute( 'status' ) === 2 )
                 {
-                    error_log( "expLayoutsResolver: Cache hit for path '$path', layout=" . $layout->attribute( 'identifier' ) );
+                    eZDebug::writeNotice( "Cache hit for path '$path', layout=" . $layout->attribute( 'identifier' ), 'expLayoutsResolver' );
                     return $layout;
                 }
             }
             else
             {
-                error_log( "expLayoutsResolver: Cache hit for path '$path', no match" );
+                eZDebug::writeNotice( "Cache hit for path '$path', no match", 'expLayoutsResolver' );
                 return false;
             }
         }
@@ -55,12 +55,12 @@ class expLayoutsResolver
                 if ( $layout && (int)$layout->attribute( 'status' ) === 2 )
                 {
                     self::writeCache( $path, $siteAccessName, (int)$rule->attribute( 'id' ), (int)$layout->attribute( 'id' ) );
-                    error_log( "expLayoutsResolver: Matched rule " . $rule->attribute( 'id' ) . " for path '$path', layout=" . $layout->attribute( 'identifier' ) );
+                    eZDebug::writeNotice( 'Matched rule ' . $rule->attribute( 'id' ) . " for path '$path', layout=" . $layout->attribute( 'identifier' ), 'expLayoutsResolver' );
                     return $layout;
                 }
             }
         }
-        error_log( "expLayoutsResolver: No rule matched for path '$path'" );
+        eZDebug::writeNotice( "No rule matched for path '$path'", 'expLayoutsResolver' );
 
         $ini = eZINI::instance( 'explayouts.ini' );
         $default = $ini->variable( 'ResolverSettings', 'DefaultLayout' );
@@ -322,7 +322,6 @@ class expLayoutsResolver
 
                 return in_array( $current['name'], $siteAccesses );
             }
-            case 'ibexa_content_type':
             case 'content_type':
             case 'class':
             {
