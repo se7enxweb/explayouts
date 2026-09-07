@@ -183,3 +183,13 @@ CREATE TABLE ezurl_object_link (
   KEY ezurl_ol_coa_version ( contentobject_attribute_version ),
   KEY ezurl_ol_url_id ( url_id )
 ) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4;
+
+
+CREATE TABLE exp_info_collection (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  contentobject_id int(11) NOT NULL DEFAULT '0',
+  data text NOT NULL,
+  created int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( id ),
+  KEY exp_info_collection_object ( contentobject_id )
+) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4;

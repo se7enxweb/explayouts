@@ -305,3 +305,21 @@ CREATE INDEX ezurl_ol_coa_version ON ezurl_object_link USING btree ( contentobje
 CREATE INDEX ezurl_ol_url_id ON ezurl_object_link USING btree ( url_id );
 
 
+
+
+CREATE SEQUENCE IF NOT EXISTS exp_info_collection_id_seq
+  START 1
+  INCREMENT 1
+  MAXVALUE 9223372036854775807
+  MINVALUE 1
+  CACHE 1;
+CREATE TABLE IF NOT EXISTS exp_info_collection (
+  id integer DEFAULT nextval('exp_info_collection_id_seq'::text) NOT NULL,
+  contentobject_id integer DEFAULT 0 NOT NULL,
+  data text NOT NULL,
+  created integer DEFAULT 0 NOT NULL
+);
+CREATE INDEX exp_info_collection_object ON exp_info_collection USING btree ( contentobject_id );
+
+ALTER TABLE ONLY exp_info_collection ADD CONSTRAINT exp_info_collection_pkey PRIMARY KEY ( id );
+

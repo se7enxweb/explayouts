@@ -245,3 +245,26 @@ BEGIN
     SELECT explayouts_rule_condition_id_seq.NEXTVAL INTO :NEW.id FROM DUAL;
 END;
 /
+
+-- Collected information from the site bundle contact forms
+-- (expLayoutsSiteBundleInfoCollection::submit)
+CREATE TABLE exp_info_collection (
+    id NUMBER(11,0) NOT NULL,
+    contentobject_id NUMBER(11,0) DEFAULT 0 NOT NULL,
+    data CLOB NOT NULL,
+    created NUMBER(11,0) DEFAULT 0 NOT NULL,
+    CONSTRAINT exp_info_collection_pk PRIMARY KEY (id)
+);
+
+CREATE INDEX exp_info_collection_idx_object ON exp_info_collection(contentobject_id);
+
+CREATE SEQUENCE exp_info_collection_id_seq START WITH 1 INCREMENT BY 1 NOCACHE;
+
+CREATE OR REPLACE TRIGGER exp_info_collection_id_trg
+BEFORE INSERT ON exp_info_collection
+FOR EACH ROW
+WHEN (NEW.id IS NULL)
+BEGIN
+    SELECT exp_info_collection_id_seq.NEXTVAL INTO :NEW.id FROM DUAL;
+END;
+/

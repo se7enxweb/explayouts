@@ -1059,6 +1059,58 @@ $schema = array (
       ),
     ),
   ),
+  'exp_info_collection' => 
+  array (
+    'name' => 'exp_info_collection',
+    'fields' => 
+    array (
+      'id' => 
+      array (
+        'type' => 'auto_increment',
+        'length' => 11,
+        'not_null' => '1',
+      ),
+      'contentobject_id' => 
+      array (
+        'type' => 'int',
+        'length' => 11,
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'data' => 
+      array (
+        'type' => 'text',
+        'not_null' => '1',
+        'default' => false,
+      ),
+      'created' => 
+      array (
+        'type' => 'int',
+        'length' => 11,
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' => 
+    array (
+      'PRIMARY' => 
+      array (
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+        ),
+      ),
+      'exp_info_collection_object' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'contentobject_id',
+        ),
+      ),
+    ),
+  ),
   '_info' => 
   array (
     'format' => 'generic',

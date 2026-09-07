@@ -248,3 +248,15 @@ CREATE TABLE ezurl_object_link (
 
 
 
+
+
+CREATE TABLE exp_info_collection (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  contentobject_id INTEGER(11) NOT NULL DEFAULT '0',
+  data text NOT NULL,
+  created INTEGER(11) NOT NULL DEFAULT '0'
+);
+  CREATE  INDEX exp_info_collection_object ON exp_info_collection  ( contentobject_id );
+
+
+
