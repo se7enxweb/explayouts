@@ -259,7 +259,10 @@ Category=basic
 [BlockDefinition_full_view]
 Name=Full view
 Handler=expLayoutsFullViewBlockHandler
-ViewTypes[]=default
+# The reference declares exactly one view type for this block - full_view -
+# and matches its template on block\view_type: full_view. 'default' emitted
+# ngl-vt-default where the reference emits ngl-vt-full_view.
+ViewTypes[]=full_view
 
 Category=placeholders
 [BlockDefinition_hero]
