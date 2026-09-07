@@ -8,3 +8,5 @@ var/
 \#*\#
 data/data.sql.backup*
 data/data.sql.full_before
+share/db_data.dba.bak.*
+share/db_data.dba.backup-*
