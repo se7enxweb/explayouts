@@ -13,7 +13,8 @@ class expLayoutsRuleCondition extends eZPersistentObject
             "keys" => array( "id" ),
             "increment_key" => "id",
             "class_name" => "expLayoutsRuleCondition",
-            "name" => "explayouts_rule_condition"
+            "name" => "explayouts_rule_condition",
+            "function_attributes" => array( "displayValue" => "displayValue", "displayItems" => "displayItems" )
         );
     }
 
@@ -30,5 +31,74 @@ class expLayoutsRuleCondition extends eZPersistentObject
             'condition_type' => $type,
             'condition_value' => $value,
         ) );
+    }
+
+    public function displayValue()
+    {
+        $type = (string)$this->attribute( 'condition_type' );
+        $value = (string)$this->attribute( 'condition_value' );
+
+        if ( in_array( $type, array( 'class', 'content_type' ) ) )
+        {
+            $decoded = json_decode( $value, true );
+            if ( !is_array( $decoded ) || count( $decoded ) === 0 )
+                $decoded = array( $value );
+
+            $parts = array();
+            foreach ( $decoded as $identifier )
+            {
+                $class = eZContentClass::fetchByIdentifier( (string)$identifier );
+                if ( $class )
+                {
+                    $name = $class->attribute( 'name' );
+                    $parts[] = ( $name !== '' && $name !== null ) ? $name : $class->attribute( 'identifier' );
+                }
+                else
+                {
+                    $parts[] = (string)$identifier;
+                }
+            }
+
+            return implode( ', ', $parts );
+        }
+        elseif ( in_array( $type, array( 'siteaccess' ) ) )
+        {
+            $decoded = json_decode( $value, true );
+            if ( is_array( $decoded ) && count( $decoded ) > 0 )
+                return implode( ', ', array_map( 'trim', $decoded ) );
+        }
+
+        return $value;
+    }
+
+    public function displayItems()
+    {
+        $type = (string)$this->attribute( 'condition_type' );
+        $value = (string)$this->attribute( 'condition_value' );
+
+        $decoded = json_decode( $value, true );
+        if ( !is_array( $decoded ) || count( $decoded ) === 0 )
+            $decoded = array( $value );
+
+        if ( in_array( $type, array( 'class', 'content_type' ) ) )
+        {
+            $items = array();
+            foreach ( $decoded as $identifier )
+            {
+                $class = eZContentClass::fetchByIdentifier( (string)$identifier );
+                if ( $class )
+                {
+                    $name = $class->attribute( 'name' );
+                    $items[] = ( $name !== '' && $name !== null ) ? $name : $class->attribute( 'identifier' );
+                }
+                else
+                {
+                    $items[] = (string)$identifier;
+                }
+            }
+            return $items;
+        }
+
+        return $decoded;
     }
 }

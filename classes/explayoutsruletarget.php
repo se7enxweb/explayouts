@@ -13,7 +13,8 @@ class expLayoutsRuleTarget extends eZPersistentObject
             "keys" => array( "id" ),
             "increment_key" => "id",
             "class_name" => "expLayoutsRuleTarget",
-            "name" => "explayouts_rule_target"
+            "name" => "explayouts_rule_target",
+            "function_attributes" => array( "displayValue" => "displayValue" )
         );
     }
 
@@ -36,5 +37,20 @@ class expLayoutsRuleTarget extends eZPersistentObject
             'target_type' => $type,
             'target_value' => $value,
         ) );
+    }
+
+    public function displayValue()
+    {
+        $type = (string)$this->attribute( 'target_type' );
+        $value = (string)$this->attribute( 'target_value' );
+
+        if ( in_array( $type, array( 'node', 'subtree' ) ) && is_numeric( $value ) )
+        {
+            $node = eZContentObjectTreeNode::fetch( (int)$value );
+            if ( $node )
+                return $node->attribute( 'path_with_names' );
+        }
+
+        return $value;
     }
 }
