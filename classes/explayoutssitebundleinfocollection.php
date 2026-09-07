@@ -27,7 +27,7 @@ class expLayoutsSiteBundleInfoCollection
     public static function submit( $contentId, array $data = array() )
     {
         $db = eZDB::instance();
-        $db->query( 'INSERT INTO sevenx_info_collection (contentobject_id, data, created) VALUES (' . (int)$contentId . ', \'' . $db->escapeString( json_encode( $data ) ) . '\', ' . time() . ')' );
+        $db->query( 'INSERT INTO exp_info_collection (contentobject_id, data, created) VALUES (' . (int)$contentId . ', \'' . $db->escapeString( json_encode( $data ) ) . '\', ' . time() . ')' );
         return true;
     }
 }
