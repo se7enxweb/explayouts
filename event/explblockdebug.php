@@ -83,7 +83,7 @@ class ExplBlockDebug
             }
         }
 
-        return ExplBlockParser::strip( $output );
+        return $debug ? $output : ExplBlockParser::strip( $output );
     }
 
     /**
