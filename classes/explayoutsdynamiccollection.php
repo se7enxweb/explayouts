@@ -182,6 +182,12 @@ class expLayoutsDynamicCollection
             $sortField = 'modified';
         elseif ( isset( $params['sort_type'] ) && $params['sort_type'] === 'content_name' )
             $sortField = 'name';
+        elseif ( isset( $params['sort_type'] ) && $params['sort_type'] === 'location_priority' )
+            // The reference's location_priority sorts on the location's own
+            // priority field, which is how editors order children by hand.
+            // Without this it silently fell back to publication date, so any
+            // hand-ordered collection came out in the wrong order.
+            $sortField = 'priority';
         $sortAsc = ( isset( $params['sort_direction'] ) && strtolower( (string)$params['sort_direction'] ) === 'ascending' );
 
         $filterBySection = !empty( $params['filter_by_section'] ) && !empty( $params['sections'] );
