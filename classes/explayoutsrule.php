@@ -30,9 +30,41 @@ class expLayoutsRule extends eZPersistentObject
             array( 'id' => (int)$id ), $asObject );
     }
 
-    static function create( $layoutId, $priority = 0 )
+    static function create( $layoutId, $priority = null )
     {
-        return new self( array( 'layout_id' => $layoutId, 'priority' => $priority, 'enabled' => 1 ) );
+        if ( $priority === null )
+            $priority = self::nextPriority();
+
+        return new self( array( 'layout_id' => $layoutId, 'priority' => (int)$priority, 'enabled' => 1 ) );
+    }
+
+    /**
+     * Priority for a newly created rule: above every existing one.
+     *
+     * Rules are evaluated highest priority first and the first match wins
+     * (see fetchEnabled() and expLayoutsResolver::resolve()). The site's
+     * catch-all rule targets path_info_prefix '/' at priority 10, so it
+     * matches every path - which means a new rule created below it can never
+     * be reached, and a freshly mapped layout silently does nothing.
+     *
+     * The reference assigns lowest-priority-minus-10 here, putting new rules
+     * at the bottom of the list; with a catch-all sitting at the bottom that
+     * makes every new mapping dead on arrival. Going above the highest instead
+     * means a rule the editor just created actually applies.
+     *
+     * Steps of 10 leave room to insert rules in between by hand.
+     */
+    static function nextPriority()
+    {
+        $rows = eZPersistentObject::fetchObjectList( self::definition(),
+            array( 'priority' ), null,
+            array( 'priority' => 'desc' ), array( 'limit' => 1 ), false );
+
+        $highest = ( is_array( $rows ) && isset( $rows[0]['priority'] ) )
+            ? (int)$rows[0]['priority']
+            : 0;
+
+        return $highest + 10;
     }
 
     function targets()

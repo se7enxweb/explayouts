@@ -11,7 +11,7 @@ $ruleId = isset( $Params['RuleID'] ) ? (int)$Params['RuleID'] : 0;
 if ( $ruleId > 0 )
     $rule = expLayoutsRule::fetch( $ruleId );
 else
-    $rule = expLayoutsRule::create( 0, 0 );
+    $rule = expLayoutsRule::create( 0 );
 
 if ( !$rule )
     return $module->handleError( eZError::KERNEL_NOT_FOUND, 'kernel' );
