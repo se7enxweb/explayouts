@@ -1067,8 +1067,7 @@ $schema = array (
       'id' => 
       array (
         'type' => 'auto_increment',
-        'length' => 11,
-        'not_null' => '1',
+        'default' => false,
       ),
       'contentobject_id' => 
       array (
