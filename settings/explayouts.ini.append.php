@@ -527,17 +527,32 @@ AllowedTemplateRoots[]=extension
 DefaultLayout=1d96945167435ac185b86cc0f9ef7084
 CacheTTL=3600
 
+# Maps a location id from the reference site onto content in this
+# installation. Values are REMOTE IDS, not node ids.
+#
+# Node ids are handed out at install time and are not stable between
+# installations, so a map written in node ids silently starts pointing at
+# whatever content happens to hold that id next time. That is what happened to
+# 190: it read 190=131, and node 131 is a test component, so the "All Recipes"
+# button on /healthy-eating linked to /media/components/test-sck2.
+#
+# The identity entries below were worse than wrong - they were inert. Written
+# as 721=721 and so on they relied on the nexus id also existing as a node id
+# here, which it does not, so every one of them resolved to nothing. Their
+# numbers were in fact the numeric half of a media-n- remote id all along.
 [NexusNodeMap]
-190=131
-195=239
-218=218
+190=media-n-744
+195=media-n-851
+218=media-n-812
+721=media-n-721
+722=media-n-722
+749=media-n-749
+752=media-n-752
+911=media-n-911
+939=media-n-939
+# 619 has neither a node nor a media-n-619 remote id in the shipped content;
+# left unmapped rather than guessed at.
 619=619
-721=721
-722=722
-749=749
-752=752
-911=911
-939=939
 940=940
 941=941
 946=946

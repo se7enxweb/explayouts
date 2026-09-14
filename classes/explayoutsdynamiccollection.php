@@ -152,7 +152,27 @@ class expLayoutsDynamicCollection
         $key = (string)$nexusId;
         if ( $ini->hasVariable( 'NexusNodeMap', $key ) )
         {
-            $mapped = (int)$ini->variable( 'NexusNodeMap', $key );
+            $mapped = trim( (string)$ini->variable( 'NexusNodeMap', $key ) );
+
+            // A non-numeric value is a remote id. Node ids are handed out at
+            // install time and are not stable between installations, so a map
+            // written in node ids silently starts pointing at whatever content
+            // happens to hold that id next time - which is how the "All
+            // Recipes" button came to link at a test component. Remote ids are
+            // assigned by the content package and do not move, so they are the
+            // form to use for anything shipped.
+            if ( $mapped !== '' && !ctype_digit( $mapped ) )
+            {
+                $node = eZContentObjectTreeNode::fetchByRemoteID( $mapped );
+                if ( $node instanceof eZContentObjectTreeNode )
+                    return (int)$node->attribute( 'node_id' );
+
+                eZDebug::writeWarning( "NexusNodeMap entry $key points at remote id" .
+                                       " '$mapped', which no node carries", __METHOD__ );
+                return 0;
+            }
+
+            $mapped = (int)$mapped;
             if ( eZContentObjectTreeNode::fetch( $mapped, false, false ) )
                 return $mapped;
             return 0;
