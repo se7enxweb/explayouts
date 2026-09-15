@@ -26,6 +26,53 @@
 .nl-empty-state i { font-size: 32px; color: #bbb; margin-bottom: 6px; }
 .nl-empty-text { color: #777; font-size: 13px; margin: 0 0 14px; }
 .layouts-controls { margin-top: 12px; display: flex; justify-content: flex-end; gap: 8px; }
+
+/* Fitting into the container it is given -------------------------------------
+
+   This tab is drawn inside the node view panel, which is as wide as the admin
+   content column and no wider. Everything below is about the tab surviving that
+   rather than deciding its own width.
+
+   .layouts-content is a flex item of .ng-layouts-app. A flex item will not
+   shrink below its min-content width unless it is told it may, so one long
+   thing inside was setting the width of the whole tab: 423px of content in a
+   360px column, with the Preview and Edit layout buttons carried off the right
+   hand edge. min-width:0 lifts that floor; the rules after it are what make the
+   content survive being narrow, because a floor lifted with nothing able to
+   wrap only moves the clipping somewhere else. */
+.exp-node-layout-tab .layouts-content { min-width: 0; }
+
+/* The two header rows are space-between with the actions on the right. Without
+   wrapping there is no narrow arrangement for them to fall back to. */
+.exp-node-layout-tab .nl-node-resolved-header,
+.exp-node-layout-tab .nl-node-rule { flex-wrap: wrap; gap: 8px; }
+.exp-node-layout-tab .nl-node-resolved-header > div:first-child,
+.exp-node-layout-tab .nl-node-rule-info { flex: 1 1 200px; min-width: 0; }
+.exp-node-layout-tab .nl-node-rule-actions { flex: 0 0 auto; flex-wrap: wrap; }
+.exp-node-layout-tab .nl-node-resolved-stats,
+.exp-node-layout-tab .layouts-controls { flex-wrap: wrap; }
+
+/* Layout identifiers are single unbreakable tokens - a remote id is thirty two
+   characters with nowhere to break - so they set a min-content width on their
+   own unless told they may break anywhere. */
+.exp-node-layout-tab .layouts-header p,
+.exp-node-layout-tab .nl-node-resolved-meta,
+.exp-node-layout-tab .nl-node-rule-name,
+.exp-node-layout-tab .nl-node-rule-meta { overflow-wrap: anywhere; word-break: break-word; }
+
+/* layouts-ibexa.css gives every .nl-btn a 20px right margin. In a flex row that
+   is spacing after the last button as well, and in a flex-end row it is the
+   last button standing 20px short of where it belongs. The rows here space
+   themselves with gap. */
+.exp-node-layout-tab .nl-btn { margin-right: 0; }
+
+@media (max-width: 600px) {
+    /* Full width buttons rather than three of them squeezed onto one line. */
+    .exp-node-layout-tab .nl-node-resolved-header .nl-node-rule-actions,
+    .exp-node-layout-tab .layouts-controls { width: 100%; justify-content: flex-start; }
+    .exp-node-layout-tab .nl-node-resolved-header .nl-node-rule-actions .nl-btn,
+    .exp-node-layout-tab .layouts-controls .nl-btn { flex: 1 1 auto; justify-content: center; }
+}
 </style>{/literal}
 <div class="ng-layouts-app row exp-node-layout-tab">
     <div class="layouts-content">
