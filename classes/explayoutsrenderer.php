@@ -31,29 +31,14 @@ class expLayoutsRenderer
 
     static function prepareZone( $zone, $status = 2 )
     {
-        // Linked zones (nglayouts zone linking): header/footer link to the
-        // shared "Header / Footer" layout, pre_footer links to "Prefooter".
-        // Render the linked layout's zone blocks instead of our own.
-        $sourceZone = $zone;
-        $linkedLayoutId = (int)$zone->attribute( 'linked_layout_id' );
-        if ( $linkedLayoutId > 0 )
-        {
-            $targetZone = false;
-            foreach ( expLayoutsZone::fetchByLayout( $linkedLayoutId, $status ) as $candidate )
-            {
-                if ( $candidate->attribute( 'identifier' ) === $zone->attribute( 'identifier' ) )
-                {
-                    $targetZone = $candidate;
-                    break;
-                }
-                if ( $candidate->attribute( 'identifier' ) === 'main' )
-                    $targetZone = $candidate;
-            }
-            if ( $targetZone )
-                $sourceZone = $targetZone;
-        }
+        // Linked zones (zone linking): header/footer link to the shared
+        // "Header / Footer" layout, pre_footer links to "Prefooter". Render
+        // the linked layout's zone blocks instead of our own. The link names
+        // its target zone, so nothing here has to guess which one it is.
+        $sourceZone = expLayoutsZone::resolveSource( $zone );
+        $blockStatus = $sourceZone === $zone ? $status : (int)$sourceZone->attribute( 'status' );
 
-        $blocks = expLayoutsBlock::fetchByZone( $sourceZone->attribute( 'id' ), $status );
+        $blocks = expLayoutsBlock::fetchByZone( $sourceZone->attribute( 'id' ), $blockStatus );
         $preparedBlocks = array();
         $blocksById = array();
         foreach ( $blocks as $block )
@@ -79,6 +64,8 @@ class expLayoutsRenderer
         return array(
             'id' => $zone->attribute( 'id' ),
             'identifier' => $zone->attribute( 'identifier' ),
+            'linked_layout_id' => $zone->isLinked() ? (int)$zone->attribute( 'linked_layout_id' ) : null,
+            'linked_zone_identifier' => $zone->isLinked() ? (string)$zone->attribute( 'linked_zone_identifier' ) : null,
             'blocks' => $preparedBlocks,
             'items' => self::buildZoneItems( $preparedBlocks ),
         );

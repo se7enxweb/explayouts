@@ -88,6 +88,7 @@ CREATE TABLE explayouts_layout (
   layout_type varchar(255) NOT NULL DEFAULT '',
   modified INTEGER(11) NOT NULL DEFAULT '0',
   name varchar(255) NOT NULL DEFAULT '',
+  shared INTEGER(11) NOT NULL DEFAULT '0',
   status INTEGER(11) NOT NULL DEFAULT '1'
 );
   CREATE  UNIQUE INDEX idx_layout_identifier_status ON explayouts_layout  ( identifier, status );
@@ -141,6 +142,7 @@ CREATE TABLE explayouts_zone (
   identifier varchar(255) NOT NULL DEFAULT '',
   layout_id INTEGER(11) NOT NULL DEFAULT '0',
   linked_layout_id INTEGER(11) DEFAULT NULL,
+  linked_zone_identifier varchar(255) DEFAULT NULL,
   position INTEGER(11) NOT NULL DEFAULT '0',
   status INTEGER(11) NOT NULL DEFAULT '1'
 );

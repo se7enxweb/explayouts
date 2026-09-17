@@ -25,6 +25,8 @@ class expLayoutsExponentialorter
                 'identifier' => $zone->attribute( 'identifier' ),
                 'position' => (int)$zone->attribute( 'position' ),
                 'linked_layout_id' => $zone->attribute( 'linked_layout_id' ),
+                'linked_layout_identifier' => self::linkedLayoutIdentifier( $zone ),
+                'linked_zone_identifier' => $zone->attribute( 'linked_zone_identifier' ),
                 'blocks' => $blocks,
             );
         }
@@ -34,8 +36,23 @@ class expLayoutsExponentialorter
             'identifier' => $layout->attribute( 'identifier' ),
             'name' => $layout->attribute( 'name' ),
             'layout_type' => $layout->attribute( 'layout_type' ),
+            'shared' => (int)$layout->attribute( 'shared' ) === 1,
             'zones' => $zones,
         );
+    }
+
+    /**
+     * A link carried by the shared layout's identifier as well as its id, so
+     * an export can be read back on an installation whose row ids differ.
+     */
+    static function linkedLayoutIdentifier( $zone )
+    {
+        $linkedLayoutId = (int)$zone->attribute( 'linked_layout_id' );
+        if ( $linkedLayoutId <= 0 )
+            return null;
+
+        $linked = expLayoutsLayout::fetch( $linkedLayoutId );
+        return $linked ? (string)$linked->attribute( 'identifier' ) : null;
     }
 
     static function exportBlock( $block )

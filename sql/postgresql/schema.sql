@@ -118,6 +118,7 @@ CREATE TABLE IF NOT EXISTS explayouts_layout (
   layout_type character varying(255) DEFAULT ''::character varying NOT NULL,
   modified integer DEFAULT 0 NOT NULL,
   name character varying(255) DEFAULT ''::character varying NOT NULL,
+  shared integer DEFAULT 0 NOT NULL,
   status integer DEFAULT 1 NOT NULL
 );
 CREATE UNIQUE INDEX idx_layout_identifier_status ON explayouts_layout USING btree ( identifier, status );
@@ -193,6 +194,7 @@ CREATE TABLE IF NOT EXISTS explayouts_zone (
   identifier character varying(255) DEFAULT ''::character varying NOT NULL,
   layout_id integer DEFAULT 0 NOT NULL,
   linked_layout_id integer DEFAULT NULL,
+  linked_zone_identifier character varying(255) DEFAULT NULL,
   "position" integer DEFAULT 0 NOT NULL,
   status integer DEFAULT 1 NOT NULL
 );

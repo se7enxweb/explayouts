@@ -31,6 +31,7 @@ class expLayoutsImporter
 
         $layout->setAttribute( 'name', $data['name'] . ' (imported)' );
         $layout->setAttribute( 'layout_type', $data['layout_type'] );
+        $layout->setAttribute( 'shared', !empty( $data['shared'] ) ? 1 : 0 );
         $layout->setAttribute( 'status', 1 );
         $layout->setAttribute( 'created', time() );
         $layout->setAttribute( 'modified', time() );
@@ -44,8 +45,28 @@ class expLayoutsImporter
             $zone = expLayoutsZone::create( $layoutId, $zoneData['identifier'], 1 );
             if ( isset( $zoneData['position'] ) )
                 $zone->setAttribute( 'position', (int)$zoneData['position'] );
-            if ( isset( $zoneData['linked_layout_id'] ) )
-                $zone->setAttribute( 'linked_layout_id', (int)$zoneData['linked_layout_id'] );
+            // Prefer the shared layout's identifier: an export read back on
+            // another installation will not find the same row ids, but the
+            // identifier is the same everywhere the layout was installed from
+            // the same package.
+            $linkedLayoutId = 0;
+            if ( isset( $zoneData['linked_layout_identifier'] ) && $zoneData['linked_layout_identifier'] !== null )
+            {
+                $linkedLayout = expLayoutsLayout::fetchByIdentifier( (string)$zoneData['linked_layout_identifier'], 2 );
+                if ( $linkedLayout )
+                    $linkedLayoutId = (int)$linkedLayout->attribute( 'id' );
+            }
+            if ( $linkedLayoutId === 0 && isset( $zoneData['linked_layout_id'] ) )
+                $linkedLayoutId = (int)$zoneData['linked_layout_id'];
+
+            if ( $linkedLayoutId > 0 )
+            {
+                $zone->setAttribute( 'linked_layout_id', $linkedLayoutId );
+                $zone->setAttribute( 'linked_zone_identifier',
+                    isset( $zoneData['linked_zone_identifier'] ) && $zoneData['linked_zone_identifier'] !== null
+                        ? (string)$zoneData['linked_zone_identifier']
+                        : (string)$zoneData['identifier'] );
+            }
             $zone->store();
 
             $oldZoneId = isset( $zoneData['id'] ) ? (int)$zoneData['id'] : 0;

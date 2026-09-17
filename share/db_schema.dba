@@ -406,6 +406,13 @@ $schema = array (
         'not_null' => '1',
         'default' => '',
       ),
+      'shared' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
       'status' => 
       array (
         'length' => 11,
@@ -628,6 +635,12 @@ $schema = array (
       array (
         'length' => 11,
         'type' => 'int',
+        'default' => NULL,
+      ),
+      'linked_zone_identifier' => 
+      array (
+        'length' => 255,
+        'type' => 'varchar',
         'default' => NULL,
       ),
       'position' => 

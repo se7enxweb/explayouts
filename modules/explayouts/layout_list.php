@@ -57,6 +57,7 @@ if ( eZUser::currentUser()->hasAccessTo( 'explayouts', 'edit' ) && $http->hasPos
             $newZone = expLayoutsZone::create( $newLayout->attribute( 'id' ), $zone->attribute( 'identifier' ), 1 );
             $newZone->setAttribute( 'position', $zone->attribute( 'position' ) );
             $newZone->setAttribute( 'linked_layout_id', $zone->attribute( 'linked_layout_id' ) );
+            $newZone->setAttribute( 'linked_zone_identifier', $zone->attribute( 'linked_zone_identifier' ) );
             $newZone->store();
             $zoneMap[(int)$zone->attribute( 'id' )] = (int)$newZone->attribute( 'id' );
         }

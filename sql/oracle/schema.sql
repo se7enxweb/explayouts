@@ -9,6 +9,7 @@ CREATE TABLE explayouts_layout (
     identifier VARCHAR2(255) NOT NULL,
     name VARCHAR2(255) NOT NULL DEFAULT '',
     layout_type VARCHAR2(255) NOT NULL DEFAULT '',
+    shared NUMBER(11,0) NOT NULL DEFAULT 0,
     status NUMBER(11,0) NOT NULL DEFAULT 1,
     created NUMBER(11,0) NOT NULL DEFAULT 0,
     modified NUMBER(11,0) NOT NULL DEFAULT 0,
@@ -35,6 +36,7 @@ CREATE TABLE explayouts_zone (
     layout_id NUMBER(11,0) NOT NULL,
     identifier VARCHAR2(255) NOT NULL,
     linked_layout_id NUMBER(11,0) DEFAULT NULL,
+    linked_zone_identifier VARCHAR2(255) DEFAULT NULL,
     status NUMBER(11,0) NOT NULL DEFAULT 1,
     position NUMBER(11,0) NOT NULL DEFAULT 0,
     CONSTRAINT explayouts_zone_pk PRIMARY KEY (id)

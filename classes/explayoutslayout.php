@@ -9,6 +9,7 @@ class expLayoutsLayout extends eZPersistentObject
                 "identifier" => array( 'name' => 'Identifier', 'datatype' => 'string', 'default' => '', 'required' => true ),
                 "name" => array( 'name' => 'Name', 'datatype' => 'string', 'default' => '', 'required' => false ),
                 "layout_type" => array( 'name' => 'LayoutType', 'datatype' => 'string', 'default' => '', 'required' => false ),
+                "shared" => array( 'name' => 'Shared', 'datatype' => 'integer', 'default' => 0, 'required' => false ),
                 "status" => array( 'name' => 'Status', 'datatype' => 'integer', 'default' => 1, 'required' => true ),
                 "created" => array( 'name' => 'Created', 'datatype' => 'integer', 'default' => 0, 'required' => false ),
                 "modified" => array( 'name' => 'Modified', 'datatype' => 'integer', 'default' => 0, 'required' => false ),
@@ -27,6 +28,7 @@ class expLayoutsLayout extends eZPersistentObject
             'identifier' => $identifier,
             'name' => $name,
             'layout_type' => $layoutType,
+            'shared' => 0,
             'status' => 1,
             'created' => time(),
             'modified' => time(),
@@ -58,6 +60,26 @@ class expLayoutsLayout extends eZPersistentObject
             array( 'id' => 'desc' ), null, $asObject );
     }
 
+    /**
+     * The layouts other layouts may link a zone to. A shared layout is a
+     * layout in its own right; it is only ever offered as a link target and
+     * never links anything itself.
+     */
+    static function fetchShared( $status = 2, $asObject = true )
+    {
+        $conds = array( 'shared' => 1 );
+        if ( $status !== false && $status !== null )
+            $conds['status'] = (int)$status;
+
+        return eZPersistentObject::fetchObjectList( self::definition(), null, $conds,
+            array( 'name' => 'asc', 'id' => 'asc' ), null, $asObject );
+    }
+
+    function isShared()
+    {
+        return (int)$this->attribute( 'shared' ) === 1;
+    }
+
     static function removeDraft( $identifier, $excludeId = false )
     {
         $db = eZDB::instance();
@@ -87,6 +109,11 @@ class expLayoutsLayout extends eZPersistentObject
         if ( $publishedId > 0 )
         {
             eZDB::instance()->query( 'UPDATE explayouts_rule SET layout_id = ' . (int)$this->attribute( 'id' ) . ' WHERE layout_id = ' . $publishedId );
+            // This path promotes the draft row, so the published layout comes
+            // out with a new id. Zones elsewhere that link to this layout are
+            // addressed by that id and would be left pointing at a row that
+            // has just been removed.
+            eZDB::instance()->query( 'UPDATE explayouts_zone SET linked_layout_id = ' . (int)$this->attribute( 'id' ) . ' WHERE linked_layout_id = ' . $publishedId );
         }
 
         foreach ( expLayoutsZone::fetchByLayout( (int)$this->attribute( 'id' ), null ) as $zone )
