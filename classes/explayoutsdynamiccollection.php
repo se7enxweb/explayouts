@@ -67,14 +67,69 @@ class expLayoutsDynamicCollection
      * Pinned positions are absolute within the full collection; only those
      * falling inside the current [offset, offset+limit) window are rendered.
      */
+    /**
+     * Fetch several nodes in one query, in the order asked for.
+     *
+     * Fetching them one at a time costs a round trip each, and a page listing
+     * fifty items paid fifty of them. eZContentObjectTreeNode::fetch()
+     * accepts an array on both engines; the result comes back in storage
+     * order, so it is reordered here to match the caller's list. Missing or
+     * unreadable nodes are dropped, exactly as the per-item loops did.
+     */
+    static function fetchNodesInOrder( array $nodeIds )
+    {
+        $wanted = array();
+        foreach ( $nodeIds as $nodeId )
+        {
+            $nodeId = (int) $nodeId;
+            if ( $nodeId > 0 )
+                $wanted[] = $nodeId;
+        }
+        if ( !$wanted )
+            return array();
+
+        $fetched = eZContentObjectTreeNode::fetch( array_values( array_unique( $wanted ) ) );
+        if ( $fetched instanceof eZContentObjectTreeNode )
+            $fetched = array( $fetched );
+        if ( !is_array( $fetched ) )
+            return array();
+
+        $byId = array();
+        foreach ( $fetched as $node )
+        {
+            if ( $node instanceof eZContentObjectTreeNode )
+                $byId[(int) $node->attribute( 'node_id' )] = $node;
+        }
+
+        // The caller's order is the collection's order, and a node listed
+        // twice is rendered twice, so this walks the original list.
+        $ordered = array();
+        foreach ( $wanted as $nodeId )
+        {
+            if ( isset( $byId[$nodeId] ) )
+                $ordered[] = $byId[$nodeId];
+        }
+
+        return $ordered;
+    }
+
     static function applyPinnedItems( $collectionId, $result, $limit = 0, $offset = 0 )
     {
+        $pinnedItems = expLayoutsCollectionItem::fetchByCollection( $collectionId, true );
+        $pinnedIdList = array();
+        foreach ( $pinnedItems as $item )
+            $pinnedIdList[] = (int) $item->attribute( 'value_id' );
+
+        $pinnedNodes = array();
+        foreach ( self::fetchNodesInOrder( $pinnedIdList ) as $node )
+            $pinnedNodes[(int) $node->attribute( 'node_id' )] = $node;
+
         $pinned = array();
-        foreach ( expLayoutsCollectionItem::fetchByCollection( $collectionId, true ) as $item )
+        foreach ( $pinnedItems as $item )
         {
-            $node = eZContentObjectTreeNode::fetch( (int)$item->attribute( 'value_id' ) );
-            if ( $node )
-                $pinned[(int)$item->attribute( 'position' )] = $node;
+            $valueId = (int) $item->attribute( 'value_id' );
+            if ( isset( $pinnedNodes[$valueId] ) )
+                $pinned[(int) $item->attribute( 'position' )] = $pinnedNodes[$valueId];
         }
         if ( empty( $pinned ) )
             return $result;
@@ -130,13 +185,11 @@ class expLayoutsDynamicCollection
     static function manualItems( $collectionId, $offset = 0, $limit = 0 )
     {
         $items = expLayoutsCollectionItem::fetchByCollection( $collectionId, true );
-        $nodes = array();
+        $valueIds = array();
         foreach ( $items as $item )
-        {
-            $node = eZContentObjectTreeNode::fetch( (int)$item->attribute( 'value_id' ) );
-            if ( $node )
-                $nodes[] = $node;
-        }
+            $valueIds[] = (int) $item->attribute( 'value_id' );
+
+        $nodes = self::fetchNodesInOrder( $valueIds );
         $total = count( $nodes );
         if ( $offset > 0 || $limit > 0 )
             $nodes = array_slice( $nodes, $offset, $limit > 0 ? $limit : null );
@@ -441,6 +494,94 @@ class expLayoutsDynamicCollection
                . ' AND co.contentclass_id != (SELECT id FROM ezcontentclass WHERE identifier=\'ng_topic\')'
                . $typeFilter;
 
+        // MongoDB has no three-table JOIN, and the driver refuses SQL it cannot
+        // translate rather than returning unfiltered rows. Left to fail, every
+        // tag-driven page - the topic landing pages and the related lists -
+        // came back empty. The same result is assembled here from a lookup
+        // between the two collections that actually matter, with the tag
+        // membership resolved first.
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $taggedObjectIds = array();
+            foreach ( $db->arrayQuery( 'SELECT object_id FROM eztags_attribute_link WHERE keyword_id IN ('
+                . implode( ',', array_map( 'intval', $tagIds ) ) . ')' ) as $row )
+            {
+                $taggedObjectIds[] = (int)$row['object_id'];
+            }
+            $taggedObjectIds = array_values( array_unique( $taggedObjectIds ) );
+            if ( !$taggedObjectIds )
+                return array( 'total' => 0, 'items' => array() );
+
+            // A topic never lists itself among its own tagged content.
+            $topicRows = $db->arrayQuery( "SELECT id FROM ezcontentclass WHERE identifier='ng_topic'" );
+            $topicClassId = isset( $topicRows[0]['id'] ) ? (int)$topicRows[0]['id'] : 0;
+
+            $wantedClassIds = array();
+            if ( !empty( $params['filter_by_content_type'] ) && !empty( $params['content_types'] ) )
+            {
+                $names = array();
+                foreach ( array_values( (array)$params['content_types'] ) as $ident )
+                    $names[] = "'" . $db->escapeString( $ident ) . "'";
+                if ( $names )
+                {
+                    foreach ( $db->arrayQuery( 'SELECT id FROM ezcontentclass WHERE identifier IN ('
+                        . implode( ',', $names ) . ')' ) as $row )
+                    {
+                        $wantedClassIds[] = (int)$row['id'];
+                    }
+                    // The filter named types that do not exist, so nothing matches.
+                    if ( !$wantedClassIds )
+                        return array( 'total' => 0, 'items' => array() );
+                }
+            }
+
+            $objectConditions = array();
+            if ( $topicClassId )
+                $objectConditions[] = array( '_obj.contentclass_id' => array( '$ne' => $topicClassId ) );
+            if ( $currentObjectId )
+                $objectConditions[] = array( '_obj.id' => array( '$ne' => $currentObjectId ) );
+            if ( $wantedClassIds )
+                $objectConditions[] = array( '_obj.contentclass_id' => array( '$in' => $wantedClassIds ) );
+
+            $pipeline = array(
+                array( '$match' => array(
+                    'contentobject_id' => array( '$in' => $taggedObjectIds ),
+                    'path_string' => new MongoDB\BSON\Regex( '^' . preg_quote( $parentPath ), '' ),
+                    'node_id' => array( '$ne' => (int)$parentNodeId ),
+                    // t.node_id = t.main_node_id: main locations only.
+                    '$expr' => array( '$eq' => array( '$node_id', '$main_node_id' ) ),
+                ) ),
+                array( '$lookup' => array(
+                    'from' => 'ezcontentobject',
+                    'localField' => 'contentobject_id',
+                    'foreignField' => 'id',
+                    'as' => '_obj',
+                ) ),
+                array( '$unwind' => '$_obj' ),
+            );
+            if ( $objectConditions )
+                $pipeline[] = array( '$match' => array( '$and' => $objectConditions ) );
+
+            // SELECT DISTINCT t.node_id ... ORDER BY co.published DESC
+            $pipeline[] = array( '$group' => array(
+                '_id' => '$node_id', 'published' => array( '$max' => '$_obj.published' ) ) );
+            $pipeline[] = array( '$sort' => array( 'published' => -1, '_id' => 1 ) );
+
+            $rows = $db->aggregate( 'ezcontentobject_tree', $pipeline );
+            if ( !is_array( $rows ) )
+                $rows = array();
+
+            $total = count( $rows );
+            if ( $limit > 0 )
+                $rows = array_slice( $rows, (int)$offset, (int)$limit );
+
+            $orderedIds = array();
+            foreach ( $rows as $row )
+                $orderedIds[] = (int) $row['_id'];
+
+            return array( 'total' => $total, 'items' => self::fetchNodesInOrder( $orderedIds ) );
+        }
+
         $countSql = 'SELECT COUNT(DISTINCT t.node_id) AS count FROM ezcontentobject_tree t'
                   . ' JOIN ezcontentobject co ON co.id = t.contentobject_id'
                   . ' JOIN eztags_attribute_link tal ON tal.object_id = co.id'
@@ -461,13 +602,10 @@ class expLayoutsDynamicCollection
             $queryParams['offset'] = $offset;
         }
         $rows = $db->arrayQuery( $sql, $queryParams );
-        $nodes = array();
+        $orderedIds = array();
         foreach ( $rows as $row )
-        {
-            $node = eZContentObjectTreeNode::fetch( (int)$row['node_id'] );
-            if ( $node )
-                $nodes[] = $node;
-        }
-        return array( 'total' => $total, 'items' => $nodes );
+            $orderedIds[] = (int) $row['node_id'];
+
+        return array( 'total' => $total, 'items' => self::fetchNodesInOrder( $orderedIds ) );
     }
 }
