@@ -3,7 +3,7 @@ class expLayoutsButtonBlockHandler implements expLayoutsBlockHandlerInterface
 {
     public function getParameters()
     {
-        return array(
+        $parameters = array(
             'text' => array(
                 'name' => 'Text',
                 'type' => 'string',
@@ -11,11 +11,6 @@ class expLayoutsButtonBlockHandler implements expLayoutsBlockHandlerInterface
             ),
             'label' => array(
                 'name' => 'Label (legacy)',
-                'type' => 'string',
-                'default' => '',
-            ),
-            'link' => array(
-                'name' => 'Link',
                 'type' => 'string',
                 'default' => '',
             ),
@@ -35,6 +30,10 @@ class expLayoutsButtonBlockHandler implements expLayoutsBlockHandlerInterface
                 'default' => '_self',
             ),
         );
+
+        // Same compound link the title block uses. Declared as a string it
+        // drew a text input holding the stored JSON.
+        return array_merge( $parameters, expLayoutsLinkParameter::definition( 'Use link' ) );
     }
 
     public function getValues( $block )
@@ -47,11 +46,12 @@ class expLayoutsButtonBlockHandler implements expLayoutsBlockHandlerInterface
         elseif ( isset( $params['label'] ) )
             $text = $params['label'];
 
-        $link = '';
-        if ( isset( $params['link'] ) && $params['link'] !== '' )
-            $link = $params['link'];
-        elseif ( isset( $params['url'] ) )
-            $link = $params['url'];
+        // The compound link wins; the legacy url parameter is the fallback for
+        // a button that predates it.
+        $resolved = expLayoutsLinkParameter::resolve( $params );
+        $link = $resolved['href'];
+        if ( $link === '' && isset( $params['url'] ) )
+            $link = (string)$params['url'];
 
         $style = isset( $params['style'] ) ? $params['style'] : 'default_button';
         $class = '';
@@ -78,7 +78,11 @@ class expLayoutsButtonBlockHandler implements expLayoutsBlockHandlerInterface
             'url' => $link,
             'style' => $style,
             'class' => $class,
-            'target' => isset( $params['target'] ) ? $params['target'] : '_self',
+            // "Open in new window" on the compound link wins over the older
+            // free-text target, which stays for buttons that still carry one.
+            'target' => $resolved['target'] !== ''
+                ? $resolved['target']
+                : ( isset( $params['target'] ) ? $params['target'] : '_self' ),
         );
     }
 }
