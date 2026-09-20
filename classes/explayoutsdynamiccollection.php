@@ -392,17 +392,71 @@ class expLayoutsDynamicCollection
     }
 
     /**
+     * The object states, as group and state identifiers with their IDs,
+     * ordered by group identifier and then state priority.
+     *
+     * MongoDB has no JOIN and the driver refuses SQL it cannot translate
+     * rather than guessing at it, so the two collections are read separately
+     * and matched here. Both callers used to receive an empty list on
+     * MongoDB - silently, since an empty result is indistinguishable from a
+     * site with no states configured.
+     */
+    static function fetchObjectStateRows()
+    {
+        $db = eZDB::instance();
+
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $groups = array();
+            foreach ( $db->arrayQuery( 'SELECT id, identifier FROM ezcobj_state_group' ) as $group )
+                $groups[(int)$group['id']] = (string)$group['identifier'];
+
+            $rows = array();
+            foreach ( $db->arrayQuery( 'SELECT id, group_id, identifier, priority FROM ezcobj_state' ) as $state )
+            {
+                $groupId = (int)$state['group_id'];
+                // An INNER JOIN drops a state whose group has gone.
+                if ( !isset( $groups[$groupId] ) )
+                    continue;
+
+                $rows[] = array(
+                    'group_identifier' => $groups[$groupId],
+                    'state_identifier' => (string)$state['identifier'],
+                    'id' => (int)$state['id'],
+                    'priority' => (int)$state['priority'],
+                );
+            }
+
+            usort( $rows, function ( $first, $second )
+            {
+                $byGroup = strcmp( $first['group_identifier'], $second['group_identifier'] );
+                return $byGroup !== 0 ? $byGroup : $first['priority'] - $second['priority'];
+            } );
+
+            return $rows;
+        }
+
+        $rows = $db->arrayQuery( 'SELECT g.identifier AS group_identifier, s.identifier AS state_identifier,'
+            . ' s.id, s.priority FROM ezcobj_state s'
+            . ' JOIN ezcobj_state_group g ON s.group_id = g.id'
+            . ' ORDER BY g.identifier, s.priority' );
+
+        return is_array( $rows ) ? $rows : array();
+    }
+
+    /**
      * Map object state keys (e.g. 'ez_lock|not_locked') to their numeric IDs.
      */
     static function resolveObjectStateIds( $stateKeys )
     {
         static $map = null;
-        if ( $map === null )
+        // An empty map is deliberately not cached. Caching one turned a single
+        // unreadable state list into a filter that matched no node for the
+        // rest of the request.
+        if ( !$map )
         {
             $map = array();
-            $db = eZDB::instance();
-            $rows = $db->arrayQuery( "SELECT g.identifier AS group_identifier, s.identifier AS state_identifier, s.id FROM ezcobj_state s JOIN ezcobj_state_group g ON s.group_id = g.id" );
-            foreach ( $rows as $state )
+            foreach ( self::fetchObjectStateRows() as $state )
             {
                 $key = (string)$state['group_identifier'] . '|' . (string)$state['state_identifier'];
                 $map[$key] = (int)$state['id'];

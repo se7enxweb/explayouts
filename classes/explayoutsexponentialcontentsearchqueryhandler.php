@@ -24,8 +24,10 @@ class expLayoutsExponentialContentSearchQueryHandler implements expLayoutsQueryH
         }
 
         $objectStates = array();
-        $db = eZDB::instance();
-        $stateRows = $db->arrayQuery( "SELECT g.identifier AS group_identifier, s.identifier AS state_identifier, s.id FROM ezcobj_state s JOIN ezcobj_state_group g ON s.group_id = g.id ORDER BY g.identifier, s.priority" );
+        // Shared with the collection filter, and engine-aware: the JOIN this
+        // used to run returned nothing on MongoDB, which left the query editor
+        // offering no object states at all.
+        $stateRows = expLayoutsDynamicCollection::fetchObjectStateRows();
         foreach ( $stateRows as $state )
         {
             $key = (string)$state['group_identifier'] . '|' . (string)$state['state_identifier'];

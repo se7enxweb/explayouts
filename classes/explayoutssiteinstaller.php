@@ -34,20 +34,57 @@ class expLayoutsSiteInstaller
         return $this;
     }
 
+    /**
+     * Whether a table is present, asked without provoking an error.
+     *
+     * This used to run "SELECT 1 FROM <table> LIMIT 1" and read the failure
+     * as the answer. No engine agreed with that reading: MongoDB returns no
+     * documents for a collection it has never heard of, so every table looked
+     * present and the schema step skipped itself; MySQL raises, which left
+     * the caller with a fatal error instead of false. Only SQLite behaved as
+     * the comment claimed.
+     *
+     * Each engine is therefore asked through its own catalogue, which answers
+     * for a missing table as readily as for a present one.
+     */
     public function tableExists( $tableName )
     {
         $db = eZDB::instance();
-        // Generic existence check that works for both MySQL and SQLite.
-        // A successful SELECT 1 means the table is present; a query failure
-        // (false result) means it is missing.
-        $result = $db->arrayQuery( "SELECT 1 FROM " . $db->escapeString( $tableName ) . " LIMIT 1" );
-        return $result !== false;
+        $engine = $db->databaseName();
+
+        if ( $engine === 'mongo' )
+            return in_array( $tableName, $db->listCollectionNames(), true );
+
+        if ( $engine === 'sqlite' )
+        {
+            $rows = $db->arrayQuery( "SELECT name FROM sqlite_master WHERE type = 'table' AND name = '"
+                . $db->escapeString( $tableName ) . "'" );
+            return is_array( $rows ) && count( $rows ) > 0;
+        }
+
+        // information_schema is common to MySQL and PostgreSQL; only the
+        // function naming the current schema differs.
+        $currentSchema = $engine === 'postgresql' ? 'current_schema()' : 'DATABASE()';
+        $rows = $db->arrayQuery( 'SELECT table_name FROM information_schema.tables'
+            . ' WHERE table_schema = ' . $currentSchema
+            . " AND table_name = '" . $db->escapeString( $tableName ) . "'" );
+
+        return is_array( $rows ) && count( $rows ) > 0;
     }
 
     public function tableHasData( $tableName )
     {
+        // Counting a table that is not there raises on MySQL, so existence is
+        // settled first. A table that does not exist holds no data.
+        if ( !$this->tableExists( $tableName ) )
+            return false;
+
         $db = eZDB::instance();
-        $result = $db->arrayQuery( "SELECT COUNT(*) AS count FROM `" . $db->escapeString( $tableName ) . "`" );
+        // The table name was quoted in MySQL backticks, which the MongoDB
+        // driver does not strip: the count never parsed, every table looked
+        // empty, and the data step would have re-imported over populated
+        // tables. Unquoted, the statement is accepted by all three engines.
+        $result = $db->arrayQuery( "SELECT COUNT(*) AS count FROM " . $db->escapeString( $tableName ) );
         return isset( $result[0]['count'] ) && (int)$result[0]['count'] > 0;
     }
 
