@@ -195,3 +195,13 @@ CREATE TABLE exp_info_collection (
   PRIMARY KEY ( id ),
   KEY exp_info_collection_object ( contentobject_id )
 ) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4;
+
+CREATE TABLE explayouts_share (
+  created int(11) NOT NULL DEFAULT '0',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  layout_id int(11) NOT NULL DEFAULT '0',
+  token varchar(64) NOT NULL DEFAULT '',
+  PRIMARY KEY ( id ),
+  KEY idx_share_layout ( layout_id ),
+  UNIQUE KEY idx_share_token ( token )
+) ENGINE=InnoDB DEFAULT CHARACTER SET utf8mb4;

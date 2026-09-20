@@ -607,6 +607,66 @@ $schema = array (
       ),
     ),
   ),
+  'explayouts_share' => 
+  array (
+    'name' => 'explayouts_share',
+    'fields' => 
+    array (
+      'created' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'id' => 
+      array (
+        'type' => 'auto_increment',
+        'default' => false,
+      ),
+      'layout_id' => 
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'token' => 
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+    ),
+    'indexes' => 
+    array (
+      'PRIMARY' => 
+      array (
+        'type' => 'primary',
+        'fields' => 
+        array (
+          0 => 'id',
+        ),
+      ),
+      'idx_share_layout' => 
+      array (
+        'type' => 'non-unique',
+        'fields' => 
+        array (
+          0 => 'layout_id',
+        ),
+      ),
+      'idx_share_token' => 
+      array (
+        'type' => 'unique',
+        'fields' => 
+        array (
+          0 => 'token',
+        ),
+      ),
+    ),
+  ),
   'explayouts_zone' => 
   array (
     'name' => 'explayouts_zone',

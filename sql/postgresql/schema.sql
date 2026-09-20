@@ -325,3 +325,19 @@ CREATE INDEX exp_info_collection_object ON exp_info_collection USING btree ( con
 
 ALTER TABLE ONLY exp_info_collection ADD CONSTRAINT exp_info_collection_pkey PRIMARY KEY ( id );
 
+CREATE SEQUENCE IF NOT EXISTS explayouts_share_id_seq
+  START 1
+  INCREMENT 1
+  MAXVALUE 9223372036854775807
+  MINVALUE 1
+  CACHE 1;
+CREATE TABLE IF NOT EXISTS explayouts_share (
+  created integer DEFAULT 0 NOT NULL,
+  id integer DEFAULT nextval('explayouts_share_id_seq'::text) NOT NULL,
+  layout_id integer DEFAULT 0 NOT NULL,
+  token character varying(64) DEFAULT '' NOT NULL
+);
+CREATE INDEX idx_share_layout ON explayouts_share USING btree ( layout_id );
+CREATE UNIQUE INDEX idx_share_token ON explayouts_share USING btree ( token );
+
+ALTER TABLE ONLY explayouts_share ADD CONSTRAINT explayouts_share_pkey PRIMARY KEY ( id );

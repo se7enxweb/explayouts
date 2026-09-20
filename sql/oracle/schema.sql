@@ -270,3 +270,25 @@ BEGIN
     SELECT exp_info_collection_id_seq.NEXTVAL INTO :NEW.id FROM DUAL;
 END;
 /
+
+CREATE TABLE explayouts_share (
+    id NUMBER(11,0) NOT NULL,
+    layout_id NUMBER(11,0) NOT NULL DEFAULT 0,
+    token VARCHAR2(64) NOT NULL,
+    created NUMBER(11,0) NOT NULL DEFAULT 0,
+    CONSTRAINT explayouts_share_pk PRIMARY KEY (id)
+);
+
+CREATE INDEX explayouts_share_idx_layout ON explayouts_share(layout_id);
+CREATE UNIQUE INDEX explayouts_share_idx_token ON explayouts_share(token);
+
+CREATE SEQUENCE explayouts_share_id_seq START WITH 1 INCREMENT BY 1 NOCACHE;
+
+CREATE OR REPLACE TRIGGER explayouts_share_id_trg
+BEFORE INSERT ON explayouts_share
+FOR EACH ROW
+WHEN (NEW.id IS NULL)
+BEGIN
+    SELECT explayouts_share_id_seq.NEXTVAL INTO :NEW.id FROM DUAL;
+END;
+/

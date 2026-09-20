@@ -260,5 +260,11 @@ CREATE TABLE exp_info_collection (
 );
   CREATE  INDEX exp_info_collection_object ON exp_info_collection  ( contentobject_id );
 
-
-
+CREATE TABLE explayouts_share (
+  created INTEGER(11) NOT NULL DEFAULT '0',
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  layout_id INTEGER(11) NOT NULL DEFAULT '0',
+  token VARCHAR(64) NOT NULL DEFAULT ''
+);
+CREATE  INDEX idx_share_layout ON explayouts_share  ( layout_id );
+CREATE UNIQUE INDEX idx_share_token ON explayouts_share  ( token );
