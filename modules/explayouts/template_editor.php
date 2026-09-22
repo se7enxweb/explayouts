@@ -1,5 +1,15 @@
 <?php
 
+
+if ( !function_exists( 'expTeJsonResponse' ) ) {
+function expTeJsonResponse( $data )
+{
+    header( 'Content-Type: application/json; charset=utf-8' );
+    echo json_encode( $data );
+    eZExecution::cleanExit();
+}
+}
+
 $editorClassFile = eZSys::rootDir() . '/extension/explayouts/classes/explayoutstemplateeditor.php';
 if ( function_exists( 'opcache_invalidate' ) && file_exists( $editorClassFile ) )
     opcache_invalidate( $editorClassFile, true );
@@ -8,12 +18,6 @@ $httpCharset = eZTextCodec::httpCharset();
 $selectedPath = '';
 $content = '';
 
-function expTeJsonResponse( $data )
-{
-    header( 'Content-Type: application/json; charset=utf-8' );
-    echo json_encode( $data );
-    eZExecution::cleanExit();
-}
 
 if ( isset( $_SERVER['HTTP_X_REQUESTED_WITH'] ) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest' )
 {

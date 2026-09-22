@@ -1,4 +1,6 @@
 <?php
+
+if ( !class_exists( 'expLayoutsFunctionCollection', false ) ) {
 class expLayoutsFunctionCollection
 {
     function fetchLayout( $identifier )
@@ -61,3 +63,5 @@ class expLayoutsFunctionCollection
         return array( 'result' => $rules );
     }
 }
+}
+

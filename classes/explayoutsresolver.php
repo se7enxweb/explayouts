@@ -209,6 +209,32 @@ class expLayoutsResolver
     {
         $path = ltrim( (string)$path, '/' );
 
+        // Drop a leading siteaccess segment.
+        //
+        // MatchOrder here is "uri;host", so the same page is reachable as
+        // /running with a matching host and as /site/running without one. In
+        // the second form the request URI still carries the siteaccess name,
+        // and a path of "site/running" translates to nothing -- so anything
+        // resolving the current node this way got false, and every dynamic
+        // collection that asks "what is the current page about" returned an
+        // empty list. The page rendered, with its lists silently empty.
+        //
+        // Only a segment that names a declared siteaccess is removed, so a
+        // real content path that happens to start with a similar word is
+        // left alone.
+        if ( $path !== '' )
+        {
+            $first = strtok( $path, '/' );
+            $siteAccessList = eZINI::instance( 'site.ini' )
+                ->variable( 'SiteAccessSettings', 'AvailableSiteAccessList' );
+
+            if ( is_array( $siteAccessList ) && in_array( $first, $siteAccessList, true ) )
+            {
+                $rest = substr( $path, strlen( $first ) );
+                $path = ltrim( (string)$rest, '/' );
+            }
+        }
+
         if ( $path === '' || $path === 'home' )
         {
             $homePage = eZINI::instance( 'site.ini' )->variable( 'SiteSettings', 'IndexPage' );

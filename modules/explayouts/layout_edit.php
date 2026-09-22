@@ -1,24 +1,6 @@
 <?php
-$http = eZHTTPTool::instance();
-$module = $Params['Module'];
 
-if ( !eZUser::currentUser()->hasAccessTo( 'explayouts', 'edit' ) )
-{
-    return $module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
-}
-
-$layoutId = isset( $Params['LayoutID'] ) ? (int)$Params['LayoutID'] : 0;
-if ( $layoutId > 0 )
-    $layout = expLayoutsLayout::fetch( $layoutId );
-else
-    $layout = expLayoutsLayout::create( '' );
-
-if ( !$layout )
-    return $module->handleError( eZError::KERNEL_NOT_FOUND, 'kernel' );
-
-$message = '';
-$error = '';
-
+if ( !function_exists( 'expLayoutEnsureZones' ) ) {
 function expLayoutEnsureZones( $layout )
 {
     $layoutType = $layout->attribute( 'layout_type' );
@@ -42,7 +24,9 @@ function expLayoutEnsureZones( $layout )
         $position++;
     }
 }
+}
 
+if ( !function_exists( 'expLayoutDeleteBlock' ) ) {
 function expLayoutDeleteBlock( $blockId )
 {
     $block = expLayoutsBlock::fetch( $blockId );
@@ -56,7 +40,9 @@ function expLayoutDeleteBlock( $blockId )
 
     expLayoutReorderBlocks( $zoneId );
 }
+}
 
+if ( !function_exists( 'expLayoutReorderBlocks' ) ) {
 function expLayoutReorderBlocks( $zoneId )
 {
     $blocks = expLayoutsBlock::fetchByZone( $zoneId );
@@ -76,6 +62,30 @@ function expLayoutReorderBlocks( $zoneId )
         $position++;
     }
 }
+}
+
+$http = eZHTTPTool::instance();
+$module = $Params['Module'];
+
+if ( !eZUser::currentUser()->hasAccessTo( 'explayouts', 'edit' ) )
+{
+    return $module->handleError( eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+}
+
+$layoutId = isset( $Params['LayoutID'] ) ? (int)$Params['LayoutID'] : 0;
+if ( $layoutId > 0 )
+    $layout = expLayoutsLayout::fetch( $layoutId );
+else
+    $layout = expLayoutsLayout::create( '' );
+
+if ( !$layout )
+    return $module->handleError( eZError::KERNEL_NOT_FOUND, 'kernel' );
+
+$message = '';
+$error = '';
+
+
+
 
 if ( $http->hasPostVariable( 'SaveDraft' ) )
 {
