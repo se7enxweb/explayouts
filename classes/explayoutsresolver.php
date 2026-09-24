@@ -118,12 +118,43 @@ class expLayoutsResolver
         return false;
     }
 
+    /**
+     * Whether the database answered the lookups just made.
+     *
+     * A failed query reads as "no rows", which reads as "no rule matched".
+     * Cached, that turned a passing database fault into pages rendered
+     * without their layout for the whole cache lifetime, on every web server
+     * sharing var/: on 2026-09-24 a broken connection wrote "layout 0" for
+     * /healthy-eating, /workout and others, and they stayed blank after the
+     * database was fine again.
+     */
+    private static function databaseAnswered()
+    {
+        $db = eZDB::instance();
+        if ( !$db || !$db->isConnected() )
+            return false;
+        return (int)$db->errorNumber() === 0;
+    }
+
     private static function writeCache( $path, $siteAccessName, $ruleId, $layoutId )
     {
         $ini = eZINI::instance( 'explayouts.ini' );
         $ttl = (int)$ini->variable( 'ResolverSettings', 'CacheTTL' );
         if ( $ttl <= 0 )
             $ttl = 3600;
+
+        // "No rule matched" and the default layout are both what a failed
+        // lookup looks like. Not remembered unless the database answered, and
+        // then only briefly, so a wrong answer corrects itself within minutes.
+        if ( (int)$ruleId === 0 )
+        {
+            if ( !self::databaseAnswered() )
+            {
+                eZDebug::writeWarning( "Not caching a non-match for '$path': the database did not answer", 'expLayoutsResolver' );
+                return;
+            }
+            $ttl = min( $ttl, 300 );
+        }
 
         $key = self::cacheKey( $path, $siteAccessName );
         $data = array(
