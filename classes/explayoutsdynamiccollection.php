@@ -17,6 +17,15 @@ class expLayoutsDynamicCollection
     const NODE_OFFSET = 554;
 
     /**
+     * Per-request identifier => id maps for resolveSectionIds() and
+     * resolveObjectStateIds(). Static properties rather than function statics,
+     * so a persistent worker resets them per request: a new section or state is
+     * seen, and a siteaccess on another database gets its own ids.
+     */
+    protected static $sectionIdMap = null;
+    protected static $objectStateIdMap = null;
+
+    /**
      * @return array|false array('total' =>, 'items' =>) or false when the
      *                     collection cannot be executed dynamically.
      */
@@ -57,8 +66,54 @@ class expLayoutsDynamicCollection
         }
 
         if ( $result !== false && $offset === 0 )
+        {
+            $queryTotal = (int)$result['total'];
             $result = self::applyPinnedItems( $collectionId, $result, $limit, $offset );
+            // A pinned item the query does not itself return is one more item
+            // in the collection. The total counted only the query's matches,
+            // so a block whose pinned item lay outside them reported one page
+            // too few and its last item could never be loaded (/workout: 13
+            // items, 2 pages shown instead of 3).
+            $result['total'] = $queryTotal
+                + self::pinnedOutsideQuery( $collectionId, $query['query_type'], $params, $queryTotal );
+        }
         return $result;
+    }
+
+    /**
+     * How many existing pinned items of a collection its query does not
+     * return. Needs the query's full id list, so it is only worked out while
+     * that list is small; past that it answers 0, which is what the total
+     * counted before.
+     */
+    static function pinnedOutsideQuery( $collectionId, $queryType, $params, $queryTotal )
+    {
+        $pinnedIdList = array();
+        foreach ( expLayoutsCollectionItem::fetchByCollection( $collectionId, true ) as $item )
+            $pinnedIdList[] = (int)$item->attribute( 'value_id' );
+        if ( !$pinnedIdList || $queryTotal > 1000 )
+            return 0;
+
+        $existing = array();
+        foreach ( self::fetchNodesInOrder( $pinnedIdList ) as $node )
+            $existing[(int)$node->attribute( 'node_id' )] = true;
+        if ( !$existing )
+            return 0;
+
+        if ( $queryTotal > 0 )
+        {
+            if ( $queryType === 'exponential_content_search' )
+                $all = self::contentSearch( $params, 0, $queryTotal );
+            elseif ( $queryType === 'content_by_topic' )
+                $all = self::contentByTopic( $params, 0, $queryTotal );
+            else
+                return 0;
+            if ( $all === false )
+                return 0;
+            foreach ( $all['items'] as $node )
+                unset( $existing[(int)$node->attribute( 'node_id' )] );
+        }
+        return count( $existing );
     }
 
     /**
@@ -372,7 +427,7 @@ class expLayoutsDynamicCollection
      */
     static function resolveSectionIds( $sectionIdentifiers )
     {
-        static $map = null;
+        $map =& self::$sectionIdMap;
         if ( $map === null )
         {
             $map = array();
@@ -449,7 +504,7 @@ class expLayoutsDynamicCollection
      */
     static function resolveObjectStateIds( $stateKeys )
     {
-        static $map = null;
+        $map =& self::$objectStateIdMap;
         // An empty map is deliberately not cached. Caching one turned a single
         // unreadable state list into a filter that matched no node for the
         // rest of the request.
