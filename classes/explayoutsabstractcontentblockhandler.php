@@ -2,7 +2,47 @@
 
 abstract class expLayoutsAbstractContentBlockHandler implements expLayoutsBlockHandlerInterface
 {
+    /**
+     * The block's items, and the HTTP cache told what the page now shows:
+     * each item's node and object, and for a query (anything but a manual
+     * collection) that its result can change with any content change ("dq")
+     * and with the children of its parent.
+     */
     protected function fetchItems( $parameters, $block = false )
+    {
+        $result = $this->fetchItemsFromQuery( $parameters, $block );
+        if ( class_exists( 'ezpHttpCacheListener' ) && is_array( $result ) )
+        {
+            $tags = array();
+            foreach ( (array)( $result['items'] ?? array() ) as $item )
+            {
+                if ( $item instanceof eZContentObjectTreeNode )
+                {
+                    $tags[] = 'l' . (int)$item->attribute( 'node_id' );
+                    $tags[] = 'c' . (int)$item->attribute( 'contentobject_id' );
+                }
+            }
+            $queryType = isset( $parameters['query_type'] ) ? trim( $parameters['query_type'] ) : 'children';
+            $manual = $queryType === 'manual';
+            if ( is_array( $block ) && isset( $block['id'] ) )
+            {
+                $collection = expLayoutsCollection::fetchByBlock( (int)$block['id'] );
+                if ( $collection && $collection->attribute( 'collection_type' ) === 'dynamic' )
+                    $manual = false;
+            }
+            if ( !$manual )
+            {
+                $tags[] = 'dq';
+                $parent = (int)( $parameters['parent_node_id'] ?? $parameters['node_id'] ?? 0 );
+                if ( $parent > 0 )
+                    $tags[] = 'pl' . $parent;
+            }
+            ezpHttpCacheListener::addTags( $tags );
+        }
+        return $result;
+    }
+
+    protected function fetchItemsFromQuery( $parameters, $block = false )
     {
         // Imported nglayouts dynamic collections carry their own query row;
         // execute it ahead of the block-level query_type parameter.
