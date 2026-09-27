@@ -17,6 +17,8 @@ class expLayoutsAjaxLoadMoreServer
         if ( !$block )
             return '';
 
+        self::renderAsPublicSite();
+
         $collection = expLayoutsCollection::fetchByBlock( $blockId, true );
         if ( !$collection || $collection->attribute( 'collection_type' ) !== 'dynamic' )
             return '';
@@ -101,5 +103,35 @@ class expLayoutsAjaxLoadMoreServer
         }
 
         return '';
+    }
+
+    /**
+     * Render as the public site when called from the admin.
+     *
+     * The admin's layout preview renders its blocks in the public siteaccess
+     * (explayouts_ui/preview.php). Where the admin has a host of its own
+     * (edit.alpha) the Load more links it prints point at that host, so the
+     * next page was rendered under the admin siteaccess, with the admin design,
+     * and came back empty. The same switch as the preview's is made here, only
+     * for an admin siteaccess (an admin design): the public siteaccesses call
+     * this for their own pages and keep their own design.
+     */
+    protected static function renderAsPublicSite()
+    {
+        $ini = eZINI::instance();
+        if ( strpos( (string)$ini->variable( 'DesignSettings', 'SiteDesign' ), 'admin' ) !== 0 )
+            return;
+        $siteAccess = $ini->variable( 'SiteSettings', 'DefaultAccess' );
+        $access = $GLOBALS['eZCurrentAccess'];
+        if ( !$siteAccess || ( isset( $access['name'] ) && $access['name'] === $siteAccess ) )
+            return;
+        $access['name'] = $siteAccess;
+        if ( $access['type'] === eZSiteAccess::TYPE_URI )
+            $access['uri_part'] = array( $siteAccess );
+        eZSiteAccess::load( $access );
+        $ini = eZINI::instance();
+        $res = eZTemplateDesignResource::instance();
+        $res->setDesignSetting( $ini->variable( 'DesignSettings', 'SiteDesign' ), 'site' );
+        $res->setOverrideAccess( $siteAccess );
     }
 }
