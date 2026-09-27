@@ -91,7 +91,7 @@
                     </div>
                     <div class="nl-node-rule-actions">
                         <a href={concat('explayouts_ui/layout_preview/',$resolved.id,'/2')|ezurl} target="_blank" class="nl-btn"><i class="material-icons">visibility</i> Preview</a>
-                        <a href={concat('explayouts_ui_api/app#layout/',$resolved.id)|ezurl} class="nl-btn nl-btn-primary" onclick="sessionStorage.setItem('nglayouts_return_to','/content/view/full/{$node.node_id}'); return true;"><i class="material-icons">edit</i> Edit layout</a>
+                        <a href={concat('explayouts_ui_api/app#layout/',$resolved.id)|ezurl} class="nl-btn nl-btn-primary" onclick="sessionStorage.setItem('nglayouts_return_to','{concat('content/view/full/', $node.node_id)|ezurl('no')|wash('javascript')}'); return true;"><i class="material-icons">edit</i> Edit layout</a>
                     </div>
                 </div>
                 {def $zone_count = count($resolved.zones)}
