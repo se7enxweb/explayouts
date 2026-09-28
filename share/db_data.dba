@@ -36496,166 +36496,6 @@ $data = array (
     array (
       0 => 
       array (
-        0 => '1082368571',
-        1 => '4',
-        2 => '1',
-        3 => '0',
-        4 => '1082368571',
-        5 => '41caff1d7f5ad51e70ad46abbcf28fb7',
-        6 => 'http://ez.no/community/forum',
-      ),
-      1 => 
-      array (
-        0 => '1082368571',
-        1 => '8',
-        2 => '1',
-        3 => '0',
-        4 => '1082368571',
-        5 => 'dfcdb471b240d964dc3f57b998eb0533',
-        6 => 'http://ez.no',
-      ),
-      2 => 
-      array (
-        0 => '1301057834',
-        1 => '9',
-        2 => '1',
-        3 => '0',
-        4 => '1301057834',
-        5 => 'bb9c47d334fd775f1c54c45d460e6b2a',
-        6 => 'http://doc.ez.no/',
-      ),
-      3 => 
-      array (
-        0 => '1301057834',
-        1 => '10',
-        2 => '1',
-        3 => '0',
-        4 => '1301057834',
-        5 => 'ae76fd1d17de21067cf13101f11689b1',
-        6 => 'http://ez.no/eZPublish/eZ-Publish-Enterprise-Subscription/Support-Services',
-      ),
-      4 => 
-      array (
-        0 => '1301057834',
-        1 => '11',
-        2 => '1',
-        3 => '0',
-        4 => '1301057834',
-        5 => '0c098a23ef9c7cae63ee8f85cf504b2d',
-        6 => 'http://ez.no/Requests/Contact-Sales',
-      ),
-      5 => 
-      array (
-        0 => '1301057834',
-        1 => '12',
-        2 => '1',
-        3 => '0',
-        4 => '1301057834',
-        5 => '6d8c164dd30423d9dcbc3fae1d64e25c',
-        6 => 'http://ez.no/eZPublish/Training-and-Certification',
-      ),
-      6 => 
-      array (
-        0 => '1301057836',
-        1 => '13',
-        2 => '1',
-        3 => '0',
-        4 => '1301057836',
-        5 => 'b13f5ff5cdcad2a4efb461e4edf6f718',
-        6 => 'http://ez.no/Demos-videos/eZ-Publish-Administration-Interface-Video-Tutorial',
-      ),
-      7 => 
-      array (
-        0 => '1301057836',
-        1 => '14',
-        2 => '1',
-        3 => '0',
-        4 => '1301057836',
-        5 => '7b133bbdf1d039979a973e5a697e3743',
-        6 => 'http://ez.no/Demos-videos/eZ-Publish-Online-Editor-Video-Tutorial',
-      ),
-      8 => 
-      array (
-        0 => '1301057836',
-        1 => '15',
-        2 => '1',
-        3 => '0',
-        4 => '1301057836',
-        5 => '4e75c83ab35d461f109ec959aa1c5e1d',
-        6 => 'http://ez.no/Demos-videos/eZ-Flow-Video-Tutorial',
-      ),
-      9 => 
-      array (
-        0 => '1301057836',
-        1 => '16',
-        2 => '1',
-        3 => '0',
-        4 => '1301057836',
-        5 => '215310c57a3d54ef1356c20855510357',
-        6 => 'http://share.ez.no/learn/ez-publish/an-introduction-to-developing-ez-publish-extensions',
-      ),
-      10 => 
-      array (
-        0 => '1301057836',
-        1 => '17',
-        2 => '1',
-        3 => '0',
-        4 => '1301057836',
-        5 => '9ba078c54f33985da5bd1348a8f39741',
-        6 => 'http://share.ez.no/learn/ez-publish/creating-a-simple-custom-workflow-event',
-      ),
-      11 => 
-      array (
-        0 => '1301057836',
-        1 => '18',
-        2 => '1',
-        3 => '0',
-        4 => '1301057836',
-        5 => 'eb3d19c36acbd41176094024d8fccfd5',
-        6 => 'http://www.slideshare.net/ezcommunity/ole-marius-smestad-rest-api-how-to-turn-ez-publish-into-a-multichannel-machine',
-      ),
-      12 => 
-      array (
-        0 => '1301057836',
-        1 => '19',
-        2 => '1',
-        3 => '0',
-        4 => '1301057836',
-        5 => '1fea0fead02dfc550fbefa5c17acc94f',
-        6 => 'http://www.slideshare.net/BertrandDunogier/presentation-winter-conference-2011-e-z-asynchronous-publishing',
-      ),
-      13 => 
-      array (
-        0 => '1301057836',
-        1 => '20',
-        2 => '1',
-        3 => '0',
-        4 => '1301057836',
-        5 => 'af8f8bdc5fac2f3ada6ad337adab04cb',
-        6 => 'http://doc.ez.no/eZ-Publish/Upgrading/Upgrading-to-4.5',
-      ),
-      14 => 
-      array (
-        0 => '1301057836',
-        1 => '21',
-        2 => '1',
-        3 => '0',
-        4 => '1301057836',
-        5 => '3c6d6cfc2642951e9a946b697f84a306',
-        6 => 'http://share.ez.no/learn',
-      ),
-      15 => 
-      array (
-        0 => '1301057836',
-        1 => '22',
-        2 => '1',
-        3 => '0',
-        4 => '1301057836',
-        5 => 'ac3ba54b44950b2d77fa42cc57dab914',
-        6 => 'http://ez.no/Demos-videos',
-      ),
-      16 => 
-      array (
         0 => '1786574405',
         1 => '23',
         2 => '1',
@@ -36664,7 +36504,7 @@ $data = array (
         5 => '57c7ffe14ab8d8f914a4380169854347',
         6 => 'https://medium.com/the-mission/8-high-energy-habits-to-power-up-your-slacking-summer-days-2430bf6dd58',
       ),
-      17 => 
+      1 => 
       array (
         0 => '1786574405',
         1 => '24',
@@ -36674,7 +36514,7 @@ $data = array (
         5 => '7256a2cc539f710cf2d160f69c14006f',
         6 => 'http://www.precisionnutrition.com/all-about-hiit',
       ),
-      18 => 
+      2 => 
       array (
         0 => '1786574405',
         1 => '25',
@@ -36684,7 +36524,7 @@ $data = array (
         5 => 'afe2f1a123b88f7d7bab4063511c1c77',
         6 => 'https://medium.com/@DanSanchezV/why-knowledge-workers-should-meditate-53e56c535b4',
       ),
-      19 => 
+      3 => 
       array (
         0 => '1786574405',
         1 => '26',
@@ -36694,7 +36534,7 @@ $data = array (
         5 => '25e24bb0ebe55705eb049b364f166f54',
         6 => 'https://www.amazon.com/gp/product/B007JK9BAY/ref=oh_aui_d_detailpage_o03_?ie=UTF8&psc=1',
       ),
-      20 => 
+      4 => 
       array (
         0 => '1786574405',
         1 => '27',
@@ -36704,7 +36544,7 @@ $data = array (
         5 => '4ebfcc8b5778e6f1b94fe1e4a48c2e55',
         6 => 'https://www.amazon.com/gp/product/B01NAS5M2L/ref=oh_aui_d_detailpage_o06_?ie=UTF8&psc=1',
       ),
-      21 => 
+      5 => 
       array (
         0 => '1786574405',
         1 => '28',
@@ -36714,7 +36554,7 @@ $data = array (
         5 => 'f469d89c3f14ca82b0aacb0cdebd0b57',
         6 => 'https://www.amazon.com/gp/product/B00B3M3KZG/ref=oh_aui_d_detailpage_o05_?ie=UTF8&psc=1',
       ),
-      22 => 
+      6 => 
       array (
         0 => '1786574405',
         1 => '29',
@@ -36724,7 +36564,7 @@ $data = array (
         5 => '509a50d249c03bc2350187d4cf00c57c',
         6 => 'https://www.amazon.com/gp/product/B00DMCV49Y/ref=oh_aui_d_detailpage_o03_?ie=UTF8&psc=1',
       ),
-      23 => 
+      7 => 
       array (
         0 => '1786574405',
         1 => '30',
@@ -36734,7 +36574,7 @@ $data = array (
         5 => '5a28c794012ae55d89f758d39ed1e06d',
         6 => 'https://www.amazon.com/gp/product/B003QP4BJM/ref=oh_aui_d_detailpage_o01_?ie=UTF8&psc=1',
       ),
-      24 => 
+      8 => 
       array (
         0 => '1786574405',
         1 => '31',
@@ -36744,7 +36584,7 @@ $data = array (
         5 => '21595fe1afb0779f1b33a8e377e7071a',
         6 => 'https://medium.com/@DanSanchezV/24-books-ive-read-in-the-past-12-months-6a4414d6a44c',
       ),
-      25 => 
+      9 => 
       array (
         0 => '1786574405',
         1 => '32',
@@ -36754,7 +36594,7 @@ $data = array (
         5 => '78d8598579c577aaa4e21f5a40f8de2e',
         6 => 'https://medium.com/@DanSanchezV/list-journaling-may-be-the-ultimate-keystone-habit-96a2d15c1340',
       ),
-      26 => 
+      10 => 
       array (
         0 => '1786574405',
         1 => '33',
@@ -36764,7 +36604,7 @@ $data = array (
         5 => '1fe4f92b541096480e1b39bcd55e8498',
         6 => 'https://medium.com/@DanSanchezV/30-blog-posts-in-30-days-14866b4bf489',
       ),
-      27 => 
+      11 => 
       array (
         0 => '1786574405',
         1 => '34',
@@ -36774,7 +36614,7 @@ $data = array (
         5 => 'eb20f50cdd2c07c8ef8ece19a361fe3b',
         6 => 'https://fee.org/articles/7-keystone-habits-to-maximize-your-mornings/',
       ),
-      28 => 
+      12 => 
       array (
         0 => '1786574405',
         1 => '35',
@@ -36784,7 +36624,7 @@ $data = array (
         5 => '969c95b82a5df337bd4fbda810158a26',
         6 => 'https://medium.com/@DanSanchezV',
       ),
-      29 => 
+      13 => 
       array (
         0 => '1786574405',
         1 => '36',
@@ -36794,7 +36634,7 @@ $data = array (
         5 => 'a0ebbeafb9d2ec7cbb19d7137ebc392c',
         6 => 'https://creativecommons.org/licenses/by/4.0/',
       ),
-      30 => 
+      14 => 
       array (
         0 => '1786574405',
         1 => '37',
@@ -36804,7 +36644,7 @@ $data = array (
         5 => 'd5a864967500355328feadb130a51faa',
         6 => 'https://unsplash.com/photos/2rMOrpr3GUk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      31 => 
+      15 => 
       array (
         0 => '1786574406',
         1 => '38',
@@ -36814,7 +36654,7 @@ $data = array (
         5 => '95b11085509cafa75d64362fd8947ed0',
         6 => 'https://www.skillbasedfitness.com/get-comfortable-with-discomfort/',
       ),
-      32 => 
+      16 => 
       array (
         0 => '1786574406',
         1 => '39',
@@ -36824,7 +36664,7 @@ $data = array (
         5 => '3b6dde7592f36cd99aae4b4f8d8fa04e',
         6 => 'https://www.skillbasedfitness.com/growth-mindset-vs-fixed-mindset/',
       ),
-      33 => 
+      17 => 
       array (
         0 => '1786574406',
         1 => '40',
@@ -36834,7 +36674,7 @@ $data = array (
         5 => '774f4a5dbd6e7979876e78aa34f1dcff',
         6 => 'https://www.skillbasedfitness.com/',
       ),
-      34 => 
+      18 => 
       array (
         0 => '1786574406',
         1 => '41',
@@ -36844,7 +36684,7 @@ $data = array (
         5 => 'd0e95cfe64a73c55f150887f52130a75',
         6 => 'https://creativecommons.org/licenses/by/3.0/',
       ),
-      35 => 
+      19 => 
       array (
         0 => '1786574406',
         1 => '42',
@@ -36854,7 +36694,7 @@ $data = array (
         5 => '0bf5d7059154229f396a88272e12397b',
         6 => 'https://unsplash.com/photos/nlZTjUZX2qo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      36 => 
+      20 => 
       array (
         0 => '1786574407',
         1 => '43',
@@ -36864,7 +36704,7 @@ $data = array (
         5 => 'a3a17bc073e82ca17b2f7f839074a36c',
         6 => 'https://medium.com/@jmsloan',
       ),
-      37 => 
+      21 => 
       array (
         0 => '1786574407',
         1 => '44',
@@ -36874,7 +36714,7 @@ $data = array (
         5 => 'b3fd9d2828bb60abab50fd7bc41b9d07',
         6 => 'https://creativecommons.org/publicdomain/zero/1.0/',
       ),
-      38 => 
+      22 => 
       array (
         0 => '1786574407',
         1 => '45',
@@ -36884,7 +36724,7 @@ $data = array (
         5 => 'a7829a65d2f99d50e1b5888c69205169',
         6 => 'https://unsplash.com/photos/JbI04nYfaJk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      39 => 
+      23 => 
       array (
         0 => '1786574408',
         1 => '46',
@@ -36894,7 +36734,7 @@ $data = array (
         5 => 'ed033ea1914eb8942e81ff5d81ef58fb',
         6 => 'https://academic.oup.com/aje/article-abstract/doi/10.1093/aje/kwx345/4582884?redirectedFrom=fulltext',
       ),
-      40 => 
+      24 => 
       array (
         0 => '1786574408',
         1 => '47',
@@ -36904,7 +36744,7 @@ $data = array (
         5 => '15b51609432c380ce6965fbc6b908500',
         6 => 'https://www.nchpad.org/965/5156/Resistance~Training~and~Chronic~Disease',
       ),
-      41 => 
+      25 => 
       array (
         0 => '1786574408',
         1 => '48',
@@ -36914,7 +36754,7 @@ $data = array (
         5 => '39eb27420eca2b935ca313d6254ed511',
         6 => 'http://www.who.int/dietphysicalactivity/factsheet_adults/en/',
       ),
-      42 => 
+      26 => 
       array (
         0 => '1786574408',
         1 => '49',
@@ -36924,7 +36764,7 @@ $data = array (
         5 => '58d5fd6e15e8bb04e83864a4e4787095',
         6 => 'https://coachbotapp.com/',
       ),
-      43 => 
+      27 => 
       array (
         0 => '1786574408',
         1 => '50',
@@ -36934,7 +36774,7 @@ $data = array (
         5 => 'd6f5a0d3360dc021d365fa43575a5915',
         6 => 'https://unsplash.com/photos/ug_onUKP99Q?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      44 => 
+      28 => 
       array (
         0 => '1786574408',
         1 => '51',
@@ -36944,7 +36784,7 @@ $data = array (
         5 => '1b26de32698bf39dcfd9e54a5da834b8',
         6 => 'http://www.lucy.com/',
       ),
-      45 => 
+      29 => 
       array (
         0 => '1786574408',
         1 => '52',
@@ -36954,7 +36794,7 @@ $data = array (
         5 => '876af729bc1049d999c762b5d5882030',
         6 => 'http://www.lucy.com/I-Run-This-Capri/111950,default,pd.html?dwvar_111950_color=lucy%20Black%2fUltramarine%20Spacedye',
       ),
-      46 => 
+      30 => 
       array (
         0 => '1786574408',
         1 => '53',
@@ -36964,7 +36804,7 @@ $data = array (
         5 => '965df12dc7ab81b76438ac7dc6d7e3f4',
         6 => 'https://pumpsandiron.com/',
       ),
-      47 => 
+      31 => 
       array (
         0 => '1786574408',
         1 => '54',
@@ -36974,7 +36814,7 @@ $data = array (
         5 => '3c00164bbb3990280e665a92cb8959dd',
         6 => 'https://creativecommons.org/licenses/by-nc-sa/3.0/',
       ),
-      48 => 
+      32 => 
       array (
         0 => '1786574409',
         1 => '55',
@@ -36984,7 +36824,7 @@ $data = array (
         5 => '06b7c0747a7bb2d5f0c4123d054b09a3',
         6 => 'http://www.markwk.com/category/track-everything/',
       ),
-      49 => 
+      33 => 
       array (
         0 => '1786574409',
         1 => '56',
@@ -36994,7 +36834,7 @@ $data = array (
         5 => '7dc9775ec9f091dc9b7d42d3f4040f4f',
         6 => 'http://www.markwk.com/2016/10/run-tracking-with-runkeeper.html',
       ),
-      50 => 
+      34 => 
       array (
         0 => '1786574409',
         1 => '57',
@@ -37004,7 +36844,7 @@ $data = array (
         5 => '9a2131e9cad9acb8c402e7bc756734e0',
         6 => 'http://www.markwk.com/blog/archives/hrv-for-beginners.html',
       ),
-      51 => 
+      35 => 
       array (
         0 => '1786574409',
         1 => '58',
@@ -37014,7 +36854,7 @@ $data = array (
         5 => '4e531a424bd154759c3d8676e8255dcc',
         6 => 'http://www.markwk.com/',
       ),
-      52 => 
+      36 => 
       array (
         0 => '1786574409',
         1 => '59',
@@ -37024,7 +36864,7 @@ $data = array (
         5 => '0d7df7372b1fa74978231e75e50ccf67',
         6 => 'https://unsplash.com/photos/V7UoMNWsYsg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      53 => 
+      37 => 
       array (
         0 => '1786574410',
         1 => '60',
@@ -37034,7 +36874,7 @@ $data = array (
         5 => '05d6a4654c06b84324d39c763afaebd2',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/8897392',
       ),
-      54 => 
+      38 => 
       array (
         0 => '1786574410',
         1 => '61',
@@ -37044,7 +36884,7 @@ $data = array (
         5 => '63771eb4a515537c7fc6f2930f70d53f',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/8028502',
       ),
-      55 => 
+      39 => 
       array (
         0 => '1786574410',
         1 => '62',
@@ -37054,7 +36894,7 @@ $data = array (
         5 => '18de59ab96b47456b0c47f0fa05d78a1',
         6 => 'https://www.skillbasedfitness.com/interval-training-part-i/',
       ),
-      56 => 
+      40 => 
       array (
         0 => '1786574410',
         1 => '63',
@@ -37064,7 +36904,7 @@ $data = array (
         5 => '767ced1ff1d03c067739deebd98bd9b3',
         6 => 'https://www.skillbasedfitness.com/my-beef-with-circuit-training/',
       ),
-      57 => 
+      41 => 
       array (
         0 => '1786574410',
         1 => '64',
@@ -37074,7 +36914,7 @@ $data = array (
         5 => '9026ed89f61d2876a3de90e0975989b4',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/28658082',
       ),
-      58 => 
+      42 => 
       array (
         0 => '1786574410',
         1 => '65',
@@ -37084,7 +36924,7 @@ $data = array (
         5 => '0eec61337edc3d00d213bba12d9b71c0',
         6 => 'https://www.bodyrecomposition.com/fat-loss/steady-state-versus-intervals-and-epoc-practical-application.html/',
       ),
-      59 => 
+      43 => 
       array (
         0 => '1786574410',
         1 => '66',
@@ -37094,7 +36934,7 @@ $data = array (
         5 => 'c7d0361388a4dc735ce5d95639ea9fb7',
         6 => 'https://www.skillbasedfitness.com/why-is-strength-training-important/',
       ),
-      60 => 
+      44 => 
       array (
         0 => '1786574410',
         1 => '67',
@@ -37104,7 +36944,7 @@ $data = array (
         5 => '680fda61bb98aafabd538521ffb7d867',
         6 => 'https://www.skillbasedfitness.com/energy-system-development/',
       ),
-      61 => 
+      45 => 
       array (
         0 => '1786574410',
         1 => '68',
@@ -37114,7 +36954,7 @@ $data = array (
         5 => '2bf7374514fa0c1b826ae1b9453fd40c',
         6 => 'https://www.quora.com/What-is-your-opinion-and-experience-with-HIIT/answer/Darren-Beattie?srid=D90',
       ),
-      62 => 
+      46 => 
       array (
         0 => '1786574410',
         1 => '69',
@@ -37124,7 +36964,7 @@ $data = array (
         5 => 'b3561146182e0df7c30e0d85f50adec2',
         6 => 'http://costculator.com/concept-2-model-d-review/',
       ),
-      63 => 
+      47 => 
       array (
         0 => '1786574411',
         1 => '70',
@@ -37134,7 +36974,7 @@ $data = array (
         5 => '9230f0fe16cb92719cecbe8d8985e8c1',
         6 => 'https://skillbasedfitness.com/measuring-whats-important/',
       ),
-      64 => 
+      48 => 
       array (
         0 => '1786574411',
         1 => '71',
@@ -37144,7 +36984,7 @@ $data = array (
         5 => '5a454ac499f43fb06661fb8484867e8f',
         6 => 'https://skillbasedfitness.com/why-goals-suck-part-i/',
       ),
-      65 => 
+      49 => 
       array (
         0 => '1786574411',
         1 => '72',
@@ -37154,7 +36994,7 @@ $data = array (
         5 => '1f08a5f4766f71f9d92faf38404605f5',
         6 => 'https://skillbasedfitness.com/why-protein-is-so-important/',
       ),
-      66 => 
+      50 => 
       array (
         0 => '1786574411',
         1 => '73',
@@ -37164,7 +37004,7 @@ $data = array (
         5 => '5d2b1d81a8ec2282395a2afda37db705',
         6 => 'http://users.telenet.be/WBtE/cunning.html',
       ),
-      67 => 
+      51 => 
       array (
         0 => '1786574411',
         1 => '74',
@@ -37174,7 +37014,7 @@ $data = array (
         5 => '7eac00645b281198dec0fc71b6bfb718',
         6 => 'https://skillbasedfitness.com/skill-based-2x2-training/',
       ),
-      68 => 
+      52 => 
       array (
         0 => '1786574411',
         1 => '75',
@@ -37184,7 +37024,7 @@ $data = array (
         5 => '9eeb25c73e89bb48c1538da3190b951c',
         6 => 'http://lonkilgore.com/freebies/freebies.html',
       ),
-      69 => 
+      53 => 
       array (
         0 => '1786574412',
         1 => '76',
@@ -37194,7 +37034,7 @@ $data = array (
         5 => 'b2533cf6cf34ba8bcff06728c36aa878',
         6 => 'https://skillbasedfitness.com/why-counting-calories-sucks/',
       ),
-      70 => 
+      54 => 
       array (
         0 => '1786574412',
         1 => '77',
@@ -37204,7 +37044,7 @@ $data = array (
         5 => '8c79244cc40994796e114eb8da3a8c87',
         6 => 'https://skillbasedfitness.com/why-carbs-matter/',
       ),
-      71 => 
+      55 => 
       array (
         0 => '1786574412',
         1 => '78',
@@ -37214,7 +37054,7 @@ $data = array (
         5 => '5d72a9d3369bab1fa436d18226fb47d3',
         6 => 'https://twitter.com/intent/tweet?text=%22The+easy+part+is+losing+the+weight%2C+the+harder+part+is+keeping+it+off+once+you+get+to+where+you+want+to+be.%22+via+%40darren_beattie',
       ),
-      72 => 
+      56 => 
       array (
         0 => '1786574412',
         1 => '79',
@@ -37224,7 +37064,7 @@ $data = array (
         5 => 'ddfe6c4cd78c06f811b09b2381ba80e1',
         6 => 'https://skillbasedfitness.com/the-elephant-weight-loss/',
       ),
-      73 => 
+      57 => 
       array (
         0 => '1786574412',
         1 => '80',
@@ -37234,7 +37074,7 @@ $data = array (
         5 => 'ab6bf3298f7f5610fa1b7a09b4d77d6f',
         6 => 'https://skillbasedfitness.com/mindset-fixed-vs-growth/',
       ),
-      74 => 
+      58 => 
       array (
         0 => '1786574412',
         1 => '81',
@@ -37244,7 +37084,7 @@ $data = array (
         5 => 'fe19bc5fbdc87bb58c5ed086026ba1c7',
         6 => 'https://skillbasedfitness.com/mindset-training-vs-trusting/',
       ),
-      75 => 
+      59 => 
       array (
         0 => '1786574412',
         1 => '82',
@@ -37254,7 +37094,7 @@ $data = array (
         5 => '8b17a8a94cc4f434b7ffdeeb1f841da9',
         6 => 'https://skillbasedfitness.com/mindset-high-vs-low/',
       ),
-      76 => 
+      60 => 
       array (
         0 => '1786574412',
         1 => '83',
@@ -37264,7 +37104,7 @@ $data = array (
         5 => '87b90ddddc812507b9dd007f79fdedcd',
         6 => 'https://skillbasedfitness.com/deliberate-practice/',
       ),
-      77 => 
+      61 => 
       array (
         0 => '1786574412',
         1 => '84',
@@ -37274,7 +37114,7 @@ $data = array (
         5 => 'db19965234c03b0797bdee28209db3c7',
         6 => 'http://en.wikipedia.org/wiki/Flow_(psychology)',
       ),
-      78 => 
+      62 => 
       array (
         0 => '1786574412',
         1 => '85',
@@ -37284,7 +37124,7 @@ $data = array (
         5 => '87dc7fd8b3cd64377ef00e23e650306a',
         6 => 'https://skillbasedfitness.com/white-belt-fitness',
       ),
-      79 => 
+      63 => 
       array (
         0 => '1786574412',
         1 => '86',
@@ -37294,7 +37134,7 @@ $data = array (
         5 => '736b53f2c6e75020c320cc15d287ec6e',
         6 => 'https://skillbasedfitness.com/eating-for-fat-loss/',
       ),
-      80 => 
+      64 => 
       array (
         0 => '1786574412',
         1 => '87',
@@ -37304,7 +37144,7 @@ $data = array (
         5 => 'c6cdc795091863fc19ce8eba4fb5b55a',
         6 => 'http://fettle.ca/wp-content/uploads/2012/05/ThreeDayDietaryRecord.pdf',
       ),
-      81 => 
+      65 => 
       array (
         0 => '1786574412',
         1 => '88',
@@ -37314,7 +37154,7 @@ $data = array (
         5 => 'd4ad83499ca057e5b4c128f3fd7388f6',
         6 => 'https://skillbasedfitness.com/identity-critical-for-weight-loss/',
       ),
-      82 => 
+      66 => 
       array (
         0 => '1786574412',
         1 => '89',
@@ -37324,7 +37164,7 @@ $data = array (
         5 => '9351c1985772ef12a3089e6784e07d6d',
         6 => 'https://skillbasedfitness.com/good-foods-for-your-pantry/',
       ),
-      83 => 
+      67 => 
       array (
         0 => '1786574412',
         1 => '90',
@@ -37334,7 +37174,7 @@ $data = array (
         5 => '759e52d5ffc3396517c5ad15e4d36e62',
         6 => 'https://skillbasedfitness.com/weekly-food-ritual/',
       ),
-      84 => 
+      68 => 
       array (
         0 => '1786574412',
         1 => '91',
@@ -37344,7 +37184,7 @@ $data = array (
         5 => '12f7eb0e82b8927241b8dbe51a8fd6c1',
         6 => 'https://skillbasedfitness.com/why-do-i-need-a-coach/',
       ),
-      85 => 
+      69 => 
       array (
         0 => '1786574413',
         1 => '92',
@@ -37354,7 +37194,7 @@ $data = array (
         5 => '2012cdf0a2963a29faff7fba4970cefa',
         6 => 'http://www.ncbi.nlm.nih.gov/pubmed/22990567',
       ),
-      86 => 
+      70 => 
       array (
         0 => '1786574413',
         1 => '93',
@@ -37364,7 +37204,7 @@ $data = array (
         5 => 'c50d628c9ffb30bf85a53cde8592db9d',
         6 => 'http://www.ncbi.nlm.nih.gov/pubmed/25932981',
       ),
-      87 => 
+      71 => 
       array (
         0 => '1786574413',
         1 => '94',
@@ -37374,7 +37214,7 @@ $data = array (
         5 => 'd3143a0a03bea04dc0568a6346ef119c',
         6 => 'https://skillbasedfitness.com/change-matters-most/',
       ),
-      88 => 
+      72 => 
       array (
         0 => '1786574413',
         1 => '95',
@@ -37384,7 +37224,7 @@ $data = array (
         5 => 'a9b360a5da95dd3310d7baf2dc1212f2',
         6 => 'http://journals.lww.com/nsca-jscr/Abstract/2000/08000/Comparison_of_1_Day_and_3_Days_Per_Week_of.6.aspx',
       ),
-      89 => 
+      73 => 
       array (
         0 => '1786574413',
         1 => '96',
@@ -37394,7 +37234,7 @@ $data = array (
         5 => 'ae3812bc753a93366ecf3593a09abca8',
         6 => 'http://www.ncbi.nlm.nih.gov/pubmed/25530577',
       ),
-      90 => 
+      74 => 
       array (
         0 => '1786574413',
         1 => '97',
@@ -37404,7 +37244,7 @@ $data = array (
         5 => '7b06aac58370c9f266065524bdce8951',
         6 => 'https://www.quora.com/I-am-unable-to-gain-muscle-mass-in-my-arms-biceps-triceps-forearms-despite-years-of-regular-weight-training-and-a-good-diet-How-can-I-gain-muscle-mass/answer/Darren-Beattie',
       ),
-      91 => 
+      75 => 
       array (
         0 => '1786574413',
         1 => '98',
@@ -37414,7 +37254,7 @@ $data = array (
         5 => '569b30809578e8151d86bd76e2d8fd7b',
         6 => 'https://www.quora.com/Is-it-ok-to-workout-as-a-beginner-like-this-Monday-Thursday-chest-and-triceps-Tuesday-Friday-back-and-biceps-Wednesday-Saturday-shoulder-and-abs-and-Sunday-off/answer/Darren-Beattie',
       ),
-      92 => 
+      76 => 
       array (
         0 => '1786574413',
         1 => '99',
@@ -37424,7 +37264,7 @@ $data = array (
         5 => 'e23821a5a1edc829bb14e17a533614a7',
         6 => 'https://skillbasedfitness.com/energy-system-development/',
       ),
-      93 => 
+      77 => 
       array (
         0 => '1786574413',
         1 => '100',
@@ -37434,7 +37274,7 @@ $data = array (
         5 => '6908ec7329dc96fe76e31f21da6e0495',
         6 => 'https://unsplash.com/photos/Vn39uEkX00s?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      94 => 
+      78 => 
       array (
         0 => '1786574414',
         1 => '101',
@@ -37444,7 +37284,7 @@ $data = array (
         5 => '4e90e3a4e4bec1b704d158cc2d979466',
         6 => 'http://www.markwk.com/first-marathon.html',
       ),
-      95 => 
+      79 => 
       array (
         0 => '1786574414',
         1 => '102',
@@ -37454,7 +37294,7 @@ $data = array (
         5 => '5a803fa58593ea1f5f46b7dee9ddedd0',
         6 => 'http://www.markwk.com/2016/02/how-to-run-a-5k-as-a-beginner.html',
       ),
-      96 => 
+      80 => 
       array (
         0 => '1786574414',
         1 => '103',
@@ -37464,7 +37304,7 @@ $data = array (
         5 => '558422c63588dbd65e2287ca11d139a2',
         6 => 'http://www.markwk.com/2017/07/finding-my-vo2-max.html',
       ),
-      97 => 
+      81 => 
       array (
         0 => '1786574414',
         1 => '104',
@@ -37474,7 +37314,7 @@ $data = array (
         5 => '3ba48ef61b75c338bbf990d4a98af8a7',
         6 => 'http://www.markwk.com/more-running-books.html',
       ),
-      98 => 
+      82 => 
       array (
         0 => '1786574414',
         1 => '105',
@@ -37484,7 +37324,7 @@ $data = array (
         5 => '247ed71c2a44421f7e72476a2665228f',
         6 => 'http://www.markwk.com/hrv-for-beginners.html',
       ),
-      99 => 
+      83 => 
       array (
         0 => '1786574414',
         1 => '106',
@@ -37494,7 +37334,7 @@ $data = array (
         5 => 'ca46a5ba13a2300f2df9d196fea378e8',
         6 => 'http://www.ncbi.nlm.nih.gov/pubmed/18202563',
       ),
-      100 => 
+      84 => 
       array (
         0 => '1786574414',
         1 => '107',
@@ -37504,7 +37344,7 @@ $data = array (
         5 => 'a6591a6fd032b52f50275ebf6104428f',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/7886283',
       ),
-      101 => 
+      85 => 
       array (
         0 => '1786574414',
         1 => '108',
@@ -37514,7 +37354,7 @@ $data = array (
         5 => 'd9355387a9cae15fa001a3cc26c273a0',
         6 => 'https://unsplash.com/photos/ky1w7eac5EM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      102 => 
+      86 => 
       array (
         0 => '1786574414',
         1 => '109',
@@ -37524,7 +37364,7 @@ $data = array (
         5 => 'c1530d3fd463db825ec2c1f026176c7d',
         6 => 'https://runblogger.com/',
       ),
-      103 => 
+      87 => 
       array (
         0 => '1786574414',
         1 => '110',
@@ -37534,7 +37374,7 @@ $data = array (
         5 => '6f113ac55b6bad9bde45c5b19d65dfdf',
         6 => 'https://unsplash.com/photos/5rKPeFcsSTY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      104 => 
+      88 => 
       array (
         0 => '1786574415',
         1 => '111',
@@ -37544,7 +37384,7 @@ $data = array (
         5 => '318871fbcf31dc27e976ad85c9b62b0a',
         6 => 'https://runblogger.com/2015/06/form-differences-among-barefoot-running-minimalist-shoe-running-and-standard-shoe-running.html',
       ),
-      105 => 
+      89 => 
       array (
         0 => '1786574415',
         1 => '112',
@@ -37554,7 +37394,7 @@ $data = array (
         5 => '00f765f76accc6e8cbdcab91ae12e994',
         6 => 'https://runblogger.com/2013/12/do-minimalist-shoes-increase-injury-risk-merry-christmas-vibram.html',
       ),
-      106 => 
+      90 => 
       array (
         0 => '1786574415',
         1 => '113',
@@ -37564,7 +37404,7 @@ $data = array (
         5 => '71fdff237b28c7dbd2c5d51de2c2a46c',
         6 => 'http://www.abstractsonline.com/Plan/ViewAbstract.aspx?sKey=72d1e156-0cfb-4165-89aa-c4c7f9ef5760&cKey=8e7a0703-1768-41ae-9691-df41b7cbe0da&mKey=%7b8BA47590-F6FA-424E-A609-471A2E1DE3BC%7d',
       ),
-      107 => 
+      91 => 
       array (
         0 => '1786574415',
         1 => '114',
@@ -37574,7 +37414,7 @@ $data = array (
         5 => 'd32f21d616094d1bc1178fff574be4c3',
         6 => 'http://www.podiatry-arena.com/podiatry-forum/showthread.php?t=102762',
       ),
-      108 => 
+      92 => 
       array (
         0 => '1786574415',
         1 => '115',
@@ -37584,7 +37424,7 @@ $data = array (
         5 => 'ab352abc8392e9dc7be4c93fbbd4501b',
         6 => 'http://www.medscape.com/viewarticle/845934',
       ),
-      109 => 
+      93 => 
       array (
         0 => '1786574415',
         1 => '116',
@@ -37594,7 +37434,7 @@ $data = array (
         5 => 'aa86186ffc1c857ba3af5afe01c38625',
         6 => 'https://unsplash.com/photos/l8p1aWZqHvE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      110 => 
+      94 => 
       array (
         0 => '1786574415',
         1 => '117',
@@ -37604,7 +37444,7 @@ $data = array (
         5 => '51f9376e4ede673c277b1a91d4b212f6',
         6 => 'http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3022995/',
       ),
-      111 => 
+      95 => 
       array (
         0 => '1786574415',
         1 => '118',
@@ -37614,7 +37454,7 @@ $data = array (
         5 => 'b633ec7aa3d353e172eb49854d887d89',
         6 => 'http://www.tandfonline.com/doi/abs/10.1080/02640414.2014.962573#.VOTlZUfF98E',
       ),
-      112 => 
+      96 => 
       array (
         0 => '1786574415',
         1 => '119',
@@ -37624,7 +37464,7 @@ $data = array (
         5 => '7ff79f49744a0abddcf54a8c92376755',
         6 => 'https://unsplash.com/photos/mu_ury4cOnA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      113 => 
+      97 => 
       array (
         0 => '1786574416',
         1 => '120',
@@ -37634,7 +37474,7 @@ $data = array (
         5 => '3a2339d488762a809c5f28ca47d89db6',
         6 => 'http://www.rocklobsterrelay.com/',
       ),
-      114 => 
+      98 => 
       array (
         0 => '1786574416',
         1 => '121',
@@ -37644,7 +37484,7 @@ $data = array (
         5 => 'f2402af5a71cd0826837a58e94ac7465',
         6 => 'https://unsplash.com/photos/wmdcUQ0CJ4c?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      115 => 
+      99 => 
       array (
         0 => '1786574416',
         1 => '122',
@@ -37654,7 +37494,7 @@ $data = array (
         5 => '9fc2aee12b10e9196bb5293604a3b85e',
         6 => 'https://unsplash.com/photos/Pn34UFYqCX4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      116 => 
+      100 => 
       array (
         0 => '1786574416',
         1 => '123',
@@ -37664,7 +37504,7 @@ $data = array (
         5 => '65fe5ea29ace448c77e9a5ec2483745e',
         6 => 'https://unsplash.com/photos/gJtDg6WfMlQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      117 => 
+      101 => 
       array (
         0 => '1786574417',
         1 => '124',
@@ -37674,7 +37514,7 @@ $data = array (
         5 => '34d7ab255fef7fee887e0387dd492c80',
         6 => 'http://www.hoolio.com/',
       ),
-      118 => 
+      102 => 
       array (
         0 => '1786574419',
         1 => '125',
@@ -37684,7 +37524,7 @@ $data = array (
         5 => 'ff73c9edc3e6f96f793d83deab40ed36',
         6 => 'http://www.markwk.com/running-books.html',
       ),
-      119 => 
+      103 => 
       array (
         0 => '1786574419',
         1 => '126',
@@ -37694,7 +37534,7 @@ $data = array (
         5 => 'f5abc8578104fff29282a055fe28105c',
         6 => 'https://breakingmuscle.com/fitness/injury-proofing-your-body-with-the-functional-movement-screen',
       ),
-      120 => 
+      104 => 
       array (
         0 => '1786574419',
         1 => '127',
@@ -37704,7 +37544,7 @@ $data = array (
         5 => '1e90b18a6219aefdf343d28246a89659',
         6 => 'https://breakingmuscle.com/fitness/living-with-the-fms-reconciling-training-with-test-results',
       ),
-      121 => 
+      105 => 
       array (
         0 => '1786574419',
         1 => '128',
@@ -37714,7 +37554,7 @@ $data = array (
         5 => 'f2bfc76bad5ab8282bf65fcec96b9c09',
         6 => 'http://www.topoathletic.com/acu-phase-1-assess',
       ),
-      122 => 
+      106 => 
       array (
         0 => '1786574419',
         1 => '129',
@@ -37724,7 +37564,7 @@ $data = array (
         5 => 'f05e914a39a71ed6ae742c2c62eafd78',
         6 => 'https://www.mobilitywod.com/gear/',
       ),
-      123 => 
+      107 => 
       array (
         0 => '1786574419',
         1 => '130',
@@ -37734,7 +37574,7 @@ $data = array (
         5 => '9970d244e57286dcb13ebe259d2b4bd1',
         6 => 'https://www.roguefitness.com/mobility-rehab',
       ),
-      124 => 
+      108 => 
       array (
         0 => '1786574419',
         1 => '131',
@@ -37744,7 +37584,7 @@ $data = array (
         5 => '4fce322ecd26af5a91886434f2f4cd14',
         6 => 'http://www.muscleforlife.com/mobility-exercises/',
       ),
-      125 => 
+      109 => 
       array (
         0 => '1786574419',
         1 => '132',
@@ -37754,7 +37594,7 @@ $data = array (
         5 => '11f61b67621ae8b2a46bb7eceda5bfc8',
         6 => 'http://running.competitor.com/2014/04/injury-prevention/the-10-best-mobility-exercises-for-runners_36329',
       ),
-      126 => 
+      110 => 
       array (
         0 => '1786574419',
         1 => '133',
@@ -37764,7 +37604,7 @@ $data = array (
         5 => '823748b8edbf25c033aaa3c3e45575c5',
         6 => 'http://blog.thewodlife.com.au/voodooflossbands/',
       ),
-      127 => 
+      111 => 
       array (
         0 => '1786574419',
         1 => '134',
@@ -37774,7 +37614,7 @@ $data = array (
         5 => 'c278e18e962a6cad13e115c00092076c',
         6 => 'http://www.builtlean.com/2016/10/24/improve-hamstring-flexibility/',
       ),
-      128 => 
+      112 => 
       array (
         0 => '1786574419',
         1 => '135',
@@ -37784,7 +37624,7 @@ $data = array (
         5 => '2183431867714a0176ffb6713c5388fe',
         6 => 'https://www.amazon.com/Ready-Run-Unlocking-Potential-Naturally-ebook/dp/B00NUFMJKQ/',
       ),
-      129 => 
+      113 => 
       array (
         0 => '1786574419',
         1 => '136',
@@ -37794,7 +37634,7 @@ $data = array (
         5 => '3a74c55ddbaed115120a8b17112b09ea',
         6 => 'http://therunexperience.com/',
       ),
-      130 => 
+      114 => 
       array (
         0 => '1786574419',
         1 => '137',
@@ -37804,7 +37644,7 @@ $data = array (
         5 => 'a7416731f38fdde56aa0d08fe9b0c43b',
         6 => 'https://bengreenfieldfitness.com/article/fitness-articles/workouts-exercise-articles/mobility-for-endurance-athletes/',
       ),
-      131 => 
+      115 => 
       array (
         0 => '1786574419',
         1 => '138',
@@ -37814,7 +37654,7 @@ $data = array (
         5 => '8ab51deb884dd80094c5a4c4ed7b5832',
         6 => 'https://www.acumobility.com/',
       ),
-      132 => 
+      116 => 
       array (
         0 => '1786574419',
         1 => '139',
@@ -37824,7 +37664,7 @@ $data = array (
         5 => 'cfb3eead9fde590ceb9c952dd350b8b4',
         6 => 'http://www.saucony.com/en/stride-lab-app/',
       ),
-      133 => 
+      117 => 
       array (
         0 => '1786574419',
         1 => '140',
@@ -37834,7 +37674,7 @@ $data = array (
         5 => 'b9cd084b3670ce9e0c4cd1efc6d6b4a1',
         6 => 'https://www.amazon.com/Becoming-Supple-Leopard-2nd-Performance/dp/1628600837/',
       ),
-      134 => 
+      118 => 
       array (
         0 => '1786574419',
         1 => '141',
@@ -37844,7 +37684,7 @@ $data = array (
         5 => 'c20c35a5e3978513b49d6c77ed3cfd30',
         6 => 'http://www.markwk.com/2016/10/habit-tracking-for-quantified-self.html',
       ),
-      135 => 
+      119 => 
       array (
         0 => '1786574419',
         1 => '142',
@@ -37854,7 +37694,7 @@ $data = array (
         5 => 'cb7d5ed8ee86b0ad3f840b1a78fc7bbc',
         6 => 'http://www.markwk.com/www.markwk.com/why-track-workouts.html',
       ),
-      136 => 
+      120 => 
       array (
         0 => '1786574419',
         1 => '143',
@@ -37864,7 +37704,7 @@ $data = array (
         5 => '416e06aafe86c72ac63a459b11d95210',
         6 => 'http://www.markwk.com/data-driven-weekly-review.html',
       ),
-      137 => 
+      121 => 
       array (
         0 => '1786574419',
         1 => '144',
@@ -37874,7 +37714,7 @@ $data = array (
         5 => '1674798c090d58e9631cf0bfdcb36a1c',
         6 => 'http://www.markwk.com/export-apple-workouts-to-your-calendar.html',
       ),
-      138 => 
+      122 => 
       array (
         0 => '1786574419',
         1 => '145',
@@ -37884,7 +37724,7 @@ $data = array (
         5 => 'de44661ae7318231af21be7bf383cd24',
         6 => 'https://unsplash.com/photos/mwlQKzFvILU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      139 => 
+      123 => 
       array (
         0 => '1786574423',
         1 => '146',
@@ -37894,7 +37734,7 @@ $data = array (
         5 => 'd1579447f2a51fdac5af12eee6cdaca8',
         6 => 'https://medium.com/@coachbot/why-strength-training-36bc72432c19',
       ),
-      140 => 
+      124 => 
       array (
         0 => '1786574423',
         1 => '147',
@@ -37904,7 +37744,7 @@ $data = array (
         5 => '84fa36406910867a29f94e92841129a1',
         6 => 'https://unsplash.com/photos/KZrwKV90zRk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      141 => 
+      125 => 
       array (
         0 => '1786574424',
         1 => '148',
@@ -37914,7 +37754,7 @@ $data = array (
         5 => '3e80a7f2472d94a2964ae9b111e88db3',
         6 => 'http://archinte.jamanetwork.com/article.aspx?articleid=2434738',
       ),
-      142 => 
+      126 => 
       array (
         0 => '1786574424',
         1 => '149',
@@ -37924,7 +37764,7 @@ $data = array (
         5 => '951409a255e2b8dfde340dcdb63b228a',
         6 => 'http://archinte.jamanetwork.com/article.aspx?articleid=2293082',
       ),
-      143 => 
+      127 => 
       array (
         0 => '1786574424',
         1 => '150',
@@ -37934,7 +37774,7 @@ $data = array (
         5 => '5dcc69bf6eccec0bf6fc7bd8ee22ee11',
         6 => 'http://www.nytimes.com/2013/02/26/health/mediterranean-diet-can-cut-heart-disease-study-finds.html',
       ),
-      144 => 
+      128 => 
       array (
         0 => '1786574424',
         1 => '151',
@@ -37944,7 +37784,7 @@ $data = array (
         5 => '1e5a6eee709ccc54dcab054f89eb7a29',
         6 => 'http://predimed.onmedic.net/eng/ImplementationoftheIntervention/FOODINFORMATIONLEAFLETS/tabid/580/Default.aspx',
       ),
-      145 => 
+      129 => 
       array (
         0 => '1786574424',
         1 => '152',
@@ -37954,7 +37794,7 @@ $data = array (
         5 => '28b8a30df2517084f9781188d9fe1d85',
         6 => 'http://www.predimed.es/investigators-tools.html',
       ),
-      146 => 
+      130 => 
       array (
         0 => '1786574424',
         1 => '153',
@@ -37964,7 +37804,7 @@ $data = array (
         5 => '0e5477ea15534bf937196c10a98b3532',
         6 => 'https://en.wikipedia.org/wiki/Randomized_controlled_trial',
       ),
-      147 => 
+      131 => 
       array (
         0 => '1786574424',
         1 => '154',
@@ -37974,7 +37814,7 @@ $data = array (
         5 => 'd4e5fcfb86c2824bc2fa8b05c607164a',
         6 => 'http://predimed.onmedic.net/eng/Home/tabid/357/Default.aspx',
       ),
-      148 => 
+      132 => 
       array (
         0 => '1786574424',
         1 => '155',
@@ -37984,7 +37824,7 @@ $data = array (
         5 => 'b3e9b0e533f6554408be4814a8616674',
         6 => 'http://ije.oxfordjournals.org/content/early/2010/12/20/ije.dyq250.full',
       ),
-      149 => 
+      133 => 
       array (
         0 => '1786574424',
         1 => '156',
@@ -37994,7 +37834,7 @@ $data = array (
         5 => '97ed97cc14e9e18ddaea4df6192e3544',
         6 => 'http://www.nejm.org/doi/full/10.1056/NEJMoa1200303#t=abstract',
       ),
-      150 => 
+      134 => 
       array (
         0 => '1786574424',
         1 => '157',
@@ -38004,7 +37844,7 @@ $data = array (
         5 => '6cab018d961a3341b71f09e86a65bba9',
         6 => 'http://www.nejm.org/doi/full/10.1056/NEJMe1301582',
       ),
-      151 => 
+      135 => 
       array (
         0 => '1786574424',
         1 => '158',
@@ -38014,7 +37854,7 @@ $data = array (
         5 => '8d3e68e70301a6485b18514c004f447e',
         6 => 'http://iom.nationalacademies.org/Reports/2015/Cognitive-Aging.aspx',
       ),
-      152 => 
+      136 => 
       array (
         0 => '1786574424',
         1 => '159',
@@ -38024,7 +37864,7 @@ $data = array (
         5 => '48d06294021a2d0993ec28c5dd9a3667',
         6 => 'http://books.nap.edu/openbook.php?record_id=21693&page=124',
       ),
-      153 => 
+      137 => 
       array (
         0 => '1786574424',
         1 => '160',
@@ -38034,7 +37874,7 @@ $data = array (
         5 => '29102442d0ed60328f95db2834bed893',
         6 => 'http://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/dash-diet/art-20048456',
       ),
-      154 => 
+      138 => 
       array (
         0 => '1786574424',
         1 => '161',
@@ -38044,7 +37884,7 @@ $data = array (
         5 => 'ff9f062c6c7d284209fd2305ff75ba7c',
         6 => 'http://tools.acc.org/ASCVD-Risk-Estimator/',
       ),
-      155 => 
+      139 => 
       array (
         0 => '1786574424',
         1 => '162',
@@ -38054,7 +37894,7 @@ $data = array (
         5 => '62449450cfcb55bc821f149db67f43e6',
         6 => 'http://www.nytimes.com/2015/01/27/upshot/can-this-treatment-help-me-theres-a-statistic-for-that.html',
       ),
-      156 => 
+      140 => 
       array (
         0 => '1786574424',
         1 => '163',
@@ -38064,7 +37904,7 @@ $data = array (
         5 => '45a4758f85465be9d8922f74fc593ff6',
         6 => 'http://www.thennt.com/nnt/statins-for-heart-disease-prevention-with-known-heart-disease/',
       ),
-      157 => 
+      141 => 
       array (
         0 => '1786574424',
         1 => '164',
@@ -38074,7 +37914,7 @@ $data = array (
         5 => '5e7345e69375073e7920097074f38d73',
         6 => 'http://www.independent.co.uk/life-style/health-and-families/health-news/mediterranean-diet-could-be-as-effective-as-statins-in-reducing-risk-of-cardiovascular-disease-according-to-experts-10490144.html',
       ),
-      158 => 
+      142 => 
       array (
         0 => '1786574424',
         1 => '165',
@@ -38084,7 +37924,7 @@ $data = array (
         5 => 'b0ef895faa871c60cd6229b403a076d1',
         6 => 'https://betterhealthwhileaging.net/7-brain-toxic-drugs-seniors-should-avoid/',
       ),
-      159 => 
+      143 => 
       array (
         0 => '1786574424',
         1 => '166',
@@ -38094,7 +37934,7 @@ $data = array (
         5 => 'c68e01b92ce254fc3a7b6e1c1c78315b',
         6 => 'http://drkernisan.net/',
       ),
-      160 => 
+      144 => 
       array (
         0 => '1786574424',
         1 => '167',
@@ -38104,7 +37944,7 @@ $data = array (
         5 => '56c7dbc0926363df1d815e5886c7ebde',
         6 => 'https://unsplash.com/photos/FVbZZpP58dY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      161 => 
+      145 => 
       array (
         0 => '1786574424',
         1 => '168',
@@ -38114,7 +37954,7 @@ $data = array (
         5 => '4856bfc12de6bec9d5eff4e5fd38b4c9',
         6 => 'https://unsplash.com/photos/sySLTGTLd78?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      162 => 
+      146 => 
       array (
         0 => '1786574425',
         1 => '169',
@@ -38124,7 +37964,7 @@ $data = array (
         5 => '46bdd7be8c0ed6b5b519f0ad80240f01',
         6 => 'ezurl://179#51af6db875c5',
       ),
-      163 => 
+      147 => 
       array (
         0 => '1786574425',
         1 => '170',
@@ -38134,7 +37974,7 @@ $data = array (
         5 => '960cb1b38c83f94db96f68c07bf7443c',
         6 => 'ezurl://181#.tnw_FMcsr5JL',
       ),
-      164 => 
+      148 => 
       array (
         0 => '1786574426',
         1 => '171',
@@ -38144,7 +37984,7 @@ $data = array (
         5 => 'bf0c6b3cc6fdbae4151af7f4e55f1121',
         6 => 'http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0077500',
       ),
-      165 => 
+      149 => 
       array (
         0 => '1786574426',
         1 => '172',
@@ -38154,7 +37994,7 @@ $data = array (
         5 => '462d3d200be1d53e373b3d4bc361093a',
         6 => 'http://ijbnpa.biomedcentral.com/articles/10.1186/s12966-015-0241-1',
       ),
-      166 => 
+      150 => 
       array (
         0 => '1786574426',
         1 => '173',
@@ -38164,7 +38004,7 @@ $data = array (
         5 => '20e0e1021064393a88d498fb76553345',
         6 => 'http://www.sciencedirect.com/science/article/pii/S0195666315000276',
       ),
-      167 => 
+      151 => 
       array (
         0 => '1786574426',
         1 => '174',
@@ -38174,7 +38014,7 @@ $data = array (
         5 => '27dd80e630ece559a1132836e067fb7a',
         6 => 'https://unsplash.com/photos/4-vigZnpeCc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      168 => 
+      152 => 
       array (
         0 => '1786574427',
         1 => '175',
@@ -38184,7 +38024,7 @@ $data = array (
         5 => 'a6ddd4a7e014914b64dc5985920c0ba3',
         6 => 'http://www.foodista.com/recipe/PTD4ZZQV/summer-pasta-pasta-l-estate',
       ),
-      169 => 
+      153 => 
       array (
         0 => '1786574427',
         1 => '176',
@@ -38194,7 +38034,7 @@ $data = array (
         5 => 'b8c4392a1c2091689495cf4833d1d05f',
         6 => 'http://www.foodista.com/recipe/NYVZW2MV/tomato-martini',
       ),
-      170 => 
+      154 => 
       array (
         0 => '1786574427',
         1 => '177',
@@ -38204,7 +38044,7 @@ $data = array (
         5 => '59789adf09e1ed58391e0375bf22a75b',
         6 => 'http://www.foodista.com/recipe/XBY42KFB/classic-gazpacho-with-spicy-grilled-shrimp',
       ),
-      171 => 
+      155 => 
       array (
         0 => '1786574427',
         1 => '178',
@@ -38214,7 +38054,7 @@ $data = array (
         5 => '296a6e412ef594c31f95557b17cd9039',
         6 => 'http://www.foodista.com/recipe/X6DLW5R8/breakfast-boat-with-cheese-bacon-tomatoes',
       ),
-      172 => 
+      156 => 
       array (
         0 => '1786574427',
         1 => '179',
@@ -38224,7 +38064,7 @@ $data = array (
         5 => 'b2b6952bba19e1c8ed9a8d587813f045',
         6 => 'http://www.foodista.com/recipe/4GW4G8BG/piedmontese-peppers',
       ),
-      173 => 
+      157 => 
       array (
         0 => '1786574427',
         1 => '180',
@@ -38234,7 +38074,7 @@ $data = array (
         5 => 'd4d6208be09878b1a80760938b4aef78',
         6 => 'http://tasteandsee.com/',
       ),
-      174 => 
+      158 => 
       array (
         0 => '1786574427',
         1 => '181',
@@ -38244,7 +38084,7 @@ $data = array (
         5 => '1e6c3ff30f187c57e946f4e2ebd6efbd',
         6 => 'https://www.happyfoodstube.com/',
       ),
-      175 => 
+      159 => 
       array (
         0 => '1786574427',
         1 => '182',
@@ -38254,7 +38094,7 @@ $data = array (
         5 => 'f620239e60fb76a22219ea622536aa34',
         6 => 'http://www.foodista.com/recipe/727C67X3/roasted-swordfish-with-manzanilla-olives-cherry-tomatoes-and-capers',
       ),
-      176 => 
+      160 => 
       array (
         0 => '1786574427',
         1 => '183',
@@ -38264,7 +38104,7 @@ $data = array (
         5 => '3feae0b6ae3a89f7ee48e15aca00836d',
         6 => 'http://www.foodista.com/blog/2018/07/24/kachumber-salad-indian-marinated-tomato-and-herb-salad-with-lamb-kebabs',
       ),
-      177 => 
+      161 => 
       array (
         0 => '1786574427',
         1 => '184',
@@ -38274,7 +38114,7 @@ $data = array (
         5 => '8f680b416efb2225066896d8fa35617b',
         6 => 'http://www.foodista.com/recipe/VLNYT4NN/tagliatelle-with-burrata-tomatoes-and-pine-nuts',
       ),
-      178 => 
+      162 => 
       array (
         0 => '1786574427',
         1 => '185',
@@ -38284,7 +38124,7 @@ $data = array (
         5 => 'ab592d2c8c1a15b43a02e5c3230d2ce7',
         6 => 'http://foodforaking.co.uk/',
       ),
-      179 => 
+      163 => 
       array (
         0 => '1786574427',
         1 => '186',
@@ -38294,7 +38134,7 @@ $data = array (
         5 => '603877dc9358da964c924408b43f7bd7',
         6 => 'http://www.foodista.com/recipe/8WD7K3MC/cilantro-lime-grilled-shrimp-with-pineapple-salsa',
       ),
-      180 => 
+      164 => 
       array (
         0 => '1786574427',
         1 => '187',
@@ -38304,7 +38144,7 @@ $data = array (
         5 => '340e02310a2d93a2cc0b6eb83c594db0',
         6 => 'http://www.foodista.com/recipe/LQ4MYLM5/panzanella-classic-italian-tomato-salad',
       ),
-      181 => 
+      165 => 
       array (
         0 => '1786574427',
         1 => '188',
@@ -38314,7 +38154,7 @@ $data = array (
         5 => 'bf5415e89ce15ffc61b14b75a155a96d',
         6 => 'http://www.discoverdelicious.org/',
       ),
-      182 => 
+      166 => 
       array (
         0 => '1786574427',
         1 => '189',
@@ -38324,7 +38164,7 @@ $data = array (
         5 => 'bae8a4924e33ace9fca7e8a7ef6b2326',
         6 => 'http://www.foodista.com/recipe/DMY8KBB4/creamy-cheesy-ham-tomato-sauce',
       ),
-      183 => 
+      167 => 
       array (
         0 => '1786574427',
         1 => '190',
@@ -38334,7 +38174,7 @@ $data = array (
         5 => '326b66df079ba57608c266aa595c8eed',
         6 => 'http://www.loavesanddishes.net/',
       ),
-      184 => 
+      168 => 
       array (
         0 => '1786574427',
         1 => '191',
@@ -38344,7 +38184,7 @@ $data = array (
         5 => '6f2cfd6c2a3cce2677dd3f78acfb14d3',
         6 => 'http://www.foodista.com/recipe/BZN5QVGY/tomato-corn-and-avocado-salad-with-cilantro-lime-vinaigrette',
       ),
-      185 => 
+      169 => 
       array (
         0 => '1786574427',
         1 => '192',
@@ -38354,7 +38194,7 @@ $data = array (
         5 => '91f03a6948dab72c4696f3b18986b7c2',
         6 => 'http://www.behindtheplates.com/',
       ),
-      186 => 
+      170 => 
       array (
         0 => '1786574427',
         1 => '193',
@@ -38364,7 +38204,7 @@ $data = array (
         5 => '997af05dcb70b6764e8261c604fc5d1a',
         6 => 'http://www.foodista.com/recipe/2Q6KDL4Q/fried-mozzarella-balls-with-homemade-tomato-sauce',
       ),
-      187 => 
+      171 => 
       array (
         0 => '1786574427',
         1 => '194',
@@ -38374,7 +38214,7 @@ $data = array (
         5 => '3fab4309d6187659cbbcd8a9810faede',
         6 => 'http://cali-zona.com/',
       ),
-      188 => 
+      172 => 
       array (
         0 => '1786574427',
         1 => '195',
@@ -38384,7 +38224,7 @@ $data = array (
         5 => '7fdc7cdd001304a96bfe98c79e81b6c5',
         6 => 'http://www.foodista.com/recipe/YKQ5H3TL/ratatouille-with-brie',
       ),
-      189 => 
+      173 => 
       array (
         0 => '1786574427',
         1 => '196',
@@ -38394,7 +38234,7 @@ $data = array (
         5 => '188834d31ec0009e06f87f47b4ff2b35',
         6 => 'http://www.foodista.com/',
       ),
-      190 => 
+      174 => 
       array (
         0 => '1786574427',
         1 => '197',
@@ -38404,7 +38244,7 @@ $data = array (
         5 => '5f2b28d9f578682a7ef52457ca97057f',
         6 => 'https://unsplash.com/photos/YEGxUZrg6FI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      191 => 
+      175 => 
       array (
         0 => '1786574427',
         1 => '198',
@@ -38414,7 +38254,7 @@ $data = array (
         5 => 'd40fe18e5e78cb656d338c99ef425e4d',
         6 => 'https://www.epicgardening.com/indoor-grow-lights/',
       ),
-      192 => 
+      176 => 
       array (
         0 => '1786574427',
         1 => '199',
@@ -38424,7 +38264,7 @@ $data = array (
         5 => 'd37b36f414c623ac3398dff054704728',
         6 => 'https://www.epicgardening.com/potting-soil/',
       ),
-      193 => 
+      177 => 
       array (
         0 => '1786574427',
         1 => '200',
@@ -38434,7 +38274,7 @@ $data = array (
         5 => 'b983f7046f3ea20c22a75ca1fdac1070',
         6 => 'https://www.epicgardening.com/best-full-spectrum-led-grow-lights/',
       ),
-      194 => 
+      178 => 
       array (
         0 => '1786574427',
         1 => '201',
@@ -38444,7 +38284,7 @@ $data = array (
         5 => '9baa155b36d2a58f716310cff6fb9145',
         6 => 'https://unsplash.com/photos/WGZv8R05LSo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      195 => 
+      179 => 
       array (
         0 => '1786574427',
         1 => '202',
@@ -38454,7 +38294,7 @@ $data = array (
         5 => '3bbb7336d8e34fcc2b513941f9d0da86',
         6 => 'https://unsplash.com/photos/7LsyosoO0GQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      196 => 
+      180 => 
       array (
         0 => '1786574428',
         1 => '203',
@@ -38464,7 +38304,7 @@ $data = array (
         5 => 'a00f39c09e58b556c33c0220b985efb4',
         6 => 'http://www.ewg.org/',
       ),
-      197 => 
+      181 => 
       array (
         0 => '1786574428',
         1 => '204',
@@ -38474,7 +38314,7 @@ $data = array (
         5 => 'f1a9267e1128d8c03d560db1c8581d6c',
         6 => 'http://www.ewg.org/foodnews/',
       ),
-      198 => 
+      182 => 
       array (
         0 => '1786574428',
         1 => '205',
@@ -38484,7 +38324,7 @@ $data = array (
         5 => 'f842a185706e2ccf71410ff5b2b19c44',
         6 => 'https://unsplash.com/photos/kvexIt7Xys0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      199 => 
+      183 => 
       array (
         0 => '1786574428',
         1 => '206',
@@ -38494,7 +38334,7 @@ $data = array (
         5 => 'da66cdc4d3c6b43ff026cbc834389087',
         6 => 'http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6426a1.htm?s_cid=mm6426a1_e',
       ),
-      200 => 
+      184 => 
       array (
         0 => '1786574428',
         1 => '207',
@@ -38504,7 +38344,7 @@ $data = array (
         5 => '44f20daac5ead7c610616003df9cc1ea',
         6 => 'https://en.wikipedia.org/wiki/Reference_Daily_Intake',
       ),
-      201 => 
+      185 => 
       array (
         0 => '1786574428',
         1 => '208',
@@ -38514,7 +38354,7 @@ $data = array (
         5 => '3c00a0d2dfa7392761d12b2710aad000',
         6 => 'http://www.whfoods.com/genpage.php?tname=nutrient&dbid=53',
       ),
-      202 => 
+      186 => 
       array (
         0 => '1786574428',
         1 => '209',
@@ -38524,7 +38364,7 @@ $data = array (
         5 => '1ca0ff8ed3e76d4f21725f86dbbe748e',
         6 => 'http://www.dietitians.ca/Your-Health/Nutrition-A-Z/Minerals.aspx',
       ),
-      203 => 
+      187 => 
       array (
         0 => '1786574428',
         1 => '210',
@@ -38534,7 +38374,7 @@ $data = array (
         5 => '3e902ff09734e013d6aa903e4731a3be',
         6 => 'https://www.cnpp.usda.gov/sites/default/files/nutrition_insights_uploads/Insight36.pdf',
       ),
-      204 => 
+      188 => 
       array (
         0 => '1786574428',
         1 => '211',
@@ -38544,7 +38384,7 @@ $data = array (
         5 => '0a5864108ea6e3a26d0a66ebebb34c7b',
         6 => 'https://www.ars.usda.gov/ARSUserFiles/80400530/pdf/dbrief/12_fiber_intake_0910.pdf',
       ),
-      205 => 
+      189 => 
       array (
         0 => '1786574428',
         1 => '212',
@@ -38554,7 +38394,7 @@ $data = array (
         5 => 'c4ff3b3aa0e1755e5ffd334241113fb8',
         6 => 'http://www.iarc.fr/en/media-centre/pr/2015/pdfs/pr240_E.pdf',
       ),
-      206 => 
+      190 => 
       array (
         0 => '1786574428',
         1 => '213',
@@ -38564,7 +38404,7 @@ $data = array (
         5 => '678a26e8138ac5bb28bf5227f9d66512',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/15073045',
       ),
-      207 => 
+      191 => 
       array (
         0 => '1786574428',
         1 => '214',
@@ -38574,7 +38414,7 @@ $data = array (
         5 => '4d3362e7d13e9fe4f58798d928eb9ec1',
         6 => 'https://unsplash.com/photos/Gwak7T9evEk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      208 => 
+      192 => 
       array (
         0 => '1786574429',
         1 => '215',
@@ -38584,7 +38424,7 @@ $data = array (
         5 => '12d654b6289dcf8b7bd834ed54ffa4a9',
         6 => 'https://skillbasedfitness.com/start-with-why/',
       ),
-      209 => 
+      193 => 
       array (
         0 => '1786574429',
         1 => '216',
@@ -38594,7 +38434,7 @@ $data = array (
         5 => '987ffa4df229a06a1562e479c4f5c4b0',
         6 => 'http://www.ncbi.nlm.nih.gov/pubmed/25763518',
       ),
-      210 => 
+      194 => 
       array (
         0 => '1786574429',
         1 => '217',
@@ -38604,7 +38444,7 @@ $data = array (
         5 => '0e300f08cf78ec7a370c1604c71dd8bc',
         6 => 'https://fitnack.com/',
       ),
-      211 => 
+      195 => 
       array (
         0 => '1786574429',
         1 => '218',
@@ -38614,7 +38454,7 @@ $data = array (
         5 => 'c6f923d3c4365dcb7485f3c69674074c',
         6 => 'https://unsplash.com/photos/tFaJOKVC2J0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      212 => 
+      196 => 
       array (
         0 => '1786574430',
         1 => '219',
@@ -38624,7 +38464,7 @@ $data = array (
         5 => '666fb947c61fabdb3e621743d6d5e4c1',
         6 => 'https://www.cdc.gov/obesity/adult/causes.html',
       ),
-      213 => 
+      197 => 
       array (
         0 => '1786574430',
         1 => '220',
@@ -38634,7 +38474,7 @@ $data = array (
         5 => '0103b05d5db96132d7a99342703522a0',
         6 => 'https://www.cdc.gov/healthyweight/healthy_eating/index.html',
       ),
-      214 => 
+      198 => 
       array (
         0 => '1786574430',
         1 => '221',
@@ -38644,7 +38484,7 @@ $data = array (
         5 => '8dd4e966171f14422068b7eb2992fa75',
         6 => 'https://www.cdc.gov/healthyweight/physical_activity/index.html',
       ),
-      215 => 
+      199 => 
       array (
         0 => '1786574430',
         1 => '222',
@@ -38654,7 +38494,7 @@ $data = array (
         5 => 'ff9c96d0e470e5249a0260855c18a3bf',
         6 => 'https://www.cdc.gov/sleep/about_sleep/how_much_sleep.html',
       ),
-      216 => 
+      200 => 
       array (
         0 => '1786574430',
         1 => '223',
@@ -38664,7 +38504,7 @@ $data = array (
         5 => '70dd9f30bfd2798d6b3063c13bc7b81b',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/17869482',
       ),
-      217 => 
+      201 => 
       array (
         0 => '1786574430',
         1 => '224',
@@ -38674,7 +38514,7 @@ $data = array (
         5 => 'fc0d01afd3f8c16ba4406d0b98f2dbb1',
         6 => 'https://www.cdc.gov/healthyweight/losing_weight/eating_habits.html',
       ),
-      218 => 
+      202 => 
       array (
         0 => '1786574430',
         1 => '225',
@@ -38684,7 +38524,7 @@ $data = array (
         5 => '21af655fd72604b3200d48b45ed010ef',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/12532147/',
       ),
-      219 => 
+      203 => 
       array (
         0 => '1786574430',
         1 => '226',
@@ -38694,7 +38534,7 @@ $data = array (
         5 => 'e8f6a7db042cd70de3611d3143458bca',
         6 => 'https://www.cambridge.org/core/journals/nutrition-research-reviews/article/structured-literature-review-on-the-role-of-mindfulness-mindful-eating-and-intuitive-eating-in-changing-eating-behaviours-effectiveness-and-associated-potential-mechanisms/351A3D01E43F49CC9794756BC950EFFC/core-reader',
       ),
-      220 => 
+      204 => 
       array (
         0 => '1786574430',
         1 => '227',
@@ -38704,7 +38544,7 @@ $data = array (
         5 => 'dd5e8df61ef225bcf730a78a74b4490d',
         6 => 'https://journals.lww.com/joem/Abstract/2011/11000/Emotional_Eating,_Rather_Than_Lifestyle_Behavior,.14.aspx',
       ),
-      221 => 
+      205 => 
       array (
         0 => '1786574430',
         1 => '228',
@@ -38714,7 +38554,7 @@ $data = array (
         5 => '65b05f5d207ee82eca8efe1bc176e2c3',
         6 => 'https://www.sciencedirect.com/science/article/pii/019566639190020S',
       ),
-      222 => 
+      206 => 
       array (
         0 => '1786574430',
         1 => '229',
@@ -38724,7 +38564,7 @@ $data = array (
         5 => '011af3012c27db66fd5c8bd8e1a3f95a',
         6 => 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1924970/',
       ),
-      223 => 
+      207 => 
       array (
         0 => '1786574430',
         1 => '230',
@@ -38734,7 +38574,7 @@ $data = array (
         5 => '704869f866c26eab12ebe277b07501a4',
         6 => 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4046117/',
       ),
-      224 => 
+      208 => 
       array (
         0 => '1786574430',
         1 => '231',
@@ -38744,7 +38584,7 @@ $data = array (
         5 => '0c0191816506510798488242887b236f',
         6 => 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4046117/#R18',
       ),
-      225 => 
+      209 => 
       array (
         0 => '1786574430',
         1 => '232',
@@ -38754,7 +38594,7 @@ $data = array (
         5 => '208f65f96aec70de46548ea7ac987036',
         6 => 'https://www.eatright.org/',
       ),
-      226 => 
+      210 => 
       array (
         0 => '1786574430',
         1 => '233',
@@ -38764,7 +38604,7 @@ $data = array (
         5 => '2da9d09d8607b07add4f2fe6ef56d713',
         6 => 'https://www.tandfonline.com/doi/abs/10.1080/19325037.2005.10608206',
       ),
-      227 => 
+      211 => 
       array (
         0 => '1786574430',
         1 => '234',
@@ -38774,7 +38614,7 @@ $data = array (
         5 => 'e87b49eb0fe0f40e5d1959371498adc8',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/24183151',
       ),
-      228 => 
+      212 => 
       array (
         0 => '1786574430',
         1 => '235',
@@ -38784,7 +38624,7 @@ $data = array (
         5 => 'f220f9323985f2ac198974427075a940',
         6 => 'https://www.tandfonline.com/doi/abs/10.1080/19325037.2006.10598892',
       ),
-      229 => 
+      213 => 
       array (
         0 => '1786574430',
         1 => '236',
@@ -38794,7 +38634,7 @@ $data = array (
         5 => 'd6856447b198ce16ae5d170973aea24b',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/25478687',
       ),
-      230 => 
+      214 => 
       array (
         0 => '1786574430',
         1 => '237',
@@ -38804,7 +38644,7 @@ $data = array (
         5 => '9f5585c1dec50ab303cea901c1680a28',
         6 => 'https://link.springer.com/article/10.1007/s12671-012-0124-3',
       ),
-      231 => 
+      215 => 
       array (
         0 => '1786574430',
         1 => '238',
@@ -38814,7 +38654,7 @@ $data = array (
         5 => '67595dcf85ed74944bbf94a6a9ecac14',
         6 => 'https://www.sciencedirect.com/science/article/pii/S0195666313001207',
       ),
-      232 => 
+      216 => 
       array (
         0 => '1786574430',
         1 => '239',
@@ -38824,7 +38664,7 @@ $data = array (
         5 => 'fa050abb54408dff752f05ee459cec6b',
         6 => 'https://www.sciencedirect.com/science/article/pii/S1471015314000385?via%3Dihub',
       ),
-      233 => 
+      217 => 
       array (
         0 => '1786574430',
         1 => '240',
@@ -38834,7 +38674,7 @@ $data = array (
         5 => '63781f28b3b22cc44c325391aad3b52c',
         6 => 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3368241/',
       ),
-      234 => 
+      218 => 
       array (
         0 => '1786574430',
         1 => '241',
@@ -38844,7 +38684,7 @@ $data = array (
         5 => 'a4463917b27ec8ef332d71c196c3133a',
         6 => 'https://www.sciencedirect.com/science/article/pii/S187704281406460X',
       ),
-      235 => 
+      219 => 
       array (
         0 => '1786574430',
         1 => '242',
@@ -38854,7 +38694,7 @@ $data = array (
         5 => 'f514955b4824a7928c5256adf96893b9',
         6 => 'https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1742-9544.2012.00091.x',
       ),
-      236 => 
+      220 => 
       array (
         0 => '1786574430',
         1 => '243',
@@ -38864,7 +38704,7 @@ $data = array (
         5 => '31560ea78c0d1a607c7dd70a8421de4f',
         6 => 'https://www.sciencedirect.com/science/article/pii/S0195666314005522',
       ),
-      237 => 
+      221 => 
       array (
         0 => '1786574430',
         1 => '244',
@@ -38874,7 +38714,7 @@ $data = array (
         5 => '3db5e3b76480c33bd97ace2318595c52',
         6 => 'https://www.hindawi.com/journals/jobe/2011/651936/',
       ),
-      238 => 
+      222 => 
       array (
         0 => '1786574430',
         1 => '245',
@@ -38884,7 +38724,7 @@ $data = array (
         5 => '0d35207b15d25b5469a7a1a8d9fd26af',
         6 => 'https://www.tandfonline.com/doi/abs/10.1080/17470919.2010.513495',
       ),
-      239 => 
+      223 => 
       array (
         0 => '1786574430',
         1 => '246',
@@ -38894,7 +38734,7 @@ $data = array (
         5 => 'e645784f5f22b94862153cafe9cca4fc',
         6 => 'https://en.wikipedia.org/wiki/Anterior_cingulate_cortex',
       ),
-      240 => 
+      224 => 
       array (
         0 => '1786574430',
         1 => '247',
@@ -38904,7 +38744,7 @@ $data = array (
         5 => 'a8910e6d332a78bdf7ea86e25ea4a5bf',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/25417199',
       ),
-      241 => 
+      225 => 
       array (
         0 => '1786574430',
         1 => '248',
@@ -38914,7 +38754,7 @@ $data = array (
         5 => '1dc86210f9964e2579dc6c984fb5eb4b',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/25308434',
       ),
-      242 => 
+      226 => 
       array (
         0 => '1786574430',
         1 => '249',
@@ -38924,7 +38764,7 @@ $data = array (
         5 => '500fa3ce43975f8198e8ce68b0a494cc',
         6 => 'http://inspire-yoga.com/neelam/',
       ),
-      243 => 
+      227 => 
       array (
         0 => '1786574430',
         1 => '250',
@@ -38934,7 +38774,7 @@ $data = array (
         5 => 'a86a6856b261b5c2b9e3e4b9d6e670d4',
         6 => 'https://twitter.com/julieannvilla7',
       ),
-      244 => 
+      228 => 
       array (
         0 => '1786574430',
         1 => '251',
@@ -38944,7 +38784,7 @@ $data = array (
         5 => 'd45a997db71fff1aef0065188a07192e',
         6 => 'http://www.feinberg.northwestern.edu/faculty-profiles/az/profile.html?xid=16101',
       ),
-      245 => 
+      229 => 
       array (
         0 => '1786574430',
         1 => '252',
@@ -38954,7 +38794,7 @@ $data = array (
         5 => '1f44501d5ed9156b7bf7b86d48ea5548',
         6 => 'https://link.springer.com/article/10.1007/s12671-012-0179-1',
       ),
-      246 => 
+      230 => 
       array (
         0 => '1786574430',
         1 => '253',
@@ -38964,7 +38804,7 @@ $data = array (
         5 => '549f0a2cfb7b9df4b6e6a482a1f03097',
         6 => 'http://www.healthylivingdallas.com/wp-content/themes/ypo-theme/pdf/mindful-eating-quiz.pdf',
       ),
-      247 => 
+      231 => 
       array (
         0 => '1786574430',
         1 => '254',
@@ -38974,7 +38814,7 @@ $data = array (
         5 => 'c6c1da9963a2eb4711005e65b6e9e29c',
         6 => 'https://www.psychologytoday.com/us/blog/food-and-spirit/200911/5-bites-meaningful-meals',
       ),
-      248 => 
+      232 => 
       array (
         0 => '1786574430',
         1 => '255',
@@ -38984,7 +38824,7 @@ $data = array (
         5 => '432566285780ef6c8d4e8dbbed3c3ea1',
         6 => 'https://lifefastingtracker.com/',
       ),
-      249 => 
+      233 => 
       array (
         0 => '1786574430',
         1 => '256',
@@ -38994,7 +38834,7 @@ $data = array (
         5 => '879fa5256e590dc57963b96fc0b2d10e',
         6 => 'https://medium.com/@fromthelabbench',
       ),
-      250 => 
+      234 => 
       array (
         0 => '1786574430',
         1 => '257',
@@ -39004,7 +38844,7 @@ $data = array (
         5 => '4a146ab8bc8efc8b7a7a9b07ecae015f',
         6 => 'https://medium.com/made-with-creative-commons',
       ),
-      251 => 
+      235 => 
       array (
         0 => '1786574430',
         1 => '258',
@@ -39014,7 +38854,7 @@ $data = array (
         5 => 'c12c08a48e7f2617c421d2d1f2545a9e',
         6 => 'https://unsplash.com/photos/y3aP9oo9Pjc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      252 => 
+      236 => 
       array (
         0 => '1786574430',
         1 => '259',
@@ -39024,7 +38864,7 @@ $data = array (
         5 => '3728c7f12ecc40ebccea0a50bf1a17ed',
         6 => 'https://www.nature.com/articles/nrendo.2016.150',
       ),
-      253 => 
+      237 => 
       array (
         0 => '1786574430',
         1 => '260',
@@ -39034,7 +38874,7 @@ $data = array (
         5 => '290daeaf20bc98f5ade060e51020ecc9',
         6 => 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4303825/',
       ),
-      254 => 
+      238 => 
       array (
         0 => '1786574430',
         1 => '261',
@@ -39044,7 +38884,7 @@ $data = array (
         5 => 'b99319f5bec246f4f7db19b90453df0d',
         6 => 'http://www.pnas.org/content/111/47/16647',
       ),
-      255 => 
+      239 => 
       array (
         0 => '1786574430',
         1 => '262',
@@ -39054,7 +38894,7 @@ $data = array (
         5 => '6326371767319e328b125b615196afb4',
         6 => 'https://www.sciencedirect.com/science/article/pii/S0092867415001865',
       ),
-      256 => 
+      240 => 
       array (
         0 => '1786574430',
         1 => '263',
@@ -39064,7 +38904,7 @@ $data = array (
         5 => '2b37c7ced8879ad69c1cc7977c75dbf8',
         6 => 'http://www.cell.com/trends/genetics/fulltext/S0168-9525(17)30127-0',
       ),
-      257 => 
+      241 => 
       array (
         0 => '1786574430',
         1 => '264',
@@ -39074,7 +38914,7 @@ $data = array (
         5 => '829209102da636355dd7d21e2197522e',
         6 => 'https://link.springer.com/article/10.1186/s41606-017-0019-2',
       ),
-      258 => 
+      242 => 
       array (
         0 => '1786574430',
         1 => '265',
@@ -39084,7 +38924,7 @@ $data = array (
         5 => 'bd5d7042ed325f0fecdd9baa15337916',
         6 => 'http://www.pnas.org/content/106/11/4453',
       ),
-      259 => 
+      243 => 
       array (
         0 => '1786574430',
         1 => '266',
@@ -39094,7 +38934,7 @@ $data = array (
         5 => 'd045a5244e5a3f5f02e53246a49ac3a6',
         6 => 'https://www.annualreviews.org/doi/pdf/10.1146/annurev-nutr-071816-064634',
       ),
-      260 => 
+      244 => 
       array (
         0 => '1786574430',
         1 => '267',
@@ -39104,7 +38944,7 @@ $data = array (
         5 => 'fce6147afe9881e0468a3df25fff8968',
         6 => 'http://www.cell.com/cell/fulltext/S0092-8674(14)01236-7',
       ),
-      261 => 
+      245 => 
       array (
         0 => '1786574430',
         1 => '268',
@@ -39114,7 +38954,7 @@ $data = array (
         5 => '547a16349e52d161fa2e76f931620419',
         6 => 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4444733/',
       ),
-      262 => 
+      246 => 
       array (
         0 => '1786574430',
         1 => '269',
@@ -39124,7 +38964,7 @@ $data = array (
         5 => '43f17f1c7c2fc7511943eaa7091a818b',
         6 => 'https://www.annualreviews.org/doi/full/10.1146/annurev-nutr-071816-064634',
       ),
-      263 => 
+      247 => 
       array (
         0 => '1786574430',
         1 => '270',
@@ -39134,7 +38974,7 @@ $data = array (
         5 => '859534c166ea8483180ed5bc175468c4',
         6 => 'https://doi.org/10.1073/pnas.0808180106',
       ),
-      264 => 
+      248 => 
       array (
         0 => '1786574430',
         1 => '271',
@@ -39144,7 +38984,7 @@ $data = array (
         5 => 'c7cbe3e971dbba700278a375e30f0727',
         6 => 'http://www.cell.com/cell-metabolism/fulltext/S1550-4131(14)00498-7?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS1550413114004987%3Fshowall%3Dtrue',
       ),
-      265 => 
+      249 => 
       array (
         0 => '1786574430',
         1 => '272',
@@ -39154,7 +38994,7 @@ $data = array (
         5 => '1d808bcfaaa330993d791c2c71edc945',
         6 => 'http://www.cell.com/cell-metabolism/fulltext/S1550-4131(12)00189-1',
       ),
-      266 => 
+      250 => 
       array (
         0 => '1786574430',
         1 => '273',
@@ -39164,7 +39004,7 @@ $data = array (
         5 => 'eb4c8875563e6ea6f1d6c41d6d61507c',
         6 => 'http://www.cell.com/trends/genetics/fulltext/S0168-9525(17)30127-0?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0168952517301270%3Fshowall%3Dtrue',
       ),
-      267 => 
+      251 => 
       array (
         0 => '1786574430',
         1 => '274',
@@ -39174,7 +39014,7 @@ $data = array (
         5 => 'fb193f9770dd7dc5a27e8538b7eac12b',
         6 => 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4709092/',
       ),
-      268 => 
+      252 => 
       array (
         0 => '1786574430',
         1 => '275',
@@ -39184,7 +39024,7 @@ $data = array (
         5 => '9e62179d0fce9b30729c86c89c5235f3',
         6 => 'https://www.tandfonline.com/doi/full/10.1080/19490976.2015.1016690',
       ),
-      269 => 
+      253 => 
       array (
         0 => '1786574430',
         1 => '276',
@@ -39194,7 +39034,7 @@ $data = array (
         5 => '09241f5d1ddf7159202f17f65bb0a8c8',
         6 => 'http://utmj.org/index.php/UTMJ/article/view/1645',
       ),
-      270 => 
+      254 => 
       array (
         0 => '1786574430',
         1 => '277',
@@ -39204,7 +39044,7 @@ $data = array (
         5 => 'a68f0a0367d76c0132b7994bce3c3613',
         6 => 'https://www.sciencedirect.com/science/article/pii/S1550413114005051',
       ),
-      271 => 
+      255 => 
       array (
         0 => '1786574430',
         1 => '278',
@@ -39214,7 +39054,7 @@ $data = array (
         5 => '56623f7117ea6210a7be2db36c237925',
         6 => 'https://onlinelibrary.wiley.com/doi/full/10.1111/sji.12163',
       ),
-      272 => 
+      256 => 
       array (
         0 => '1786574430',
         1 => '279',
@@ -39224,7 +39064,7 @@ $data = array (
         5 => 'ba1647c1f83da46cd8c452a8691e3748',
         6 => 'http://www.jni-journal.com/article/S0165-5728(15)00125-3/abstract',
       ),
-      273 => 
+      257 => 
       array (
         0 => '1786574430',
         1 => '280',
@@ -39234,7 +39074,7 @@ $data = array (
         5 => 'c398e024e234da046cdd301fbe7aa51a',
         6 => 'https://www.sciencedirect.com/science/article/pii/S1550413117305041',
       ),
-      274 => 
+      258 => 
       array (
         0 => '1786574430',
         1 => '281',
@@ -39244,7 +39084,7 @@ $data = array (
         5 => '576b16266660fd4b8b5d4a16e17765bb',
         6 => 'https://www.nature.com/articles/ijo201623',
       ),
-      275 => 
+      259 => 
       array (
         0 => '1786574430',
         1 => '282',
@@ -39254,7 +39094,7 @@ $data = array (
         5 => 'a8c5ed5bd24f3b4911a7ea0e61156ca5',
         6 => 'https://onlinelibrary.wiley.com/doi/abs/10.1002/mnfr.201700721',
       ),
-      276 => 
+      260 => 
       array (
         0 => '1786574430',
         1 => '283',
@@ -39264,7 +39104,7 @@ $data = array (
         5 => '1fde60cd2d3bfeb6c71dd52c13014a7a',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/19469536',
       ),
-      277 => 
+      261 => 
       array (
         0 => '1786574430',
         1 => '284',
@@ -39274,7 +39114,7 @@ $data = array (
         5 => '229fb3c5db64178b1590d59bf0d08c96',
         6 => 'https://www.sciencedirect.com/science/article/pii/S0006291X06006978?via%3Dihub',
       ),
-      278 => 
+      262 => 
       array (
         0 => '1786574430',
         1 => '285',
@@ -39284,7 +39124,7 @@ $data = array (
         5 => '2a16fda47bfb7d7deb10a340b79a1da2',
         6 => 'https://www.nature.com/articles/cr2017130',
       ),
-      279 => 
+      263 => 
       array (
         0 => '1786574430',
         1 => '286',
@@ -39294,7 +39134,7 @@ $data = array (
         5 => 'd5e6ee0a4edd019fa0d842218dfc6463',
         6 => 'https://www.sciencedirect.com/science/article/pii/S0098299712001288?via%3Dihub',
       ),
-      280 => 
+      264 => 
       array (
         0 => '1786574430',
         1 => '287',
@@ -39304,7 +39144,7 @@ $data = array (
         5 => '6154b89c91907c52da054cc02687fcd5',
         6 => 'https://www.jci.org/articles/view/58109',
       ),
-      281 => 
+      265 => 
       array (
         0 => '1786574430',
         1 => '288',
@@ -39314,7 +39154,7 @@ $data = array (
         5 => '1cefe59eba336fc775bfead4c3ee0583',
         6 => 'https://onlinelibrary.wiley.com/doi/abs/10.1002/mnfr.201300104',
       ),
-      282 => 
+      266 => 
       array (
         0 => '1786574430',
         1 => '289',
@@ -39324,7 +39164,7 @@ $data = array (
         5 => '4b679644b61a7d9cc492ed97f0c2895d',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/22378797',
       ),
-      283 => 
+      267 => 
       array (
         0 => '1786574430',
         1 => '290',
@@ -39334,7 +39174,7 @@ $data = array (
         5 => '420f6805d8dbf2d7afd0b7740b1fc1d8',
         6 => 'https://onlinelibrary.wiley.com/doi/abs/10.1002/mnfr.201400044',
       ),
-      284 => 
+      268 => 
       array (
         0 => '1786574430',
         1 => '291',
@@ -39344,7 +39184,7 @@ $data = array (
         5 => 'f46cae75c8c3c5cab20958d7952100db',
         6 => 'http://www.molmetab.com/article/S2212-8778(16)00038-7/fulltext',
       ),
-      285 => 
+      269 => 
       array (
         0 => '1786574430',
         1 => '292',
@@ -39354,7 +39194,7 @@ $data = array (
         5 => '7d3086e4e830380862eab6dda54b46c9',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/26416813',
       ),
-      286 => 
+      270 => 
       array (
         0 => '1786574430',
         1 => '293',
@@ -39364,7 +39204,7 @@ $data = array (
         5 => '5dcfd2c21619ef9b45c027e9cbf89f11',
         6 => 'http://www.mdpi.com/1422-0067/15/7/11678/htm',
       ),
-      287 => 
+      271 => 
       array (
         0 => '1786574430',
         1 => '294',
@@ -39374,7 +39214,7 @@ $data = array (
         5 => 'f5b37c2b6f2bd062f09291fe66b7779e',
         6 => 'https://www.sciencedirect.com/science/article/pii/S0092867415001865#fig1',
       ),
-      288 => 
+      272 => 
       array (
         0 => '1786574430',
         1 => '295',
@@ -39384,7 +39224,7 @@ $data = array (
         5 => '7d12fbc214630e6b066617da0578fdc7',
         6 => 'https://onlinelibrary.wiley.com/doi/full/10.1111/j.1365-2672.2007.03400.x',
       ),
-      289 => 
+      273 => 
       array (
         0 => '1786574432',
         1 => '296',
@@ -39394,7 +39234,7 @@ $data = array (
         5 => 'c631770cf3bfffa5e2a27dc14caa69ec',
         6 => 'https://ahs.uic.edu/kinesiology-nutrition/directory/varady-krista/',
       ),
-      290 => 
+      274 => 
       array (
         0 => '1786574432',
         1 => '297',
@@ -39404,7 +39244,7 @@ $data = array (
         5 => 'cf254c865cd1ef88bd8b4e9bd805f6c6',
         6 => 'http://science.sciencemag.org/content/325/5937/201.full',
       ),
-      291 => 
+      275 => 
       array (
         0 => '1786574432',
         1 => '298',
@@ -39414,7 +39254,7 @@ $data = array (
         5 => 'b86f110bc3022feec743ac0afa67eb9f',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/28017879',
       ),
-      292 => 
+      276 => 
       array (
         0 => '1786574432',
         1 => '299',
@@ -39424,7 +39264,7 @@ $data = array (
         5 => '3b64bfaebcc98b87d267f284723c80ab',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/28106818',
       ),
-      293 => 
+      277 => 
       array (
         0 => '1786574432',
         1 => '300',
@@ -39434,7 +39274,7 @@ $data = array (
         5 => 'ecc76b403574ea1540a36bf786388468',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/28715993',
       ),
-      294 => 
+      278 => 
       array (
         0 => '1786574432',
         1 => '301',
@@ -39444,7 +39284,7 @@ $data = array (
         5 => '3c2977afcc6cd36d682f180b23f1833a',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/25251676',
       ),
-      295 => 
+      279 => 
       array (
         0 => '1786574432',
         1 => '302',
@@ -39454,7 +39294,7 @@ $data = array (
         5 => '24e17f7e2a0081dfc280d6f4ebe9eea9',
         6 => 'https://www.ncbi.nlm.nih.gov/m/pubmed/25881054/',
       ),
-      296 => 
+      280 => 
       array (
         0 => '1786574432',
         1 => '303',
@@ -39464,7 +39304,7 @@ $data = array (
         5 => 'd0cf835f4dd7a8af47a7ba9d00d9fe0f',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/29321682',
       ),
-      297 => 
+      281 => 
       array (
         0 => '1786574432',
         1 => '304',
@@ -39474,7 +39314,7 @@ $data = array (
         5 => 'a59dd3a75828a9f1abd4a7b74dc13d47',
         6 => 'https://medium.com/lifeomic/this-is-your-brain-on-fasting-a77d9d264de7',
       ),
-      298 => 
+      282 => 
       array (
         0 => '1786574432',
         1 => '305',
@@ -39484,7 +39324,7 @@ $data = array (
         5 => 'e42c6d9fa23ca4af296a55b1859f4384',
         6 => 'https://medium.com/lifeomic/quality-over-quantity-in-life-and-fat-d75bd6aa0331',
       ),
-      299 => 
+      283 => 
       array (
         0 => '1786574432',
         1 => '306',
@@ -39494,7 +39334,7 @@ $data = array (
         5 => 'ce3809b83b9ace5143c5cac05cd4b4be',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/26411343https:/www.ncbi.nlm.nih.gov/pubmed/26411343',
       ),
-      300 => 
+      284 => 
       array (
         0 => '1786574432',
         1 => '307',
@@ -39504,7 +39344,7 @@ $data = array (
         5 => 'e8d82432f0d8fdac18e21ddf4a1cb27d',
         6 => 'https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis/a1c-test',
       ),
-      301 => 
+      285 => 
       array (
         0 => '1786574432',
         1 => '308',
@@ -39514,7 +39354,7 @@ $data = array (
         5 => '81a2ea4d01b80907346942caf326372a',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/27737674',
       ),
-      302 => 
+      286 => 
       array (
         0 => '1786574432',
         1 => '309',
@@ -39524,7 +39364,7 @@ $data = array (
         5 => '945fb01a3e25f525d2cbff8f347b6225',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/27569118',
       ),
-      303 => 
+      287 => 
       array (
         0 => '1786574432',
         1 => '310',
@@ -39534,7 +39374,7 @@ $data = array (
         5 => '0e25bdc035f29ec1b9be33896a1842a5',
         6 => 'https://academic.oup.com/ajcn/article-abstract/105/6/1351/4668664?redirectedFrom=fulltext',
       ),
-      304 => 
+      288 => 
       array (
         0 => '1786574432',
         1 => '311',
@@ -39544,7 +39384,7 @@ $data = array (
         5 => 'b497670c63457f9aaf8daac14808befb',
         6 => 'https://medium.com/lifeomic/time-restricted-feeding-how-and-when-you-break-your-fast-matters-f241d40950f3',
       ),
-      305 => 
+      289 => 
       array (
         0 => '1786574432',
         1 => '312',
@@ -39554,7 +39394,7 @@ $data = array (
         5 => 'dd7be65a556a73e11fa7fc9e8494a622',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/29163194',
       ),
-      306 => 
+      290 => 
       array (
         0 => '1786574432',
         1 => '313',
@@ -39564,7 +39404,7 @@ $data = array (
         5 => '6a5620c1bedf27de3ac659df2cf01e7b',
         6 => 'https://www.ncbi.nlm.nih.gov/pubmed/25943396',
       ),
-      307 => 
+      291 => 
       array (
         0 => '1786574432',
         1 => '314',
@@ -39574,7 +39414,7 @@ $data = array (
         5 => '2884e524ab8f1b55561d9891e5de4ed4',
         6 => 'https://news.usc.edu/118758/fasting-during-chemotherapy-may-offset-spikes-in-blood-sugar-caused-by-cancer-fighting-drugs/',
       ),
-      308 => 
+      292 => 
       array (
         0 => '1786574432',
         1 => '315',
@@ -39584,7 +39424,7 @@ $data = array (
         5 => '6441262773b87e1ccfaaae3e5d82a16b',
         6 => 'http://www.tandfonline.com/doi/abs/10.4161/cc.9.22.13954',
       ),
-      309 => 
+      293 => 
       array (
         0 => '1786574432',
         1 => '316',
@@ -39594,7 +39434,7 @@ $data = array (
         5 => '747981d28cb22dabfd50ef662481a12d',
         6 => 'http://gero.usc.edu/faculty/longo/',
       ),
-      310 => 
+      294 => 
       array (
         0 => '1786574432',
         1 => '317',
@@ -39604,7 +39444,7 @@ $data = array (
         5 => '7f58aae37e67e4bda3aef115f4d8998c',
         6 => 'https://www.tandfonline.com/doi/abs/10.1080/23723556.2015.1117701',
       ),
-      311 => 
+      295 => 
       array (
         0 => '1786574432',
         1 => '318',
@@ -39614,7 +39454,7 @@ $data = array (
         5 => '2708bbc09dd26ebcba39b069bc7395a4',
         6 => 'https://www.tandfonline.com/doi/abs/10.4161/cc.25016',
       ),
-      312 => 
+      296 => 
       array (
         0 => '1786574432',
         1 => '319',
@@ -39624,7 +39464,7 @@ $data = array (
         5 => '68e50806a1079b59598648e4fef4fbdf',
         6 => 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4289501/',
       ),
-      313 => 
+      297 => 
       array (
         0 => '1786574432',
         1 => '320',
@@ -39634,7 +39474,7 @@ $data = array (
         5 => '66799a459472c21c4ab1a72fadf33ba3',
         6 => 'https://unsplash.com/photos/fH55IFx6kXE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      314 => 
+      298 => 
       array (
         0 => '1786574433',
         1 => '321',
@@ -39644,7 +39484,7 @@ $data = array (
         5 => 'd0779adf1e8b42adfc221179144fdba0',
         6 => 'https://unsplash.com/photos/jUPOXXRNdcA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      315 => 
+      299 => 
       array (
         0 => '1786574433',
         1 => '322',
@@ -39654,7 +39494,7 @@ $data = array (
         5 => '84959b4d9b12739e9f59ddf8a3aec781',
         6 => 'http://www.foodista.com/user/44',
       ),
-      316 => 
+      300 => 
       array (
         0 => '1786574433',
         1 => '323',
@@ -39664,7 +39504,7 @@ $data = array (
         5 => '3a1443dcd09362ec4fd4c184e88a92c0',
         6 => 'https://pixabay.com/en/users/sharonang-99559/',
       ),
-      317 => 
+      301 => 
       array (
         0 => '1786574433',
         1 => '324',
@@ -39674,7 +39514,7 @@ $data = array (
         5 => 'cde9bd3a78bb947c5a161c8d9b47086a',
         6 => 'https://pixabay.com/',
       ),
-      318 => 
+      302 => 
       array (
         0 => '1786574433',
         1 => '325',
@@ -39684,7 +39524,7 @@ $data = array (
         5 => 'd58f4f0a0cec2e5b198f06212b4c2e63',
         6 => 'https://creativecommons.org/publicdomain/zero/1.0/deed.en',
       ),
-      319 => 
+      303 => 
       array (
         0 => '1786574434',
         1 => '326',
@@ -39694,7 +39534,7 @@ $data = array (
         5 => '876ee3b5111b47283feb93fc912cb30d',
         6 => 'http://www.foodista.com/user/150433',
       ),
-      320 => 
+      304 => 
       array (
         0 => '1786574435',
         1 => '327',
@@ -39704,7 +39544,7 @@ $data = array (
         5 => '1ce039b705d8bbed72a26c8b3434f109',
         6 => 'http://www.foodista.com/user/account-7HX6YPKP',
       ),
-      321 => 
+      305 => 
       array (
         0 => '1786574435',
         1 => '328',
@@ -39714,7 +39554,7 @@ $data = array (
         5 => '22cdcca1671a243386e08de74b7fdb14',
         6 => 'http://www.foodista.com/user/117846',
       ),
-      322 => 
+      306 => 
       array (
         0 => '1786574436',
         1 => '329',
@@ -39724,7 +39564,7 @@ $data = array (
         5 => '6587eefe89cc5e6022446de188adc8b4',
         6 => 'https://www.makebetterfood.com/',
       ),
-      323 => 
+      307 => 
       array (
         0 => '1786574436',
         1 => '330',
@@ -39734,7 +39574,7 @@ $data = array (
         5 => '7f9a029d6497aef1ba195383bd68d96e',
         6 => 'https://www.makebetterfood.com/recipes/american-sandwich-bread/',
       ),
-      324 => 
+      308 => 
       array (
         0 => '1786574436',
         1 => '331',
@@ -39744,7 +39584,7 @@ $data = array (
         5 => '7dbcf29b612e712389f1447ecd20ab91',
         6 => 'https://www.makebetterfood.com/recipes/kale-pesto/',
       ),
-      325 => 
+      309 => 
       array (
         0 => '1786574436',
         1 => '332',
@@ -39754,7 +39594,7 @@ $data = array (
         5 => '806454b6d49391c74ad2752ad101df84',
         6 => 'https://www.flickr.com/photos/30478819@N08/',
       ),
-      326 => 
+      310 => 
       array (
         0 => '1786574436',
         1 => '333',
@@ -39764,7 +39604,7 @@ $data = array (
         5 => 'a81f80ab49d1bf54dd49dbb030239770',
         6 => 'https://creativecommons.org/licenses/by/2.0/',
       ),
-      327 => 
+      311 => 
       array (
         0 => '1786574438',
         1 => '334',
@@ -39774,7 +39614,7 @@ $data = array (
         5 => 'dd9a4f51f275273aed3230412cb742f0',
         6 => 'http://www.kjokkenutstyr.net',
       ),
-      328 => 
+      312 => 
       array (
         0 => '1786574439',
         1 => '335',
@@ -39784,7 +39624,7 @@ $data = array (
         5 => '5f75da2e1e937e6d817855e3bace4da8',
         6 => 'https://unsplash.com/photos/inJF419mrPE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      329 => 
+      313 => 
       array (
         0 => '1786574441',
         1 => '336',
@@ -39794,7 +39634,7 @@ $data = array (
         5 => '81056ad37bf51fd870a069b39d88fedc',
         6 => 'https://unsplash.com/photos/ldUMCsT7iFU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
       ),
-      330 => 
+      314 => 
       array (
         0 => '1786574450',
         1 => '337',
@@ -39804,7 +39644,7 @@ $data = array (
         5 => '105a0654ae4af2580bbdb49ccb931557',
         6 => 'ezlocation://506',
       ),
-      331 => 
+      315 => 
       array (
         0 => '1786574482',
         1 => '338',
@@ -39814,7 +39654,7 @@ $data = array (
         5 => '9b492048041e95b32de08bafc86d759b',
         6 => '/content/view/sitemap/2',
       ),
-      332 => 
+      316 => 
       array (
         0 => '1786574482',
         1 => '339',
@@ -39824,7 +39664,7 @@ $data = array (
         5 => 'c86bcb109d8e70f9db65c803baafd550',
         6 => '/content/view/tagcloud/2',
       ),
-      333 => 
+      317 => 
       array (
         0 => '1788229570',
         1 => '340',
@@ -39834,7 +39674,7 @@ $data = array (
         5 => 'a24a5be7a6076556c8c2f16e5065bd40',
         6 => 'https://www.facebook.com',
       ),
-      334 => 
+      318 => 
       array (
         0 => '1788229570',
         1 => '341',
@@ -39844,7 +39684,7 @@ $data = array (
         5 => '196287304fd73ddd3ebae44cfad2d6fb',
         6 => 'https://www.twitter.com',
       ),
-      335 => 
+      319 => 
       array (
         0 => '1788229570',
         1 => '342',
@@ -39854,7 +39694,7 @@ $data = array (
         5 => '81baa2bda524b19dddf2507580b95e0b',
         6 => 'https://www.instagram.com',
       ),
-      336 => 
+      320 => 
       array (
         0 => '1788229570',
         1 => '343',
@@ -39878,3173 +39718,2969 @@ $data = array (
     array (
       0 => 
       array (
-        0 => '104',
-        1 => '6',
-        2 => '9',
-      ),
-      1 => 
-      array (
-        0 => '104',
-        1 => '6',
-        2 => '4',
-      ),
-      2 => 
-      array (
-        0 => '104',
-        1 => '6',
-        2 => '10',
-      ),
-      3 => 
-      array (
-        0 => '104',
-        1 => '6',
-        2 => '11',
-      ),
-      4 => 
-      array (
-        0 => '104',
-        1 => '6',
-        2 => '12',
-      ),
-      5 => 
-      array (
-        0 => '104',
-        1 => '6',
-        2 => '8',
-      ),
-      6 => 
-      array (
-        0 => '104',
-        1 => '6',
-        2 => '13',
-      ),
-      7 => 
-      array (
-        0 => '104',
-        1 => '6',
-        2 => '14',
-      ),
-      8 => 
-      array (
-        0 => '104',
-        1 => '6',
-        2 => '15',
-      ),
-      9 => 
-      array (
-        0 => '104',
-        1 => '6',
-        2 => '16',
-      ),
-      10 => 
-      array (
-        0 => '104',
-        1 => '6',
-        2 => '17',
-      ),
-      11 => 
-      array (
-        0 => '104',
-        1 => '6',
-        2 => '18',
-      ),
-      12 => 
-      array (
-        0 => '104',
-        1 => '6',
-        2 => '19',
-      ),
-      13 => 
-      array (
-        0 => '104',
-        1 => '6',
-        2 => '20',
-      ),
-      14 => 
-      array (
-        0 => '104',
-        1 => '6',
-        2 => '21',
-      ),
-      15 => 
-      array (
-        0 => '104',
-        1 => '6',
-        2 => '22',
-      ),
-      16 => 
-      array (
         0 => '402',
         1 => '1',
         2 => '23',
       ),
-      17 => 
+      1 => 
       array (
         0 => '402',
         1 => '1',
         2 => '24',
       ),
-      18 => 
+      2 => 
       array (
         0 => '402',
         1 => '1',
         2 => '25',
       ),
-      19 => 
+      3 => 
       array (
         0 => '402',
         1 => '1',
         2 => '26',
       ),
-      20 => 
+      4 => 
       array (
         0 => '402',
         1 => '1',
         2 => '27',
       ),
-      21 => 
+      5 => 
       array (
         0 => '402',
         1 => '1',
         2 => '28',
       ),
-      22 => 
+      6 => 
       array (
         0 => '402',
         1 => '1',
         2 => '29',
       ),
-      23 => 
+      7 => 
       array (
         0 => '402',
         1 => '1',
         2 => '30',
       ),
-      24 => 
+      8 => 
       array (
         0 => '402',
         1 => '1',
         2 => '31',
       ),
-      25 => 
+      9 => 
       array (
         0 => '402',
         1 => '1',
         2 => '32',
       ),
-      26 => 
+      10 => 
       array (
         0 => '402',
         1 => '1',
         2 => '33',
       ),
-      27 => 
+      11 => 
       array (
         0 => '402',
         1 => '1',
         2 => '34',
       ),
-      28 => 
+      12 => 
       array (
         0 => '402',
         1 => '1',
         2 => '35',
       ),
-      29 => 
+      13 => 
       array (
         0 => '402',
         1 => '1',
         2 => '36',
       ),
-      30 => 
+      14 => 
       array (
         0 => '402',
         1 => '1',
         2 => '37',
       ),
-      31 => 
+      15 => 
       array (
         0 => '418',
         1 => '1',
         2 => '38',
       ),
-      32 => 
+      16 => 
       array (
         0 => '418',
         1 => '1',
         2 => '39',
       ),
-      33 => 
+      17 => 
       array (
         0 => '418',
         1 => '1',
         2 => '40',
       ),
-      34 => 
+      18 => 
       array (
         0 => '418',
         1 => '1',
         2 => '41',
       ),
-      35 => 
+      19 => 
       array (
         0 => '418',
         1 => '1',
         2 => '42',
       ),
-      36 => 
+      20 => 
       array (
         0 => '434',
         1 => '1',
         2 => '43',
       ),
-      37 => 
+      21 => 
       array (
         0 => '434',
         1 => '1',
         2 => '44',
       ),
-      38 => 
+      22 => 
       array (
         0 => '434',
         1 => '1',
         2 => '45',
       ),
-      39 => 
+      23 => 
       array (
         0 => '450',
         1 => '1',
         2 => '46',
       ),
-      40 => 
+      24 => 
       array (
         0 => '450',
         1 => '1',
         2 => '47',
       ),
-      41 => 
+      25 => 
       array (
         0 => '450',
         1 => '1',
         2 => '48',
       ),
-      42 => 
+      26 => 
       array (
         0 => '450',
         1 => '1',
         2 => '49',
       ),
-      43 => 
+      27 => 
       array (
         0 => '450',
         1 => '1',
         2 => '36',
       ),
-      44 => 
+      28 => 
       array (
         0 => '450',
         1 => '1',
         2 => '50',
       ),
-      45 => 
+      29 => 
       array (
         0 => '466',
         1 => '1',
         2 => '51',
       ),
-      46 => 
+      30 => 
       array (
         0 => '466',
         1 => '1',
         2 => '52',
       ),
-      47 => 
+      31 => 
       array (
         0 => '466',
         1 => '1',
         2 => '53',
       ),
-      48 => 
+      32 => 
       array (
         0 => '466',
         1 => '1',
         2 => '54',
       ),
-      49 => 
+      33 => 
       array (
         0 => '482',
         1 => '1',
         2 => '55',
       ),
-      50 => 
+      34 => 
       array (
         0 => '482',
         1 => '1',
         2 => '56',
       ),
-      51 => 
+      35 => 
       array (
         0 => '482',
         1 => '1',
         2 => '57',
       ),
-      52 => 
+      36 => 
       array (
         0 => '482',
         1 => '1',
         2 => '58',
       ),
-      53 => 
+      37 => 
       array (
         0 => '482',
         1 => '1',
         2 => '54',
       ),
-      54 => 
+      38 => 
       array (
         0 => '482',
         1 => '1',
         2 => '59',
       ),
-      55 => 
+      39 => 
       array (
         0 => '498',
         1 => '1',
         2 => '60',
       ),
-      56 => 
+      40 => 
       array (
         0 => '498',
         1 => '1',
         2 => '61',
       ),
-      57 => 
+      41 => 
       array (
         0 => '498',
         1 => '1',
         2 => '62',
       ),
-      58 => 
+      42 => 
       array (
         0 => '498',
         1 => '1',
         2 => '63',
       ),
-      59 => 
+      43 => 
       array (
         0 => '498',
         1 => '1',
         2 => '64',
       ),
-      60 => 
+      44 => 
       array (
         0 => '498',
         1 => '1',
         2 => '65',
       ),
-      61 => 
+      45 => 
       array (
         0 => '498',
         1 => '1',
         2 => '66',
       ),
-      62 => 
+      46 => 
       array (
         0 => '498',
         1 => '1',
         2 => '67',
       ),
-      63 => 
+      47 => 
       array (
         0 => '498',
         1 => '1',
         2 => '68',
       ),
-      64 => 
+      48 => 
       array (
         0 => '498',
         1 => '1',
         2 => '40',
       ),
-      65 => 
+      49 => 
       array (
         0 => '498',
         1 => '1',
         2 => '41',
       ),
-      66 => 
+      50 => 
       array (
         0 => '498',
         1 => '1',
         2 => '69',
       ),
-      67 => 
+      51 => 
       array (
         0 => '514',
         1 => '1',
         2 => '70',
       ),
-      68 => 
+      52 => 
       array (
         0 => '514',
         1 => '1',
         2 => '71',
       ),
-      69 => 
+      53 => 
       array (
         0 => '514',
         1 => '1',
         2 => '72',
       ),
-      70 => 
+      54 => 
       array (
         0 => '514',
         1 => '1',
         2 => '73',
       ),
-      71 => 
+      55 => 
       array (
         0 => '514',
         1 => '1',
         2 => '74',
       ),
-      72 => 
+      56 => 
       array (
         0 => '514',
         1 => '1',
         2 => '75',
       ),
-      73 => 
+      57 => 
       array (
         0 => '514',
         1 => '1',
         2 => '40',
       ),
-      74 => 
+      58 => 
       array (
         0 => '514',
         1 => '1',
         2 => '41',
       ),
-      75 => 
+      59 => 
       array (
         0 => '514',
         1 => '1',
         2 => '69',
       ),
-      76 => 
+      60 => 
       array (
         0 => '530',
         1 => '1',
         2 => '76',
       ),
-      77 => 
+      61 => 
       array (
         0 => '530',
         1 => '1',
         2 => '72',
       ),
-      78 => 
+      62 => 
       array (
         0 => '530',
         1 => '1',
         2 => '77',
       ),
-      79 => 
+      63 => 
       array (
         0 => '530',
         1 => '1',
         2 => '78',
       ),
-      80 => 
+      64 => 
       array (
         0 => '530',
         1 => '1',
         2 => '79',
       ),
-      81 => 
+      65 => 
       array (
         0 => '530',
         1 => '1',
         2 => '80',
       ),
-      82 => 
+      66 => 
       array (
         0 => '530',
         1 => '1',
         2 => '81',
       ),
-      83 => 
+      67 => 
       array (
         0 => '530',
         1 => '1',
         2 => '82',
       ),
-      84 => 
+      68 => 
       array (
         0 => '530',
         1 => '1',
         2 => '83',
       ),
-      85 => 
+      69 => 
       array (
         0 => '530',
         1 => '1',
         2 => '84',
       ),
-      86 => 
+      70 => 
       array (
         0 => '530',
         1 => '1',
         2 => '85',
       ),
-      87 => 
+      71 => 
       array (
         0 => '530',
         1 => '1',
         2 => '86',
       ),
-      88 => 
+      72 => 
       array (
         0 => '530',
         1 => '1',
         2 => '87',
       ),
-      89 => 
+      73 => 
       array (
         0 => '530',
         1 => '1',
         2 => '88',
       ),
-      90 => 
+      74 => 
       array (
         0 => '530',
         1 => '1',
         2 => '89',
       ),
-      91 => 
+      75 => 
       array (
         0 => '530',
         1 => '1',
         2 => '90',
       ),
-      92 => 
+      76 => 
       array (
         0 => '530',
         1 => '1',
         2 => '91',
       ),
-      93 => 
+      77 => 
       array (
         0 => '530',
         1 => '1',
         2 => '40',
       ),
-      94 => 
+      78 => 
       array (
         0 => '530',
         1 => '1',
         2 => '41',
       ),
-      95 => 
+      79 => 
       array (
         0 => '530',
         1 => '1',
         2 => '69',
       ),
-      96 => 
+      80 => 
       array (
         0 => '546',
         1 => '1',
         2 => '92',
       ),
-      97 => 
+      81 => 
       array (
         0 => '546',
         1 => '1',
         2 => '93',
       ),
-      98 => 
+      82 => 
       array (
         0 => '546',
         1 => '1',
         2 => '94',
       ),
-      99 => 
+      83 => 
       array (
         0 => '546',
         1 => '1',
         2 => '95',
       ),
-      100 => 
+      84 => 
       array (
         0 => '546',
         1 => '1',
         2 => '96',
       ),
-      101 => 
+      85 => 
       array (
         0 => '546',
         1 => '1',
         2 => '97',
       ),
-      102 => 
+      86 => 
       array (
         0 => '546',
         1 => '1',
         2 => '98',
       ),
-      103 => 
+      87 => 
       array (
         0 => '546',
         1 => '1',
         2 => '99',
       ),
-      104 => 
+      88 => 
       array (
         0 => '546',
         1 => '1',
         2 => '40',
       ),
-      105 => 
+      89 => 
       array (
         0 => '546',
         1 => '1',
         2 => '41',
       ),
-      106 => 
+      90 => 
       array (
         0 => '546',
         1 => '1',
         2 => '100',
       ),
-      107 => 
+      91 => 
       array (
         0 => '562',
         1 => '1',
         2 => '101',
       ),
-      108 => 
+      92 => 
       array (
         0 => '562',
         1 => '1',
         2 => '102',
       ),
-      109 => 
+      93 => 
       array (
         0 => '562',
         1 => '1',
         2 => '103',
       ),
-      110 => 
+      94 => 
       array (
         0 => '562',
         1 => '1',
         2 => '104',
       ),
-      111 => 
+      95 => 
       array (
         0 => '562',
         1 => '1',
         2 => '105',
       ),
-      112 => 
+      96 => 
       array (
         0 => '562',
         1 => '1',
         2 => '106',
       ),
-      113 => 
+      97 => 
       array (
         0 => '562',
         1 => '1',
         2 => '107',
       ),
-      114 => 
+      98 => 
       array (
         0 => '562',
         1 => '1',
         2 => '58',
       ),
-      115 => 
+      99 => 
       array (
         0 => '562',
         1 => '1',
         2 => '54',
       ),
-      116 => 
+      100 => 
       array (
         0 => '562',
         1 => '1',
         2 => '108',
       ),
-      117 => 
+      101 => 
       array (
         0 => '580',
         1 => '1',
         2 => '109',
       ),
-      118 => 
+      102 => 
       array (
         0 => '580',
         1 => '1',
         2 => '54',
       ),
-      119 => 
+      103 => 
       array (
         0 => '580',
         1 => '1',
         2 => '110',
       ),
-      120 => 
+      104 => 
       array (
         0 => '597',
         1 => '1',
         2 => '111',
       ),
-      121 => 
+      105 => 
       array (
         0 => '597',
         1 => '1',
         2 => '112',
       ),
-      122 => 
+      106 => 
       array (
         0 => '597',
         1 => '1',
         2 => '113',
       ),
-      123 => 
+      107 => 
       array (
         0 => '597',
         1 => '1',
         2 => '114',
       ),
-      124 => 
+      108 => 
       array (
         0 => '597',
         1 => '1',
         2 => '115',
       ),
-      125 => 
+      109 => 
       array (
         0 => '597',
         1 => '1',
         2 => '109',
       ),
-      126 => 
+      110 => 
       array (
         0 => '597',
         1 => '1',
         2 => '54',
       ),
-      127 => 
+      111 => 
       array (
         0 => '597',
         1 => '1',
         2 => '116',
       ),
-      128 => 
+      112 => 
       array (
         0 => '614',
         1 => '1',
         2 => '117',
       ),
-      129 => 
+      113 => 
       array (
         0 => '614',
         1 => '1',
         2 => '118',
       ),
-      130 => 
+      114 => 
       array (
         0 => '614',
         1 => '1',
         2 => '109',
       ),
-      131 => 
+      115 => 
       array (
         0 => '614',
         1 => '1',
         2 => '54',
       ),
-      132 => 
+      116 => 
       array (
         0 => '614',
         1 => '1',
         2 => '119',
       ),
-      133 => 
+      117 => 
       array (
         0 => '631',
         1 => '1',
         2 => '120',
       ),
-      134 => 
+      118 => 
       array (
         0 => '631',
         1 => '1',
         2 => '109',
       ),
-      135 => 
+      119 => 
       array (
         0 => '631',
         1 => '1',
         2 => '54',
       ),
-      136 => 
+      120 => 
       array (
         0 => '631',
         1 => '1',
         2 => '121',
       ),
-      137 => 
+      121 => 
       array (
         0 => '631',
         1 => '1',
         2 => '122',
       ),
-      138 => 
+      122 => 
       array (
         0 => '646',
         1 => '1',
         2 => '49',
       ),
-      139 => 
+      123 => 
       array (
         0 => '646',
         1 => '1',
         2 => '36',
       ),
-      140 => 
+      124 => 
       array (
         0 => '646',
         1 => '1',
         2 => '123',
       ),
-      141 => 
+      125 => 
       array (
         0 => '657',
         1 => '1',
         2 => '124',
       ),
-      142 => 
+      126 => 
       array (
         0 => '657',
         1 => '1',
         2 => '36',
       ),
-      143 => 
+      127 => 
       array (
         0 => '690',
         1 => '1',
         2 => '102',
       ),
-      144 => 
+      128 => 
       array (
         0 => '690',
         1 => '1',
         2 => '125',
       ),
-      145 => 
+      129 => 
       array (
         0 => '690',
         1 => '1',
         2 => '103',
       ),
-      146 => 
+      130 => 
       array (
         0 => '690',
         1 => '1',
         2 => '126',
       ),
-      147 => 
+      131 => 
       array (
         0 => '690',
         1 => '1',
         2 => '127',
       ),
-      148 => 
+      132 => 
       array (
         0 => '690',
         1 => '1',
         2 => '128',
       ),
-      149 => 
+      133 => 
       array (
         0 => '690',
         1 => '1',
         2 => '129',
       ),
-      150 => 
+      134 => 
       array (
         0 => '690',
         1 => '1',
         2 => '130',
       ),
-      151 => 
+      135 => 
       array (
         0 => '690',
         1 => '1',
         2 => '131',
       ),
-      152 => 
+      136 => 
       array (
         0 => '690',
         1 => '1',
         2 => '132',
       ),
-      153 => 
+      137 => 
       array (
         0 => '690',
         1 => '1',
         2 => '133',
       ),
-      154 => 
+      138 => 
       array (
         0 => '690',
         1 => '1',
         2 => '134',
       ),
-      155 => 
+      139 => 
       array (
         0 => '690',
         1 => '1',
         2 => '135',
       ),
-      156 => 
+      140 => 
       array (
         0 => '690',
         1 => '1',
         2 => '136',
       ),
-      157 => 
+      141 => 
       array (
         0 => '690',
         1 => '1',
         2 => '137',
       ),
-      158 => 
+      142 => 
       array (
         0 => '690',
         1 => '1',
         2 => '138',
       ),
-      159 => 
+      143 => 
       array (
         0 => '690',
         1 => '1',
         2 => '139',
       ),
-      160 => 
+      144 => 
       array (
         0 => '690',
         1 => '1',
         2 => '140',
       ),
-      161 => 
+      145 => 
       array (
         0 => '690',
         1 => '1',
         2 => '141',
       ),
-      162 => 
+      146 => 
       array (
         0 => '690',
         1 => '1',
         2 => '142',
       ),
-      163 => 
+      147 => 
       array (
         0 => '690',
         1 => '1',
         2 => '143',
       ),
-      164 => 
+      148 => 
       array (
         0 => '690',
         1 => '1',
         2 => '144',
       ),
-      165 => 
+      149 => 
       array (
         0 => '690',
         1 => '1',
         2 => '101',
       ),
-      166 => 
+      150 => 
       array (
         0 => '690',
         1 => '1',
         2 => '58',
       ),
-      167 => 
+      151 => 
       array (
         0 => '690',
         1 => '1',
         2 => '54',
       ),
-      168 => 
+      152 => 
       array (
         0 => '690',
         1 => '1',
         2 => '145',
       ),
-      169 => 
+      153 => 
       array (
         0 => '741',
         1 => '1',
         2 => '109',
       ),
-      170 => 
+      154 => 
       array (
         0 => '741',
         1 => '1',
         2 => '54',
       ),
-      171 => 
+      155 => 
       array (
         0 => '756',
         1 => '1',
         2 => '146',
       ),
-      172 => 
+      156 => 
       array (
         0 => '756',
         1 => '1',
         2 => '49',
       ),
-      173 => 
+      157 => 
       array (
         0 => '756',
         1 => '1',
         2 => '36',
       ),
-      174 => 
+      158 => 
       array (
         0 => '756',
         1 => '1',
         2 => '147',
       ),
-      175 => 
+      159 => 
       array (
         0 => '781',
         1 => '1',
         2 => '148',
       ),
-      176 => 
+      160 => 
       array (
         0 => '781',
         1 => '1',
         2 => '149',
       ),
-      177 => 
+      161 => 
       array (
         0 => '781',
         1 => '1',
         2 => '150',
       ),
-      178 => 
+      162 => 
       array (
         0 => '781',
         1 => '1',
         2 => '151',
       ),
-      179 => 
+      163 => 
       array (
         0 => '781',
         1 => '1',
         2 => '152',
       ),
-      180 => 
+      164 => 
       array (
         0 => '781',
         1 => '1',
         2 => '153',
       ),
-      181 => 
+      165 => 
       array (
         0 => '781',
         1 => '1',
         2 => '154',
       ),
-      182 => 
+      166 => 
       array (
         0 => '781',
         1 => '1',
         2 => '155',
       ),
-      183 => 
+      167 => 
       array (
         0 => '781',
         1 => '1',
         2 => '156',
       ),
-      184 => 
+      168 => 
       array (
         0 => '781',
         1 => '1',
         2 => '157',
       ),
-      185 => 
+      169 => 
       array (
         0 => '781',
         1 => '1',
         2 => '158',
       ),
-      186 => 
+      170 => 
       array (
         0 => '781',
         1 => '1',
         2 => '159',
       ),
-      187 => 
+      171 => 
       array (
         0 => '781',
         1 => '1',
         2 => '160',
       ),
-      188 => 
+      172 => 
       array (
         0 => '781',
         1 => '1',
         2 => '161',
       ),
-      189 => 
+      173 => 
       array (
         0 => '781',
         1 => '1',
         2 => '162',
       ),
-      190 => 
+      174 => 
       array (
         0 => '781',
         1 => '1',
         2 => '163',
       ),
-      191 => 
+      175 => 
       array (
         0 => '781',
         1 => '1',
         2 => '164',
       ),
-      192 => 
+      176 => 
       array (
         0 => '781',
         1 => '1',
         2 => '165',
       ),
-      193 => 
+      177 => 
       array (
         0 => '781',
         1 => '1',
         2 => '166',
       ),
-      194 => 
+      178 => 
       array (
         0 => '781',
         1 => '1',
         2 => '167',
       ),
-      195 => 
+      179 => 
       array (
         0 => '781',
         1 => '1',
         2 => '168',
       ),
-      196 => 
+      180 => 
       array (
         0 => '799',
         1 => '1',
         2 => '169',
       ),
-      197 => 
+      181 => 
       array (
         0 => '799',
         1 => '1',
         2 => '170',
       ),
-      198 => 
+      182 => 
       array (
         0 => '799',
         1 => '1',
         2 => '178',
       ),
-      199 => 
+      183 => 
       array (
         0 => '799',
         1 => '1',
         2 => '180',
       ),
-      200 => 
+      184 => 
       array (
         0 => '799',
         1 => '1',
         2 => '182',
       ),
-      201 => 
+      185 => 
       array (
         0 => '799',
         1 => '1',
         2 => '183',
       ),
-      202 => 
+      186 => 
       array (
         0 => '799',
         1 => '1',
         2 => '184',
       ),
-      203 => 
+      187 => 
       array (
         0 => '799',
         1 => '1',
         2 => '185',
       ),
-      204 => 
+      188 => 
       array (
         0 => '799',
         1 => '1',
         2 => '329',
       ),
-      205 => 
+      189 => 
       array (
         0 => '799',
         1 => '1',
         2 => '335',
       ),
-      206 => 
+      190 => 
       array (
         0 => '815',
         1 => '1',
         2 => '171',
       ),
-      207 => 
+      191 => 
       array (
         0 => '815',
         1 => '1',
         2 => '172',
       ),
-      208 => 
+      192 => 
       array (
         0 => '815',
         1 => '1',
         2 => '173',
       ),
-      209 => 
+      193 => 
       array (
         0 => '815',
         1 => '1',
         2 => '174',
       ),
-      210 => 
+      194 => 
       array (
         0 => '833',
         1 => '1',
         2 => '175',
       ),
-      211 => 
+      195 => 
       array (
         0 => '833',
         1 => '1',
         2 => '176',
       ),
-      212 => 
+      196 => 
       array (
         0 => '833',
         1 => '1',
         2 => '177',
       ),
-      213 => 
+      197 => 
       array (
         0 => '833',
         1 => '1',
         2 => '178',
       ),
-      214 => 
+      198 => 
       array (
         0 => '833',
         1 => '1',
         2 => '179',
       ),
-      215 => 
+      199 => 
       array (
         0 => '833',
         1 => '1',
         2 => '180',
       ),
-      216 => 
+      200 => 
       array (
         0 => '833',
         1 => '1',
         2 => '181',
       ),
-      217 => 
+      201 => 
       array (
         0 => '833',
         1 => '1',
         2 => '182',
       ),
-      218 => 
+      202 => 
       array (
         0 => '833',
         1 => '1',
         2 => '183',
       ),
-      219 => 
+      203 => 
       array (
         0 => '833',
         1 => '1',
         2 => '184',
       ),
-      220 => 
+      204 => 
       array (
         0 => '833',
         1 => '1',
         2 => '185',
       ),
-      221 => 
+      205 => 
       array (
         0 => '833',
         1 => '1',
         2 => '186',
       ),
-      222 => 
+      206 => 
       array (
         0 => '833',
         1 => '1',
         2 => '187',
       ),
-      223 => 
+      207 => 
       array (
         0 => '833',
         1 => '1',
         2 => '188',
       ),
-      224 => 
+      208 => 
       array (
         0 => '833',
         1 => '1',
         2 => '189',
       ),
-      225 => 
+      209 => 
       array (
         0 => '833',
         1 => '1',
         2 => '190',
       ),
-      226 => 
+      210 => 
       array (
         0 => '833',
         1 => '1',
         2 => '191',
       ),
-      227 => 
+      211 => 
       array (
         0 => '833',
         1 => '1',
         2 => '192',
       ),
-      228 => 
+      212 => 
       array (
         0 => '833',
         1 => '1',
         2 => '193',
       ),
-      229 => 
+      213 => 
       array (
         0 => '833',
         1 => '1',
         2 => '194',
       ),
-      230 => 
+      214 => 
       array (
         0 => '833',
         1 => '1',
         2 => '195',
       ),
-      231 => 
+      215 => 
       array (
         0 => '833',
         1 => '1',
         2 => '196',
       ),
-      232 => 
+      216 => 
       array (
         0 => '833',
         1 => '1',
         2 => '41',
       ),
-      233 => 
+      217 => 
       array (
         0 => '833',
         1 => '1',
         2 => '197',
       ),
-      234 => 
+      218 => 
       array (
         0 => '850',
         1 => '1',
         2 => '198',
       ),
-      235 => 
+      219 => 
       array (
         0 => '850',
         1 => '1',
         2 => '199',
       ),
-      236 => 
+      220 => 
       array (
         0 => '850',
         1 => '1',
         2 => '200',
       ),
-      237 => 
+      221 => 
       array (
         0 => '850',
         1 => '1',
         2 => '196',
       ),
-      238 => 
+      222 => 
       array (
         0 => '850',
         1 => '1',
         2 => '41',
       ),
-      239 => 
+      223 => 
       array (
         0 => '850',
         1 => '1',
         2 => '201',
       ),
-      240 => 
+      224 => 
       array (
         0 => '850',
         1 => '1',
         2 => '202',
       ),
-      241 => 
+      225 => 
       array (
         0 => '867',
         1 => '1',
         2 => '203',
       ),
-      242 => 
+      226 => 
       array (
         0 => '867',
         1 => '1',
         2 => '204',
       ),
-      243 => 
+      227 => 
       array (
         0 => '867',
         1 => '1',
         2 => '196',
       ),
-      244 => 
+      228 => 
       array (
         0 => '867',
         1 => '1',
         2 => '41',
       ),
-      245 => 
+      229 => 
       array (
         0 => '867',
         1 => '1',
         2 => '205',
       ),
-      246 => 
+      230 => 
       array (
         0 => '882',
         1 => '1',
         2 => '72',
       ),
-      247 => 
+      231 => 
       array (
         0 => '882',
         1 => '1',
         2 => '206',
       ),
-      248 => 
+      232 => 
       array (
         0 => '882',
         1 => '1',
         2 => '207',
       ),
-      249 => 
+      233 => 
       array (
         0 => '882',
         1 => '1',
         2 => '208',
       ),
-      250 => 
+      234 => 
       array (
         0 => '882',
         1 => '1',
         2 => '209',
       ),
-      251 => 
+      235 => 
       array (
         0 => '882',
         1 => '1',
         2 => '210',
       ),
-      252 => 
+      236 => 
       array (
         0 => '882',
         1 => '1',
         2 => '211',
       ),
-      253 => 
+      237 => 
       array (
         0 => '882',
         1 => '1',
         2 => '77',
       ),
-      254 => 
+      238 => 
       array (
         0 => '882',
         1 => '1',
         2 => '212',
       ),
-      255 => 
+      239 => 
       array (
         0 => '882',
         1 => '1',
         2 => '213',
       ),
-      256 => 
+      240 => 
       array (
         0 => '882',
         1 => '1',
         2 => '40',
       ),
-      257 => 
+      241 => 
       array (
         0 => '882',
         1 => '1',
         2 => '41',
       ),
-      258 => 
+      242 => 
       array (
         0 => '882',
         1 => '1',
         2 => '214',
       ),
-      259 => 
+      243 => 
       array (
         0 => '898',
         1 => '1',
         2 => '215',
       ),
-      260 => 
+      244 => 
       array (
         0 => '898',
         1 => '1',
         2 => '86',
       ),
-      261 => 
+      245 => 
       array (
         0 => '898',
         1 => '1',
         2 => '216',
       ),
-      262 => 
+      246 => 
       array (
         0 => '898',
         1 => '1',
         2 => '217',
       ),
-      263 => 
+      247 => 
       array (
         0 => '898',
         1 => '1',
         2 => '40',
       ),
-      264 => 
+      248 => 
       array (
         0 => '898',
         1 => '1',
         2 => '41',
       ),
-      265 => 
+      249 => 
       array (
         0 => '898',
         1 => '1',
         2 => '218',
       ),
-      266 => 
+      250 => 
       array (
         0 => '914',
         1 => '1',
         2 => '219',
       ),
-      267 => 
+      251 => 
       array (
         0 => '914',
         1 => '1',
         2 => '220',
       ),
-      268 => 
+      252 => 
       array (
         0 => '914',
         1 => '1',
         2 => '221',
       ),
-      269 => 
+      253 => 
       array (
         0 => '914',
         1 => '1',
         2 => '222',
       ),
-      270 => 
+      254 => 
       array (
         0 => '914',
         1 => '1',
         2 => '223',
       ),
-      271 => 
+      255 => 
       array (
         0 => '914',
         1 => '1',
         2 => '224',
       ),
-      272 => 
+      256 => 
       array (
         0 => '914',
         1 => '1',
         2 => '225',
       ),
-      273 => 
+      257 => 
       array (
         0 => '914',
         1 => '1',
         2 => '226',
       ),
-      274 => 
+      258 => 
       array (
         0 => '914',
         1 => '1',
         2 => '227',
       ),
-      275 => 
+      259 => 
       array (
         0 => '914',
         1 => '1',
         2 => '228',
       ),
-      276 => 
+      260 => 
       array (
         0 => '914',
         1 => '1',
         2 => '229',
       ),
-      277 => 
+      261 => 
       array (
         0 => '914',
         1 => '1',
         2 => '230',
       ),
-      278 => 
+      262 => 
       array (
         0 => '914',
         1 => '1',
         2 => '231',
       ),
-      279 => 
+      263 => 
       array (
         0 => '914',
         1 => '1',
         2 => '232',
       ),
-      280 => 
+      264 => 
       array (
         0 => '914',
         1 => '1',
         2 => '233',
       ),
-      281 => 
+      265 => 
       array (
         0 => '914',
         1 => '1',
         2 => '234',
       ),
-      282 => 
+      266 => 
       array (
         0 => '914',
         1 => '1',
         2 => '235',
       ),
-      283 => 
+      267 => 
       array (
         0 => '914',
         1 => '1',
         2 => '236',
       ),
-      284 => 
+      268 => 
       array (
         0 => '914',
         1 => '1',
         2 => '237',
       ),
-      285 => 
+      269 => 
       array (
         0 => '914',
         1 => '1',
         2 => '238',
       ),
-      286 => 
+      270 => 
       array (
         0 => '914',
         1 => '1',
         2 => '239',
       ),
-      287 => 
+      271 => 
       array (
         0 => '914',
         1 => '1',
         2 => '240',
       ),
-      288 => 
+      272 => 
       array (
         0 => '914',
         1 => '1',
         2 => '241',
       ),
-      289 => 
+      273 => 
       array (
         0 => '914',
         1 => '1',
         2 => '242',
       ),
-      290 => 
+      274 => 
       array (
         0 => '914',
         1 => '1',
         2 => '243',
       ),
-      291 => 
+      275 => 
       array (
         0 => '914',
         1 => '1',
         2 => '244',
       ),
-      292 => 
+      276 => 
       array (
         0 => '914',
         1 => '1',
         2 => '245',
       ),
-      293 => 
+      277 => 
       array (
         0 => '914',
         1 => '1',
         2 => '246',
       ),
-      294 => 
+      278 => 
       array (
         0 => '914',
         1 => '1',
         2 => '247',
       ),
-      295 => 
+      279 => 
       array (
         0 => '914',
         1 => '1',
         2 => '248',
       ),
-      296 => 
+      280 => 
       array (
         0 => '914',
         1 => '1',
         2 => '249',
       ),
-      297 => 
+      281 => 
       array (
         0 => '914',
         1 => '1',
         2 => '250',
       ),
-      298 => 
+      282 => 
       array (
         0 => '914',
         1 => '1',
         2 => '251',
       ),
-      299 => 
+      283 => 
       array (
         0 => '914',
         1 => '1',
         2 => '252',
       ),
-      300 => 
+      284 => 
       array (
         0 => '914',
         1 => '1',
         2 => '253',
       ),
-      301 => 
+      285 => 
       array (
         0 => '914',
         1 => '1',
         2 => '254',
       ),
-      302 => 
+      286 => 
       array (
         0 => '914',
         1 => '1',
         2 => '255',
       ),
-      303 => 
+      287 => 
       array (
         0 => '914',
         1 => '1',
         2 => '256',
       ),
-      304 => 
+      288 => 
       array (
         0 => '914',
         1 => '1',
         2 => '257',
       ),
-      305 => 
+      289 => 
       array (
         0 => '914',
         1 => '1',
         2 => '258',
       ),
-      306 => 
+      290 => 
       array (
         0 => '930',
         1 => '1',
         2 => '259',
       ),
-      307 => 
+      291 => 
       array (
         0 => '930',
         1 => '1',
         2 => '260',
       ),
-      308 => 
+      292 => 
       array (
         0 => '930',
         1 => '1',
         2 => '261',
       ),
-      309 => 
+      293 => 
       array (
         0 => '930',
         1 => '1',
         2 => '262',
       ),
-      310 => 
+      294 => 
       array (
         0 => '930',
         1 => '1',
         2 => '263',
       ),
-      311 => 
+      295 => 
       array (
         0 => '930',
         1 => '1',
         2 => '264',
       ),
-      312 => 
+      296 => 
       array (
         0 => '930',
         1 => '1',
         2 => '265',
       ),
-      313 => 
+      297 => 
       array (
         0 => '930',
         1 => '1',
         2 => '266',
       ),
-      314 => 
+      298 => 
       array (
         0 => '930',
         1 => '1',
         2 => '267',
       ),
-      315 => 
+      299 => 
       array (
         0 => '930',
         1 => '1',
         2 => '268',
       ),
-      316 => 
+      300 => 
       array (
         0 => '930',
         1 => '1',
         2 => '269',
       ),
-      317 => 
+      301 => 
       array (
         0 => '930',
         1 => '1',
         2 => '270',
       ),
-      318 => 
+      302 => 
       array (
         0 => '930',
         1 => '1',
         2 => '271',
       ),
-      319 => 
+      303 => 
       array (
         0 => '930',
         1 => '1',
         2 => '272',
       ),
-      320 => 
+      304 => 
       array (
         0 => '930',
         1 => '1',
         2 => '273',
       ),
-      321 => 
+      305 => 
       array (
         0 => '930',
         1 => '1',
         2 => '274',
       ),
-      322 => 
+      306 => 
       array (
         0 => '930',
         1 => '1',
         2 => '275',
       ),
-      323 => 
+      307 => 
       array (
         0 => '930',
         1 => '1',
         2 => '276',
       ),
-      324 => 
+      308 => 
       array (
         0 => '930',
         1 => '1',
         2 => '277',
       ),
-      325 => 
+      309 => 
       array (
         0 => '930',
         1 => '1',
         2 => '278',
       ),
-      326 => 
+      310 => 
       array (
         0 => '930',
         1 => '1',
         2 => '279',
       ),
-      327 => 
+      311 => 
       array (
         0 => '930',
         1 => '1',
         2 => '280',
       ),
-      328 => 
+      312 => 
       array (
         0 => '930',
         1 => '1',
         2 => '281',
       ),
-      329 => 
+      313 => 
       array (
         0 => '930',
         1 => '1',
         2 => '282',
       ),
-      330 => 
+      314 => 
       array (
         0 => '930',
         1 => '1',
         2 => '283',
       ),
-      331 => 
+      315 => 
       array (
         0 => '930',
         1 => '1',
         2 => '284',
       ),
-      332 => 
+      316 => 
       array (
         0 => '930',
         1 => '1',
         2 => '285',
       ),
-      333 => 
+      317 => 
       array (
         0 => '930',
         1 => '1',
         2 => '286',
       ),
-      334 => 
+      318 => 
       array (
         0 => '930',
         1 => '1',
         2 => '287',
       ),
-      335 => 
+      319 => 
       array (
         0 => '930',
         1 => '1',
         2 => '288',
       ),
-      336 => 
+      320 => 
       array (
         0 => '930',
         1 => '1',
         2 => '289',
       ),
-      337 => 
+      321 => 
       array (
         0 => '930',
         1 => '1',
         2 => '290',
       ),
-      338 => 
+      322 => 
       array (
         0 => '930',
         1 => '1',
         2 => '291',
       ),
-      339 => 
+      323 => 
       array (
         0 => '930',
         1 => '1',
         2 => '292',
       ),
-      340 => 
+      324 => 
       array (
         0 => '930',
         1 => '1',
         2 => '293',
       ),
-      341 => 
+      325 => 
       array (
         0 => '930',
         1 => '1',
         2 => '294',
       ),
-      342 => 
+      326 => 
       array (
         0 => '930',
         1 => '1',
         2 => '295',
       ),
-      343 => 
+      327 => 
       array (
         0 => '948',
         1 => '1',
         2 => '279',
       ),
-      344 => 
+      328 => 
       array (
         0 => '948',
         1 => '1',
         2 => '280',
       ),
-      345 => 
+      329 => 
       array (
         0 => '948',
         1 => '1',
         2 => '281',
       ),
-      346 => 
+      330 => 
       array (
         0 => '948',
         1 => '1',
         2 => '309',
       ),
-      347 => 
+      331 => 
       array (
         0 => '964',
         1 => '1',
         2 => '296',
       ),
-      348 => 
+      332 => 
       array (
         0 => '964',
         1 => '1',
         2 => '297',
       ),
-      349 => 
+      333 => 
       array (
         0 => '964',
         1 => '1',
         2 => '298',
       ),
-      350 => 
+      334 => 
       array (
         0 => '964',
         1 => '1',
         2 => '299',
       ),
-      351 => 
+      335 => 
       array (
         0 => '964',
         1 => '1',
         2 => '300',
       ),
-      352 => 
+      336 => 
       array (
         0 => '964',
         1 => '1',
         2 => '301',
       ),
-      353 => 
+      337 => 
       array (
         0 => '964',
         1 => '1',
         2 => '302',
       ),
-      354 => 
+      338 => 
       array (
         0 => '964',
         1 => '1',
         2 => '303',
       ),
-      355 => 
+      339 => 
       array (
         0 => '964',
         1 => '1',
         2 => '304',
       ),
-      356 => 
+      340 => 
       array (
         0 => '964',
         1 => '1',
         2 => '305',
       ),
-      357 => 
+      341 => 
       array (
         0 => '964',
         1 => '1',
         2 => '306',
       ),
-      358 => 
+      342 => 
       array (
         0 => '964',
         1 => '1',
         2 => '307',
       ),
-      359 => 
+      343 => 
       array (
         0 => '964',
         1 => '1',
         2 => '308',
       ),
-      360 => 
+      344 => 
       array (
         0 => '964',
         1 => '1',
         2 => '309',
       ),
-      361 => 
+      345 => 
       array (
         0 => '964',
         1 => '1',
         2 => '310',
       ),
-      362 => 
+      346 => 
       array (
         0 => '964',
         1 => '1',
         2 => '311',
       ),
-      363 => 
+      347 => 
       array (
         0 => '964',
         1 => '1',
         2 => '312',
       ),
-      364 => 
+      348 => 
       array (
         0 => '964',
         1 => '1',
         2 => '313',
       ),
-      365 => 
+      349 => 
       array (
         0 => '964',
         1 => '1',
         2 => '314',
       ),
-      366 => 
+      350 => 
       array (
         0 => '964',
         1 => '1',
         2 => '315',
       ),
-      367 => 
+      351 => 
       array (
         0 => '964',
         1 => '1',
         2 => '316',
       ),
-      368 => 
+      352 => 
       array (
         0 => '964',
         1 => '1',
         2 => '317',
       ),
-      369 => 
+      353 => 
       array (
         0 => '964',
         1 => '1',
         2 => '318',
       ),
-      370 => 
+      354 => 
       array (
         0 => '964',
         1 => '1',
         2 => '319',
       ),
-      371 => 
+      355 => 
       array (
         0 => '964',
         1 => '1',
         2 => '320',
       ),
-      372 => 
+      356 => 
       array (
         0 => '980',
         1 => '1',
         2 => '321',
       ),
-      373 => 
+      357 => 
       array (
         0 => '1014',
         1 => '1',
         2 => '322',
       ),
-      374 => 
+      358 => 
       array (
         0 => '1014',
         1 => '1',
         2 => '196',
       ),
-      375 => 
+      359 => 
       array (
         0 => '1014',
         1 => '1',
         2 => '41',
       ),
-      376 => 
+      360 => 
       array (
         0 => '1014',
         1 => '1',
         2 => '323',
       ),
-      377 => 
+      361 => 
       array (
         0 => '1014',
         1 => '1',
         2 => '324',
       ),
-      378 => 
+      362 => 
       array (
         0 => '1014',
         1 => '1',
         2 => '325',
       ),
-      379 => 
+      363 => 
       array (
         0 => '1035',
         1 => '1',
         2 => '326',
       ),
-      380 => 
+      364 => 
       array (
         0 => '1035',
         1 => '1',
         2 => '196',
       ),
-      381 => 
+      365 => 
       array (
         0 => '1035',
         1 => '1',
         2 => '41',
       ),
-      382 => 
+      366 => 
       array (
         0 => '1056',
         1 => '1',
         2 => '322',
       ),
-      383 => 
+      367 => 
       array (
         0 => '1056',
         1 => '1',
         2 => '196',
       ),
-      384 => 
+      368 => 
       array (
         0 => '1056',
         1 => '1',
         2 => '41',
       ),
-      385 => 
+      369 => 
       array (
         0 => '1077',
         1 => '1',
         2 => '327',
       ),
-      386 => 
+      370 => 
       array (
         0 => '1077',
         1 => '1',
         2 => '196',
       ),
-      387 => 
+      371 => 
       array (
         0 => '1077',
         1 => '1',
         2 => '41',
       ),
-      388 => 
+      372 => 
       array (
         0 => '1098',
         1 => '1',
         2 => '328',
       ),
-      389 => 
+      373 => 
       array (
         0 => '1098',
         1 => '1',
         2 => '196',
       ),
-      390 => 
+      374 => 
       array (
         0 => '1098',
         1 => '1',
         2 => '41',
       ),
-      391 => 
+      375 => 
       array (
         0 => '1119',
         1 => '1',
         2 => '329',
       ),
-      392 => 
+      376 => 
       array (
         0 => '1119',
         1 => '1',
         2 => '41',
       ),
-      393 => 
+      377 => 
       array (
         0 => '1140',
         1 => '1',
         2 => '330',
       ),
-      394 => 
+      378 => 
       array (
         0 => '1140',
         1 => '1',
         2 => '331',
       ),
-      395 => 
+      379 => 
       array (
         0 => '1140',
         1 => '1',
         2 => '329',
       ),
-      396 => 
+      380 => 
       array (
         0 => '1140',
         1 => '1',
         2 => '41',
       ),
-      397 => 
+      381 => 
       array (
         0 => '1161',
         1 => '1',
         2 => '329',
       ),
-      398 => 
+      382 => 
       array (
         0 => '1161',
         1 => '1',
         2 => '41',
       ),
-      399 => 
+      383 => 
       array (
         0 => '1161',
         1 => '1',
         2 => '332',
       ),
-      400 => 
+      384 => 
       array (
         0 => '1161',
         1 => '1',
         2 => '333',
       ),
-      401 => 
+      385 => 
       array (
         0 => '1182',
         1 => '1',
         2 => '329',
       ),
-      402 => 
+      386 => 
       array (
         0 => '1182',
         1 => '1',
         2 => '41',
       ),
-      403 => 
+      387 => 
       array (
         0 => '1203',
         1 => '1',
         2 => '329',
       ),
-      404 => 
+      388 => 
       array (
         0 => '1203',
         1 => '1',
         2 => '41',
       ),
-      405 => 
+      389 => 
       array (
         0 => '1224',
         1 => '1',
         2 => '329',
       ),
-      406 => 
+      390 => 
       array (
         0 => '1224',
         1 => '1',
         2 => '41',
       ),
-      407 => 
+      391 => 
       array (
         0 => '1224',
         1 => '1',
         2 => '334',
       ),
-      408 => 
+      392 => 
       array (
         0 => '1245',
         1 => '1',
         2 => '329',
       ),
-      409 => 
+      393 => 
       array (
         0 => '1245',
         1 => '1',
         2 => '41',
       ),
-      410 => 
+      394 => 
       array (
         0 => '1266',
         1 => '1',
         2 => '329',
       ),
-      411 => 
+      395 => 
       array (
         0 => '1266',
         1 => '1',
         2 => '41',
       ),
-      412 => 
+      396 => 
       array (
         0 => '1266',
         1 => '1',
         2 => '335',
       ),
-      413 => 
+      397 => 
       array (
         0 => '1287',
         1 => '1',
         2 => '329',
       ),
-      414 => 
+      398 => 
       array (
         0 => '1287',
         1 => '1',
         2 => '41',
       ),
-      415 => 
+      399 => 
       array (
         0 => '1308',
         1 => '1',
         2 => '329',
       ),
-      416 => 
+      400 => 
       array (
         0 => '1308',
         1 => '1',
         2 => '41',
       ),
-      417 => 
+      401 => 
       array (
         0 => '1308',
         1 => '1',
         2 => '336',
       ),
-      418 => 
+      402 => 
       array (
         0 => '1329',
         1 => '1',
         2 => '329',
       ),
-      419 => 
+      403 => 
       array (
         0 => '1329',
         1 => '1',
         2 => '41',
       ),
-      420 => 
+      404 => 
       array (
         0 => '1350',
         1 => '1',
         2 => '329',
       ),
-      421 => 
+      405 => 
       array (
         0 => '1350',
         1 => '1',
         2 => '41',
       ),
-      422 => 
+      406 => 
       array (
         0 => '1371',
         1 => '1',
         2 => '329',
       ),
-      423 => 
+      407 => 
       array (
         0 => '1371',
         1 => '1',
         2 => '41',
       ),
-      424 => 
+      408 => 
       array (
         0 => '1711',
         1 => '1',
         2 => '337',
       ),
-      425 => 
+      409 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '148',
       ),
-      426 => 
+      410 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '149',
       ),
-      427 => 
+      411 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '150',
       ),
-      428 => 
+      412 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '151',
       ),
-      429 => 
+      413 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '152',
       ),
-      430 => 
+      414 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '154',
       ),
-      431 => 
+      415 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '155',
       ),
-      432 => 
+      416 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '156',
       ),
-      433 => 
+      417 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '157',
       ),
-      434 => 
+      418 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '158',
       ),
-      435 => 
+      419 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '159',
       ),
-      436 => 
+      420 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '160',
       ),
-      437 => 
+      421 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '161',
       ),
-      438 => 
+      422 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '162',
       ),
-      439 => 
+      423 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '163',
       ),
-      440 => 
+      424 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '164',
       ),
-      441 => 
+      425 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '165',
       ),
-      442 => 
+      426 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '166',
       ),
-      443 => 
+      427 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '167',
       ),
-      444 => 
+      428 => 
       array (
         0 => '2149',
         1 => '1',
         2 => '168',
       ),
-      445 => 
+      429 => 
       array (
         0 => '2181',
         1 => '1',
         2 => '109',
       ),
-      446 => 
+      430 => 
       array (
         0 => '2181',
         1 => '1',
         2 => '54',
       ),
-      447 => 
+      431 => 
       array (
         0 => '2209',
         1 => '1',
         2 => '124',
       ),
-      448 => 
+      432 => 
       array (
         0 => '2209',
         1 => '1',
         2 => '36',
       ),
-      449 => 
+      433 => 
       array (
         0 => '2256',
         1 => '1',
         2 => '169',
       ),
-      450 => 
+      434 => 
       array (
         0 => '2256',
         1 => '1',
         2 => '170',
       ),
-      451 => 
+      435 => 
       array (
         0 => '2256',
         1 => '1',
         2 => '178',
       ),
-      452 => 
+      436 => 
       array (
         0 => '2256',
         1 => '1',
         2 => '180',
       ),
-      453 => 
+      437 => 
       array (
         0 => '2256',
         1 => '1',
         2 => '182',
       ),
-      454 => 
+      438 => 
       array (
         0 => '2256',
         1 => '1',
         2 => '183',
       ),
-      455 => 
+      439 => 
       array (
         0 => '2256',
         1 => '1',
         2 => '184',
       ),
-      456 => 
+      440 => 
       array (
         0 => '2256',
         1 => '1',
         2 => '185',
       ),
-      457 => 
+      441 => 
       array (
         0 => '2256',
         1 => '1',
         2 => '329',
       ),
-      458 => 
+      442 => 
       array (
         0 => '2256',
         1 => '1',
         2 => '335',
       ),
-      459 => 
+      443 => 
       array (
         0 => '2433',
         1 => '2',
         2 => '338',
       ),
-      460 => 
+      444 => 
       array (
         0 => '2434',
         1 => '2',
         2 => '339',
       ),
-      461 => 
+      445 => 
       array (
         0 => '2410',
         1 => '2',
         2 => '338',
       ),
-      462 => 
+      446 => 
       array (
         0 => '2411',
         1 => '2',
         2 => '339',
       ),
-      463 => 
+      447 => 
       array (
         0 => '2640',
         1 => '1',
         2 => '340',
       ),
-      464 => 
+      448 => 
       array (
         0 => '2641',
         1 => '1',
         2 => '341',
       ),
-      465 => 
+      449 => 
       array (
         0 => '2642',
         1 => '1',
         2 => '342',
       ),
-      466 => 
+      450 => 
       array (
         0 => '2643',
         1 => '1',
         2 => '343',
       ),
-      467 => 
+      451 => 
       array (
         0 => '2660',
         1 => '1',
         2 => '340',
       ),
-      468 => 
+      452 => 
       array (
         0 => '2661',
         1 => '1',
         2 => '341',
       ),
-      469 => 
+      453 => 
       array (
         0 => '2662',
         1 => '1',
         2 => '342',
       ),
-      470 => 
+      454 => 
       array (
         0 => '2663',
         1 => '1',
         2 => '343',
       ),
-      471 => 
+      455 => 
       array (
         0 => '2475',
         1 => '6',
         2 => '178',
+      ),
+      456 => 
+      array (
+        0 => '2475',
+        1 => '6',
+        2 => '179',
+      ),
+      457 => 
+      array (
+        0 => '2475',
+        1 => '6',
+        2 => '180',
+      ),
+      458 => 
+      array (
+        0 => '2475',
+        1 => '6',
+        2 => '181',
+      ),
+      459 => 
+      array (
+        0 => '2475',
+        1 => '6',
+        2 => '182',
+      ),
+      460 => 
+      array (
+        0 => '2475',
+        1 => '6',
+        2 => '183',
+      ),
+      461 => 
+      array (
+        0 => '2475',
+        1 => '6',
+        2 => '184',
+      ),
+      462 => 
+      array (
+        0 => '2475',
+        1 => '6',
+        2 => '185',
+      ),
+      463 => 
+      array (
+        0 => '2475',
+        1 => '6',
+        2 => '329',
+      ),
+      464 => 
+      array (
+        0 => '2475',
+        1 => '6',
+        2 => '335',
+      ),
+      465 => 
+      array (
+        0 => '2475',
+        1 => '7',
+        2 => '178',
+      ),
+      466 => 
+      array (
+        0 => '2475',
+        1 => '7',
+        2 => '179',
+      ),
+      467 => 
+      array (
+        0 => '2475',
+        1 => '7',
+        2 => '180',
+      ),
+      468 => 
+      array (
+        0 => '2475',
+        1 => '7',
+        2 => '181',
+      ),
+      469 => 
+      array (
+        0 => '2475',
+        1 => '7',
+        2 => '182',
+      ),
+      470 => 
+      array (
+        0 => '2475',
+        1 => '7',
+        2 => '183',
+      ),
+      471 => 
+      array (
+        0 => '2475',
+        1 => '7',
+        2 => '184',
       ),
       472 => 
       array (
         0 => '2475',
-        1 => '6',
-        2 => '179',
+        1 => '7',
+        2 => '185',
       ),
       473 => 
       array (
         0 => '2475',
-        1 => '6',
-        2 => '180',
+        1 => '7',
+        2 => '329',
       ),
       474 => 
       array (
         0 => '2475',
-        1 => '6',
-        2 => '181',
+        1 => '7',
+        2 => '335',
       ),
       475 => 
       array (
         0 => '2475',
-        1 => '6',
-        2 => '182',
+        1 => '8',
+        2 => '178',
       ),
       476 => 
       array (
         0 => '2475',
-        1 => '6',
-        2 => '183',
+        1 => '8',
+        2 => '179',
       ),
       477 => 
       array (
         0 => '2475',
-        1 => '6',
-        2 => '184',
+        1 => '8',
+        2 => '180',
       ),
       478 => 
       array (
         0 => '2475',
-        1 => '6',
-        2 => '185',
+        1 => '8',
+        2 => '181',
       ),
       479 => 
       array (
         0 => '2475',
-        1 => '6',
-        2 => '329',
+        1 => '8',
+        2 => '182',
       ),
       480 => 
       array (
         0 => '2475',
-        1 => '6',
-        2 => '335',
+        1 => '8',
+        2 => '183',
       ),
       481 => 
       array (
-        0 => '2491',
-        1 => '4',
-        2 => '17',
+        0 => '2475',
+        1 => '8',
+        2 => '184',
       ),
       482 => 
       array (
-        0 => '2491',
-        1 => '4',
-        2 => '18',
+        0 => '2475',
+        1 => '8',
+        2 => '185',
       ),
       483 => 
       array (
-        0 => '2491',
-        1 => '4',
-        2 => '19',
+        0 => '2475',
+        1 => '8',
+        2 => '329',
       ),
       484 => 
       array (
         0 => '2475',
-        1 => '7',
-        2 => '178',
+        1 => '8',
+        2 => '335',
       ),
       485 => 
       array (
         0 => '2475',
-        1 => '7',
-        2 => '179',
+        1 => '9',
+        2 => '178',
       ),
       486 => 
       array (
         0 => '2475',
-        1 => '7',
-        2 => '180',
+        1 => '9',
+        2 => '179',
       ),
       487 => 
       array (
         0 => '2475',
-        1 => '7',
-        2 => '181',
+        1 => '9',
+        2 => '180',
       ),
       488 => 
       array (
         0 => '2475',
-        1 => '7',
-        2 => '182',
+        1 => '9',
+        2 => '181',
       ),
       489 => 
       array (
         0 => '2475',
-        1 => '7',
-        2 => '183',
+        1 => '9',
+        2 => '182',
       ),
       490 => 
       array (
         0 => '2475',
-        1 => '7',
-        2 => '184',
+        1 => '9',
+        2 => '183',
       ),
       491 => 
       array (
         0 => '2475',
-        1 => '7',
-        2 => '185',
+        1 => '9',
+        2 => '184',
       ),
       492 => 
       array (
         0 => '2475',
-        1 => '7',
-        2 => '329',
+        1 => '9',
+        2 => '185',
       ),
       493 => 
       array (
         0 => '2475',
-        1 => '7',
-        2 => '335',
+        1 => '9',
+        2 => '329',
       ),
       494 => 
-      array (
-        0 => '2491',
-        1 => '5',
-        2 => '17',
-      ),
-      495 => 
-      array (
-        0 => '2491',
-        1 => '5',
-        2 => '18',
-      ),
-      496 => 
-      array (
-        0 => '2491',
-        1 => '5',
-        2 => '19',
-      ),
-      497 => 
-      array (
-        0 => '2475',
-        1 => '8',
-        2 => '178',
-      ),
-      498 => 
-      array (
-        0 => '2475',
-        1 => '8',
-        2 => '179',
-      ),
-      499 => 
-      array (
-        0 => '2475',
-        1 => '8',
-        2 => '180',
-      ),
-      500 => 
-      array (
-        0 => '2475',
-        1 => '8',
-        2 => '181',
-      ),
-      501 => 
-      array (
-        0 => '2475',
-        1 => '8',
-        2 => '182',
-      ),
-      502 => 
-      array (
-        0 => '2475',
-        1 => '8',
-        2 => '183',
-      ),
-      503 => 
-      array (
-        0 => '2475',
-        1 => '8',
-        2 => '184',
-      ),
-      504 => 
-      array (
-        0 => '2475',
-        1 => '8',
-        2 => '185',
-      ),
-      505 => 
-      array (
-        0 => '2475',
-        1 => '8',
-        2 => '329',
-      ),
-      506 => 
-      array (
-        0 => '2475',
-        1 => '8',
-        2 => '335',
-      ),
-      507 => 
-      array (
-        0 => '2491',
-        1 => '6',
-        2 => '17',
-      ),
-      508 => 
-      array (
-        0 => '2491',
-        1 => '6',
-        2 => '18',
-      ),
-      509 => 
-      array (
-        0 => '2491',
-        1 => '6',
-        2 => '19',
-      ),
-      510 => 
-      array (
-        0 => '2491',
-        1 => '7',
-        2 => '17',
-      ),
-      511 => 
-      array (
-        0 => '2491',
-        1 => '7',
-        2 => '18',
-      ),
-      512 => 
-      array (
-        0 => '2491',
-        1 => '7',
-        2 => '19',
-      ),
-      513 => 
-      array (
-        0 => '2491',
-        1 => '8',
-        2 => '17',
-      ),
-      514 => 
-      array (
-        0 => '2491',
-        1 => '8',
-        2 => '18',
-      ),
-      515 => 
-      array (
-        0 => '2491',
-        1 => '8',
-        2 => '19',
-      ),
-      516 => 
-      array (
-        0 => '2491',
-        1 => '9',
-        2 => '17',
-      ),
-      517 => 
-      array (
-        0 => '2491',
-        1 => '9',
-        2 => '18',
-      ),
-      518 => 
-      array (
-        0 => '2491',
-        1 => '9',
-        2 => '19',
-      ),
-      519 => 
-      array (
-        0 => '2475',
-        1 => '9',
-        2 => '178',
-      ),
-      520 => 
-      array (
-        0 => '2475',
-        1 => '9',
-        2 => '179',
-      ),
-      521 => 
-      array (
-        0 => '2475',
-        1 => '9',
-        2 => '180',
-      ),
-      522 => 
-      array (
-        0 => '2475',
-        1 => '9',
-        2 => '181',
-      ),
-      523 => 
-      array (
-        0 => '2475',
-        1 => '9',
-        2 => '182',
-      ),
-      524 => 
-      array (
-        0 => '2475',
-        1 => '9',
-        2 => '183',
-      ),
-      525 => 
-      array (
-        0 => '2475',
-        1 => '9',
-        2 => '184',
-      ),
-      526 => 
-      array (
-        0 => '2475',
-        1 => '9',
-        2 => '185',
-      ),
-      527 => 
-      array (
-        0 => '2475',
-        1 => '9',
-        2 => '329',
-      ),
-      528 => 
       array (
         0 => '2475',
         1 => '9',
