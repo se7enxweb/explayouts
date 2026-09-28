@@ -13,10 +13,10 @@ class explayoutsInfo
 {
     public static function info()
     {
-        return array( Name => "explayouts",
-                      Version => "1.3.2",
-                      Copyright => "Copyright (C) 1998 - 2026 7x. All rights reserved.",
-                      License => "GNU General Public License v2.0 (or any later version)",
-                      info_url => "https://github.com/se7enxweb/explayouts" );
+        return array( 'Name' => "explayouts",
+                      'Version' => "1.4.4",
+                      'Copyright' => "Copyright (C) 1998 - 2026 7x. All rights reserved.",
+                      'License' => "GNU General Public License v2.0 (or any later version)",
+                      'info_url' => "https://github.com/se7enxweb/explayouts" );
     }
 }
