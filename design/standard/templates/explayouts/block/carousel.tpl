@@ -9,6 +9,6 @@
             {/foreach}
         </div>
     {else}
-        <p class="empty">No carousel slides found.</p>
+        <p class="empty">{'No carousel slides found.'|i18n( 'design/standard/explayouts/block/carousel' )}</p>
     {/if}
 </div>

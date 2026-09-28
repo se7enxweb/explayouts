@@ -4,6 +4,6 @@
         <h4><a href={$block.values.link|ezurl}>{$block.values.name|wash}</a></h4>
         {if $block.values.intro}<p>{$block.values.intro|wash|shorten(200)}</p>{/if}
     {else}
-        <p class="empty">No content selected.</p>
+        <p class="empty">{'No content selected.'|i18n( 'design/standard/explayouts/block/single' )}</p>
     {/if}
 </div>

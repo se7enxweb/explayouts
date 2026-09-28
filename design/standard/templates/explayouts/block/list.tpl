@@ -5,7 +5,7 @@
         <li><a href={$node.url_alias|ezurl}>{$node.name|wash}</a></li>
     {/foreach}
     {if eq(count($block.values.items),0)}
-        <li class="empty">No items found.</li>
+        <li class="empty">{'No items found.'|i18n( 'design/standard/explayouts/block/list' )}</li>
     {/if}
     </ul>
 </div>

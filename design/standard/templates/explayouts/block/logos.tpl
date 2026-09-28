@@ -9,7 +9,7 @@
         {/if}
     {/foreach}
     {if eq(count($block.values.items),0)}
-        <p class="empty">No logos found.</p>
+        <p class="empty">{'No logos found.'|i18n( 'design/standard/explayouts/block/logos' )}</p>
     {/if}
     </div>
 </div>

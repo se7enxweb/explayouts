@@ -3,6 +3,6 @@
         <iframe src="{$block.values.video_url|wash}" width="{$block.values.width|wash}" height="{$block.values.height|wash}" frameborder="0" allowfullscreen
                 {if $block.values.autoplay}allow="autoplay"{/if}></iframe>
     {else}
-        <p class="empty">No video configured.</p>
+        <p class="empty">{'No video configured.'|i18n( 'design/standard/explayouts/block/video' )}</p>
     {/if}
 </div>

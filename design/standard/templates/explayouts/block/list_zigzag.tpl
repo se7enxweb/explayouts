@@ -7,6 +7,6 @@
         {/foreach}
         </ul>
     {else}
-        <p class="empty">No items found.</p>
+        <p class="empty">{'No items found.'|i18n( 'design/standard/explayouts/block/list_zigzag' )}</p>
     {/if}
 </div>

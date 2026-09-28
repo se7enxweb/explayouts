@@ -37,7 +37,7 @@ switch ( $dbType )
         break;
 
     default:
-        $error = 'Unsupported database type: ' . $dbType;
+        $error = ezpI18n::tr( 'design/admin/explayouts/setup', 'Unsupported database type: %type', null, array( '%type' => $dbType ) );
 }
 
 if ( $schemaFile && $http->hasPostVariable( 'InstallSchema' ) )
@@ -46,7 +46,7 @@ if ( $schemaFile && $http->hasPostVariable( 'InstallSchema' ) )
     {
         $result = expLayoutsMongoInstaller::install( eZSys::rootDir() . '/' . $schemaFile );
         if ( $result['success'] )
-            $message = 'MongoDB collections created: ' . $result['created'] . ', indexes: ' . $result['indexes'];
+            $message = ezpI18n::tr( 'design/admin/explayouts/setup', 'MongoDB collections created: %created, indexes: %indexes', null, array( '%created' => $result['created'], '%indexes' => $result['indexes'] ) );
         else
             $error = $result['error'];
     }

@@ -5,5 +5,5 @@
             <div class="accordion-content">{$item.content}</div>
         </details>
     {/foreach}
-    {if eq(count($block.values.items),0)}<p class="empty">No accordion items.</p>{/if}
+    {if eq(count($block.values.items),0)}<p class="empty">{'No accordion items.'|i18n( 'design/standard/explayouts/block/accordion' )}</p>{/if}
 </div>

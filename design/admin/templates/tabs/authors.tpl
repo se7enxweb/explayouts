@@ -20,13 +20,13 @@
 {set $tab_contributors = $tab_contributors|sort()}
 
 <div class="block">
-<table class="list" cellspacing="0" summary="Authors and publication information">
+<table class="list" cellspacing="0" summary="{'Authors and publication information'|i18n( 'design/admin/tabs/authors' )}">
 <tr>
-    <th>Published</th>
-    <th>Modified</th>
-    <th>Creator</th>
-    <th>Last contributor</th>
-    <th>Contributors{if $tab_contributors|count|gt(1)} ({$tab_contributors|count}){/if}</th>
+    <th>{'Published'|i18n( 'design/admin/tabs/authors' )}</th>
+    <th>{'Modified'|i18n( 'design/admin/tabs/authors' )}</th>
+    <th>{'Creator'|i18n( 'design/admin/tabs/authors' )}</th>
+    <th>{'Last contributor'|i18n( 'design/admin/tabs/authors' )}</th>
+    <th>{'Contributors'|i18n( 'design/admin/tabs/authors' )}{if $tab_contributors|count|gt(1)} ({$tab_contributors|count}){/if}</th>
 </tr>
 <tr class="bglight">
     <td style="white-space: nowrap;">{$node.object.published|l10n(shortdatetime)}</td>

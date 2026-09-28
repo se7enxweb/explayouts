@@ -19,11 +19,11 @@ if ( eZUser::currentUser()->hasAccessTo( 'explayouts', 'edit' ) && $http->hasPos
         foreach ( $rule->targets() as $t ) $t->remove();
         foreach ( $rule->conditions() as $c ) $c->remove();
         $rule->remove();
-        $message = 'Rule deleted.';
+        $message = ezpI18n::tr( 'design/admin/explayouts/rule_list', 'Rule deleted.' );
     }
     else
     {
-        $error = 'Rule not found.';
+        $error = ezpI18n::tr( 'design/admin/explayouts/rule_list', 'Rule not found.' );
     }
 }
 
@@ -50,11 +50,11 @@ if ( eZUser::currentUser()->hasAccessTo( 'explayouts', 'edit' ) && $http->hasPos
             $newCondition->store();
         }
 
-        $message = 'Rule copied.';
+        $message = ezpI18n::tr( 'design/admin/explayouts/rule_list', 'Rule copied.' );
     }
     else
     {
-        $error = 'Rule not found.';
+        $error = ezpI18n::tr( 'design/admin/explayouts/rule_list', 'Rule not found.' );
     }
 }
 

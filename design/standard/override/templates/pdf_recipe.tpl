@@ -42,24 +42,24 @@
 
 {* The numbers, on one line, each saying what it is. *}
 {if and( is_set( $map.serving_calories ), $map.serving_calories.has_content )}
-  {set $nutrition=concat( $nutrition, $map.serving_calories.content, ' kcal' )}
+  {set $nutrition=concat( $nutrition, '%value kcal'|i18n( 'design/standard/explayouts/pdf_recipe',, hash( '%value', $map.serving_calories.content ) ) )}
 {/if}
 {if and( is_set( $map.serving_fat ), $map.serving_fat.has_content )}
-  {set $nutrition=concat( $nutrition, ' - ', $map.serving_fat.content, 'g fat' )}
+  {set $nutrition=concat( $nutrition, ' - ', '%amount fat'|i18n( 'design/standard/explayouts/pdf_recipe',, hash( '%amount', concat( $map.serving_fat.content, 'g' ) ) ) )}
 {/if}
 {if and( is_set( $map.serving_carbohydrates ), $map.serving_carbohydrates.has_content )}
-  {set $nutrition=concat( $nutrition, ' - ', $map.serving_carbohydrates.content, 'g carbohydrate' )}
+  {set $nutrition=concat( $nutrition, ' - ', '%amount carbohydrate'|i18n( 'design/standard/explayouts/pdf_recipe',, hash( '%amount', concat( $map.serving_carbohydrates.content, 'g' ) ) ) )}
 {/if}
 {if and( is_set( $map.serving_protein ), $map.serving_protein.has_content )}
-  {set $nutrition=concat( $nutrition, ' - ', $map.serving_protein.content, 'g protein' )}
+  {set $nutrition=concat( $nutrition, ' - ', '%amount protein'|i18n( 'design/standard/explayouts/pdf_recipe',, hash( '%amount', concat( $map.serving_protein.content, 'g' ) ) ) )}
 {/if}
 {if and( is_set( $map.preparation_time ), $map.preparation_time.has_content )}
-  {set $nutrition=concat( $nutrition, ' - ', $map.preparation_time.content, ' minutes' )}
+  {set $nutrition=concat( $nutrition, ' - ', '%value minutes'|i18n( 'design/standard/explayouts/pdf_recipe',, hash( '%value', $map.preparation_time.content ) ) )}
 {/if}
 {if $nutrition|ne('')}
   {* pdf(text) takes the words as its own parameter and the settings as the
      next one. Handed a hash it prints the word "Array". *}
-  {pdf(text, concat( 'Per serving: ', $nutrition )|wash(pdf),
+  {pdf(text, 'Per serving: %nutrition'|i18n( 'design/standard/explayouts/pdf_recipe',, hash( '%nutrition', $nutrition ) )|wash(pdf),
              hash( size, 9 ) )}
   {pdf(newline)}
 {/if}

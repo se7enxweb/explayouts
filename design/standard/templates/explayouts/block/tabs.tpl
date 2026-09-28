@@ -9,5 +9,5 @@
         <div class="tab-panel{if $idx|eq($block.values.active_index)} active{/if}">{$item.content}</div>
     {/foreach}
     </div>
-    {if eq(count($block.values.items),0)}<p class="empty">No tabs.</p>{/if}
+    {if eq(count($block.values.items),0)}<p class="empty">{'No tabs.'|i18n( 'design/standard/explayouts/block/tabs' )}</p>{/if}
 </div>

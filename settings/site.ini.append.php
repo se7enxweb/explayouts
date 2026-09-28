@@ -6,4 +6,7 @@ ExtensionAutoloadPath[]=explayouts
 [Event]
 Listeners[]=response/output@ExplBlockDebug::output
 
+[RegionalSettings]
+TranslationExtensions[]=explayouts
+
 */ ?>

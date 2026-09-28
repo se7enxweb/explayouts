@@ -14,6 +14,6 @@
         </div>
     {/foreach}
     </div>
-    {if eq(count($block.values.items),0)}<p class="empty">No items found.</p>{/if}
+    {if eq(count($block.values.items),0)}<p class="empty">{'No items found.'|i18n( 'design/standard/explayouts/block/grid' )}</p>{/if}
     {undef $columns $col_class}
 </div>

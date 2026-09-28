@@ -10,6 +10,6 @@
         {/foreach}
         </div>
     {else}
-        <p class="empty">No images found.</p>
+        <p class="empty">{'No images found.'|i18n( 'design/standard/explayouts/block/thumb_gallery' )}</p>
     {/if}
 </div>

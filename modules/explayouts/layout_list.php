@@ -29,11 +29,11 @@ if ( eZUser::currentUser()->hasAccessTo( 'explayouts', 'edit' ) && $http->hasPos
             $zone->remove();
         }
         $layout->remove();
-        $message = 'Layout deleted.';
+        $message = ezpI18n::tr( 'design/admin/explayouts/layout_list', 'Layout deleted.' );
     }
     else
     {
-        $error = 'Layout not found.';
+        $error = ezpI18n::tr( 'design/admin/explayouts/layout_list', 'Layout not found.' );
     }
 }
 
@@ -97,11 +97,11 @@ if ( eZUser::currentUser()->hasAccessTo( 'explayouts', 'edit' ) && $http->hasPos
             }
         }
 
-        $message = 'Layout copied.';
+        $message = ezpI18n::tr( 'design/admin/explayouts/layout_list', 'Layout copied.' );
     }
     else
     {
-        $error = 'Layout not found.';
+        $error = ezpI18n::tr( 'design/admin/explayouts/layout_list', 'Layout not found.' );
     }
 }
 
@@ -119,7 +119,7 @@ if ( eZUser::currentUser()->hasAccessTo( 'explayouts', 'read' ) && $http->hasPos
     }
     else
     {
-        $error = 'Layout not found for export.';
+        $error = ezpI18n::tr( 'design/admin/explayouts/layout_list', 'Layout not found for export.' );
     }
 }
 
@@ -136,7 +136,7 @@ if ( eZUser::currentUser()->hasAccessTo( 'explayouts', 'edit' ) && $http->hasPos
     }
     else
     {
-        $error = 'No JSON provided.';
+        $error = ezpI18n::tr( 'design/admin/explayouts/layout_list', 'No JSON provided.' );
     }
 }
 

@@ -64,7 +64,7 @@ if ( $http->hasPostVariable( 'SaveRule' ) )
         $c->store();
     }
 
-    $message = 'Rule saved.';
+    $message = ezpI18n::tr( 'design/admin/explayouts/rule_edit', 'Rule saved.' );
 }
 
 $layouts = expLayoutsLayout::fetchList( 2 );
