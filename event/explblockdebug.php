@@ -17,7 +17,9 @@ class ExplBlockDebug
     public static function output( $output )
     {
         $http = eZHTTPTool::instance();
-        $debug = $http->getVariable( 'expl_debug' ) == '1';
+        // hasGetVariable() first: getVariable() of a variable not sent writes
+        // an "Undefined get variable" warning, on every page without ?expl_debug.
+        $debug = $http->hasGetVariable( 'expl_debug' ) && $http->getVariable( 'expl_debug' ) == '1';
 
         if ( $debug )
         {
