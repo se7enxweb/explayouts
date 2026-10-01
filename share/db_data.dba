@@ -11027,7 +11027,7 @@ $data = array (
         0 => '386',
         1 => '1593',
         2 => 'link',
-        3 => '{"link_type": "internal", "link": "ibexa-location://190", "link_suffix": null, "new_window": false}',
+        3 => '{"link_type": "internal", "link": "exp-remote-location://media-n-744", "link_suffix": null, "new_window": false}',
       ),
       889 => 
       array (
@@ -11223,7 +11223,7 @@ $data = array (
         0 => '388',
         1 => '1621',
         2 => 'link',
-        3 => '{"link_type": "internal", "link": "ibexa-location://190", "link_suffix": null, "new_window": false}',
+        3 => '{"link_type": "internal", "link": "exp-remote-location://media-n-744", "link_suffix": null, "new_window": false}',
       ),
       917 => 
       array (

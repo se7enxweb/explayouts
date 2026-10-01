@@ -176,12 +176,12 @@ class expLayoutsRenderer
         if ( !is_string( $value ) || $value === '' )
             return $value;
 
-        // Plain ibexa-location URI (legacy / pre-JSON values)
-        if ( strpos( $value, 'ibexa-location://' ) === 0 )
+        // A plain location reference (pre-JSON values): exp-remote-location://,
+        // ezlocation:// or the deprecated ibexa-location:// of old data, see
+        // expLayoutsLinkParameter::referencedNode()
+        if ( expLayoutsLinkParameter::isLocationReference( $value ) )
         {
-            $nexusId = (int)substr( $value, 17 );
-            $nodeId = expLayoutsDynamicCollection::remapNodeId( $nexusId );
-            $node = $nodeId ? eZContentObjectTreeNode::fetch( $nodeId, false, true ) : false;
+            $node = expLayoutsLinkParameter::referencedNode( $value );
             if ( $node )
                 return $node->attribute( 'url_alias' );
             return $value;
@@ -195,11 +195,9 @@ class expLayoutsRenderer
             return $value;
 
         $link = isset( $data['link'] ) ? $data['link'] : '';
-        if ( $data['link_type'] === 'internal' && strpos( $link, 'ibexa-location://' ) === 0 )
+        if ( $data['link_type'] === 'internal' && expLayoutsLinkParameter::isLocationReference( $link ) )
         {
-            $nexusId = (int)substr( $link, 17 );
-            $nodeId = expLayoutsDynamicCollection::remapNodeId( $nexusId );
-            $node = $nodeId ? eZContentObjectTreeNode::fetch( $nodeId, false, true ) : false;
+            $node = expLayoutsLinkParameter::referencedNode( $link );
             if ( $node )
                 return $node->attribute( 'url_alias' );
         }

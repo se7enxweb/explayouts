@@ -1411,7 +1411,7 @@ INSERT INTO "explayouts_block_parameter" ("block_id", "id", "name", "value") VAL
 INSERT INTO "explayouts_block_parameter" ("block_id", "id", "name", "value") VALUES (386, 1590, 'tag', TO_CLOB('h2'));
 INSERT INTO "explayouts_block_parameter" ("block_id", "id", "name", "value") VALUES (386, 1591, 'title', TO_CLOB('Recipes'));
 INSERT INTO "explayouts_block_parameter" ("block_id", "id", "name", "value") VALUES (386, 1592, 'use_link', TO_CLOB('1'));
-INSERT INTO "explayouts_block_parameter" ("block_id", "id", "name", "value") VALUES (386, 1593, 'link', TO_CLOB('{"link_type": "internal", "link": "ibexa-location://190", "link_suffix": null, "new_window": false}'));
+INSERT INTO "explayouts_block_parameter" ("block_id", "id", "name", "value") VALUES (386, 1593, 'link', TO_CLOB('{"link_type": "internal", "link": "exp-remote-location://media-n-744", "link_suffix": null, "new_window": false}'));
 INSERT INTO "explayouts_block_parameter" ("block_id", "id", "name", "value") VALUES (386, 1594, 'vertical_whitespace:enabled', TO_CLOB('1'));
 INSERT INTO "explayouts_block_parameter" ("block_id", "id", "name", "value") VALUES (386, 1595, 'vertical_whitespace:top', TO_CLOB('medium'));
 INSERT INTO "explayouts_block_parameter" ("block_id", "id", "name", "value") VALUES (386, 1596, 'vertical_whitespace:bottom', TO_CLOB('small'));
@@ -1439,7 +1439,7 @@ INSERT INTO "explayouts_block_parameter" ("block_id", "id", "name", "value") VAL
 INSERT INTO "explayouts_block_parameter" ("block_id", "id", "name", "value") VALUES (387, 1618, 'set_container:size', NULL);
 INSERT INTO "explayouts_block_parameter" ("block_id", "id", "name", "value") VALUES (388, 1619, 'text', TO_CLOB('All Recipes'));
 INSERT INTO "explayouts_block_parameter" ("block_id", "id", "name", "value") VALUES (388, 1620, 'style', TO_CLOB('default_button'));
-INSERT INTO "explayouts_block_parameter" ("block_id", "id", "name", "value") VALUES (388, 1621, 'link', TO_CLOB('{"link_type": "internal", "link": "ibexa-location://190", "link_suffix": null, "new_window": false}'));
+INSERT INTO "explayouts_block_parameter" ("block_id", "id", "name", "value") VALUES (388, 1621, 'link', TO_CLOB('{"link_type": "internal", "link": "exp-remote-location://media-n-744", "link_suffix": null, "new_window": false}'));
 INSERT INTO "explayouts_block_parameter" ("block_id", "id", "name", "value") VALUES (388, 1622, 'vertical_whitespace:enabled', TO_CLOB('1'));
 INSERT INTO "explayouts_block_parameter" ("block_id", "id", "name", "value") VALUES (388, 1623, 'vertical_whitespace:top', TO_CLOB('small'));
 INSERT INTO "explayouts_block_parameter" ("block_id", "id", "name", "value") VALUES (388, 1624, 'vertical_whitespace:bottom', TO_CLOB('medium'));

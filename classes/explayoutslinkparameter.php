@@ -174,15 +174,69 @@ class expLayoutsLinkParameter
     }
 
     /**
+     * Whether a link value names a node by one of the location reference
+     * forms (see referencedNode()).
+     */
+    public static function isLocationReference( $value )
+    {
+        return (bool)preg_match( '#^(?:exp-remote-location://\S+|ezlocation://\d+|ibexa-?location://\d+)$#i', trim( (string)$value ) );
+    }
+
+    /**
+     * The node a location reference names, or null when it names none.
+     *
+     *   exp-remote-location://<remote id>  a node by its remote id. This is the
+     *                                      form shipped data stores: remote ids
+     *                                      come with the content package, node
+     *                                      ids are handed out at install time.
+     *   ezlocation://<node id>             a node of this installation by id.
+     *   ibexa-location://<id>              deprecated, still read for old data: a
+     *                                      location id of the reference
+     *                                      installation, mapped through
+     *                                      [NexusNodeMap] like every imported
+     *                                      reference id. bin/php/
+     *                                      updatelinklocationreferences.php
+     *                                      converts stored values to
+     *                                      exp-remote-location://.
+     */
+    public static function referencedNode( $value )
+    {
+        $value = trim( (string)$value );
+        $node = null;
+        if ( preg_match( '#^exp-remote-location://(\S+)$#i', $value, $matches ) )
+        {
+            $node = eZContentObjectTreeNode::fetchByRemoteID( $matches[1] );
+        }
+        elseif ( preg_match( '#^ezlocation://(\d+)$#i', $value, $matches ) )
+        {
+            $node = eZContentObjectTreeNode::fetch( (int)$matches[1] );
+        }
+        elseif ( preg_match( '#^ibexa-?location://(\d+)$#i', $value, $matches ) )
+        {
+            $nodeId = expLayoutsDynamicCollection::remapNodeId( (int)$matches[1] );
+            $node = $nodeId ? eZContentObjectTreeNode::fetch( $nodeId ) : null;
+        }
+
+        return $node instanceof eZContentObjectTreeNode ? $node : null;
+    }
+
+    /**
      * An internal link, which may still be written the way the reference
      * installation writes one.
      *
-     * A location reference is resolved through the node it names; an
-     * unresolvable one yields an empty href rather than a dead
-     * "ibexa-location://" address in the markup.
+     * A location reference is resolved through the node it names, the same
+     * way expLayoutsRenderer::resolveBlockLink() resolves it; an unresolvable
+     * one yields an empty href rather than a dead address in the markup (or a
+     * link to whichever local node happens to carry a reference id).
      */
     protected static function internalHref( $value )
     {
+        if ( self::isLocationReference( $value ) )
+        {
+            $node = self::referencedNode( $value );
+            return $node ? self::nodeHref( (int)$node->attribute( 'node_id' ) ) : '';
+        }
+
         if ( preg_match( '#^(?:ibexa|ezlocation|ezcontent)-?location://(\d+)$#i', $value, $matches )
             || preg_match( '#^(?:ibexa|ez)location://(\d+)$#i', $value, $matches ) )
         {
