@@ -71,7 +71,7 @@ class expLayoutsGalleryBlockHandler implements expLayoutsBlockHandlerInterface
             }
         }
 
-        // imported nglayouts dynamic collections (queries) come first
+        // dynamic collections imported from Netgen Layouts (queries) come first
         if ( count( $items ) === 0 && isset( $block['id'] ) )
         {
             $dynCollection = expLayoutsCollection::fetchByBlock( (int)$block['id'] );

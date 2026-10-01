@@ -1,4 +1,4 @@
-{ezcss_load(array('netgen/layouts-admin.css','netgen/layouts-ibexa.css','nglayouts-ui.css'))}
+{ezcss_load(array('netgen/layouts-admin.css','netgen/layouts-exponential.css','explayouts-ui.css'))}
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 {def $resolved = fetch('explayouts','layout_summary_for_node',hash('node_id',$node.node_id))}
@@ -60,7 +60,7 @@
 .exp-node-layout-tab .nl-node-rule-name,
 .exp-node-layout-tab .nl-node-rule-meta { overflow-wrap: anywhere; word-break: break-word; }
 
-/* layouts-ibexa.css gives every .nl-btn a 20px right margin. In a flex row that
+/* layouts-exponential.css gives every .nl-btn a 20px right margin. In a flex row that
    is spacing after the last button as well, and in a flex-end row it is the
    last button standing 20px short of where it belongs. The rows here space
    themselves with gap. */
@@ -91,7 +91,7 @@
                     </div>
                     <div class="nl-node-rule-actions">
                         <a href={concat('explayouts_ui/layout_preview/',$resolved.id,'/2')|ezurl} target="_blank" class="nl-btn"><i class="material-icons">visibility</i> {'Preview'|i18n( 'design/admin/tabs/explayouts' )}</a>
-                        <a href={concat('explayouts_ui_api/app#layout/',$resolved.id)|ezurl} class="nl-btn nl-btn-primary" onclick="sessionStorage.setItem('nglayouts_return_to','{concat('content/view/full/', $node.node_id)|ezurl('no')|wash('javascript')}'); return true;"><i class="material-icons">edit</i> {'Edit layout'|i18n( 'design/admin/tabs/explayouts' )}</a>
+                        <a href={concat('explayouts_ui_api/app#layout/',$resolved.id)|ezurl} class="nl-btn nl-btn-primary" onclick="sessionStorage.setItem('explayouts_return_to','{concat('content/view/full/', $node.node_id)|ezurl('no')|wash('javascript')}'); return true;"><i class="material-icons">edit</i> {'Edit layout'|i18n( 'design/admin/tabs/explayouts' )}</a>
                     </div>
                 </div>
                 {def $zone_count = count($resolved.zones)}

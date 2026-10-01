@@ -1,6 +1,6 @@
 <?php
 /**
- * Executes 'dynamic' collections (imported nglayouts collection queries).
+ * Executes 'dynamic' collections (collection queries imported from Netgen Layouts).
  *
  * Supported query types:
  *  - exponential_content_search: subtree fetch with content-type filter, publish-date

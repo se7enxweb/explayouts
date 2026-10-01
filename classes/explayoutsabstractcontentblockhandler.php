@@ -44,7 +44,7 @@ abstract class expLayoutsAbstractContentBlockHandler implements expLayoutsBlockH
 
     protected function fetchItemsFromQuery( $parameters, $block = false )
     {
-        // Imported nglayouts dynamic collections carry their own query row;
+        // Dynamic collections imported from Netgen Layouts carry their own query row;
         // execute it ahead of the block-level query_type parameter.
         if ( is_array( $block ) && isset( $block['id'] ) )
         {
