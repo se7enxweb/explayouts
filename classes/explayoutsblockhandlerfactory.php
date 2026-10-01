@@ -1,10 +1,25 @@
 <?php
 class expLayoutsBlockHandlerFactory
 {
+    /**
+     * Renamed block identifiers: the content component blocks were
+     * ibexa_component_<type> and are exp_component_<type>. A block stored
+     * under the old name still finds its definition, until
+     * bin/php/updatecomponentblockidentifiers.php has renamed the rows.
+     */
+    static function currentIdentifier( $definitionIdentifier )
+    {
+        $definitionIdentifier = (string)$definitionIdentifier;
+        if ( strpos( $definitionIdentifier, 'ibexa_component_' ) === 0 )
+            return 'exp_component_' . substr( $definitionIdentifier, strlen( 'ibexa_component_' ) );
+
+        return $definitionIdentifier;
+    }
+
     static function get( $definitionIdentifier )
     {
         $ini = eZINI::instance( 'explayouts.ini' );
-        $blockSection = 'BlockDefinition_' . $definitionIdentifier;
+        $blockSection = 'BlockDefinition_' . self::currentIdentifier( $definitionIdentifier );
         if ( !$ini->hasGroup( $blockSection ) )
             return false;
 
@@ -27,7 +42,7 @@ class expLayoutsBlockHandlerFactory
     static function getBlockInfo( $definitionIdentifier )
     {
         $ini = eZINI::instance( 'explayouts.ini' );
-        $blockSection = 'BlockDefinition_' . $definitionIdentifier;
+        $blockSection = 'BlockDefinition_' . self::currentIdentifier( $definitionIdentifier );
         if ( !$ini->hasGroup( $blockSection ) )
             return false;
 

@@ -116,7 +116,32 @@ Helper scripts under `bin/php/`, e.g.:
 php extension/explayouts/bin/php/layout_list.php
 php extension/explayouts/bin/php/layout_publish.php
 php extension/explayouts/bin/php/diagnose.php
+php extension/explayouts/bin/php/updatecomponentblockidentifiers.php --dry-run
 ```
+
+## Upgrading: the component block identifiers
+
+The content component blocks (hero, features, about, logos, quote, lead) are
+`exp_component_<type>`. Up to 1.4.9 they were `ibexa_component_<type>`. After
+upgrading, rename the blocks already stored, once, from the installation's root:
+
+```bash
+php extension/explayouts/bin/php/updatecomponentblockidentifiers.php --dry-run
+php extension/explayouts/bin/php/updatecomponentblockidentifiers.php
+php bin/php/ezcache.php --clear-id=content,template-block --allow-root-user
+```
+
+It renames the blocks in every status (published, draft, archived), works on
+every database Exponential supports, and changes nothing when run again. Add
+`-s <siteaccess>` where the database is set per siteaccess.
+
+Until it has run, a block stored under the old name still finds its
+definition (`expLayoutsBlockHandlerFactory::currentIdentifier()`), and a theme
+that includes `explayouts/block/<identifier>.tpl` can map the name the same
+way. The admin's Components page lists component usages by the new names, so
+it shows them once the blocks are renamed. A theme with its own
+`ibexa_component_<type>.tpl` templates renames them to
+`exp_component_<type>.tpl`.
 
 ## Customization
 

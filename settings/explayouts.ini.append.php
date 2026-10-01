@@ -325,11 +325,12 @@ Category=containers
 # the block with no view types, no parameters and no preview, and made the
 # editor sidebar request fail outright.
 #
-# The identifiers keep the ibexa_component_* prefix because the stored blocks,
-# the media theme's block.tpl and its ibexa_component_*.tpl templates all key
-# off it. Renaming them to an exp_* scheme is a data migration, tracked
-# separately; the Name values below are what the editor displays.
-[BlockDefinition_ibexa_component_hero]
+# The identifiers are exp_component_<type>; they were ibexa_component_<type>
+# and are renamed in stored blocks by bin/php/updatecomponentblockidentifiers.php.
+# Until then a block stored under the old name still finds its definition here
+# (expLayoutsBlockHandlerFactory::currentIdentifier()). The Name values below
+# are what the editor displays.
+[BlockDefinition_exp_component_hero]
 Name=Hero component
 Handler=expLayoutsContentComponentBlockHandler
 ViewTypes[]=hero_style_1
@@ -337,7 +338,7 @@ ViewTypes[]=hero_style_2
 ViewTypes[]=hero_style_3
 
 Category=components
-[BlockDefinition_ibexa_component_features]
+[BlockDefinition_exp_component_features]
 Name=Features component
 Handler=expLayoutsContentComponentBlockHandler
 ViewTypes[]=features_style_1
@@ -349,7 +350,7 @@ ViewTypes[]=features_style_6
 ViewTypes[]=features_style_7
 
 Category=components
-[BlockDefinition_ibexa_component_about]
+[BlockDefinition_exp_component_about]
 Name=About component
 Handler=expLayoutsContentComponentBlockHandler
 ViewTypes[]=about_style_1
@@ -359,20 +360,20 @@ ViewTypes[]=about_style_4
 ViewTypes[]=about_style_5
 
 Category=components
-[BlockDefinition_ibexa_component_logos]
+[BlockDefinition_exp_component_logos]
 Name=Logos component
 Handler=expLayoutsContentComponentBlockHandler
 ViewTypes[]=logos_style_1
 ViewTypes[]=logos_style_2
 
 Category=components
-[BlockDefinition_ibexa_component_quote]
+[BlockDefinition_exp_component_quote]
 Name=Quote component
 Handler=expLayoutsContentComponentBlockHandler
 ViewTypes[]=quote_style_1
 
 Category=components
-[BlockDefinition_ibexa_component_lead]
+[BlockDefinition_exp_component_lead]
 Name=Lead component
 Handler=expLayoutsContentComponentBlockHandler
 ViewTypes[]=lead_style_1

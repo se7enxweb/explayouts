@@ -6,7 +6,7 @@ class expLayoutsExpBlock
     public function getConfig( $blockIdentifier )
     {
         $ini = eZINI::instance( 'explayouts.ini' );
-        $group = 'BlockDefinition_' . $blockIdentifier;
+        $group = 'BlockDefinition_' . expLayoutsBlockHandlerFactory::currentIdentifier( $blockIdentifier );
         if ( !$ini->hasGroup( $group ) )
             return array();
 
