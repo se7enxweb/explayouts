@@ -29,6 +29,20 @@ $FunctionList['resolve_layout'] = array(
     )
 );
 
+$FunctionList['layout_summary_for_node'] = array(
+    'name' => 'layout_summary_for_node',
+    'operation_types' => array( 'read' ),
+    'call_method' => array(
+        'include_file' => 'extension/explayouts/modules/explayouts/functioncollection.php',
+        'class' => 'expLayoutsFunctionCollection',
+        'method' => 'layoutSummaryForNode'
+    ),
+    'parameter_type' => 'standard',
+    'parameters' => array(
+        array( 'name' => 'node_id', 'type' => 'integer', 'required' => true ),
+    )
+);
+
 $FunctionList['resolve_layout_for_node'] = array(
     'name' => 'resolve_layout_for_node',
     'operation_types' => array( 'read' ),

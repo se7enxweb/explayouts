@@ -29,6 +29,49 @@ class expLayoutsRenderer
         );
     }
 
+    /**
+     * What a layout is made of, without what it shows: the same id, identifier,
+     * name, layout_type, zones and block_count as prepareLayout(), where each
+     * zone carries its identifier, link and block_count only. One query for the
+     * zones and one count per zone, instead of every block with its parameters,
+     * collections and items, so a page that only names the layout (the Layouts
+     * tab of the admin node view) does not load what a visitor sees.
+     */
+    static function summarizeLayout( $layout, $status = 2 )
+    {
+        if ( !$layout instanceof expLayoutsLayout )
+            return false;
+
+        $zones = array();
+        $blockCount = 0;
+        foreach ( expLayoutsZone::fetchByLayout( $layout->attribute( 'id' ), $status ) as $zone )
+        {
+            $sourceZone = expLayoutsZone::resolveSource( $zone );
+            $blockStatus = $sourceZone === $zone ? $status : (int)$sourceZone->attribute( 'status' );
+            $conditions = array( 'zone_id' => (int)$sourceZone->attribute( 'id' ) );
+            if ( $blockStatus !== null )
+                $conditions['status'] = $blockStatus;
+            $count = (int)eZPersistentObject::count( expLayoutsBlock::definition(), $conditions );
+            $blockCount += $count;
+            $zones[] = array(
+                'id' => $zone->attribute( 'id' ),
+                'identifier' => $zone->attribute( 'identifier' ),
+                'linked_layout_id' => $zone->isLinked() ? (int)$zone->attribute( 'linked_layout_id' ) : null,
+                'linked_zone_identifier' => $zone->isLinked() ? (string)$zone->attribute( 'linked_zone_identifier' ) : null,
+                'block_count' => $count,
+            );
+        }
+
+        return array(
+            'id' => $layout->attribute( 'id' ),
+            'identifier' => $layout->attribute( 'identifier' ),
+            'name' => $layout->attribute( 'name' ),
+            'layout_type' => $layout->attribute( 'layout_type' ),
+            'zones' => $zones,
+            'block_count' => $blockCount,
+        );
+    }
+
     static function prepareZone( $zone, $status = 2 )
     {
         // Linked zones (zone linking): header/footer link to the shared

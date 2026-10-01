@@ -37,28 +37,46 @@ class expLayoutsFunctionCollection
         return array( 'result' => false );
     }
 
+    /**
+     * The layout that applies to the node, summarised (expLayoutsRenderer::summarizeLayout()):
+     * enough to name it and count its zones and blocks, for the admin node view.
+     */
+    function layoutSummaryForNode( $nodeId )
+    {
+        $node = eZContentObjectTreeNode::fetch( (int)$nodeId );
+        if ( $node )
+        {
+            $layout = expLayoutsResolver::resolve( $node->attribute( 'url_alias' ) );
+            if ( $layout )
+                return array( 'result' => expLayoutsRenderer::summarizeLayout( $layout, 2 ) );
+        }
+        return array( 'result' => false );
+    }
+
     function rulesForNode( $nodeId )
     {
         $nodeId = (int) $nodeId;
+        // The rules that target this node, read from its targets: one query,
+        // instead of the targets of every enabled rule.
+        $ruleIds = array();
+        foreach ( expLayoutsRuleTarget::fetchByTarget( 'node', (string)$nodeId ) as $target )
+            $ruleIds[(int)$target->attribute( 'rule_id' )] = true;
         $rules = array();
+        if ( !$ruleIds )
+            return array( 'result' => $rules );
         foreach ( expLayoutsRule::fetchEnabled() as $rule )
         {
-            foreach ( $rule->targets() as $target )
-            {
-                if ( $target->attribute( 'target_type' ) === 'node' && (int)$target->attribute( 'target_value' ) == $nodeId )
-                {
-                    $layout = expLayoutsLayout::fetch( $rule->attribute( 'layout_id' ) );
-                    $rules[] = array(
-                        'id' => $rule->attribute( 'id' ),
-                        'priority' => $rule->attribute( 'priority' ),
-                        'enabled' => $rule->attribute( 'enabled' ),
-                        'layout_id' => $rule->attribute( 'layout_id' ),
-                        'layout_name' => $layout ? $layout->attribute( 'name' ) : '',
-                        'layout_identifier' => $layout ? $layout->attribute( 'identifier' ) : '',
-                    );
-                    break;
-                }
-            }
+            if ( !isset( $ruleIds[(int)$rule->attribute( 'id' )] ) )
+                continue;
+            $layout = expLayoutsLayout::fetch( $rule->attribute( 'layout_id' ) );
+            $rules[] = array(
+                'id' => $rule->attribute( 'id' ),
+                'priority' => $rule->attribute( 'priority' ),
+                'enabled' => $rule->attribute( 'enabled' ),
+                'layout_id' => $rule->attribute( 'layout_id' ),
+                'layout_name' => $layout ? $layout->attribute( 'name' ) : '',
+                'layout_identifier' => $layout ? $layout->attribute( 'identifier' ) : '',
+            );
         }
         return array( 'result' => $rules );
     }
