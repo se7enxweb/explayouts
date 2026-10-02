@@ -117,6 +117,7 @@ php extension/explayouts/bin/php/layout_list.php
 php extension/explayouts/bin/php/layout_publish.php
 php extension/explayouts/bin/php/diagnose.php
 php extension/explayouts/bin/php/updatecomponentblockidentifiers.php --dry-run
+php extension/explayouts/bin/php/updatelinklocationreferences.php --dry-run
 ```
 
 ## Upgrading: the component block identifiers
@@ -127,6 +128,7 @@ upgrading, rename the blocks already stored, once, from the installation's root:
 
 ```bash
 php extension/explayouts/bin/php/updatecomponentblockidentifiers.php --dry-run
+php extension/explayouts/bin/php/updatelinklocationreferences.php --dry-run
 php extension/explayouts/bin/php/updatecomponentblockidentifiers.php
 php bin/php/ezcache.php --clear-id=content,template-block --allow-root-user
 ```
@@ -142,6 +144,24 @@ way. The admin's Components page lists component usages by the new names, so
 it shows them once the blocks are renamed. A theme with its own
 `ibexa_component_<type>.tpl` templates renames them to
 `exp_component_<type>.tpl`.
+
+## Upgrading: the block link references
+
+A block link that names a node is stored as `exp-remote-location://<remote id>`:
+remote ids come with the content, while node ids are handed out at install
+time, so the link resolves to the same node on every installation. Up to 1.4.9
+such links were stored as `ibexa-location://<id>`, an id of the reference
+installation. Convert them once after upgrading:
+
+```bash
+php extension/explayouts/bin/php/updatelinklocationreferences.php --dry-run
+php extension/explayouts/bin/php/updatelinklocationreferences.php
+```
+
+`expLayoutsLinkParameter::referencedNode()` reads every form —
+`exp-remote-location://`, `ezlocation://<node id>` and, for old data,
+`ibexa-location://` through `[NexusNodeMap]` — and the renderer and the link
+parameter both use it, so a link resolves the same way wherever it is read.
 
 ## Customization
 
