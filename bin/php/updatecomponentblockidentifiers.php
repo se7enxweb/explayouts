@@ -16,81 +16,12 @@
  * cache holds only layout ids and can stay):
  *
  *   php bin/php/ezcache.php --clear-id=content,template-block --allow-root-user
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
+ * @package kernel
  */
 require_once 'autoload.php';
 
-$cli = eZCLI::instance();
-$script = eZScript::instance( array(
-    'description' => "Renames the stored component blocks from ibexa_component_<type> to exp_component_<type>.",
-    'use-session' => false,
-    'use-modules' => false,
-    'use-extensions' => true,
-) );
-$script->startup();
-$options = $script->getOptions( '[dry-run]', '', array( 'dry-run' => 'Report what would be renamed, change nothing.' ) );
-$script->initialize();
-
-$oldPrefix = 'ibexa_component_';
-$newPrefix = 'exp_component_';
-$dryRun = (bool)$options['dry-run'];
-$db = eZDB::instance();
-
-$rows = $db->arrayQuery( "SELECT definition_identifier, COUNT(*) AS block_count FROM explayouts_block GROUP BY definition_identifier" );
-if ( !is_array( $rows ) )
-{
-    $cli->error( 'FAIL could not read explayouts_block' );
-    $script->shutdown( 1 );
-}
-
-$renames = array();
-foreach ( $rows as $row )
-{
-    $row = array_change_key_case( $row, CASE_LOWER );
-    $identifier = (string)$row['definition_identifier'];
-    if ( strpos( $identifier, $oldPrefix ) === 0 )
-        $renames[$identifier] = array( $newPrefix . substr( $identifier, strlen( $oldPrefix ) ), (int)$row['block_count'] );
-}
-
-if ( !$renames )
-{
-    $cli->output( 'PASS nothing to rename: no block uses an ' . $oldPrefix . '* identifier' );
-    $script->shutdown( 0 );
-}
-
-$total = 0;
-foreach ( $renames as $old => $rename )
-{
-    $cli->output( sprintf( '%s %d blocks: %s -> %s', $dryRun ? 'would rename' : 'renaming', $rename[1], $old, $rename[0] ) );
-    $total += $rename[1];
-}
-
-if ( $dryRun )
-{
-    $cli->output( "DRY $total blocks would be renamed; nothing was changed" );
-    $script->shutdown( 0 );
-}
-
-$db->begin();
-foreach ( $renames as $old => $rename )
-{
-    $result = $db->query( "UPDATE explayouts_block SET definition_identifier = '" . $db->escapeString( $rename[0] ) . "'"
-        . " WHERE definition_identifier = '" . $db->escapeString( $old ) . "'" );
-    if ( $result === false )
-    {
-        $db->rollback();
-        $cli->error( "FAIL renaming $old; nothing was changed" );
-        $script->shutdown( 1 );
-    }
-}
-$db->commit();
-
-$left = $db->arrayQuery( "SELECT COUNT(*) AS block_count FROM explayouts_block WHERE definition_identifier LIKE '" . $oldPrefix . "%'" );
-$left = is_array( $left ) && $left ? (int)current( array_change_key_case( $left[0], CASE_LOWER ) ) : -1;
-if ( $left !== 0 )
-{
-    $cli->error( "FAIL $left blocks still use an $oldPrefix* identifier" );
-    $script->shutdown( 1 );
-}
-
-$cli->output( "PASS $total blocks renamed. Clear the content and template-block caches now." );
-$script->shutdown( 0 );
+// The code is in extension/explayouts/classes/runnable/commands/php_updatecomponentblockidentifiers.php (#207); this file is the entry point.
+\Exponential\Command\Extension\Explayouts\Updatecomponentblockidentifiers::main( __FILE__ );

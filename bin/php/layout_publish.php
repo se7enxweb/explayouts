@@ -1,4 +1,5 @@
 <?php
+// @description Publish the draft of a layout: layout_publish.php <layout_id>
 if ( !isset( $argv[1] ) )
 {
     echo "Usage: layout_publish.php <layout_id>\n";

@@ -1,4 +1,5 @@
 <?php
+// @description Copy a layout: layout_copy.php <layout_id>
 if ( !isset( $argv[1] ) )
 {
     echo "Usage: layout_copy.php <layout_id>\n";

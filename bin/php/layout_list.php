@@ -1,4 +1,5 @@
 <?php
+// @description List all layouts with id, identifier, name, type and status
 $service = new expLayoutsCoreLayoutService();
 $layouts = $service->listAll();
 

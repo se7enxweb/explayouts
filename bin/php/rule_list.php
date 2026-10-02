@@ -1,4 +1,5 @@
 <?php
+// @description List the rules of a layout: rule_list.php <layout_id>
 if ( !isset( $argv[1] ) )
 {
     echo "Usage: rule_list.php <layout_id>\n";

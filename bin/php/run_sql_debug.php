@@ -1,4 +1,5 @@
 <?php
+// @description Run sql/mysql/test_data.sql query by query and show each result (development only)
 ini_set( 'display_errors', 1 );
 error_reporting( E_ALL );
 

@@ -1,4 +1,5 @@
 <?php
+// @description List the collection items of a block: collection_list.php <block_id>
 if ( !isset( $argv[1] ) )
 {
     echo "Usage: collection_list.php <block_id>\n";

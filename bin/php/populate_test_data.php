@@ -1,4 +1,5 @@
 <?php
+// @description Install the explayouts test data (development only)
 require_once __DIR__ . '/../../classes/explayoutsfixtures.php';
 
 ini_set( 'display_errors', 1 );

@@ -24,95 +24,12 @@
  * caches that hold rendered blocks:
  *
  *   php bin/php/ezcache.php --clear-id=content,template-block --allow-root-user
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
+ * @package kernel
  */
 require_once 'autoload.php';
 
-$cli = eZCLI::instance();
-$script = eZScript::instance( array(
-    'description' => "Converts the block links stored as ibexa-location://<id> to exp-remote-location://<remote id>.",
-    'use-session' => false,
-    'use-modules' => false,
-    'use-extensions' => true,
-) );
-$script->startup();
-$options = $script->getOptions( '[dry-run]', '', array( 'dry-run' => 'Report what would be converted, change nothing.' ) );
-$script->initialize();
-
-$oldScheme = 'ibexa-location://';
-$newScheme = 'exp-remote-location://';
-$dryRun = (bool)$options['dry-run'];
-$db = eZDB::instance();
-
-$rows = $db->arrayQuery( "SELECT id, block_id, name, value FROM explayouts_block_parameter WHERE value LIKE '%" . $db->escapeString( $oldScheme ) . "%'" );
-if ( !is_array( $rows ) )
-{
-    $cli->error( 'FAIL could not read explayouts_block_parameter' );
-    $script->shutdown( 1 );
-}
-
-$updates = array();
-$unresolved = 0;
-foreach ( $rows as $row )
-{
-    $row = array_change_key_case( $row, CASE_LOWER );
-    $value = (string)$row['value'];
-    $newValue = preg_replace_callback( '#ibexa-location://(\d+)#', function ( $m ) use ( $newScheme, $cli, $row, &$unresolved )
-    {
-        $node = expLayoutsLinkParameter::referencedNode( $m[0] );
-        $remoteId = $node ? (string)$node->attribute( 'remote_id' ) : '';
-        if ( $remoteId === '' )
-        {
-            $unresolved++;
-            $cli->warning( sprintf( 'WARN parameter %d (block %d, %s): %s names no node; left as it is',
-                                    $row['id'], $row['block_id'], $row['name'], $m[0] ) );
-            return $m[0];
-        }
-        return $newScheme . $remoteId;
-    }, $value );
-
-    if ( $newValue !== $value )
-    {
-        $updates[(int)$row['id']] = $newValue;
-        $cli->output( sprintf( '%s parameter %d (block %d, %s): %s -> %s', $dryRun ? 'would convert' : 'converting',
-                               $row['id'], $row['block_id'], $row['name'], $value, $newValue ) );
-    }
-}
-
-if ( !$updates )
-{
-    $cli->output( $unresolved ? "PASS nothing to convert; $unresolved references name no node and were left as they are"
-                              : 'PASS nothing to convert: no block link uses ' . $oldScheme );
-    $script->shutdown( 0 );
-}
-
-$total = count( $updates );
-if ( $dryRun )
-{
-    $cli->output( "DRY $total parameters would be converted; nothing was changed" );
-    $script->shutdown( 0 );
-}
-
-$db->begin();
-foreach ( $updates as $id => $newValue )
-{
-    $result = $db->query( "UPDATE explayouts_block_parameter SET value = '" . $db->escapeString( $newValue ) . "' WHERE id = " . (int)$id );
-    if ( $result === false )
-    {
-        $db->rollback();
-        $cli->error( "FAIL converting parameter $id; nothing was changed" );
-        $script->shutdown( 1 );
-    }
-}
-$db->commit();
-
-$left = $db->arrayQuery( "SELECT COUNT(*) AS parameter_count FROM explayouts_block_parameter WHERE value LIKE '%" . $db->escapeString( $oldScheme ) . "%'" );
-$left = is_array( $left ) && $left ? (int)current( array_change_key_case( $left[0], CASE_LOWER ) ) : -1;
-if ( $left !== $unresolved )
-{
-    $cli->error( "FAIL $left parameters still use $oldScheme, $unresolved expected (those naming no node)" );
-    $script->shutdown( 1 );
-}
-
-$cli->output( "PASS $total parameters converted" . ( $unresolved ? ", $unresolved unresolvable references left as they are" : '' )
-              . '. Clear the content and template-block caches now.' );
-$script->shutdown( 0 );
+// The code is in extension/explayouts/classes/runnable/commands/php_updatelinklocationreferences.php (#207); this file is the entry point.
+\Exponential\Command\Extension\Explayouts\Updatelinklocationreferences::main( __FILE__ );

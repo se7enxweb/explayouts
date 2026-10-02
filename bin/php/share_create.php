@@ -1,4 +1,5 @@
 <?php
+// @description Create a share token for a layout: share_create.php <layout_id>
 if ( !isset( $argv[1] ) )
 {
     echo "Usage: share_create.php <layout_id>\n";

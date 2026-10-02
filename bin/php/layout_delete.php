@@ -1,4 +1,5 @@
 <?php
+// @description Delete a layout: layout_delete.php <layout_id>
 if ( !isset( $argv[1] ) )
 {
     echo "Usage: layout_delete.php <layout_id>\n";

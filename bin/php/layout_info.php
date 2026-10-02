@@ -1,4 +1,5 @@
 <?php
+// @description Show the details of a layout: layout_info.php <layout_id>
 if ( !isset( $argv[1] ) )
 {
     echo "Usage: layout_info.php <layout_id>\n";

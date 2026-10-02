@@ -1,4 +1,5 @@
 <?php
+// @description List the blocks of a layout: block_list.php <layout_id>
 if ( !isset( $argv[1] ) )
 {
     echo "Usage: block_list.php <layout_id>\n";

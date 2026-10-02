@@ -1,4 +1,5 @@
 <?php
+// @description List content browser items: content_browser.php [provider] [parent node id] [search text]
 $provider = isset( $argv[1] ) ? trim( $argv[1] ) : 'content';
 $parentNodeId = isset( $argv[2] ) ? (int)$argv[2] : 2;
 $search = isset( $argv[3] ) ? trim( $argv[3] ) : '';

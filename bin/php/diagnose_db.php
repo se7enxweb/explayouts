@@ -1,4 +1,5 @@
 <?php
+// @description Check the database connection and count the rows of explayouts_layout
 ini_set( 'display_errors', 1 );
 error_reporting( E_ALL );
 
