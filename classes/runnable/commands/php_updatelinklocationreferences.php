@@ -47,16 +47,14 @@ class Updatelinklocationreferences extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array(
+        $cli = $this->cli();
+        $script = $this->script( array(
             'description' => "Converts the block links stored as ibexa-location://<id> to exp-remote-location://<remote id>.",
             'use-session' => false,
             'use-modules' => false,
             'use-extensions' => true,
         ) );
-        $script->startup();
-        $options = $script->getOptions( '[dry-run]', '', array( 'dry-run' => 'Report what would be converted, change nothing.' ) );
-        $script->initialize();
+        $options = $this->startup( '[dry-run]', '', array( 'dry-run' => 'Report what would be converted, change nothing.' ) );
 
         $oldScheme = 'ibexa-location://';
         $newScheme = 'exp-remote-location://';

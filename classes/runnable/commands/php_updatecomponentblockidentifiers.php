@@ -39,16 +39,14 @@ class Updatecomponentblockidentifiers extends \Exponential\Runnable\Command
             ${$__name} = &$GLOBALS[$__name];
         unset( $__name );
 
-        $cli = \eZCLI::instance();
-        $script = \eZScript::instance( array(
+        $cli = $this->cli();
+        $script = $this->script( array(
             'description' => "Renames the stored component blocks from ibexa_component_<type> to exp_component_<type>.",
             'use-session' => false,
             'use-modules' => false,
             'use-extensions' => true,
         ) );
-        $script->startup();
-        $options = $script->getOptions( '[dry-run]', '', array( 'dry-run' => 'Report what would be renamed, change nothing.' ) );
-        $script->initialize();
+        $options = $this->startup( '[dry-run]', '', array( 'dry-run' => 'Report what would be renamed, change nothing.' ) );
 
         $oldPrefix = 'ibexa_component_';
         $newPrefix = 'exp_component_';
