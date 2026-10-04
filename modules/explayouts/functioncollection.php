@@ -24,6 +24,42 @@ class expLayoutsFunctionCollection
         return array( 'result' => expLayoutsRenderer::prepareLayout( $layout, 2 ) );
     }
 
+    /**
+     * The admin layout for a module and view (default: the request being
+     * served), prepared like resolveLayout(); false when the admin layouts
+     * are off, the siteaccess is not an admin one, or nothing resolves.
+     * Never throws: a failure is "no layout", which is plain admin4.
+     */
+    function resolveAdminLayout( $module = false, $view = false )
+    {
+        try
+        {
+            $layout = expLayoutsResolver::resolveAdmin( $module, $view );
+            if ( !$layout )
+                return array( 'result' => false );
+            return array( 'result' => expLayoutsRenderer::prepareLayout( $layout, 2 ) );
+        }
+        catch ( Throwable $e )
+        {
+            eZDebug::writeError( $e->getMessage(), 'expLayoutsFunctionCollection::resolveAdminLayout' );
+            return array( 'result' => false );
+        }
+    }
+
+    /**
+     * Values for cache-block keys: generation, siteaccess, module, view and
+     * the user's permissions hash.
+     */
+    function adminLayoutCacheKey( $module = false, $view = false )
+    {
+        return array( 'result' => expLayoutsResolver::adminCacheKey( $module, $view ) );
+    }
+
+    function adminLayoutsEnabled()
+    {
+        return array( 'result' => expLayoutsResolver::adminLayoutsEnabled() && expLayoutsResolver::isAdminSiteAccess() );
+    }
+
     function resolveLayoutForNode( $nodeId )
     {
         $nodeId = (int)$nodeId;

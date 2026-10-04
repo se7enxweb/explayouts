@@ -33,7 +33,7 @@ class expLayoutsResolver
             if ( (int)$cached['layout_id'] > 0 )
             {
                 $layout = expLayoutsLayout::fetch( $cached['layout_id'] );
-                if ( $layout && (int)$layout->attribute( 'status' ) === 2 )
+                if ( $layout && (int)$layout->attribute( 'status' ) === 2 && !expLayoutsLayoutType::isAdminType( $layout->attribute( 'layout_type' ) ) )
                 {
                     eZDebug::writeNotice( "Cache hit for path '$path', layout=" . $layout->attribute( 'identifier' ), 'expLayoutsResolver' );
                     return $layout;
@@ -52,7 +52,8 @@ class expLayoutsResolver
             if ( self::ruleMatches( $rule, $path ) )
             {
                 $layout = expLayoutsLayout::fetch( $rule->attribute( 'layout_id' ) );
-                if ( $layout && (int)$layout->attribute( 'status' ) === 2 )
+                // Admin layouts never reach the public site.
+                if ( $layout && (int)$layout->attribute( 'status' ) === 2 && !expLayoutsLayoutType::isAdminType( $layout->attribute( 'layout_type' ) ) )
                 {
                     self::writeCache( $path, $siteAccessName, (int)$rule->attribute( 'id' ), (int)$layout->attribute( 'id' ) );
                     eZDebug::writeNotice( 'Matched rule ' . $rule->attribute( 'id' ) . " for path '$path', layout=" . $layout->attribute( 'identifier' ), 'expLayoutsResolver' );
@@ -67,7 +68,7 @@ class expLayoutsResolver
         if ( $default )
         {
             $layout = expLayoutsLayout::fetchByIdentifier( $default, 2 );
-            if ( $layout )
+            if ( $layout && !expLayoutsLayoutType::isAdminType( $layout->attribute( 'layout_type' ) ) )
             {
                 self::writeCache( $path, $siteAccessName, 0, (int)$layout->attribute( 'id' ) );
                 return $layout;
@@ -171,6 +172,10 @@ class expLayoutsResolver
 
     public static function clearCache()
     {
+        self::$resolvedCache = array();
+        self::$adminMemo = array();
+        self::bumpAdminGeneration();
+
         $dir = self::cacheDir();
         if ( !is_dir( $dir ) )
             return;
@@ -185,7 +190,218 @@ class expLayoutsResolver
         }
     }
 
-    static function ruleMatches( $rule, $path )
+    // ------------------------------------------------------------------
+    // Admin layouts: resolved by module and view, kept apart from the site.
+    // ------------------------------------------------------------------
+
+    private static $adminMemo = array();
+
+    /**
+     * The safety switch: [AdminLayoutSettings] Enabled=enabled|disabled.
+     * Disabled returns every admin page to plain admin4.
+     */
+    static function adminLayoutsEnabled()
+    {
+        $ini = eZINI::instance( 'explayouts.ini' );
+        if ( !$ini->hasVariable( 'AdminLayoutSettings', 'Enabled' ) )
+            return false;
+        return $ini->variable( 'AdminLayoutSettings', 'Enabled' ) === 'enabled';
+    }
+
+    /**
+     * Whether the current siteaccess is one the admin layouts apply to
+     * ([AdminLayoutSettings] SiteAccessMatch, fnmatch patterns).
+     */
+    static function isAdminSiteAccess( $name = false )
+    {
+        if ( $name === false )
+        {
+            $current = eZSiteAccess::current();
+            $name = ( is_array( $current ) && isset( $current['name'] ) ) ? $current['name'] : '';
+        }
+        $ini = eZINI::instance( 'explayouts.ini' );
+        if ( $name === '' || !$ini->hasVariable( 'AdminLayoutSettings', 'SiteAccessMatch' ) )
+            return false;
+        foreach ( (array)$ini->variable( 'AdminLayoutSettings', 'SiteAccessMatch' ) as $pattern )
+        {
+            if ( $pattern !== '' && fnmatch( $pattern, $name ) )
+                return true;
+        }
+        return false;
+    }
+
+    /**
+     * The module and view of the request being served, as the kernel records
+     * them (eZRequestedModuleParams), or false.
+     */
+    static function requestedModuleView()
+    {
+        if ( empty( $GLOBALS['eZRequestedModuleParams']['module_name'] ) )
+            return false;
+        $params = $GLOBALS['eZRequestedModuleParams'];
+        return array( (string)$params['module_name'], isset( $params['function_name'] ) ? (string)$params['function_name'] : '' );
+    }
+
+    private static function adminGenerationFile()
+    {
+        $varDir = eZINI::instance( 'site.ini' )->variable( 'FileSettings', 'VarDir' );
+        return $varDir . '/cache/explayouts/admin_generation';
+    }
+
+    /**
+     * Token that changes whenever an admin layout is published or a rule
+     * changes. It is part of every admin cache key, so every cached answer
+     * and rendered zone made before the change stops being found.
+     */
+    static function adminGeneration()
+    {
+        $file = self::adminGenerationFile();
+        $token = is_file( $file ) ? trim( (string)@file_get_contents( $file ) ) : '';
+        if ( $token === '' )
+            $token = self::bumpAdminGeneration();
+        return $token;
+    }
+
+    private static function bumpAdminGeneration()
+    {
+        $token = dechex( time() ) . bin2hex( random_bytes( 3 ) );
+        eZFile::create( 'admin_generation', dirname( self::adminGenerationFile() ), $token, true );
+        return $token;
+    }
+
+    /**
+     * The same hash the admin pagelayout uses for "this user's permissions".
+     */
+    static function adminUserHash()
+    {
+        $user = eZUser::currentUser();
+        return implode( ',', $user->roleIDList() ) . ',' . implode( ',', $user->limitValueList() );
+    }
+
+    /**
+     * Values for a cache-block keys= list: everything the resolved admin
+     * layout depends on. Siteaccess, module, view, user permissions and the
+     * generation (changes on publish / rule change).
+     */
+    static function adminCacheKey( $module = false, $view = false )
+    {
+        if ( $module === false || $module === '' )
+        {
+            $mv = self::requestedModuleView();
+            $module = $mv ? $mv[0] : '';
+            $view = $mv ? $mv[1] : '';
+        }
+        $current = eZSiteAccess::current();
+        return array(
+            self::adminGeneration(),
+            ( is_array( $current ) && isset( $current['name'] ) ) ? $current['name'] : '',
+            (string)$module,
+            (string)$view,
+            self::adminUserHash(),
+        );
+    }
+
+    /**
+     * The published admin layout for a module and view, or false (plain admin4).
+     *
+     * False when the admin layouts are disabled, when the siteaccess is not an
+     * admin one, or when nothing resolves. Only rules whose layout is of an
+     * admin type are looked at; the first match by priority wins, then the
+     * DefaultLayout setting.
+     */
+    static function resolveAdmin( $module = false, $view = false )
+    {
+        if ( !self::adminLayoutsEnabled() || !self::isAdminSiteAccess() )
+            return false;
+
+        if ( $module === false || $module === '' )
+        {
+            $mv = self::requestedModuleView();
+            if ( !$mv )
+                return false;
+            $module = $mv[0];
+            $view = $mv[1];
+        }
+        $module = (string)$module;
+        $view = (string)$view;
+
+        $current = eZSiteAccess::current();
+        $siteAccessName = ( is_array( $current ) && isset( $current['name'] ) ) ? $current['name'] : 'default';
+        $generation = self::adminGeneration();
+        $memoKey = $generation . '|' . $siteAccessName . '|' . $module . '|' . $view;
+        if ( array_key_exists( $memoKey, self::$adminMemo ) )
+            return self::$adminMemo[$memoKey];
+
+        $cached = self::readCache( 'admin|' . $module . '|' . $view, $siteAccessName );
+        if ( $cached !== false && isset( $cached['generation'] ) && $cached['generation'] === $generation )
+        {
+            $layout = (int)$cached['layout_id'] > 0 ? expLayoutsLayout::fetch( $cached['layout_id'] ) : false;
+            if ( $layout && (int)$layout->attribute( 'status' ) === 2 )
+                return self::$adminMemo[$memoKey] = $layout;
+            if ( (int)$cached['layout_id'] === 0 )
+                return self::$adminMemo[$memoKey] = false;
+        }
+
+        $context = array( 'module' => $module, 'view' => $view );
+        $path = $module . '/' . $view;
+        $found = false;
+        $ruleId = 0;
+        foreach ( expLayoutsRule::fetchEnabled() as $rule )
+        {
+            $layout = expLayoutsLayout::fetch( $rule->attribute( 'layout_id' ) );
+            if ( !$layout || (int)$layout->attribute( 'status' ) !== 2
+                || !expLayoutsLayoutType::isAdminType( $layout->attribute( 'layout_type' ) ) )
+                continue;
+            if ( self::ruleMatches( $rule, $path, $context ) )
+            {
+                $found = $layout;
+                $ruleId = (int)$rule->attribute( 'id' );
+                break;
+            }
+        }
+
+        if ( !$found )
+        {
+            $default = eZINI::instance( 'explayouts.ini' )->variable( 'AdminLayoutSettings', 'DefaultLayout' );
+            if ( $default )
+            {
+                $layout = expLayoutsLayout::fetchByIdentifier( $default, 2 );
+                if ( $layout && expLayoutsLayoutType::isAdminType( $layout->attribute( 'layout_type' ) ) )
+                    $found = $layout;
+            }
+        }
+
+        self::writeAdminCache( $module, $view, $siteAccessName, $generation, $ruleId, $found ? (int)$found->attribute( 'id' ) : 0 );
+        return self::$adminMemo[$memoKey] = $found;
+    }
+
+    private static function writeAdminCache( $module, $view, $siteAccessName, $generation, $ruleId, $layoutId )
+    {
+        // As for the site: a non-match is only remembered when the database answered.
+        if ( $layoutId === 0 && !self::databaseAnswered() )
+            return;
+
+        $ttl = (int)eZINI::instance( 'explayouts.ini' )->variable( 'AdminLayoutSettings', 'CacheTTL' );
+        if ( $ttl <= 0 )
+            $ttl = 3600;
+        if ( $layoutId === 0 )
+            $ttl = min( $ttl, 300 );
+
+        $path = 'admin|' . $module . '|' . $view;
+        $key = self::cacheKey( $path, $siteAccessName );
+        $data = array(
+            'path' => $path,
+            'siteaccess' => $siteAccessName,
+            'rule_id' => $ruleId,
+            'layout_id' => $layoutId,
+            'generation' => $generation,
+            'expires' => time() + $ttl,
+        );
+        self::$resolvedCache[$key] = $data;
+        eZFile::create( $key . '.php', self::cacheDir(), '<?php return ' . var_export( $data, true ) . ';', true );
+    }
+
+    static function ruleMatches( $rule, $path, $context = false )
     {
         $targets = $rule->targets();
         $conditions = $rule->conditions();
@@ -201,16 +417,44 @@ class expLayoutsResolver
 
         foreach ( $targets as $target )
         {
-            if ( self::targetMatches( $target, $path ) )
+            if ( self::targetMatches( $target, $path, $context ) )
                 return true;
         }
         return false;
     }
 
-    static function targetMatches( $target, $path )
+    /**
+     * Whether a module/view pattern matches. "*" is everything, "content/*"
+     * every view of a module, "content/view" one view, "content" a module.
+     */
+    static function moduleViewMatches( $pattern, $module, $view )
+    {
+        $pattern = trim( (string)$pattern );
+        if ( $pattern === '*' )
+            return true;
+        $parts = explode( '/', $pattern, 2 );
+        if ( $parts[0] !== '*' && $parts[0] !== $module )
+            return false;
+        if ( !isset( $parts[1] ) || $parts[1] === '*' )
+            return true;
+        return $parts[1] === $view;
+    }
+
+    static function targetMatches( $target, $path, $context = false )
     {
         $type = $target->attribute( 'target_type' );
         $value = $target->attribute( 'target_value' );
+
+        // Module/view targets belong to the admin layouts and need a request
+        // context; the public site never supplies one, so they never match there.
+        if ( $type === 'module' || $type === 'module_view' )
+        {
+            if ( !is_array( $context ) )
+                return false;
+            return self::moduleViewMatches( $value, $context['module'], $context['view'] );
+        }
+        if ( is_array( $context ) )
+            return false;
 
         switch ( $type )
         {

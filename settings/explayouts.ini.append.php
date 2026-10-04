@@ -443,6 +443,157 @@ Handler=expLayoutsExponentialContentSearchQueryHandler
 Name=Topics
 Handler=expLayoutsContentByTopicQueryHandler
 
+# The admin blocks (design admin4l): each renders one part of the admin4 page with
+# admin4's own template, so the markup is the one of admin4. Group=admin keeps them
+# out of the site layouts' block list; AdminBlockSettings lists them for the admin
+# layouts. Their view templates are design:explayouts/block/<identifier>.tpl.
+[AdminBlockSettings]
+AvailableBlocks[]
+AvailableBlocks[]=admin_logo
+AvailableBlocks[]=admin_search
+AvailableBlocks[]=admin_theme_switch
+AvailableBlocks[]=admin_sidebar_toggles
+AvailableBlocks[]=admin_tab_menu
+AvailableBlocks[]=admin_left_menu
+AvailableBlocks[]=admin_content_tree
+AvailableBlocks[]=admin_clear_cache
+AvailableBlocks[]=admin_bookmarks
+AvailableBlocks[]=admin_current_user
+AvailableBlocks[]=admin_preferences
+AvailableBlocks[]=admin_quick_settings
+AvailableBlocks[]=admin_breadcrumb
+AvailableBlocks[]=admin_module_result
+AvailableBlocks[]=admin_footer
+AvailableBlocks[]=admin_popup_menu
+AvailableBlocks[]=admin_overlay
+AvailableBlocks[]=admin_debug_area
+
+[BlockDefinition_admin_logo]
+Name=Admin: logo and site preview
+Handler=expLayoutsAdminPartBlockHandler
+ViewTypes[]=default
+Category=admin_header
+Group=admin
+
+[BlockDefinition_admin_search]
+Name=Admin: search
+Handler=expLayoutsAdminPartBlockHandler
+ViewTypes[]=default
+Category=admin_header
+Group=admin
+
+[BlockDefinition_admin_theme_switch]
+Name=Admin: light and dark mode switch
+Handler=expLayoutsAdminPartBlockHandler
+ViewTypes[]=default
+Category=admin_header
+Group=admin
+
+[BlockDefinition_admin_sidebar_toggles]
+Name=Admin: sidebar toggles
+Handler=expLayoutsAdminPartBlockHandler
+ViewTypes[]=default
+Category=admin_header
+Group=admin
+
+[BlockDefinition_admin_tab_menu]
+Name=Admin: tab menu
+Handler=expLayoutsAdminPartBlockHandler
+ViewTypes[]=default
+Category=admin_navigation
+Group=admin
+
+[BlockDefinition_admin_left_menu]
+Name=Admin: left menu of the navigation part
+Handler=expLayoutsAdminLeftMenuBlockHandler
+ViewTypes[]=default
+Category=admin_navigation
+Group=admin
+
+[BlockDefinition_admin_content_tree]
+Name=Admin: content structure
+Handler=expLayoutsAdminPartBlockHandler
+ViewTypes[]=default
+Category=admin_navigation
+Group=admin
+
+[BlockDefinition_admin_clear_cache]
+Name=Admin: clear cache
+Handler=expLayoutsAdminPartBlockHandler
+ViewTypes[]=default
+Category=admin_sidebar
+Group=admin
+
+[BlockDefinition_admin_bookmarks]
+Name=Admin: bookmarks
+Handler=expLayoutsAdminPartBlockHandler
+ViewTypes[]=default
+Category=admin_sidebar
+Group=admin
+
+[BlockDefinition_admin_current_user]
+Name=Admin: current user
+Handler=expLayoutsAdminPartBlockHandler
+ViewTypes[]=default
+Category=admin_sidebar
+Group=admin
+
+[BlockDefinition_admin_preferences]
+Name=Admin: user preferences
+Handler=expLayoutsAdminPartBlockHandler
+ViewTypes[]=default
+Category=admin_sidebar
+Group=admin
+
+[BlockDefinition_admin_quick_settings]
+Name=Admin: quick settings
+Handler=expLayoutsAdminPartBlockHandler
+ViewTypes[]=default
+Category=admin_sidebar
+Group=admin
+
+[BlockDefinition_admin_breadcrumb]
+Name=Admin: breadcrumb path
+Handler=expLayoutsAdminPartBlockHandler
+ViewTypes[]=default
+Category=admin_page
+Group=admin
+
+[BlockDefinition_admin_module_result]
+Name=Admin: module result
+Handler=expLayoutsAdminPartBlockHandler
+ViewTypes[]=default
+Category=admin_page
+Group=admin
+
+[BlockDefinition_admin_footer]
+Name=Admin: footer and copyright
+Handler=expLayoutsAdminPartBlockHandler
+ViewTypes[]=default
+Category=admin_page
+Group=admin
+
+[BlockDefinition_admin_popup_menu]
+Name=Admin: context menu
+Handler=expLayoutsAdminPartBlockHandler
+ViewTypes[]=default
+Category=admin_page
+Group=admin
+
+[BlockDefinition_admin_overlay]
+Name=Admin: overlay and loader
+Handler=expLayoutsAdminPartBlockHandler
+ViewTypes[]=default
+Category=admin_page
+Group=admin
+
+[BlockDefinition_admin_debug_area]
+Name=Admin: debug report area
+Handler=expLayoutsAdminPartBlockHandler
+ViewTypes[]=default
+Category=admin_page
+Group=admin
+
 [LayoutType_1_column]
 Name=1 column
 Zones[]=main
@@ -518,6 +669,60 @@ Zones[]=left
 Zones[]=right
 Zones[]=pre_footer
 Zones[]=footer
+
+[LayoutType_admin_3col]
+Name=Admin: left, main, right
+Group=admin
+Zones[]=header
+Zones[]=topmenu
+Zones[]=left
+Zones[]=right
+Zones[]=main_top
+Zones[]=main
+Zones[]=main_bottom
+Zones[]=footer
+
+[LayoutType_admin_2col]
+Name=Admin: left, main
+Group=admin
+Zones[]=header
+Zones[]=topmenu
+Zones[]=left
+Zones[]=main_top
+Zones[]=main
+Zones[]=main_bottom
+Zones[]=footer
+
+[LayoutType_admin_full]
+Name=Admin: main only
+Group=admin
+Zones[]=header
+Zones[]=topmenu
+Zones[]=main_top
+Zones[]=main
+Zones[]=main_bottom
+Zones[]=footer
+
+# The admin layouts: the pages of the administration interface assembled from
+# layouts, zones and blocks (design admin4l). Layout types with Group=admin are
+# admin layouts. They are resolved by module and view for the siteaccesses
+# listed here, and never reach the public site; site layouts never reach the
+# admin.
+[AdminLayoutSettings]
+# enabled|disabled. disabled returns every admin page to plain admin4.
+Enabled=enabled
+# Siteaccess names (fnmatch patterns) the admin layouts apply to.
+SiteAccessMatch[]
+SiteAccessMatch[]=admin
+SiteAccessMatch[]=admin_*
+SiteAccessMatch[]=admintest_*
+SiteAccessMatch[]=editor
+# Layout used when no admin rule matches the module and view (identifier of a
+# published admin layout). Empty: nothing resolves and the page is plain admin4.
+DefaultLayout=admin_3col
+# Seconds a resolved answer is remembered. Publishing an admin layout or
+# changing a rule clears it at once.
+CacheTTL=3600
 
 [TemplateEditorSettings]
 AllowedTemplateRoots[]

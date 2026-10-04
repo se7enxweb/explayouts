@@ -29,6 +29,48 @@ $FunctionList['resolve_layout'] = array(
     )
 );
 
+$FunctionList['resolve_admin_layout'] = array(
+    'name' => 'resolve_admin_layout',
+    'operation_types' => array( 'read' ),
+    'call_method' => array(
+        'include_file' => 'extension/explayouts/modules/explayouts/functioncollection.php',
+        'class' => 'expLayoutsFunctionCollection',
+        'method' => 'resolveAdminLayout'
+    ),
+    'parameter_type' => 'standard',
+    'parameters' => array(
+        array( 'name' => 'module', 'type' => 'string', 'required' => false, 'default' => false ),
+        array( 'name' => 'view', 'type' => 'string', 'required' => false, 'default' => false ),
+    )
+);
+
+$FunctionList['admin_layout_cache_key'] = array(
+    'name' => 'admin_layout_cache_key',
+    'operation_types' => array( 'read' ),
+    'call_method' => array(
+        'include_file' => 'extension/explayouts/modules/explayouts/functioncollection.php',
+        'class' => 'expLayoutsFunctionCollection',
+        'method' => 'adminLayoutCacheKey'
+    ),
+    'parameter_type' => 'standard',
+    'parameters' => array(
+        array( 'name' => 'module', 'type' => 'string', 'required' => false, 'default' => false ),
+        array( 'name' => 'view', 'type' => 'string', 'required' => false, 'default' => false ),
+    )
+);
+
+$FunctionList['admin_layouts_enabled'] = array(
+    'name' => 'admin_layouts_enabled',
+    'operation_types' => array( 'read' ),
+    'call_method' => array(
+        'include_file' => 'extension/explayouts/modules/explayouts/functioncollection.php',
+        'class' => 'expLayoutsFunctionCollection',
+        'method' => 'adminLayoutsEnabled'
+    ),
+    'parameter_type' => 'standard',
+    'parameters' => array()
+);
+
 $FunctionList['layout_summary_for_node'] = array(
     'name' => 'layout_summary_for_node',
     'operation_types' => array( 'read' ),
