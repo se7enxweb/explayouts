@@ -90,7 +90,7 @@ Requirements
 The following requirements exists for using the Exponential Layouts extension:
 
 Exponential version
-- Make sure you use Exponential 6 / eZ Publish Legacy (required) or higher.
+- Make sure you use Exponential 6 / Exponential Legacy (required) or higher.
 
 PHP version
 - Make sure you have PHP 8.1 or higher.
