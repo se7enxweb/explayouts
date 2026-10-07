@@ -538,8 +538,25 @@ class expLayoutsDynamicCollection
         return array_unique( $ids );
     }
 
+    /**
+     * The page a collection is fetched for when the request is not that
+     * page: a later page of a paged block, fetched by an address of its own
+     * (a design's paging view). Set it right before the fetch and set it back
+     * to null right after, in a finally block, so a persistent worker never
+     * carries it into the next request. Null (the default) leaves
+     * currentNode() as it is.
+     */
+    protected static $contextNode = null;
+
+    static function setContextNode( $node )
+    {
+        self::$contextNode = $node instanceof eZContentObjectTreeNode ? $node : null;
+    }
+
     static function currentNode()
     {
+        if ( self::$contextNode !== null )
+            return self::$contextNode;
         if ( isset( $_GET['node_id'] ) && is_numeric( $_GET['node_id'] )
              && isset( $_SERVER['REQUEST_URI'] )
              && strpos( $_SERVER['REQUEST_URI'], '/ezjscore/call' ) !== false )
