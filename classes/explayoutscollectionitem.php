@@ -19,6 +19,11 @@ class expLayoutsCollectionItem extends eZPersistentObject
         );
     }
 
+    static function fetch( $id, $asObject = true )
+    {
+        return eZPersistentObject::fetchObject( self::definition(), null, array( 'id' => (int)$id ), $asObject );
+    }
+
     static function fetchByCollection( $collectionId, $asObject = true )
     {
         return eZPersistentObject::fetchObjectList( self::definition(), null,

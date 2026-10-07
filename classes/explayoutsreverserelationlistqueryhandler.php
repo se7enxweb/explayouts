@@ -24,7 +24,7 @@ class expLayoutsReverseRelationListQueryHandler
             return array();
 
         $fieldIdentifier = isset( $params['field_definition_identifier'] ) ? trim( $params['field_definition_identifier'] ) : '';
-        $reverse = eZContentObject::reverseRelatedObjects( (int)$object->attribute( 'id' ), false, 0, $fieldIdentifier );
+        $reverse = expLayoutsSiteAPI::loadReverseFieldRelations( $object, $fieldIdentifier );
         if ( !is_array( $reverse ) )
             return array();
 

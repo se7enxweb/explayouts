@@ -38,14 +38,9 @@ class expLayoutsExpSiteApi
 
     public static function currentNode()
     {
-        $module = eZModule::currentModule();
-        if ( !$module instanceof eZModule )
-            return false;
-
-        $ini = eZINI::instance();
-        $root = (int)$ini->variable( 'ContentSettings', 'RootNode' );
-        $nodeId = $module->hasAction( 'NodeID' ) ? $module->action( 'NodeID' ) : $root;
-        return self::loadLocation( (int)$nodeId );
+        // eZModule::currentModule() is an instance method returning a module name, so the
+        // page node is resolved the way the dynamic collections resolve it
+        return expLayoutsDynamicCollection::currentNode();
     }
 
     public static function currentObject()

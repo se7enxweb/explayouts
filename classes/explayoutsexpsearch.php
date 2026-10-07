@@ -5,7 +5,8 @@ class expLayoutsExpSearch
 {
     public function search( $text, array $options = array() )
     {
-        return expLayoutsFullTextCriterion::getQuery( $text, $options );
+        $criterion = new expLayoutsFullTextCriterion( $text );
+        return $criterion->getQuery( $options );
     }
 
 

@@ -19,6 +19,11 @@ class expLayoutsCollection extends eZPersistentObject
         );
     }
 
+    static function fetch( $id, $asObject = true )
+    {
+        return eZPersistentObject::fetchObject( self::definition(), null, array( 'id' => (int)$id ), $asObject );
+    }
+
     static function fetchByBlock( $blockId, $asObject = true )
     {
         $list = eZPersistentObject::fetchObjectList( self::definition(), null,

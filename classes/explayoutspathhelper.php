@@ -64,7 +64,7 @@ class expLayoutsPathHelper
             {
                 $url = $location->attribute( 'url_alias' );
                 if ( $options['absolute_url'] )
-                    $url = eZSys::indexURL() . $url;
+                    eZURI::transformURI( $url, false, 'full', false );
             }
 
             $pathArray[] = array(

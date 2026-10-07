@@ -27,7 +27,7 @@ class expLayoutsRelationListQueryHandler
         if ( $fieldIdentifier === '' )
             return array();
 
-        $related = eZContentObject::relatedObjects( (int)$object->attribute( 'id' ), 0, false, $fieldIdentifier );
+        $related = expLayoutsSiteAPI::loadFieldRelations( $object, $fieldIdentifier );
         if ( !is_array( $related ) )
             return array();
 

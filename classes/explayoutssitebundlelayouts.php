@@ -5,7 +5,7 @@ class expLayoutsSiteBundleLayouts
 {
     public static function render( $layoutId )
     {
-        return expLayoutsRenderer::renderById( (int)$layoutId );
+        return expLayoutsRenderer::prepareLayout( expLayoutsLayout::fetch( (int)$layoutId ) );
     }
 
 
