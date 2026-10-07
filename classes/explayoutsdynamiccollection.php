@@ -322,8 +322,19 @@ class expLayoutsDynamicCollection
         $filterByObjectState = !empty( $params['filter_by_object_state'] ) && !empty( $params['object_states'] );
         $hasExtraFilters = $filterBySection || $filterByObjectState;
 
+        $sortBy = array( array( $sortField, $sortAsc ) );
+        if ( isset( $params['sort_type'] ) && $params['sort_type'] === 'defined_by_parent' )
+        {
+            // The reference sorts by the parent location's own sort clause (sort field and order of the
+            // parent node, as the editor set them); sort_direction does not apply. It used to fall back to
+            // publication date, so a gallery or list ordered by its folder came out in another order.
+            $parentNode = eZContentObjectTreeNode::fetch( $parentNodeId );
+            if ( $parentNode instanceof eZContentObjectTreeNode )
+                $sortBy = $parentNode->sortArray();
+        }
+
         $fetchParams = array(
-            'SortBy' => array( array( $sortField, $sortAsc ) ),
+            'SortBy' => $sortBy,
             'MainNodeOnly' => !isset( $params['only_main_locations'] ) || $params['only_main_locations'],
             'IgnoreVisibility' => false,
         );
