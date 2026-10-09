@@ -179,7 +179,7 @@ class expLayoutsSiteInstaller
     protected function recursiveCopy( $source, $destination )
     {
         $dir = opendir( $source );
-        @mkdir( $destination, 0777, true );
+        @mkdir( $destination, self::dirMode( 0777 ), true );
         while ( false !== ( $file = readdir( $dir ) ) )
         {
             if ( $file === '.' || $file === '..' )
@@ -192,5 +192,18 @@ class expLayoutsSiteInstaller
                 copy( $src, $dst );
         }
         closedir( $dir );
+    }
+
+    /**
+     * The mode $mode within the limit for new directories the kernel sets (EZP_DIR_MODE_MAX in config.php, see
+     * eZDir::dirMode()): never wider, and without a limit exactly $mode. On a kernel without that helper
+     * (Exponential before 6.0.15) $mode as it is.
+     *
+     * @param int $mode
+     * @return int
+     */
+    protected static function dirMode( $mode )
+    {
+        return method_exists( 'eZDir', 'dirMode' ) ? eZDir::dirMode( $mode ) : $mode;
     }
 }
