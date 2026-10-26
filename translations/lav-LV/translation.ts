@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>Vienums ir noņemts no kolekcijas.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>Nezināms skata tips.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Nederīga ievade.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>Pārvietot uz augšu</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>Nezināms izkārtojuma tips.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>Nezināms bloka tips.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>Publicēts.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Nederīga ievade.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>Prioritāte</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>Nezināmi mērķu vai nosacījumu tipi netika saglabāti: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>Kārtula bez mērķa neattiecas ne uz vienu lapu.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>Nav konfigurēta karte.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>Karte</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>Ielādēt karti</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>Nav konfigurēts video.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>Video</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>Ielādēt video</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>Neviena kārtula neatbilda: noklusējuma izkārtojums (no atrisinātāja kešatmiņas)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>Ielādējot dati tiek nosūtīti uz %host.</translation>
     </message>
 </context>
 </TS>

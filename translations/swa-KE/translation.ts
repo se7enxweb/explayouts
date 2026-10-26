@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>Kipengee kimeondolewa kwenye mkusanyiko.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>Aina ya mwonekano isiyojulikana.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Data batili.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>Sogeza juu</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>Aina ya mpangilio wa ukurasa isiyojulikana.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>Aina ya bloku isiyojulikana.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>Imechapishwa.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Data batili.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>Kipaumbele</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>Aina za lengo au masharti zisizojulikana hazikuhifadhiwa: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>Kanuni isiyo na lengo haitumiki kwa ukurasa wowote.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>Hakuna ramani iliyosanidiwa.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>Ramani</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>Pakia ramani</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>Hakuna video iliyosanidiwa.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>Video</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>Pakia video</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>Hakuna kanuni iliyolingana: mpangilio chaguomsingi wa ukurasa (kutoka akiba ya kibainishi)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>Kuipakia hutuma data kwa %host.</translation>
     </message>
 </context>
 </TS>

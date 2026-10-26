@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>Elementi u hoq nga koleksioni.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>Lloj i panjohur pamjeje.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Vlerë e pavlefshme.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>Zhvendos lart</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>Lloj i panjohur faqosjeje.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>Lloj i panjohur blloku.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>U publikua.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Vlerë e pavlefshme.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>Përparësia</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>Llojet e panjohura të objektivave ose kushteve nuk u ruajtën: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>Një rregull pa objektiv nuk zbatohet në asnjë faqe.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>Nuk është konfiguruar asnjë hartë.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>Harta</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>Ngarko hartën</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>Nuk është konfiguruar asnjë video.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>Video</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>Ngarko videon</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>Asnjë rregull nuk u përputh: faqosja e parazgjedhur (nga memoria e përkohshme e zgjidhësit)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>Ngarkimi i tij dërgon të dhëna te %host.</translation>
     </message>
 </context>
 </TS>

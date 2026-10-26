@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>Allattugaq katersugamit piiarneqarpoq.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>Takutitsinerup suussusaa ilisimaneqanngitsoq.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Allanneqartoq atorsinnaanngilaq.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>Qummut nuuguk</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>Inissiinerup suussusaa ilisimaneqanngitsoq.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>Blokkip suussusaa ilisimaneqanngitsoq.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>Saqqummiunneqarpoq.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Allanneqartoq atorsinnaanngilaq.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>Salliutitaq</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>Siunertat imaluunniit piumasaqaatit suussusaat ilisimaneqanngitsut toqqorneqanngillat: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>Malittarisassaq siunertaqanngitsoq quppernermut sumulluunniit atuutinngilaq.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>Nunap assinga aaqqissuunneqanngilaq.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>Nunap assinga</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>Nunap assinga aaguk</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>Videomik aaqqissuisoqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>Video</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>Video aaguk</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>Malittarisassamik naapertuuttumik peqanngilaq: inissiineq aallaavittut (aaqqiisup cache-ianit)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>Aallerneqarpat paasissutissat uunga nassiunneqartarput: %host.</translation>
     </message>
 </context>
 </TS>

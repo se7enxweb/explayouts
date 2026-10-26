@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>Zapisk jo se ze zběrki wótpórał.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>Njeznaty typ naglěda.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Njepłaśiwe zapódaśe.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>Górjej pśesunuś</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>Njeznaty typ wugótowanja.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>Njeznaty typ bloka.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>Wózjawjone.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Njepłaśiwe zapódaśe.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>Priorita</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>Njeznate typy celow abo wuměnjenjow njejsu se składowali: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>Pšawidło bźez cela njepłaśi za žeden bok.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>Žedna karta njejo konfigurěrowana.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>Karta</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>Kartu zacytaś</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>Žedno wideo njejo konfigurěrowane.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>Wideo</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>Wideo zacytaś</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>Žedno pšawidło njejo wótpowědowało: standardne wugótowanje (z pufrowaka rozpušćaka)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>Pśi zacytanju se daty na %host pósćelu.</translation>
     </message>
 </context>
 </TS>

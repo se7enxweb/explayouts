@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>Üksus on kollektsioonist eemaldatud.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>Tundmatu vaate tüüp.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Sobimatu sisestus.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>Teisalda üles</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>Tundmatu paigutuse tüüp.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>Tundmatu ploki tüüp.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>Avaldatud.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Sobimatu sisestus.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>Prioriteet</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>Tundmatuid sihtmärgi- või tingimusetüüpe ei salvestatud: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>Sihtmärgita reegel ei kehti ühelegi lehele.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>Kaarti pole konfigureeritud.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>Kaart</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>Laadi kaart</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>Videot pole konfigureeritud.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>Video</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>Laadi video</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>Ükski reegel ei sobinud: vaikepaigutus (lahendaja vahemälust)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>Laadimisel saadetakse andmed aadressile %host.</translation>
     </message>
 </context>
 </TS>

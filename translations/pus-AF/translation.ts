@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>توکی له ټولګې لرې شو.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>نامعلوم د لید ډول.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>ناسمه ننوتنه.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>پورته وړل</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>نامعلوم د ترتیب ډول.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>نامعلوم د بلاک ډول.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>خپور شو.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>ناسمه ننوتنه.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>لومړیتوب</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>د هدف یا شرط نامعلوم ډولونه خوندي نه شول: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>پرته له هدفه قاعده په هېڅ پاڼه نه پلي کېږي.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>هېڅ نقشه نه ده تنظیم شوې.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>نقشه</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>د نقشې بارول</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>هېڅ ویډیو نه ده تنظیم شوې.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>ویډیو</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>د ویډیو بارول</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>هېڅ قاعده برابره نه شوه: تلواله ترتیب (د ټاکونکي له کش څخه)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>په بارولو سره معلومات %host ته لېږل کېږي.</translation>
     </message>
 </context>
 </TS>

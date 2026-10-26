@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>आइटम संग्रह से निकाला गया।</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>अज्ञात दृश्य प्रकार।</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>अमान्य इनपुट।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>ऊपर ले जाएँ</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>अज्ञात लेआउट प्रकार।</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>अज्ञात ब्लॉक प्रकार।</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>प्रकाशित।</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>अमान्य इनपुट।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>प्राथमिकता</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>अज्ञात लक्ष्य या शर्त प्रकार सहेजे नहीं गए: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>बिना लक्ष्य वाला नियम किसी भी पृष्ठ पर लागू नहीं होता।</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>कोई मानचित्र कॉन्फ़िगर नहीं है।</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>मानचित्र</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>मानचित्र लोड करें</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>कोई वीडियो कॉन्फ़िगर नहीं है।</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>वीडियो</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>वीडियो लोड करें</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>कोई नियम मेल नहीं खाया: डिफ़ॉल्ट लेआउट (रिज़ॉल्वर कैश से)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>इसे लोड करने पर डेटा %host को भेजा जाता है।</translation>
     </message>
 </context>
 </TS>

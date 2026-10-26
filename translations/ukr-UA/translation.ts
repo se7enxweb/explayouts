@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>Елемент вилучено з колекції.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>Невідомий тип перегляду.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Недійсне введення.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>Перемістити вгору</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>Невідомий тип макета.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>Невідомий тип блоку.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>Опубліковано.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Недійсне введення.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>Пріоритет</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>Невідомі типи цілей або умов не збережено: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>Правило без цілі не застосовується до жодної сторінки.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>Карту не налаштовано.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>Карта</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>Завантажити карту</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>Відео не налаштовано.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>Відео</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>Завантажити відео</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>Жодне правило не підійшло: типовий макет (з кешу резолвера)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>Під час завантаження дані надсилаються на %host.</translation>
     </message>
 </context>
 </TS>

@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>項目がコレクションから削除されました。</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>不明なビューの種類です。</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>入力が無効です。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>上へ移動</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>不明なレイアウトの種類です。</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>不明なブロックの種類です。</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>公開されました。</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>入力が無効です。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>優先度</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>不明なターゲットまたは条件の種類は保存されませんでした: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>ターゲットのないルールはどのページにも適用されません。</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>地図が構成されていません。</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>地図</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>地図の読み込み</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>動画が構成されていません。</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>ビデオ</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>ビデオの読み込み</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>一致するルールがありません: 既定のレイアウト（リゾルバーのキャッシュから）</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>読み込むと、データが %host に送信されます。</translation>
     </message>
 </context>
 </TS>

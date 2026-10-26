@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>Élément retiré de la collection.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>Type de vue inconnu.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Saisie non valide.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>Monter</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>Type de mise en page inconnu.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>Type de bloc inconnu.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>Publié.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Saisie non valide.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>Priorité</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>Les types de cible ou de condition inconnus n&apos;ont pas été enregistrés : %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>Une règle sans cible ne s&apos;applique à aucune page.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>Aucune carte configurée.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>Carte</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>Charger la carte</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>Aucune vidéo configurée.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>Vidéo</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>Charger la vidéo</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>Aucune règle ne correspond : mise en page par défaut (depuis le cache du résolveur)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>Le chargement envoie des données à %host.</translation>
     </message>
 </context>
 </TS>

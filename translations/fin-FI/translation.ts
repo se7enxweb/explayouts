@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>Kohde poistettiin kokoelmasta.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>Tuntematon näkymän tyyppi.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Virheellinen syöte.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>Siirrä ylös</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>Tuntematon asettelun tyyppi.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>Tuntematon lohkon tyyppi.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>Julkaistu.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Virheellinen syöte.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>Prioriteetti</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>Tuntemattomia kohde- tai ehtotyyppejä ei tallennettu: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>Sääntö, jolla ei ole kohdetta, ei koske mitään sivua.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>Karttaa ei ole määritetty.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>Kartta</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>Lataa kartta</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>Videota ei ole määritetty.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>Video</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>Lataa video</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>Mikään sääntö ei vastannut: oletusasettelu (selvittimen välimuistista)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>Lataaminen lähettää tietoja palvelimelle %host.</translation>
     </message>
 </context>
 </TS>

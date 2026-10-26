@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>Stavka je uklonjena iz kolekcije.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>Nepoznat tip prikaza.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Neispravan unos.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>Pomjeri gore</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>Nepoznat tip rasporeda.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>Nepoznat tip bloka.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>Objavljeno.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Neispravan unos.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>Prioritet</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>Nepoznati tipovi ciljeva ili uslova nisu sačuvani: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>Pravilo bez cilja ne važi ni za jednu stranicu.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>Nije konfigurisana nijedna mapa.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>Mapa</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>Učitaj mapu</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>Nije konfigurisan nijedan video.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>Video</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>Učitaj video</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>Nijedno pravilo nije odgovaralo: zadani raspored (iz keš memorije razrješivača)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>Učitavanjem se podaci šalju na %host.</translation>
     </message>
 </context>
 </TS>

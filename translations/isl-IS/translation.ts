@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>Atriði fjarlægt úr samsafni.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>Óþekkt gerð sýnar.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Ógilt inntak.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>Færa upp</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>Óþekkt útlitsgerð.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>Óþekkt gerð bálks.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>Birt.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Ógilt inntak.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>Forgangur</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>Óþekktar gerðir markmiða eða skilyrða voru ekki vistaðar: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>Regla án markmiðs gildir ekki um neina síðu.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>Ekkert kort stillt.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>Kort</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>Hlaða korti</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>Ekkert myndskeið stillt.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>Myndband</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>Hlaða myndbandi</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>Engin regla passaði: sjálfgefna útlitið (úr skyndiminni leysisins)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>Þegar það er hlaðið eru gögn send til %host.</translation>
     </message>
 </context>
 </TS>

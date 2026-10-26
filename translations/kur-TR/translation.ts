@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>Hêman ji komê hate rakirin.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>Cureyê dîtinê yê nenas.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Têketin ne derbasdar e.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>Ber bi jor ve livandin</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>Cureyê plansaziyê yê nenas.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>Cureyê blokê yê nenas.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>Hate weşandin.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Têketin ne derbasdar e.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>Pêşîtî</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>Cureyên armanc an şertan ên nenas nehatin tomarkirin: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>Qaîdeyeke bê armanc li tu rûpelê nayê sepandin.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>Tu nexşe nehatiye mîhengkirin.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>Nexşe</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>Barkirina nexşeyê</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>Tu vîdyo nehatiye mîhengkirin.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>Vîdeo</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>Barkirina vîdeoyê</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>Tu qaîde li hev nehat: plansaziya standard (ji cache ya çareserkerê)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>Dema tê barkirin, dane ji %host re tên şandin.</translation>
     </message>
 </context>
 </TS>

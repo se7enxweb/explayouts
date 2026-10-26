@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>Elem eltávolítva a gyűjteményből.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>Ismeretlen nézettípus.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Érvénytelen bevitel.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>Mozgatás felfelé</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>Ismeretlen elrendezéstípus.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>Ismeretlen blokktípus.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>Közzétéve.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Érvénytelen bevitel.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>Prioritás</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>Az ismeretlen cél- vagy feltételtípusok nem lettek mentve: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>A cél nélküli szabály egyetlen oldalra sem vonatkozik.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>Nincs beállítva térkép.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>Térkép</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>Térkép betöltése</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>Nincs beállítva videó.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>Videó</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>Videó betöltése</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>Nem egyezett szabály: az alapértelmezett elrendezés (a feloldó gyorsítótárából)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>Betöltéskor adatok jutnak el ide: %host.</translation>
     </message>
 </context>
 </TS>

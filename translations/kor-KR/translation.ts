@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>항목이 컬렉션에서 제거되었습니다.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>알 수 없는 보기 유형입니다.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>입력이 잘못되었습니다.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>위로 이동</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>알 수 없는 레이아웃 유형입니다.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>알 수 없는 블록 유형입니다.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>게시되었습니다.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>입력이 잘못되었습니다.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>우선순위</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>알 수 없는 대상 또는 조건 유형은 저장되지 않았습니다: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>대상이 없는 규칙은 어떤 페이지에도 적용되지 않습니다.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>구성된 지도가 없습니다.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>지도</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>지도 불러오기</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>구성된 동영상이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>동영상</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>동영상 불러오기</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>일치하는 규칙 없음: 기본 레이아웃(확인자 캐시에서)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>불러오면 데이터가 다음으로 전송됩니다: %host.</translation>
     </message>
 </context>
 </TS>

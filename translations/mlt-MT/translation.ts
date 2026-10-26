@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>L-element tneħħa mill-ġabra.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>Tip ta&apos; veduta mhux magħruf.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Input invalidu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>Mexxi &apos;l fuq</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>Tip ta&apos; tqassim mhux magħruf.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>Tip ta&apos; blokk mhux magħruf.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>Ippubblikat.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Input invalidu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>Prijorità</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>Tipi ta&apos; miri jew kundizzjonijiet mhux magħrufa ma ġewx salvati: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>Regola mingħajr mira ma tapplika għall-ebda paġna.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>L-ebda mappa kkonfigurata.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>Mappa</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>Tella&apos; l-mappa</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>L-ebda vidjo kkonfigurat.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>Vidjo</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>Tella&apos; l-vidjo</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>L-ebda regola ma qablet: it-tqassim predefinit (mill-cache tar-riżolutur)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>Meta jitella&apos;, tintbagħat data lil %host.</translation>
     </message>
 </context>
 </TS>

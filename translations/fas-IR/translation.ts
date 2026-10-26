@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>مورد از مجموعه برداشته شد.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>نوع نمای ناشناخته.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>ورودی نامعتبر.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>انتقال به بالا</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>نوع چیدمان ناشناخته.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>نوع بلوک ناشناخته.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>منتشر شد.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>ورودی نامعتبر.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>اولویت</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>انواع ناشناختهٔ هدف یا شرط ذخیره نشدند: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>قاعده‌ای که هدفی ندارد برای هیچ صفحه‌ای اعمال نمی‌شود.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>هیچ نقشه‌ای پیکربندی نشده است.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>نقشه</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>بارگذاری نقشه</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>هیچ ویدیویی پیکربندی نشده است.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>ویدیو</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>بارگذاری ویدیو</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>هیچ قاعده‌ای منطبق نبود: چیدمان پیش‌فرض (از حافظهٔ پنهان resolver)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>بارگذاری آن داده‌ها را به %host ارسال می‌کند.</translation>
     </message>
 </context>
 </TS>

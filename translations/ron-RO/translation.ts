@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>Element eliminat din colecție.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>Tip de vizualizare necunoscut.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Valoare nevalidă.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>Mutare în sus</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>Tip de aspect necunoscut.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>Tip de bloc necunoscut.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>Publicat.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Valoare nevalidă.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>Prioritate</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>Tipurile necunoscute de țintă sau de condiție nu au fost salvate: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>O regulă fără țintă nu se aplică niciunei pagini.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>Nu este configurată nicio hartă.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>Hartă</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>Încărcare hartă</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>Nu este configurat niciun videoclip.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>Video</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>Încărcare video</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>Nicio regulă nu s-a potrivit: aspectul implicit (din memoria cache a mecanismului de rezolvare)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>La încărcare se trimit date către %host.</translation>
     </message>
 </context>
 </TS>

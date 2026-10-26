@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>Baineadh an mhír den bhailiúchán.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>Cineál amhairc anaithnid.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Ionchur neamhbhailí.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>Bog suas</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>Cineál leagain amach anaithnid.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>Cineál bloic anaithnid.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>Foilsithe.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>Ionchur neamhbhailí.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>Tosaíocht</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>Níor sábháladh cineálacha sprice nó coinníollacha anaithnide: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>Ní bhaineann riail gan sprioc le haon leathanach.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>Níl aon léarscáil cumraithe.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>Léarscáil</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>Lódáil an léarscáil</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>Níl aon fhíseán cumraithe.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>Físeán</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>Lódáil an físeán</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>Níor mheaitseáil aon riail: an leagan amach réamhshocraithe (ó thaisce an réiteora)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>Má lódáiltear é, seoltar sonraí chuig %host.</translation>
     </message>
 </context>
 </TS>

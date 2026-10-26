@@ -95,6 +95,14 @@
         <source>Item removed from collection.</source>
         <translation>أُزيل العنصر من المجموعة.</translation>
     </message>
+    <message>
+        <source>Unknown view type.</source>
+        <translation>نوع عرض غير معروف.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>إدخال غير صالح.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/dashboard</name>
@@ -329,6 +337,22 @@
         <source>Move up</source>
         <translation>نقل لأعلى</translation>
     </message>
+    <message>
+        <source>Unknown layout type.</source>
+        <translation>نوع تخطيط غير معروف.</translation>
+    </message>
+    <message>
+        <source>Unknown block type.</source>
+        <translation>نوع كتلة غير معروف.</translation>
+    </message>
+    <message>
+        <source>Published.</source>
+        <translation>تم النشر.</translation>
+    </message>
+    <message>
+        <source>Invalid input.</source>
+        <translation>إدخال غير صالح.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/explayouts/layout_list</name>
@@ -506,6 +530,14 @@
     <message>
         <source>Priority</source>
         <translation>الأولوية</translation>
+    </message>
+    <message>
+        <source>Unknown target or condition types were not saved: %types</source>
+        <translation>لم يتم حفظ أنواع الأهداف أو الشروط غير المعروفة: %types</translation>
+    </message>
+    <message>
+        <source>A rule without a target applies to no page.</source>
+        <translation>القاعدة التي ليس لها هدف لا تنطبق على أي صفحة.</translation>
     </message>
 </context>
 <context>
@@ -946,6 +978,14 @@
         <source>No map configured.</source>
         <translation>لم تُعدّ أي خريطة.</translation>
     </message>
+    <message>
+        <source>Map</source>
+        <translation>خريطة</translation>
+    </message>
+    <message>
+        <source>Load map</source>
+        <translation>تحميل الخريطة</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/explayouts/block/single</name>
@@ -987,6 +1027,14 @@
     <message>
         <source>No video configured.</source>
         <translation>لم يُعدّ أي فيديو.</translation>
+    </message>
+    <message>
+        <source>Video</source>
+        <translation>فيديو</translation>
+    </message>
+    <message>
+        <source>Load video</source>
+        <translation>تحميل الفيديو</translation>
     </message>
 </context>
 <context>
@@ -1195,6 +1243,13 @@
     <message>
         <source>No rule matched: the default layout (from the resolver cache)</source>
         <translation>لم تتطابق أي قاعدة: التخطيط الافتراضي (من ذاكرة المحلّل المؤقتة)</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/explayouts/block/embed</name>
+    <message>
+        <source>Loading it sends data to %host.</source>
+        <translation>يؤدي تحميله إلى إرسال بيانات إلى %host.</translation>
     </message>
 </context>
 </TS>
