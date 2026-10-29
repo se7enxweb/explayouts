@@ -7,7 +7,7 @@
  * fetches nodes). A published block whose collection names a node inside the selected subtrees loses that item
  * when the node goes, even when the object keeps a location elsewhere, so every such node counts.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package explayouts
  */

@@ -9,7 +9,7 @@
  * and what expLayoutsRenderer::prepareLayout() prepared for that layout. Its own queries are the page's node (when the
  * request's path is not what the page resolved) and the layout's name when it was resolved but not rendered.
  *
- * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package explayouts
  */
