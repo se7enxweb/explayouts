@@ -19,23 +19,23 @@ td.expl-authors-contributors { width: 100%; max-width: 0; white-space: normal; o
 .exp-node-layout-tab { padding: 0; }
 .exp-node-layout-tab .layouts-header { margin-bottom: 8px; }
 .exp-node-layout-tab .expl-node-line { margin: 0; color: var(--a4-muted, #777); font-size: 12px; }
-.exp-node-layout-tab .nl-node-resolved { background: var(--a4-card, #fff); border: 1px solid var(--a4-line, #e0e0e0); border-radius: 4px; padding: 12px; margin-bottom: 10px; }
+.exp-node-layout-tab .nl-node-resolved { background: var(--a4-card, #fff); border: 1px solid var(--a4-line, #e0e0e0); border-radius: var(--a4-radius-s, 4px); padding: 12px; margin-bottom: 10px; }
 .exp-node-layout-tab .nl-node-resolved-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 6px; }
-.exp-node-layout-tab .nl-node-resolved-title { font-size: 16px; font-weight: 500; color: var(--a4-ink, #333); margin: 0 0 2px; }
+.exp-node-layout-tab .nl-node-resolved-title { font-size: 16px; font-weight: var(--a4-weight-medium, 500); color: var(--a4-ink, #333); margin: 0 0 2px; }
 .exp-node-layout-tab .nl-node-resolved-meta { font-size: 11px; color: var(--a4-muted, #777); margin: 0; }
 .exp-node-layout-tab .nl-node-resolved-stats { display: flex; gap: 12px; margin: 8px 0; }
 .exp-node-layout-tab .nl-node-resolved-stat { display: flex; align-items: center; gap: 4px; font-size: 12px; color: var(--a4-muted, #555); }
 .exp-node-layout-tab .nl-node-resolved-stat i { color: var(--a4-muted, #666); font-size: 16px; }
-.exp-node-layout-tab .nl-node-rules-title { font-size: 14px; font-weight: 500; color: var(--a4-ink, #333); margin: 0 0 6px; }
-.exp-node-layout-tab .nl-node-rule { background: var(--a4-card, #fff); border: 1px solid var(--a4-line, #e0e0e0); border-radius: 4px; padding: 8px 12px; margin-bottom: 6px; display: flex; align-items: center; justify-content: space-between; }
+.exp-node-layout-tab .nl-node-rules-title { font-size: 14px; font-weight: var(--a4-weight-medium, 500); color: var(--a4-ink, #333); margin: 0 0 6px; }
+.exp-node-layout-tab .nl-node-rule { background: var(--a4-card, #fff); border: 1px solid var(--a4-line, #e0e0e0); border-radius: var(--a4-radius-s, 4px); padding: 8px 12px; margin-bottom: 6px; display: flex; align-items: center; justify-content: space-between; }
 .exp-node-layout-tab .nl-node-rule-info { min-width: 0; }
-.exp-node-layout-tab .nl-node-rule-name { font-size: 13px; font-weight: 500; color: var(--a4-ink, #333); margin: 0 0 2px; }
+.exp-node-layout-tab .nl-node-rule-name { font-size: 13px; font-weight: var(--a4-weight-medium, 500); color: var(--a4-ink, #333); margin: 0 0 2px; }
 .exp-node-layout-tab .nl-node-rule-meta { font-size: 11px; color: var(--a4-muted, #777); margin: 0; }
 .exp-node-layout-tab .nl-node-rule-actions { display: flex; align-items: center; gap: 6px; }
-.exp-node-layout-tab .nl-status { display: inline-flex; align-items: center; padding: 2px 6px; border-radius: 12px; font-size: 10px; font-weight: 500; text-transform: uppercase; }
+.exp-node-layout-tab .nl-status { display: inline-flex; align-items: center; padding: 2px 6px; border-radius: var(--a4-radius-s, 12px); font-size: 10px; font-weight: var(--a4-weight-medium, 500); text-transform: uppercase; }
 .exp-node-layout-tab .nl-status.enabled { background: var(--a4-ok-bg, #e6f5e6); color: var(--a4-ok, #2e7d32); }
 .exp-node-layout-tab .nl-status.disabled { background: var(--a4-soft, #f5f5f5); color: var(--a4-muted, #777); }
-.exp-node-layout-tab .nl-empty-state { background: var(--a4-soft, #f9f9f9); border: 1px dashed var(--a4-line-strong, #d0d0d0); border-radius: 4px; padding: 16px; text-align: center; color: var(--a4-muted, #777); }
+.exp-node-layout-tab .nl-empty-state { background: var(--a4-soft, #f9f9f9); border: 1px dashed var(--a4-line-strong, #d0d0d0); border-radius: var(--a4-radius-s, 4px); padding: 16px; text-align: center; color: var(--a4-muted, #777); }
 .exp-node-layout-tab .nl-empty-state.expl-empty-spaced { margin-bottom: 22px; }
 .exp-node-layout-tab .nl-empty-state i { font-size: 32px; color: var(--a4-muted, #bbb); margin-bottom: 6px; }
 .exp-node-layout-tab .nl-empty-text { color: var(--a4-muted, #777); font-size: 13px; margin: 0 0 14px; }
