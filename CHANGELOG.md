@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.48 (2026-10-29)
+
+- Updated: One copyright notice, Exponential Foundation and 7x.
+
 ## 1.4.47 (2026-10-29)
 
 - Updated: One copyright notice, Exponential Foundation and 7x.
