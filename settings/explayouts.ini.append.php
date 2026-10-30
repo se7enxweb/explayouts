@@ -119,6 +119,9 @@ Name=Rich text
 Handler=expLayoutsRichTextBlockHandler
 ContentParameters[]=content
 ViewTypes[]=default
+# rich_text is the view type of Netgen Layouts' rich text block; layouts imported from Netgen keep it
+ViewTypes[]=rich_text
+ViewTypeNames[rich_text]=Rich text
 
 Category=basic
 [BlockDefinition_image]
