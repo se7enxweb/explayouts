@@ -30,6 +30,47 @@ class expLayoutsBlockHandlerFactory
         return new $handlerClass();
     }
 
+    /**
+     * The item view types editors can choose for a block of the definition, as identifier => label: the handler's
+     * own list (getItemViewTypes(), when it has one), then the ones the settings add in [BlockDefinition_<identifier>]
+     * with ItemViewTypes[<item view type>]=<label> (ItemViewTypes[]=<item view type> is read as its own label). A
+     * configured entry replaces the handler's label of the same identifier.
+     *
+     * Item view types are an axis of their own: every view type of the definition offers all of them, and whether a
+     * design draws a combination is up to the design. A definition whose handler has no list and whose settings add
+     * none has no item view type (an empty array), as before.
+     *
+     * @param string $definitionIdentifier
+     * @return array item view type => label
+     */
+    static function itemViewTypes( $definitionIdentifier )
+    {
+        $itemViewTypes = array();
+        $handler = self::get( $definitionIdentifier );
+        if ( is_object( $handler ) && method_exists( $handler, 'getItemViewTypes' ) )
+        {
+            foreach ( (array)$handler->getItemViewTypes() as $itemViewType => $label )
+                $itemViewTypes[(string)$itemViewType] = (string)$label;
+        }
+
+        $ini = eZINI::instance( 'explayouts.ini' );
+        $blockSection = 'BlockDefinition_' . self::currentIdentifier( $definitionIdentifier );
+        if ( $ini->hasVariable( $blockSection, 'ItemViewTypes' ) )
+        {
+            $configured = $ini->variable( $blockSection, 'ItemViewTypes' );
+            foreach ( is_array( $configured ) ? $configured : array() as $itemViewType => $label )
+            {
+                if ( is_int( $itemViewType ) )
+                    $itemViewType = $label;
+                if ( (string)$itemViewType === '' )
+                    continue;
+                $itemViewTypes[(string)$itemViewType] = (string)$label;
+            }
+        }
+
+        return $itemViewTypes;
+    }
+
     static function getAvailableBlocks()
     {
         $ini = eZINI::instance( 'explayouts.ini' );
