@@ -1,6 +1,43 @@
 <?php
 class expLayoutsBlockHandlerFactory
 {
+    /** @var eZINI|null explayouts.ini of the siteaccess useSiteAccess() chose, null for the current siteaccess */
+    private static $settings = null;
+
+    /**
+     * Reads the block definitions from the settings of another siteaccess for the rest of the request: the layout
+     * editor runs in the administration, but the blocks it edits are drawn by a site, and a design keeps the block
+     * settings it adds (ViewTypes[], ItemViewTypes[], AvailableBlocks[] in settings/siteaccess/<site>) where only that
+     * site reads them. The editor calls this with the siteaccess it previews in (expLayoutsPreviewSiteAccess), so what
+     * it offers, accepts and previews are the same. false or '' goes back to the current siteaccess.
+     *
+     * @param string|false $siteAccess
+     * @return string the siteaccess the settings come from ('' for the current one)
+     */
+    static function useSiteAccess( $siteAccess )
+    {
+        self::$settings = null;
+        if ( !is_string( $siteAccess ) || $siteAccess === '' )
+            return '';
+
+        $current = eZSiteAccess::current();
+        if ( is_array( $current ) && isset( $current['name'] ) && $current['name'] === $siteAccess )
+            return '';
+
+        self::$settings = eZSiteAccess::getIni( $siteAccess, 'explayouts.ini' );
+        return $siteAccess;
+    }
+
+    /**
+     * explayouts.ini the block definitions are read from: the current siteaccess's, or the one useSiteAccess() chose.
+     *
+     * @return eZINI
+     */
+    static function settings()
+    {
+        return self::$settings instanceof eZINI ? self::$settings : eZINI::instance( 'explayouts.ini' );
+    }
+
     /**
      * Renamed block identifiers: the content component blocks were
      * ibexa_component_<type> and are exp_component_<type>. A block stored
@@ -18,7 +55,7 @@ class expLayoutsBlockHandlerFactory
 
     static function get( $definitionIdentifier )
     {
-        $ini = eZINI::instance( 'explayouts.ini' );
+        $ini = self::settings();
         $blockSection = 'BlockDefinition_' . self::currentIdentifier( $definitionIdentifier );
         if ( !$ini->hasGroup( $blockSection ) )
             return false;
@@ -53,7 +90,7 @@ class expLayoutsBlockHandlerFactory
                 $itemViewTypes[(string)$itemViewType] = (string)$label;
         }
 
-        $ini = eZINI::instance( 'explayouts.ini' );
+        $ini = self::settings();
         $blockSection = 'BlockDefinition_' . self::currentIdentifier( $definitionIdentifier );
         if ( $ini->hasVariable( $blockSection, 'ItemViewTypes' ) )
         {
@@ -73,7 +110,7 @@ class expLayoutsBlockHandlerFactory
 
     static function getAvailableBlocks()
     {
-        $ini = eZINI::instance( 'explayouts.ini' );
+        $ini = self::settings();
         if ( !$ini->hasVariable( 'BlockSettings', 'AvailableBlocks' ) )
             return array();
 
@@ -98,7 +135,7 @@ class expLayoutsBlockHandlerFactory
 
     static function getBlockInfo( $definitionIdentifier )
     {
-        $ini = eZINI::instance( 'explayouts.ini' );
+        $ini = self::settings();
         $blockSection = 'BlockDefinition_' . self::currentIdentifier( $definitionIdentifier );
         if ( !$ini->hasGroup( $blockSection ) )
             return false;
