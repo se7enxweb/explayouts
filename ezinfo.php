@@ -1,6 +1,6 @@
 <?php
 //
-// explayouts - Exponential Layouts - Netgen Layouts inspired visual page builder for Exponential Legacy / Exponential 6
+// explayouts - Exponential Layouts - visual page builder for Exponential Legacy / Exponential 6
 // Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
 //
 // This program is free software; you can redistribute it and/or modify

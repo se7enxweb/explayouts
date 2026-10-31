@@ -2,7 +2,7 @@
 
 ## How does this differ from netgen/layouts-ibexa?
 
-`netgen/layouts-ibexa` is a Symfony bundle that plugs Netgen Layouts into Ibexa CMS. `explayouts` re-implements the same concepts (layouts, zones, blocks, collections, mapping rules) natively for the eZ Publish legacy kernel: persistence via `eZPersistentObject`, configuration via INI files (`explayouts.ini`) instead of Symfony DI/YAML, rendering via legacy `.tpl` templates, and admin screens as legacy module views. There is no Symfony container, no Twig and no Doctrine.
+`netgen/layouts-ibexa` is a Symfony bundle that plugs the upstream layouts engine into Ibexa CMS. `explayouts` re-implements the same concepts (layouts, zones, blocks, collections, mapping rules) natively for the eZ Publish legacy kernel: persistence via `eZPersistentObject`, configuration via INI files (`explayouts.ini`) instead of Symfony DI/YAML, rendering via legacy `.tpl` templates, and admin screens as legacy module views. There is no Symfony container, no Twig and no Doctrine.
 
 ## Which database tables does it own?
 

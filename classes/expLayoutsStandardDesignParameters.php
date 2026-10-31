@@ -5,7 +5,7 @@ class expLayoutsStandardDesignParameters
     /**
      * Returns the standard set of block design parameters that are shown in the
      * right sidebar (query browser) for all block types. These mirror the
-     * Nexus/Netgen Layouts editor: Use vertical whitespace, On top, On bottom,
+     * Exponential Layouts editor: Use vertical whitespace, On top, On bottom,
      * CSS class, CSS ID, and Wrap in container.
      */
     public static function get()

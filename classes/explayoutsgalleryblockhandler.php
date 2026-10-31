@@ -172,7 +172,7 @@ class expLayoutsGalleryBlockHandler implements expLayoutsBlockHandlerInterface
         // The block's collection, fetched once for both cases below.
         $collection = count( $items ) === 0 && isset( $block['id'] ) ? expLayoutsCollection::fetchByBlock( (int)$block['id'] ) : null;
 
-        // dynamic collections imported from Netgen Layouts (queries) come first
+        // dynamic collections imported from the Nexus reference (queries) come first
         if ( count( $items ) === 0 && $collection )
         {
             $dynCollection = $collection;

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * eZ Publish 4 port of Netgen Layouts Exp TagsQuery handler.
+ * Exponential Layouts port of the upstream TagsQuery handler.
  */
 class expLayoutsExpTagsQuery
 {

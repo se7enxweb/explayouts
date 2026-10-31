@@ -1,7 +1,7 @@
 <?php
 
 /**
- * eZ Publish 4 port of Netgen Layouts Exp RelationListQuery handler.
+ * Exponential Layouts port of the upstream RelationListQuery handler.
  */
 class expLayoutsExpRelationListQuery
 {

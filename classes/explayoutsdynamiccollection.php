@@ -1,6 +1,6 @@
 <?php
 /**
- * Executes 'dynamic' collections (collection queries imported from Netgen Layouts).
+ * Executes 'dynamic' collections (collection queries imported from the Nexus reference).
  *
  * Supported query types:
  *  - exponential_content_search: subtree fetch with content-type filter, publish-date

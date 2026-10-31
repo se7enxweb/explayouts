@@ -88,7 +88,7 @@ abstract class expLayoutsAbstractContentBlockHandler implements expLayoutsBlockH
         $collection = $source['collection'];
         $queryType = $source['query_type'];
 
-        // Dynamic collections imported from Netgen Layouts carry their own query row;
+        // Dynamic collections imported from the Nexus reference carry their own query row;
         // execute it ahead of the block-level query_type parameter.
         if ( $queryType === 'dynamic' )
         {
