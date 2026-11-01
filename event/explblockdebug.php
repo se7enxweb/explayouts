@@ -64,7 +64,7 @@ class ExplBlockDebug
             $html = '<div id="explDebugToolbar" class="expl-debug-toolbar" data-default-state="open">';
             $html .= '<div class="expl-debug-bar">';
             $html .= '<span class="expl-debug-brand">expl blocks</span>';
-            $html .= '<span class="expl-debug-summary">' . htmlspecialchars( $summary ) . '</span>';
+            $html .= '<span class="expl-debug-summary">' . htmlspecialchars( $summary, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 ) . '</span>';
             $html .= '<span class="expl-debug-actions">';
             $html .= '<button id="explDebugToggle" type="button" class="expl-debug-btn" title="Minimize">_</button>';
             $html .= '<button id="explDebugClose" type="button" class="expl-debug-btn" title="Close (without reload)">×</button>';
