@@ -950,14 +950,14 @@ $data = array (
       35 => 
       array (
         0 => '100036',
-        1 => '100001',
+        1 => '100003',
         2 => 'module_view',
         3 => 'setup/templatecreate',
       ),
       36 => 
       array (
         0 => '100037',
-        1 => '100001',
+        1 => '100003',
         2 => 'module_view',
         3 => 'setup/templateedit',
       ),
@@ -1055,21 +1055,21 @@ $data = array (
       50 => 
       array (
         0 => '100051',
-        1 => '100001',
+        1 => '100006',
         2 => 'module_view',
         3 => 'visual/templatecreate',
       ),
       51 => 
       array (
         0 => '100052',
-        1 => '100001',
+        1 => '100006',
         2 => 'module_view',
         3 => 'visual/templateedit',
       ),
       52 => 
       array (
         0 => '100053',
-        1 => '100001',
+        1 => '100006',
         2 => 'module_view',
         3 => 'visual/toolbar',
       ),
