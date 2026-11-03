@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.49 (2026-11-03)
+
+- Updated: The admin template edit, template create and toolbar views use the three-column admin layout (rule targets moved in the admin layouts seed).
+- Updated: The product is called Exponential Layouts in the documentation.
+
 ## 1.4.48 (2026-10-29)
 
 - Updated: One copyright notice, Exponential Foundation and 7x.
