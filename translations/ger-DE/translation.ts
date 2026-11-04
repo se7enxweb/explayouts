@@ -1252,4 +1252,31 @@
         <translation>Beim Laden werden Daten an %host übertragen.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/explayouts/block/lightbox</name>
+    <message>
+        <source>Image viewer</source>
+        <translation>Bildbetrachter</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Schließen</translation>
+    </message>
+    <message>
+        <source>Previous image</source>
+        <translation>Vorheriges Bild</translation>
+    </message>
+    <message>
+        <source>Next image</source>
+        <translation>Nächstes Bild</translation>
+    </message>
+    <message>
+        <source>Open page</source>
+        <translation>Seite öffnen</translation>
+    </message>
+    <message>
+        <source>%current of %total</source>
+        <translation>%current von %total</translation>
+    </message>
+</context>
 </TS>
