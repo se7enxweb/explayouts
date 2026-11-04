@@ -141,7 +141,9 @@ class expLayoutsBlockHandlerFactory
             return false;
 
         $name = $ini->hasVariable( $blockSection, 'Name' ) ? $ini->variable( $blockSection, 'Name' ) : $definitionIdentifier;
-        $viewTypes = $ini->hasVariable( $blockSection, 'ViewTypes' ) ? $ini->variable( $blockSection, 'ViewTypes' ) : array( 'default' );
+        // a design may list a view type explayouts lists too (an ini file appends to ViewTypes[] without removing
+        // repeats): offered once, as getAvailableBlocks() does with the blocks
+        $viewTypes = $ini->hasVariable( $blockSection, 'ViewTypes' ) ? array_values( array_unique( (array)$ini->variable( $blockSection, 'ViewTypes' ) ) ) : array( 'default' );
         $hasCollection = $ini->hasVariable( $blockSection, 'HasCollection' ) ? (bool)$ini->variable( $blockSection, 'HasCollection' ) : false;
         $isContainer = $ini->hasVariable( $blockSection, 'IsContainer' ) ? (bool)$ini->variable( $blockSection, 'IsContainer' ) : false;
         $placeholders = $ini->hasVariable( $blockSection, 'Placeholders' ) ? $ini->variable( $blockSection, 'Placeholders' ) : array();
