@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.50 (2026-11-03)
+
+- Updated: The image viewer's labels (Image viewer, Close, Previous image, Next image, Open page, %current of %total) are translated into German.
+
 ## 1.4.49 (2026-11-03)
 
 - Updated: The admin template edit, template create and toolbar views use the three-column admin layout (rule targets moved in the admin layouts seed).
