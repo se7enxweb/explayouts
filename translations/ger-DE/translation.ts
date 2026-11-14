@@ -100,6 +100,18 @@
         <translation>Unbekannter Ansichtstyp.</translation>
     </message>
     <message>
+        <source>Unknown item view type.</source>
+        <translation>Unbekannter Ansichtstyp der Elemente.</translation>
+    </message>
+    <message>
+        <source>Item view type:</source>
+        <translation>Ansichtstyp der Elemente:</translation>
+    </message>
+    <message>
+        <source>Default of the view type</source>
+        <translation>Vorgabe des Ansichtstyps</translation>
+    </message>
+    <message>
         <source>Invalid input.</source>
         <translation>Ungültige Eingabe.</translation>
     </message>

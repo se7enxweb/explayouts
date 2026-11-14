@@ -40,6 +40,7 @@ class BlockEdit extends \Exponential\Runnable\ModuleView
 
         $blockInfo = \expLayoutsBlockHandlerFactory::getBlockInfo( $block->attribute( 'definition_identifier' ) );
         $hasCollection = isset( $blockInfo['has_collection'] ) && $blockInfo['has_collection'];
+        $itemViewTypes = isset( $blockInfo['item_view_types'] ) && is_array( $blockInfo['item_view_types'] ) ? $blockInfo['item_view_types'] : array();
 
         $collection = false;
         if ( $hasCollection )
@@ -70,12 +71,24 @@ class BlockEdit extends \Exponential\Runnable\ModuleView
                 $error = \ezpI18n::tr( 'design/admin/explayouts/block_edit', 'Unknown view type.' );
             if ( $error === '' && !is_string( $name ) )
                 $error = \ezpI18n::tr( 'design/admin/explayouts/block_edit', 'Invalid input.' );
+
+            // an item view type of the definition (the handler's list and ItemViewTypes[], every view type offers all
+            // of them), '' for the view type's own, or the one the block already has; a form without the field keeps
+            // the stored one. The frontend templates include the template named by it, so nothing else is stored.
+            $storedItemViewType = (string)$block->attribute( 'item_view_type' );
+            $itemViewType = $storedItemViewType;
+            if ( $http->hasPostVariable( 'ItemViewType' ) )
+                $itemViewType = is_string( $http->postVariable( 'ItemViewType' ) ) ? trim( $http->postVariable( 'ItemViewType' ) ) : false;
+            if ( $error === '' && ( $itemViewType === false
+                 || ( $itemViewType !== '' && $itemViewType !== $storedItemViewType && !isset( $itemViewTypes[$itemViewType] ) ) ) )
+                $error = \ezpI18n::tr( 'design/admin/explayouts/block_edit', 'Unknown item view type.' );
         }
 
         if ( $http->hasPostVariable( 'SaveBlock' ) && $error === '' )
         {
             $block->setAttribute( 'name', trim( $name ) );
             $block->setAttribute( 'view_type', $viewType );
+            $block->setAttribute( 'item_view_type', $itemViewType );
             $block->store();
 
             foreach ( $values as $parameterName => $value )
@@ -145,6 +158,7 @@ class BlockEdit extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'parameters', $parameters );
         $tpl->setVariable( 'existing_params', $existingParams );
         $tpl->setVariable( 'view_types', $viewTypes );
+        $tpl->setVariable( 'item_view_types', $itemViewTypes );
         $tpl->setVariable( 'has_collection', $hasCollection );
         $tpl->setVariable( 'collection', $collection );
         $tpl->setVariable( 'collection_items', $collectionItems );
