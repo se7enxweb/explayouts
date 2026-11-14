@@ -133,6 +133,14 @@ class expLayoutsBlockHandlerFactory
         return is_array( $info ) && in_array( (string)$parameterName, $info['content_parameters'], true ) ? 'content' : 'design';
     }
 
+    /**
+     * The settings of a block definition: identifier, name, content_parameters, view_types, view_type_names,
+     * item_view_types (itemViewTypes()), has_collection, is_container, placeholders and category; false when
+     * explayouts.ini has no [BlockDefinition_<identifier>].
+     *
+     * @param string $definitionIdentifier
+     * @return array|false
+     */
     static function getBlockInfo( $definitionIdentifier )
     {
         $ini = self::settings();
@@ -167,6 +175,8 @@ class expLayoutsBlockHandlerFactory
             'content_parameters' => array_values( array_filter( array_map( 'trim', $contentParameters ), 'strlen' ) ),
             'view_types' => $viewTypes,
             'view_type_names' => $viewTypeNames,
+            // item view type => label, as itemViewTypes() gives them (the handler's list and ItemViewTypes[])
+            'item_view_types' => self::itemViewTypes( $definitionIdentifier ),
             'has_collection' => $hasCollection,
             'is_container' => $isContainer,
             'placeholders' => $placeholders,
