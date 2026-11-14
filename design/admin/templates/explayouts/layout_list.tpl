@@ -22,7 +22,7 @@
                     <td>
                         <a href={concat('explayouts/layout_edit/',$layout.id)|ezurl} title="{'Edit'|i18n( 'design/admin/explayouts/layout_list' )}"><img src={'edit.gif'|ezimage} width="16" height="16" alt="{'Edit'|i18n( 'design/admin/explayouts/layout_list' )}" class="expl-icon" /></a>
                         <a href={concat('explayouts/layout_preview/',$layout.id,'/',$layout.status)|ezurl} target="_blank" title="{'Preview'|i18n( 'design/admin/explayouts/layout_list' )}"><img src={'find.png'|ezimage} width="16" height="16" alt="{'Preview'|i18n( 'design/admin/explayouts/layout_list' )}" class="expl-icon" /></a>
-                        {if eq($layout.status,2)}<a href="/explayouts_ui_api/app#layout/{$layout.id}/create_new_draft">{'New draft'|i18n( 'design/admin/explayouts/layout_list' )}</a>{else}<a href="/explayouts_ui_api/app#layout/{$layout.id}/edit">{'Edit in UI'|i18n( 'design/admin/explayouts/layout_list' )}</a>{/if}
+                        {if eq($layout.status,2)}<a href={concat( 'explayouts_ui_api/app#layout/', $layout.id, '/create_new_draft' )|ezurl}>{'New draft'|i18n( 'design/admin/explayouts/layout_list' )}</a>{else}<a href={concat( 'explayouts_ui_api/app#layout/', $layout.id, '/edit' )|ezurl}>{'Edit in UI'|i18n( 'design/admin/explayouts/layout_list' )}</a>{/if}
                         <form method="post" action={'explayouts/layout_list'|ezurl} class="expl-inline-form">
                             <input type="hidden" name="ExportLayoutID" value="{$layout.id|wash}" />
                             <button type="submit" name="ExportLayout" class="button">{'Export'|i18n( 'design/admin/explayouts/layout_list' )}</button>

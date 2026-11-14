@@ -22,7 +22,7 @@
 
             <input class="button" type="submit" name="SaveDraft" value="{'Save draft'|i18n( 'design/admin/explayouts/layout_edit' )}" />
             <input class="defaultbutton" type="submit" name="Publish" value="{'Publish'|i18n( 'design/admin/explayouts/layout_edit' )}" />
-            <input class="button" type="button" value="{'Cancel'|i18n( 'design/admin/explayouts/layout_edit' )}" data-explayouts-href="/explayouts/layout_list" />
+            <input class="button" type="button" value="{'Cancel'|i18n( 'design/admin/explayouts/layout_edit' )}" data-explayouts-href={'explayouts/layout_list'|ezurl} />
         </form>
 
         <hr/>
