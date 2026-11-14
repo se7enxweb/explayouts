@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.4.51 (2026-11-14)
+
+- Added: Item view types in the settings: `ItemViewTypes[<item view type>]=<label>` of `[BlockDefinition_<identifier>]` adds item view types after the handler's own list; every view type of a definition offers all of them (from Marco-JAC's pull request #21). `expLayoutsBlockHandlerFactory::itemViewTypes()` gives the list, and `getBlockInfo()` carries it as `item_view_types`.
+- Added: The list block offers the item views of its zig-zag and accordion view types, `zigzag` and `accordion`.
+- Added: The block definitions can be read from the settings of another siteaccess (`expLayoutsBlockHandlerFactory::useSiteAccess()`, `settings()`), for the layout editor in an administration.
+- Added: The block edit view of the administration (admin and admin4) offers the item view types of a block, with "Default of the view type" for none, and stores only an item view type of the definition, none or the stored one.
+- Fixed: The rich text block offers `rich_text`, the view type of the upstream rich text block, which imported layouts keep.
+- Fixed: A view type a design lists again is offered once.
+- Fixed: Gallery and carousel images carry the web root of an installation served from a sub path (`expLayoutsSafeValue::webRootUrl()`, as `ezroot('no')` writes it), in the site and in the layout editor's previews.
+- Fixed: The layout list and the layout edit form link the editor and the list through the installation's address (ezurl), not from the server root.
+- Fixed: The tests run under PHPUnit 9, the last PHPUnit for PHP 8.0, as under PHPUnit 10 and later; the resolver and debug bar test scripts reach private members on PHP 8.0 too; the block debug output escapes the same on PHP 8.0 as on 8.1+ (from Marco-JAC's pull request #22).
+- Updated: The documentation describes item view types with a settings example, images in a sub path and how to run the tests; the README names PHP 8.0 as the lowest PHP.
+
 ## 1.4.50 (2026-11-03)
 
 - Updated: The image viewer's labels (Image viewer, Close, Previous image, Next image, Open page, %current of %total) are translated into German.
