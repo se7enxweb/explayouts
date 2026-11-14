@@ -95,6 +95,9 @@ class NetgenParityBlocksTest extends TestCase
         );
     }
 
+    /**
+     * @dataProvider unsafeMarkdown
+     */
     #[\PHPUnit\Framework\Attributes\DataProvider( 'unsafeMarkdown' )]
     public function testTheOwnParserWritesNoMarkupFromTheText( $text )
     {
@@ -149,6 +152,9 @@ class NetgenParityBlocksTest extends TestCase
         );
     }
 
+    /**
+     * @dataProvider exactMarkdown
+     */
     #[\PHPUnit\Framework\Attributes\DataProvider( 'exactMarkdown' )]
     public function testTheOwnParserGivesWhatCommonMarkGives( $text, $expected )
     {
@@ -189,6 +195,9 @@ class NetgenParityBlocksTest extends TestCase
         );
     }
 
+    /**
+     * @dataProvider slowMarkdown
+     */
     #[\PHPUnit\Framework\Attributes\DataProvider( 'slowMarkdown' )]
     public function testNoTextMakesTheOwnParserSlow( $text )
     {

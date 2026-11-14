@@ -28,17 +28,28 @@ function check( $condition, $message )
 function call( $name, ...$args )
 {
     $method = new ReflectionMethod( 'expLayoutsResolver', $name );
+    // PHP 8.0 needs it for a non-public member, 8.1+ does not (and 8.5 deprecates it)
+    if ( PHP_VERSION_ID < 80100 )
+        $method->setAccessible( true );
     return $method->invoke( null, ...$args );
+}
+
+function staticProperty( $name )
+{
+    $property = new ReflectionProperty( 'expLayoutsResolver', $name );
+    if ( PHP_VERSION_ID < 80100 )
+        $property->setAccessible( true );
+    return $property;
 }
 
 function getStatic( $name )
 {
-    return ( new ReflectionProperty( 'expLayoutsResolver', $name ) )->getValue( null );
+    return staticProperty( $name )->getValue( null );
 }
 
 function setStatic( $name, $value )
 {
-    ( new ReflectionProperty( 'expLayoutsResolver', $name ) )->setValue( null, $value );
+    staticProperty( $name )->setValue( null, $value );
 }
 
 /** A new request of the same process */

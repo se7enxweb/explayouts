@@ -34,6 +34,9 @@ function check( $condition, $message )
 function setStatic( $class, $name, $value )
 {
     $property = new ReflectionProperty( $class, $name );
+    // PHP 8.0 needs it for a non-public member, 8.1+ does not (and 8.5 deprecates it)
+    if ( PHP_VERSION_ID < 80100 )
+        $property->setAccessible( true );
     $property->setValue( null, $value );
 }
 
