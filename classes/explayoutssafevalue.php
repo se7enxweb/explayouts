@@ -183,6 +183,31 @@ class expLayoutsSafeValue
         return implode( ' ', $tokens );
     }
 
+    /**
+     * A file below the installation's web root (an image alias, stored as var/<site>/storage/... without a leading
+     * slash) as the browser has to ask for it, as the template operator ezroot('no') writes it: the web root in front,
+     * so an installation served from a sub path (/sub/path/var/...) finds it, or the address of the cluster's file
+     * server where one is configured. An address with a scheme (http:, https:) or a protocol relative one stays as it
+     * is; '' stays ''. Without the kernel (tests) the path gets a leading slash, as before.
+     *
+     * @param mixed $path
+     * @return string
+     */
+    public static function webRootUrl( $path )
+    {
+        $path = is_scalar( $path ) ? (string)$path : '';
+        if ( $path === '' || preg_match( '#^([a-z][a-z0-9+.\-]*:|//)#i', $path ) )
+            return $path;
+
+        if ( class_exists( 'eZURI' ) && class_exists( 'eZSys' ) )
+        {
+            eZURI::transformURI( $path, true, 'relative', false );
+            return $path;
+        }
+
+        return '/' . ltrim( $path, '/' );
+    }
+
     // ------------------------------------------------------------------
     // Template operators
     // ------------------------------------------------------------------

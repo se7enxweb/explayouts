@@ -137,7 +137,34 @@ if ( !class_exists( 'ezpHttpCacheListener', false ) )
     }
 }
 
+/**
+ * eZURI::transformURI() as ezroot('no') calls it: the web root (eZSys::wwwDir(), '' for an installation at the server
+ * root, /sub/path when a test sets it) in front of a path, an address with a scheme left alone.
+ */
+if ( !class_exists( 'eZSys', false ) )
+{
+    class eZSys
+    {
+        public static $wwwDir = '';
+        public static function wwwDir() { return self::$wwwDir; }
+    }
+}
+if ( !class_exists( 'eZURI', false ) )
+{
+    class eZURI
+    {
+        public static function transformURI( &$href, $ignoreIndexDir = false, $serverURL = null, $htmlEscape = true )
+        {
+            if ( preg_match( '#^[a-zA-Z0-9]+:#', $href ) || substr( $href, 0, 2 ) === '//' )
+                return false;
+            $href = eZSys::wwwDir() . '/' . ltrim( $href, '/' );
+            return true;
+        }
+    }
+}
+
 $classes = dirname( __DIR__, 2 ) . '/classes/';
+require_once $classes . 'explayoutssafevalue.php';
 require_once $classes . 'explayoutsblockhandlerinterface.php';
 require_once $classes . 'explayoutsqueryhandlerinterface.php';
 require_once $classes . 'explayoutsmanualqueryhandler.php';

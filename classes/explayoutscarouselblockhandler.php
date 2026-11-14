@@ -54,9 +54,10 @@ class expLayoutsCarouselBlockHandler extends expLayoutsAbstractContentBlockHandl
 
                         // Alias URLs carry no leading slash, so an <img src>
                         // built from one resolves against the current page -
-                        // on /testing/ it became /testing/var/site/... and 404'd.
-                        if ( $url !== '' && strpos( $url, '/' ) !== 0 && strpos( $url, 'http' ) !== 0 )
-                            $url = '/' . $url;
+                        // on /testing/ it became /testing/var/site/... and 404'd;
+                        // with the web root in front, as ezroot writes it, an
+                        // installation served from a sub path finds it too.
+                        $url = expLayoutsSafeValue::webRootUrl( $url );
                     }
                 }
             }

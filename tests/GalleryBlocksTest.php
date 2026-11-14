@@ -110,6 +110,34 @@ class GalleryBlocksTest extends TestCase
         $this->assertSame( '/var/site/storage/images/b/b.jpg', $item['full_url'] );
     }
 
+    /**
+     * An installation served from a sub path has its files below it: the images of the gallery and the carousel carry
+     * the web root, as ezroot('no') writes it (the layout editor's previews draw the same blocks).
+     */
+    public function testTheImagesCarryTheWebRootOfAnInstallationInASubPath()
+    {
+        eZSys::$wwwDir = '/sub/path';
+        eZContentObjectTreeNode::$children[10] = array( $this->node( 11, 'Picture', $this->image ) );
+
+        $item = ( new expLayoutsGalleryBlockHandler() )->getValues( array( 'parameters' => array( 'parent_node_id' => 10 ) ) )['items'][0];
+        $this->assertSame( '/sub/path/var/site/storage/images/a/a_small.jpg', $item['url'] );
+        $this->assertSame( '/sub/path/var/site/storage/images/a/a.jpg', $item['full_url'] );
+
+        $values = ( new expLayoutsCarouselBlockHandler() )->getValues( array( 'parameters' => array( 'parent_node_id' => 10 ) ) );
+        $this->assertSame( '/sub/path/var/site/storage/images/a/a.jpg', $values['slides'][0]['image_url'] );
+    }
+
+    public function testAnImageOnAnotherServerStaysAsItIs()
+    {
+        eZSys::$wwwDir = '/sub/path';
+        $remote = new gbImage( array( 'original' => array( 'url' => 'https://images.example.org/b.jpg' ) ) );
+        eZContentObjectTreeNode::$children[10] = array( $this->node( 11, 'Picture', $remote ) );
+
+        $item = ( new expLayoutsGalleryBlockHandler() )->getValues( array( 'parameters' => array( 'parent_node_id' => 10 ) ) )['items'][0];
+        $this->assertSame( 'https://images.example.org/b.jpg', $item['url'] );
+        $this->assertSame( 'https://images.example.org/b.jpg', $item['full_url'] );
+    }
+
     public function testAManualCollectionShowsAllItsItemsUnlessItIsLimited()
     {
         $ids = array();

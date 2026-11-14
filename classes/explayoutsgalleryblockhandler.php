@@ -327,17 +327,17 @@ class expLayoutsGalleryBlockHandler implements expLayoutsBlockHandlerInterface
                 }
                 if ( $url === '' )
                     $url = $fullUrl;
-                if ( $fullUrl !== '' && strpos( $fullUrl, '/' ) !== 0 && strpos( $fullUrl, 'http' ) !== 0 )
-                    $fullUrl = '/' . $fullUrl;
+                $fullUrl = expLayoutsSafeValue::webRootUrl( $fullUrl );
                 if ( $url !== '' )
                 {
-                    // Image alias URLs are stored without a leading slash, so
-                    // an <img src> built straight from one is resolved relative
-                    // to the current page: on /testing/ it became
-                    // /testing/var/site/storage/... and 404'd. Only a path on a
-                    // one-segment URL happened to work.
-                    if ( strpos( $url, '/' ) !== 0 && strpos( $url, 'http' ) !== 0 )
-                        $url = '/' . $url;
+                    // Image alias URLs are stored relative to the web root and
+                    // without a leading slash, so an <img src> built straight
+                    // from one is resolved relative to the current page: on
+                    // /testing/ it became /testing/var/site/storage/... and
+                    // 404'd. A slash alone missed the web root of an
+                    // installation served from a sub path (the layout editor's
+                    // previews among them): webRootUrl() puts it in front.
+                    $url = expLayoutsSafeValue::webRootUrl( $url );
 
                     $entry['url'] = $url;
                     $entry['full_url'] = $fullUrl !== '' ? $fullUrl : $url;
