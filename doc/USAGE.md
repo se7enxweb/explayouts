@@ -83,8 +83,64 @@ $values  = $handler->getValues( $blockArray ); // values for the view template
 
 $available = expLayoutsBlockHandlerFactory::getAvailableBlocks();
 $info      = expLayoutsBlockHandlerFactory::getBlockInfo( 'list' );
-// $info: identifier, name, view_types, has_collection
+// $info: identifier, name, content_parameters, view_types, view_type_names, item_view_types,
+//        has_collection, is_container, placeholders, category
+$items     = expLayoutsBlockHandlerFactory::itemViewTypes( 'list' ); // item view type => label
 ```
+
+### Item view types
+
+A block with items (a list, a grid, a gallery) draws each item in an *item view type*: `standard`, `card`, `line`,
+`zigzag` ... The editor offers them in the "Item view type" select of the layout editor and of the administration's
+block edit form, and the design draws the item with `content/views/<item view type>.tpl` (or its own block template
+reads `$block.item_view_type`). An empty item view type is the default of the view type: the design decides.
+
+The list of a definition comes from two places, in this order:
+
+1. the handler's own list in code, `getItemViewTypes()`, when the handler has one (every handler based on
+   `expLayoutsAbstractContentBlockHandler`: standard, standard_with_intro, overlay, card, card_with_intro, line, mini,
+   listitem, listitem_with_intro);
+2. `ItemViewTypes[<item view type>]=<label>` of `[BlockDefinition_<identifier>]` in `explayouts.ini`.
+   `ItemViewTypes[]=<item view type>` is read with the identifier as its label; a configured entry replaces the
+   handler's label of the same identifier.
+
+A design that draws more item views adds them in its settings, with no code:
+
+```ini
+# extension/mytheme/settings/siteaccess/mysite/explayouts.ini.append.php
+[BlockDefinition_list]
+ItemViewTypes[tile]=Tile
+ItemViewTypes[timeline]=Timeline
+
+[BlockDefinition_gallery]
+ItemViewTypes[]=polaroid
+```
+
+Item view types are an axis of their own: every view type of the definition offers all of them, and whether a design
+draws a combination is up to the design. explayouts itself adds `zigzag` and `accordion` to the list block, the item
+views of its `list_zigzag` and `list_accordion` view types. A definition whose handler has no list and whose settings
+add none has no item view type, and the editors show no select for it.
+
+The block edit views and the layout editor's API store only an item view type of the definition, none, or the one the
+block already has (a stored one the list no longer offers stays as it is until an editor picks another): the frontend
+templates include the template named by it.
+
+#### The settings of the site in the administration
+
+The layout editor runs in the administration, but the blocks it edits are drawn by a site, and a design keeps the block
+settings it adds (`ViewTypes[]`, `ItemViewTypes[]`, `AvailableBlocks[]`) in that site's siteaccess settings.
+`expLayoutsBlockHandlerFactory::useSiteAccess( $siteAccess )` makes the factory read `explayouts.ini` of that
+siteaccess for the rest of the request; `settings()` returns the file it reads, and `useSiteAccess( false )` goes back
+to the current siteaccess. The layout editor (`explayouts_ui_api`) calls it with the siteaccess it previews in
+(`[PreviewSettings] SiteAccess`), so what it offers, accepts and previews are the same.
+
+### Images in an installation served from a sub path
+
+Image aliases are stored relative to the web root (`var/<site>/storage/images/...`). The gallery blocks and the
+carousel write them with `expLayoutsSafeValue::webRootUrl()`, as the template operator `ezroot('no')` does: with the
+web root of an installation served from a sub path in front (`/sub/path/var/...`), or the address of the cluster's
+file server where one is configured. Your own block handlers should do the same with every file URL they give a
+template.
 
 ## Dynamic collection queries
 

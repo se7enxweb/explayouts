@@ -94,7 +94,7 @@ Exponential version
 - Make sure you use Exponential 6 / Exponential Legacy (required) or higher.
 
 PHP version
-- Make sure you have PHP 8.1 or higher.
+- Make sure you have PHP 8.0 or higher (the tests run under PHPUnit 9, the last PHPUnit for PHP 8.0, as under PHPUnit 10 and later).
 
 Database server
 - Make sure you have MySQL/MariaDB, SQLite or PostgreSQL available; the extension ships a schema for each in its `sql/` directory.
@@ -168,6 +168,20 @@ What else is included:
 - Frontend templates under `design/standard/templates/explayouts/` including layout type templates (`1_column`, `2_column`, `3_column`, `4_column`, `featured`).
 
 See [doc/USAGE.md](doc/USAGE.md) for exhaustive usage scenarios: working with the value objects, block and query handlers, layout types, import/export, admin screens, CLI scripts, and the full customization guide covering the settings layer (INI cascade), the template layer (design override cascade) and the PHP layer (safe extension points such as custom block and query handlers).
+
+Tests
+-----
+
+The PHPUnit tests (`tests/*Test.php`) need no database. They carry their metadata both as docblock annotations and as
+attributes, so they run under PHPUnit 9 (the last PHPUnit for PHP 8.0) as under PHPUnit 10 and later; run them from the
+installation's root:
+
+```bash
+vendor/bin/phpunit --no-configuration --bootstrap vendor/autoload.php extension/explayouts/tests/
+```
+
+The other scripts in `tests/` (`explayouts*test.php`) need an installation and run through the kernel, e.g.
+`php bin/php/ezexec.php extension/explayouts/tests/explayoutsresolvercachetest.php`.
 
 Documentation
 -------------

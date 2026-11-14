@@ -6,4 +6,4 @@
 - `settings/admininterface.ini.append.php` also registers an "Authors" node view tab that is unrelated to layouts; it should move to its own extension.
 - `design/standard/templates/pagelayout.tpl` still uses the legacy `$sevenx_layout` template variable name from before the sevenx to exp rename.
 - Stray backup files (`extension.xml~`, `settings/admininterface.ini.append.php~`) should be removed from the tree.
-- No automated tests; the `bin/php/diagnose.php` / `diagnose_db.php` scripts are the only verification tooling.
+- The PHPUnit tests in `tests/*Test.php` cover the block definitions, the gallery blocks and the Markdown parser without a database; the other scripts in `tests/` run through `bin/php/ezexec.php` and need an installation. Most of the module views and the resolver still have no automated test.

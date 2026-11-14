@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- Exponential Legacy / Exponential 6 (eZ Publish legacy kernel), PHP 8.1+
+- Exponential Legacy / Exponential 6, PHP 8.0+
 - MySQL/MariaDB, SQLite or PostgreSQL
 
 ## 1. Put the extension in place
