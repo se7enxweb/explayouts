@@ -131,8 +131,21 @@ The layout editor runs in the administration, but the blocks it edits are drawn 
 settings it adds (`ViewTypes[]`, `ItemViewTypes[]`, `AvailableBlocks[]`) in that site's siteaccess settings.
 `expLayoutsBlockHandlerFactory::useSiteAccess( $siteAccess )` makes the factory read `explayouts.ini` of that
 siteaccess for the rest of the request; `settings()` returns the file it reads, and `useSiteAccess( false )` goes back
-to the current siteaccess. The layout editor (`explayouts_ui_api`) calls it with the siteaccess it previews in
-(`[PreviewSettings] SiteAccess`), so what it offers, accepts and previews are the same.
+to the current siteaccess. The layout editor (`explayouts_ui_api`) calls it with the siteaccess it previews in, so
+what it offers, accepts and previews are the same.
+
+Which siteaccess that is depends on the layout, as an administration may serve several sites:
+`expLayoutsPreviewSiteAccess::resolveForLayout( $layoutId )` takes, in this order, the first that is public and uses
+the administration's database:
+
+1. the siteaccesses named by the siteaccess conditions of the layout's enabled rules,
+2. without such a condition, for the node and subtree targets of those rules, the siteaccesses whose `content.ini`
+   `[NodeSettings] RootNode` lies deepest above the node,
+3. the preview siteaccess of the administration (`expLayoutsPreviewSiteAccess::resolve()`: `[PreviewSettings]
+   SiteAccess`, else `FrontSiteAccess`, `RelatedSiteAccessList[]`, `DefaultAccess`), for a layout without rules.
+
+Of several in 1 or 2, such as a site in two languages on one root node, the one whose `ContentObjectLocale` is the
+administration's comes first.
 
 ### Images in an installation served from a sub path
 
