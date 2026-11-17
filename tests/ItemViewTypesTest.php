@@ -2,7 +2,8 @@
 /**
  * The item view types of a block definition (expLayoutsBlockHandlerFactory::itemViewTypes() and getBlockInfo()):
  * the handler's own list, then ItemViewTypes[] of [BlockDefinition_<identifier>], read from the settings of the
- * siteaccess useSiteAccess() chose. And the list the extension ships for the list block.
+ * siteaccess useSiteAccess() chose. The item view types per view type (ViewTypeItemViewTypes[]) and the parameters the
+ * editor does not offer (HiddenParameters[]). And the list the extension ships for the list block.
  *
  * Without the kernel: eZINI and eZSiteAccess are stand-ins declared in each test's own process (setUp()), holding the
  * settings as arrays.
@@ -71,7 +72,14 @@ class ItemViewTypesTest extends TestCase
                 'ItemViewTypes' => array( 'zigzag' => 'Zig-zag', 'line' => 'Line (short)', 0 => 'tile' ),
             ),
             'BlockDefinition_plain' => array( 'Handler' => 'ivtPlainHandler' ),
-            'BlockDefinition_gallery' => array( 'Handler' => 'ivtPlainHandler', 'ItemViewTypes' => array( 'slide' => 'Slide' ) ),
+            'BlockDefinition_gallery' => array( 'Handler' => 'ivtPlainHandler', 'ItemViewTypes' => array( 'slide' => 'Slide' ),
+                // as Netgen Layouts' item_view_types per view type; malformed entries are left out
+                'ViewTypeItemViewTypes' => array( 'slider' => 'slide', 'sushi_bar' => ' overlay, line ,overlay', 'empty' => ' , ', 0 => 'slide' ),
+                'HiddenParameters' => array( 'image_attribute', ' thumbnail_size ', '', 'image_attribute' ),
+                'ViewTypes' => array( 'gallery', 'slider', 'sushi_bar', 'carousel' ),
+                'HiddenViewTypes' => array( 'gallery', ' sushi_bar' ),
+                'ViewTypeHiddenParameters' => array( 'slider' => 'number_of_thumbnails, enable_lightbox', 'carousel' => ' ', 0 => 'x' ) ),
+            'BlockDefinition_quote' => array( 'Handler' => 'ivtPlainHandler', 'ViewTypes' => array( 'quote' ), 'HiddenViewTypes' => array( 'quote' ) ),
         );
         eZINI::$siteAccesses = array(
             'site' => array(
@@ -104,6 +112,38 @@ class ItemViewTypesTest extends TestCase
         $info = expLayoutsBlockHandlerFactory::getBlockInfo( 'list' );
         $this->assertSame( array( 'list', 'grid' ), $info['view_types'] );
         $this->assertSame( expLayoutsBlockHandlerFactory::itemViewTypes( 'list' ), $info['item_view_types'] );
+    }
+
+    public function testTheItemViewTypesOfEachViewTypeWhereTheSettingsLimitThem()
+    {
+        $this->assertSame( array( 'slider' => array( 'slide' ), 'sushi_bar' => array( 'overlay', 'line' ) ),
+                           expLayoutsBlockHandlerFactory::viewTypeItemViewTypes( 'gallery' ) );
+        $this->assertSame( array(), expLayoutsBlockHandlerFactory::viewTypeItemViewTypes( 'list' ), 'no limit: every view type offers all' );
+        $info = expLayoutsBlockHandlerFactory::getBlockInfo( 'gallery' );
+        $this->assertSame( expLayoutsBlockHandlerFactory::viewTypeItemViewTypes( 'gallery' ), $info['view_type_item_view_types'] );
+    }
+
+    public function testTheParametersTheEditorDoesNotOffer()
+    {
+        $this->assertSame( array( 'image_attribute', 'thumbnail_size' ), expLayoutsBlockHandlerFactory::hiddenParameters( 'gallery' ) );
+        $this->assertSame( array(), expLayoutsBlockHandlerFactory::hiddenParameters( 'list' ) );
+        $info = expLayoutsBlockHandlerFactory::getBlockInfo( 'gallery' );
+        $this->assertSame( array( 'image_attribute', 'thumbnail_size' ), $info['hidden_parameters'] );
+    }
+
+    public function testTheParametersAViewTypeDoesNotOffer()
+    {
+        $this->assertSame( array( 'slider' => array( 'number_of_thumbnails', 'enable_lightbox' ) ),
+                           expLayoutsBlockHandlerFactory::viewTypeHiddenParameters( 'gallery' ) );
+        $this->assertSame( array(), expLayoutsBlockHandlerFactory::viewTypeHiddenParameters( 'list' ) );
+        $this->assertSame( expLayoutsBlockHandlerFactory::viewTypeHiddenParameters( 'gallery' ),
+                           expLayoutsBlockHandlerFactory::getBlockInfo( 'gallery' )['view_type_hidden_parameters'] );
+    }
+
+    public function testHiddenViewTypesAreNotOffered()
+    {
+        $this->assertSame( array( 'slider', 'carousel' ), expLayoutsBlockHandlerFactory::getBlockInfo( 'gallery' )['view_types'] );
+        $this->assertSame( array( 'quote' ), expLayoutsBlockHandlerFactory::getBlockInfo( 'quote' )['view_types'], 'never none: hiding every one hides none' );
     }
 
     public function testTheSettingsOfAnotherSiteAccess()
