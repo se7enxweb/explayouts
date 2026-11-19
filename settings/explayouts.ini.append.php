@@ -1078,6 +1078,9 @@ GoogleMapsApiKey=
 # administration, else DefaultAccess. The siteaccess must use the same database as the administration; if it does
 # not, the preview says so instead of rendering. Not set here: a value in an extension's global settings would win
 # over the one of the administration siteaccess.
+# The layout editor and the layout preview ask the layout first: the siteaccess condition of its rules, else the
+# site whose RootNode lies deepest above a node it is mapped to (expLayoutsPreviewSiteAccess::resolveForLayout()).
+# This setting is for a layout that names no site that way, a new one without rules.
 #SiteAccess=
 
 */ ?>
