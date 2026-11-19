@@ -121,6 +121,30 @@ draws a combination is up to the design. explayouts itself adds `zigzag` and `ac
 views of its `list_zigzag` and `list_accordion` view types. A definition whose handler has no list and whose settings
 add none has no item view type, and the editors show no select for it.
 
+A design whose view types each draw their own item views limits them per view type, as Netgen Layouts lists
+`item_view_types` per view type: `ViewTypeItemViewTypes[<view type>]=<item view type>,<item view type>,...`. The layout
+editor then offers a view type only the ones listed (a view type without an entry still offers all), and hides the
+select when only one is left, choosing that one; a stored item view type the view type does not list is replaced by
+the first listed one when the block is saved.
+
+```ini
+[BlockDefinition_gallery]
+ItemViewTypes[carousel]=Carousel
+ViewTypeItemViewTypes[carousel]=carousel
+ViewTypeItemViewTypes[sushi_bar]=standard_with_intro,overlay,line
+```
+
+`HiddenViewTypes[]=<view type>` of a definition leaves view types out that another settings file adds but the design
+does not draw (explayouts' `gallery` and `sushi_bar` of the gallery blocks in a design without templates for them). A
+reset line of `ViewTypes[]` in a siteaccess does not do it: explayouts' own settings are read after a siteaccess's.
+A block stored with a hidden view type keeps it; hiding every view type of a definition hides none.
+
+`HiddenParameters[]=<parameter>` of a definition leaves a parameter out of the layout editor's forms, for a design
+whose templates do not read it (the gallery block's `image_attribute` and `thumbnail_size`, where the design draws
+its items with its own item view templates). The parameter keeps the value stored for it, or its default.
+`ViewTypeHiddenParameters[<view type>]=<parameter>,<parameter>,...` does the same for one view type, as Netgen Layouts'
+`valid_parameters` per view type: the editor hides those parameters while that view type is selected.
+
 The block edit views and the layout editor's API store only an item view type of the definition, none, or the one the
 block already has (a stored one the list no longer offers stays as it is until an editor picks another): the frontend
 templates include the template named by it.

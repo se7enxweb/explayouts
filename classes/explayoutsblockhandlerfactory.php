@@ -108,6 +108,76 @@ class expLayoutsBlockHandlerFactory
         return $itemViewTypes;
     }
 
+    /**
+     * The item view types each view type offers, where the settings limit them:
+     * ViewTypeItemViewTypes[<view type>]=<item view type>,<item view type>,... of [BlockDefinition_<identifier>],
+     * as Netgen Layouts lists item_view_types per view type. A view type without an entry offers all of
+     * itemViewTypes(); one with a single item view type offers only that, and the editor hides its select.
+     *
+     * @param string $definitionIdentifier
+     * @return array view type => item view types (identifiers, in the order given)
+     */
+    static function viewTypeItemViewTypes( $definitionIdentifier )
+    {
+        $ini = self::settings();
+        $blockSection = 'BlockDefinition_' . self::currentIdentifier( $definitionIdentifier );
+        if ( !$ini->hasVariable( $blockSection, 'ViewTypeItemViewTypes' ) )
+            return array();
+
+        $limits = array();
+        foreach ( (array)$ini->variable( $blockSection, 'ViewTypeItemViewTypes' ) as $viewType => $list )
+        {
+            $itemViewTypes = array_values( array_unique( array_filter( array_map( 'trim', explode( ',', (string)$list ) ), 'strlen' ) ) );
+            if ( !is_int( $viewType ) && (string)$viewType !== '' && !empty( $itemViewTypes ) )
+                $limits[(string)$viewType] = $itemViewTypes;
+        }
+        return $limits;
+    }
+
+    /**
+     * The parameters of a definition the editor does not offer: HiddenParameters[] of [BlockDefinition_<identifier>],
+     * for a design whose templates do not read them (the image attribute and the thumbnail size of the gallery block
+     * where the design draws its items itself). A hidden parameter keeps the value stored for it, or its default.
+     *
+     * @param string $definitionIdentifier
+     * @return string[]
+     */
+    static function hiddenParameters( $definitionIdentifier )
+    {
+        $ini = self::settings();
+        $blockSection = 'BlockDefinition_' . self::currentIdentifier( $definitionIdentifier );
+        if ( !$ini->hasVariable( $blockSection, 'HiddenParameters' ) )
+            return array();
+        return array_values( array_unique( array_filter( array_map( 'trim', (array)$ini->variable( $blockSection, 'HiddenParameters' ) ), 'strlen' ) ) );
+    }
+
+    /**
+     * The parameters a view type does not offer: ViewTypeHiddenParameters[<view type>]=<parameter>,<parameter>,... of
+     * [BlockDefinition_<identifier>], as Netgen Layouts' valid_parameters per view type ('!number_of_thumbnails'), for
+     * a design whose template of that view type does not read them (the starter's slider shows two images per slide
+     * whatever "Thumbnails per row/slide" says). The editor hides them while that view type is selected; they keep
+     * their stored value.
+     *
+     * @param string $definitionIdentifier
+     * @return array view type => parameter names
+     */
+    static function viewTypeHiddenParameters( $definitionIdentifier )
+    {
+        $ini = self::settings();
+        $blockSection = 'BlockDefinition_' . self::currentIdentifier( $definitionIdentifier );
+        if ( !$ini->hasVariable( $blockSection, 'ViewTypeHiddenParameters' ) )
+            return array();
+
+        $hidden = array();
+        foreach ( (array)$ini->variable( $blockSection, 'ViewTypeHiddenParameters' ) as $viewType => $list )
+        {
+            $names = array_values( array_unique( array_filter( array_map( 'trim', explode( ',', (string)$list ) ), 'strlen' ) ) );
+            if ( !is_int( $viewType ) && (string)$viewType !== '' && !empty( $names ) )
+                $hidden[(string)$viewType] = $names;
+        }
+        return $hidden;
+    }
+
     static function getAvailableBlocks()
     {
         $ini = self::settings();
@@ -135,7 +205,8 @@ class expLayoutsBlockHandlerFactory
 
     /**
      * The settings of a block definition: identifier, name, content_parameters, view_types, view_type_names,
-     * item_view_types (itemViewTypes()), has_collection, is_container, placeholders and category; false when
+     * item_view_types (itemViewTypes()), view_type_item_view_types (viewTypeItemViewTypes()), hidden_parameters
+     * (hiddenParameters()), view_type_hidden_parameters (viewTypeHiddenParameters()), has_collection, is_container, placeholders and category; false when
      * explayouts.ini has no [BlockDefinition_<identifier>].
      *
      * @param string $definitionIdentifier
@@ -152,6 +223,14 @@ class expLayoutsBlockHandlerFactory
         // a design may list a view type explayouts lists too (an ini file appends to ViewTypes[] without removing
         // repeats): offered once, as getAvailableBlocks() does with the blocks
         $viewTypes = $ini->hasVariable( $blockSection, 'ViewTypes' ) ? array_values( array_unique( (array)$ini->variable( $blockSection, 'ViewTypes' ) ) ) : array( 'default' );
+        // HiddenViewTypes[]: view types a design does not draw, though explayouts or another extension lists them (a
+        // reset line of ViewTypes[] does not help: explayouts' own settings are read after a siteaccess's)
+        if ( $ini->hasVariable( $blockSection, 'HiddenViewTypes' ) )
+        {
+            $kept = array_values( array_diff( $viewTypes, array_map( 'trim', (array)$ini->variable( $blockSection, 'HiddenViewTypes' ) ) ) );
+            if ( !empty( $kept ) )
+                $viewTypes = $kept;
+        }
         $hasCollection = $ini->hasVariable( $blockSection, 'HasCollection' ) ? (bool)$ini->variable( $blockSection, 'HasCollection' ) : false;
         $isContainer = $ini->hasVariable( $blockSection, 'IsContainer' ) ? (bool)$ini->variable( $blockSection, 'IsContainer' ) : false;
         $placeholders = $ini->hasVariable( $blockSection, 'Placeholders' ) ? $ini->variable( $blockSection, 'Placeholders' ) : array();
@@ -177,6 +256,11 @@ class expLayoutsBlockHandlerFactory
             'view_type_names' => $viewTypeNames,
             // item view type => label, as itemViewTypes() gives them (the handler's list and ItemViewTypes[])
             'item_view_types' => self::itemViewTypes( $definitionIdentifier ),
+            // view type => its item view types, where ViewTypeItemViewTypes[] limits them (viewTypeItemViewTypes())
+            'view_type_item_view_types' => self::viewTypeItemViewTypes( $definitionIdentifier ),
+            // the parameters the editor does not offer (hiddenParameters()), and per view type (viewTypeHiddenParameters())
+            'hidden_parameters' => self::hiddenParameters( $definitionIdentifier ),
+            'view_type_hidden_parameters' => self::viewTypeHiddenParameters( $definitionIdentifier ),
             'has_collection' => $hasCollection,
             'is_container' => $isContainer,
             'placeholders' => $placeholders,
