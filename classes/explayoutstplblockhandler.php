@@ -5,7 +5,7 @@ class expLayoutsTplBlockHandler implements expLayoutsBlockHandlerInterface
     {
         return array(
             'block_name' => array(
-                'name' => 'Template name',
+                'name' => 'Template block name',
                 'type' => 'text',
                 'default' => '',
             ),
