@@ -12,6 +12,12 @@
  *  PV-03 - a siteaccess with another database is never chosen; a configured one with another database is an error
  *          with a reason, not a fall back to another site
  *  PV-04 - the current siteaccess and administrations are skipped
+ *  PV-05 - a layout's siteaccess (resolveForLayout()): the siteaccess condition of its rules wins
+ *  PV-06 - without one, a node or subtree target: the site whose root node lies deepest above it; of a site in two
+ *          languages on one root node, the one in the language asked for (default: the administration's)
+ *  PV-07 - a layout without rules gets the preview siteaccess of the administration (resolve())
+ *  PV-08 - a rule naming a siteaccess that does not qualify (another database, an administration) falls back to it too
+ *  PV-09 - the parts on their own: conditions before targets, the deepest root node, the language order
  */
 
 $failures = 0;
@@ -92,6 +98,78 @@ pvCheck( expLayoutsPreviewSiteAccess::choose( array( 'blog_admin', 'shop_admin',
                                               function( $name ) { return array( 'admin' => strpos( $name, '_admin' ) !== false,
                                                                                 'database' => expLayoutsPreviewSiteAccess::databaseOf( new eZINI( $name ) ) ); } ) === 'blog',
          'PV-04 administrations are skipped' );
+
+// PV-05 to PV-09: the siteaccess of a layout (resolveForLayout()). shop_admin also serves the site fair in English and
+// German on root node 60, in the same database; shop and shop_en show the whole tree (root node 2).
+$resetSites = function() use ( $reset, $site, $settings )
+{
+    $reset();
+    eZINI::$settings['fair'] = $site( 'db_shop', 'fair' );
+    eZINI::$settings['fair_ger'] = $site( 'db_shop', 'fair' );
+    foreach ( array( 'shop' => 'eng-GB', 'shop_en' => 'eng-GB', 'fair' => 'eng-GB', 'fair_ger' => 'ger-DE', 'shop_admin' => 'eng-GB' ) as $name => $locale )
+        $settings( $name, 'site.ini', 'RegionalSettings', 'ContentObjectLocale', $locale );
+    $settings( 'fair', 'content.ini', 'NodeSettings', 'RootNode', 60 );
+    $settings( 'fair_ger', 'content.ini', 'NodeSettings', 'RootNode', 60 );
+    expLayoutsPreviewSiteAccess::$availableSiteAccesses = array_keys( eZINI::$settings );
+    expLayoutsPreviewSiteAccess::$nodePaths = array( 61 => array( 1, 2, 60, 61 ), 70 => array( 1, 2, 70 ) );
+    expLayoutsPreviewSiteAccess::$layoutRules = array(
+        // a fair layout limited to the German site, as the rules of an imported site are
+        1 => array( array( 'conditions' => array( array( 'siteaccess', '["fair_ger"]' ), array( 'class', '["ng_frontpage"]' ) ),
+                           'targets' => array( array( 'subtree', '60' ) ) ) ),
+        // a fair layout mapped to a node only
+        2 => array( array( 'conditions' => array(), 'targets' => array( array( 'node', '61' ) ) ) ),
+        // a shop layout mapped to a node only
+        3 => array( array( 'conditions' => array(), 'targets' => array( array( 'subtree', '70' ), array( 'path_info_prefix', '/' ) ) ) ),
+        // limited to a siteaccess of another database, and to an administration
+        5 => array( array( 'conditions' => array( array( 'siteaccess', 'blog' ) ), 'targets' => array() ) ),
+        6 => array( array( 'conditions' => array( array( 'siteaccess', '["shop_admin"]' ) ), 'targets' => array() ) ),
+    );
+};
+
+// PV-05
+$resetSites();
+pvCheck( expLayoutsPreviewSiteAccess::resolveForLayout( 1 ) === 'fair_ger', 'PV-05 the siteaccess condition of the layout\'s rule wins over FrontSiteAccess shop_en' );
+
+// PV-06
+$resetSites();
+pvCheck( expLayoutsPreviewSiteAccess::resolveForLayout( 2 ) === 'fair', 'PV-06 a node target: the site whose root node lies deepest above it, in the administration\'s language (eng-GB)' );
+pvCheck( expLayoutsPreviewSiteAccess::resolveForLayout( 2, 'ger-DE' ) === 'fair_ger', 'PV-06 the same in German: fair_ger' );
+pvCheck( expLayoutsPreviewSiteAccess::resolveForLayout( 3 ) === 'shop', 'PV-06 a node of the shop: shop (root node 2), not fair' );
+// an editorial interface on root node 2 whose design is not admin*, but that requires a login, comes first in the list
+$resetSites();
+eZINI::$settings = array( 'shop_editor' => $site( 'db_shop', 'editor', array( 'SiteAccessSettings' => array( 'RequireUserLogin' => 'true' ),
+                                                                           'RegionalSettings' => array( 'ContentObjectLocale' => 'eng-GB' ) ) ) ) + eZINI::$settings;
+expLayoutsPreviewSiteAccess::$availableSiteAccesses = array_keys( eZINI::$settings );
+pvCheck( expLayoutsPreviewSiteAccess::resolveForLayout( 3 ) === 'shop', 'PV-06 a siteaccess that requires a login (shop_editor) is not a site the node is shown in' );
+
+// the editor works on the draft, a layout of its own whose rules are those of its published layout
+$resetSites();
+expLayoutsPreviewSiteAccess::$publishedLayouts = array( 101 => 1, 102 => 2, 1 => 1 );
+pvCheck( expLayoutsPreviewSiteAccess::resolveForLayout( 101 ) === 'fair_ger', 'PV-06 a draft (101) takes the rules of its published layout (1): fair_ger' );
+pvCheck( expLayoutsPreviewSiteAccess::resolveForLayout( 102 ) === 'fair', 'PV-06 a draft (102) of a layout mapped to a node: fair' );
+expLayoutsPreviewSiteAccess::$publishedLayouts = null;
+
+// PV-07
+$resetSites();
+expLayoutsPreviewSiteAccess::$publishedLayouts = array();
+pvCheck( expLayoutsPreviewSiteAccess::resolveForLayout( 4 ) === 'shop_en', 'PV-07 a layout without rules gets the preview siteaccess of the administration (FrontSiteAccess)' );
+
+// PV-08
+$resetSites();
+pvCheck( expLayoutsPreviewSiteAccess::resolveForLayout( 5 ) === 'shop_en', 'PV-08 a condition naming a siteaccess of another database falls back to the administration\'s' );
+pvCheck( expLayoutsPreviewSiteAccess::resolveForLayout( 6 ) === 'shop_en', 'PV-08 a condition naming the administration itself falls back too' );
+
+// PV-09
+pvCheck( expLayoutsPreviewSiteAccess::siteAccessesOfRules( array(
+             array( 'conditions' => array( array( 'class', '["x"]' ) ), 'targets' => array( array( 'node', '61' ) ) ),
+             array( 'conditions' => array( array( 'siteaccess', 'fair' ) ), 'targets' => array() ),
+             array( 'conditions' => array( array( 'siteaccess', '["fair_ger","fair"]' ) ), 'targets' => array() ) ),
+             function( $id ) { return array( 'never' ); } ) === array( 'fair', 'fair_ger' ),
+         'PV-09 siteaccess conditions (one name or a list) come before node targets, each name once' );
+pvCheck( expLayoutsPreviewSiteAccess::deepestRoots( array( 1, 2, 60, 61 ), array( 'shop' => 2, 'fair' => 60, 'fair_ger' => 60, 'other' => 99 ) ) === array( 'fair', 'fair_ger' ),
+         'PV-09 the deepest root node above the node, with every siteaccess on it' );
+pvCheck( expLayoutsPreviewSiteAccess::byLanguage( array( 'fair', 'fair_ger' ), 'ger-DE', function( $n ) { return $n === 'fair_ger' ? 'ger-DE' : 'eng-GB'; } ) === array( 'fair_ger', 'fair' ),
+         'PV-09 the one in the language comes first' );
 
 echo $failures ? "$failures failed\n" : "all passed\n";
 exit( $failures ? 1 : 0 );
