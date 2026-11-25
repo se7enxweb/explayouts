@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.4.52 (2026-11-25)
+
+- Added: The siteaccess of a layout, from the siteaccess condition of its rules, else the site whose RootNode lies deepest above a node the layout is mapped to (expLayoutsPreviewSiteAccess::resolveForLayout()), for the layout editor and the layout preview; an administration that serves several sites previews each layout in its own site (pull request #23).
+- Added: Item view types per view type (ViewTypeItemViewTypes), hidden view types (HiddenViewTypes) and hidden parameters (HiddenParameters, ViewTypeHiddenParameters) in the settings of a block definition (pull request #24).
+- Updated: The parameter of the template block is called Template block name (pull request #24).
+- Added: A CI workflow (php -l on PHP 7.4 and 8.0 to 8.5, extension.xml, version parity).
+
 ## 1.4.51 (2026-11-14)
 
 - Added: Item view types in the settings: `ItemViewTypes[<item view type>]=<label>` of `[BlockDefinition_<identifier>]` adds item view types after the handler's own list; every view type of a definition offers all of them (from Marco-JAC's pull request #21). `expLayoutsBlockHandlerFactory::itemViewTypes()` gives the list, and `getBlockInfo()` carries it as `item_view_types`.
