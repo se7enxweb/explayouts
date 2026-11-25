@@ -19,6 +19,11 @@
 # the block, after the ones its handler offers in code (getItemViewTypes()). They are an axis of their own: every view
 # type of the definition offers all of them; whether a design draws a combination is up to the design. A design that
 # draws more item views (content/views/<item view type>.tpl) adds them in its siteaccess settings, with no code.
+# ViewTypeItemViewTypes[<view type>]=<item view type>,... limits the item view types of one view type, as Netgen
+# Layouts lists them per view type; with one left the layout editor hides the select. HiddenViewTypes[]=<view type>
+# leaves out a view type the design does not draw. HiddenParameters[]=<parameter>
+# leaves a parameter out of the layout editor's forms, for a design whose templates do not read it, and
+# ViewTypeHiddenParameters[<view type>]=<parameter>,... for one view type (Netgen Layouts' valid_parameters).
 [BlockSettings]
 AvailableBlocks[]=title
 AvailableBlocks[]=text
