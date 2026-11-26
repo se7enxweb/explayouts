@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.4.53 (2026-11-25)
+
+- Added: A slider that follows the block's settings in the Design tab, for the slider of any design: the part
+  `explayouts/block/parts/slick_attributes.tpl` writes slick's class and settings attribute from Thumbnails per
+  row/slide, next and previous buttons, pagination, infinite loop, fade and autoplay; the mapping is PHP
+  (`expLayoutsSliderSettings`, the operator `explayouts_slider_settings`), so it costs microseconds, not a template's
+  worth of operators. From cjw_themes_jumper's pull request #11.
+- Added: The template block `image` in the standard design: the image of the page the layout is drawn for (`$node`,
+  else the node of `$module_result.content_info`, as in the layout preview), the first field of
+  `[PageImageSettings] AttributeIdentifiers[]` in `ImageAlias`, with width, height and alternative text, styled by
+  `.slb-page-image`. From cjw_themes_jumper's pull request #12.
+- Added: A test without the kernel for the slider settings (`tests/explayoutsslidersettingstest.php`); CI runs it and
+  the safe value test on PHP 7.4 and 8.0 to 8.5. The patterns are described in doc/USAGE.md.
+
 ## 1.4.52 (2026-11-25)
 
 - Added: The siteaccess of a layout, from the siteaccess condition of its rules, else the site whose RootNode lies deepest above a node the layout is mapped to (expLayoutsPreviewSiteAccess::resolveForLayout()), for the layout editor and the layout preview; an administration that serves several sites previews each layout in its own site (pull request #23).

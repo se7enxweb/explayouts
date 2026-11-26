@@ -354,6 +354,41 @@ extension/mytheme/design/mydesign/templates/explayouts/layouts/2_column.tpl
 
 with `mydesign` selected as (additional) site design for the siteaccess. The same works for the admin design (`design/admin/templates/tabs/explayouts.tpl`) from an admin-design extension. Block view templates referenced by `ViewTypes[]` follow the same rule.
 
+### Patterns for the templates of a design
+
+Two pieces any design can use instead of writing its own (from cjw_themes_jumper's starter design, pull requests #11
+and #12, made general in 1.4.53):
+
+**A slider that follows the Design tab.** The block's settings Thumbnails per row/slide, Show next and previous
+buttons, Show pagination, Infinite loop, Transition (fade) and Autoplay with Autoplay time become slick's own settings
+attribute; the design needs no script of its own and no inline style:
+
+```
+<div{include uri='design:explayouts/block/parts/slick_attributes.tpl' block=$block}>
+    {foreach $block.values.items as $entry} ... one element per slide ... {/foreach}
+</div>
+```
+
+The include writes `class="slick-slider[ has-dots][ <class>]"` and `data-slick='{...}'`; optional parameters `class`,
+`per_view` (items per slide when the block stores none, default 2) and `per_view_md` (the most up to 991px wide,
+default 2; one up to 480px). Fade needs one item per slide; the autoplay time is 1 to 12 seconds, else 5. The mapping
+is PHP (`expLayoutsSliderSettings::settings()`, the template operator `explayouts_slider_settings`), so a slider
+costs about 2 microseconds for its settings; a design may call the operator directly:
+`{def $s = $block.parameters|explayouts_slider_settings( 2, 2 )}` gives `$s.class`, `$s.json`, `$s.dots`. Give
+`.slick-slider.has-dots` room for the dots in the design's stylesheet (the starter design: `padding-bottom: 2.75rem`).
+
+**The page's image as a template block.** A template block named `image` draws the image of the page the layout is
+drawn for, in a layout zone of its own (a hero image above the title, for example): `explayouts/tpl_block/image.tpl`
+takes `$node` where a full view defines it, else the node of `$module_result.content_info` (the page layout and the
+layout preview set it), and draws the first field of `[PageImageSettings] AttributeIdentifiers[]` (default `image`)
+that has content, in `ImageAlias` (default `large`), with width and height from the alias and the alternative text
+(else the page's name). The look is `.slb-page-image` in `explayouts.css`; a design that draws the image its own way
+overrides the template (the starter design does, with its own alias).
+
+Measured on the alpha installation (PHP 8.5, template cache off, so every template is parsed): the starter slider
+with fixed settings 0.30 ms per render, with the settings in template code (cjw_themes_jumper 0.1.17) 1.05 ms, on the
+operator (0.1.18) 0.42 ms; the slider part alone 0.27 ms.
+
 ### PHP layer (safe extension points)
 
 - **Block handlers** — implement `expLayoutsBlockHandlerInterface` (`getParameters()`, `getValues( $block )`) in your own extension and wire it via `BlockDefinition_<id>` `Handler=`. This is the primary extension point; no core code changes needed.
