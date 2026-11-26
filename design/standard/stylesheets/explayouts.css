@@ -484,3 +484,14 @@ nav.ajax-navigation .ajax-load-more {
     list-style: none;
     padding-left: 0;
 }
+
+/* The template block "image": the page's image across the zone's width (tpl_block/image.tpl) */
+.slb-page-image {
+    margin: 0;
+}
+
+.slb-page-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

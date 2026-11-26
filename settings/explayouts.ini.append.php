@@ -15,6 +15,13 @@
 # galleries and lists) are in the Design tab, as is every parameter of a definition that lists none. A compound
 # parameter takes its children along.
 
+# The template block "image" (explayouts/tpl_block/image.tpl) draws the image of the page: the first of these fields
+# (ezimage) that has content, in this image alias (image.ini). A design may override the template.
+[PageImageSettings]
+AttributeIdentifiers[]
+AttributeIdentifiers[]=image
+ImageAlias=large
+
 # ItemViewTypes[<item view type>]=<label> of a block definition: item view types editors can choose for the items of
 # the block, after the ones its handler offers in code (getItemViewTypes()). They are an axis of their own: every view
 # type of the definition offers all of them; whether a design draws a combination is up to the design. A design that
