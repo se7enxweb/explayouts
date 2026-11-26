@@ -30,6 +30,10 @@ jobs:
             php -l "$f" > /dev/null || { echo "::error file=$f::syntax error on PHP ${{ matrix.php }}"; status=1; }
           done < <(git ls-files -z '*.php')
           exit $status
+      - name: Tests without the kernel (safe values, slider settings)
+        run: |
+          php tests/explayoutssafevaluetest.php
+          php tests/explayoutsslidersettingstest.php
 
   package:
     name: extension.xml and version parity
