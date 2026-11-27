@@ -44,7 +44,7 @@ class expLayoutsFunctionCollection
         {
             if ( (string)$target->attribute( 'target_type' ) === 'route'
                  && expLayoutsResolver::routeMatches( $target->attribute( 'target_value' ), (string)$resolution['path'] ) )
-                return array( 'result' => expLayoutsRenderer::prepareLayout( $layout, 2 ) );
+                return array( 'result' => expLayoutsRenderer::prepareLayout( $layout, 2, $values !== false && $values !== 0 && $values !== '0' ) );
         }
         return array( 'result' => false );
     }
@@ -85,7 +85,12 @@ class expLayoutsFunctionCollection
         return array( 'result' => expLayoutsResolver::adminLayoutsEnabled() && expLayoutsResolver::isAdminSiteAccess() );
     }
 
-    function resolveLayoutForNode( $nodeId )
+    /**
+     * The layout that applies to the node, prepared for design:explayouts/layout.tpl. values=false() leaves the
+     * block values out (expLayoutsRenderer::prepareLayout()): enough to tell whether the page has a layout and to
+     * key the cache-block that holds the rendered layout, without the queries of its blocks.
+     */
+    function resolveLayoutForNode( $nodeId, $values = true )
     {
         $nodeId = (int)$nodeId;
         $node = eZContentObjectTreeNode::fetch( $nodeId );
@@ -93,7 +98,7 @@ class expLayoutsFunctionCollection
         {
             $layout = expLayoutsResolver::resolve( $node->attribute( 'url_alias' ) );
             if ( $layout )
-                return array( 'result' => expLayoutsRenderer::prepareLayout( $layout, 2 ) );
+                return array( 'result' => expLayoutsRenderer::prepareLayout( $layout, 2, $values !== false && $values !== 0 && $values !== '0' ) );
         }
         return array( 'result' => false );
     }

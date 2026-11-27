@@ -23,6 +23,27 @@ class expLayoutsBlockParameter extends eZPersistentObject
             array( 'block_id' => $blockId ), null, null, $asObject );
     }
 
+    /**
+     * The parameters of several blocks in one query, as block id => name => value (a block without parameters
+     * has an empty array). For a whole zone, instead of one fetchByBlock() per block.
+     *
+     * @param int[] $blockIds
+     * @return array
+     */
+    static function fetchValuesByBlocks( array $blockIds )
+    {
+        $values = array();
+        foreach ( $blockIds as $blockId )
+            $values[(int)$blockId] = array();
+        if ( !$values )
+            return $values;
+        $rows = eZPersistentObject::fetchObjectList( self::definition(), null,
+            array( 'block_id' => array( array_keys( $values ) ) ), array( 'id' => 'asc' ), null, false );
+        foreach ( (array)$rows as $row )
+            $values[(int)$row['block_id']][$row['name']] = $row['value'];
+        return $values;
+    }
+
     static function set( $blockId, $name, $value )
     {
         $existing = eZPersistentObject::fetchObjectList( self::definition(), null,

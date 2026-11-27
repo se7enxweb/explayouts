@@ -109,6 +109,8 @@ $FunctionList['resolve_layout_for_node'] = array(
     'parameter_type' => 'standard',
     'parameters' => array(
         array( 'name' => 'node_id', 'type' => 'integer', 'required' => true ),
+        // false(): the blocks without their values (no block queries), see expLayoutsRenderer::prepareLayout()
+        array( 'name' => 'values', 'type' => 'boolean', 'required' => false, 'default' => true ),
     )
 );
 

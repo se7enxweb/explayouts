@@ -35,7 +35,21 @@ class expLayoutsRenderer
         return isset( self::$prepared[(int)$layoutId] ) ? self::$prepared[(int)$layoutId] : null;
     }
 
-    static function prepareLayout( $layout, $status = 2 )
+    /**
+     * The layout with its zones and blocks, ready for design:explayouts/layout.tpl.
+     *
+     * With $withValues false the blocks carry their parameters but no values: the block handlers (collection
+     * queries, node loads, link lookups) do not run, and 'values' is an empty array. That is what a page needs
+     * to decide whether it has a layout and to build the key of the cache-block that holds the rendered layout;
+     * the values are only needed when that cache-block is generated. A layout prepared without values is kept
+     * for the debug bar only when no full one was prepared in this request.
+     *
+     * @param expLayoutsLayout $layout
+     * @param int $status
+     * @param bool $withValues
+     * @return array|false
+     */
+    static function prepareLayout( $layout, $status = 2, $withValues = true )
     {
         if ( !$layout instanceof expLayoutsLayout )
             return false;
@@ -45,7 +59,7 @@ class expLayoutsRenderer
         $blockCount = 0;
         foreach ( $zones as $zone )
         {
-            $preparedZones[] = self::prepareZone( $zone, $status );
+            $preparedZones[] = self::prepareZone( $zone, $status, $withValues );
         }
 
         foreach ( $preparedZones as $preparedZone )
@@ -62,7 +76,8 @@ class expLayoutsRenderer
             'block_count' => $blockCount,
         );
         self::forgetEarlierRequests();
-        self::$prepared[(int)$prepared['id']] = $prepared;
+        if ( $withValues || !isset( self::$prepared[(int)$prepared['id']] ) )
+            self::$prepared[(int)$prepared['id']] = $prepared;
         return $prepared;
     }
 
@@ -109,7 +124,7 @@ class expLayoutsRenderer
         );
     }
 
-    static function prepareZone( $zone, $status = 2 )
+    static function prepareZone( $zone, $status = 2, $withValues = true )
     {
         // Linked zones (zone linking): header/footer link to the shared
         // "Header / Footer" layout, pre_footer links to "Prefooter". Render
@@ -121,9 +136,14 @@ class expLayoutsRenderer
         $blocks = expLayoutsBlock::fetchByZone( $sourceZone->attribute( 'id' ), $blockStatus );
         $preparedBlocks = array();
         $blocksById = array();
+        // The parameters of every block of the zone in one query
+        $blockIds = array();
+        foreach ( $blocks as $block )
+            $blockIds[] = (int)$block->attribute( 'id' );
+        $parameters = expLayoutsBlockParameter::fetchValuesByBlocks( $blockIds );
         foreach ( $blocks as $block )
         {
-            $preparedBlock = self::prepareBlock( $block );
+            $preparedBlock = self::prepareBlock( $block, $withValues, $parameters[(int)$block->attribute( 'id' )] );
             $preparedBlock['parent_id'] = (int)$block->attribute( 'parent_id' );
             $preparedBlock['placeholder'] = $block->attribute( 'placeholder' );
             $preparedBlock['children'] = array();
@@ -254,15 +274,25 @@ class expLayoutsRenderer
         return $value;
     }
 
-    static function prepareBlock( $block )
+    /**
+     * @param expLayoutsBlock $block
+     * @param bool $withValues false: no handler values and no link lookup (see prepareLayout())
+     * @param array|null $params the block's parameters (name => value) when the caller read them already
+     *                           (expLayoutsBlockParameter::fetchValuesByBlocks()), null reads them here
+     * @return array
+     */
+    static function prepareBlock( $block, $withValues = true, $params = null )
     {
-        $params = array();
-        foreach ( expLayoutsBlockParameter::fetchByBlock( $block->attribute( 'id' ) ) as $param )
+        if ( !is_array( $params ) )
         {
-            $params[$param->attribute( 'name' )] = $param->attribute( 'value' );
+            $params = array();
+            foreach ( expLayoutsBlockParameter::fetchByBlock( $block->attribute( 'id' ) ) as $param )
+            {
+                $params[$param->attribute( 'name' )] = $param->attribute( 'value' );
+            }
         }
 
-        if ( isset( $params['link'] ) )
+        if ( $withValues && isset( $params['link'] ) )
         {
             $params['link'] = self::resolveBlockLink( $params['link'] );
         }
@@ -279,7 +309,7 @@ class expLayoutsRenderer
             'name' => $block->attribute( 'name' ),
             'parameters' => $params,
         );
-        $handler = expLayoutsBlockHandlerFactory::get( $blockArray['definition_identifier'] );
+        $handler = $withValues ? expLayoutsBlockHandlerFactory::get( $blockArray['definition_identifier'] ) : null;
         if ( $handler )
         {
             $blockArray['values'] = $handler->getValues( $blockArray );
